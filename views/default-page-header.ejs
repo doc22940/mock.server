@@ -1,0 +1,28 @@
+<div class="page-header">
+	<h1>
+		<%=title %>
+		<small>version v<%=version %></small>
+		<div class="dropdown pull-right">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li>
+					<a href="#_modal_preferences" data-toggle="modal" data-target="#_modal_preferences">Preferences</a>
+				</li>
+				<% if (isSwaggerImportAvailable) { %>
+                	<li role="separator" class="divider"></li>
+                    <li>
+                    	<a href="#_modal_swagger_import" data-toggle="modal" data-target="#_modal_swagger_import">Swagger Import</a>
+                    </li>
+                <% } %>
+                <li role="separator" class="divider"></li>
+                <li>
+                	<a href="#" class="js-validate">Validate all mock responses (except error)</a>
+                </li>
+			</ul>
+		</div>
+	</h1>
+	<p>
+	</p>
+</div>

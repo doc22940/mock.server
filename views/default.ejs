@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<% include head.ejs %>
+
+<body id="index" class="home">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9" role="main">
+				<% include default-page-header.ejs %>
+				<% if (swaggerImport && swaggerImport.dateTime) { %>
+					<div class="alert alert-success" role="alert">Swagger import: <%=swaggerImport.dateTime%></div>
+				<% } %>
+				<% for(var i=0; i<apiData.length; i++) { %>
+					<% var group = apiData[i]; %>
+					<% include group.ejs %>
+				<% } %>
+			</div>
+			<div class="col-md-3">
+				<div id="sidebar" class="hidden-print affix" role="complementary">
+					<% include menu.ejs %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% include swagger-import-modal.ejs %>
+	<% include preferences-modal.ejs %>
+	<% include validate-single-modal.ejs %>
+	<% include validate-modal.ejs %>
+	<% include scripts.ejs %>
+</body>
+
+</html>

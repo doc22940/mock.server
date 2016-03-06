@@ -1,0 +1,69 @@
+{
+  "properties": {
+    "country": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "countryIsocode": {
+      "type": "string"
+    },
+    "country2": {
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "email": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "line1": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "streetNumber": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleCode": {
+      "type": "string"
+    },
+    "town": {
+      "type": "string"
+    }
+  }
+}

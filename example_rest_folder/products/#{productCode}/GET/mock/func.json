@@ -1,0 +1,5 @@
+{
+	"image": <%-image();%>,
+	"highlight": true,
+	"quantity": 3423
+}

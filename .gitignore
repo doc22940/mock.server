@@ -1,1 +1,8 @@
 .idea
+node_modules
+/preferences.json
+/example_rest_folder/*/*/*/mock/response.txt
+rest
+/test/tmp
+/tmp
+npm-debug.log
