@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha ./test/tests.js"
+    "test": "./node_modules/mocha/bin/mocha ./test/tests.js"
   },
   "main": "mock-server.js",
   "keywords": [
@@ -37,6 +37,7 @@
   "private": false,
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^1.10.3"
+    "eslint": "^1.10.3",
+    "mocha": "^2.4.5"
   }
 }
