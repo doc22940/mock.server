@@ -2,6 +2,8 @@
 var mockServer = require('./mock-server.js'),
 	dest = './example_rest_folder';
 
+dest = './test/tmp/swagger-import';
+
 mockServer({
 	restPath: dest,
 	funcPath: [
