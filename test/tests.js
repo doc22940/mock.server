@@ -40,20 +40,6 @@ function _startMockServer () {
 	mockServer(serverOptions);
 }
 
-function _getServiceResponse(opt) {
-	request({
-		uri: opt.url,
-		method: opt.method || 'GET',
-		form: opt.data
-	}, function(error, res, data) {
-		if (!error && res.statusCode === 200) {
-			opt.success.call(this, data);
-		} else {
-			opt.error.call(this);
-		}
-	});
-}
-
 function _getFile(path) {
 	return utils.readFile(path);
 }
@@ -73,6 +59,7 @@ swaggerImporter.doImport(function () {
 	describe('SwaggerImport', require('./tests-swagger-import').bind(this, serverOptions, _getFile));
 	describe('GetResponse', require('./tests-get-response').bind(this, serverOptions, _getFile));
 	describe('ValidatorResponses', require('./tests-validator-responses').bind(this, serverOptions, _getFile));
+	describe('DTOImport', require('./tests-dto-import').bind(this, serverOptions, _getFile));
 
 });
 

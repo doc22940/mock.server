@@ -1,0 +1,49 @@
+{
+  "properties": {
+    "country": {
+      "$ref": "#/definitions/CountryWsDTO"
+    },
+    "countryIsocode": {
+      "type": "string"
+    },
+    "country2": {
+      "$ref": "#/definitions/CountryWsDTO"
+    },
+    "email": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "line1": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "streetName": {
+      "type": "string"
+    },
+    "streetNumber": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleCode": {
+      "type": "string"
+    },
+    "town": {
+      "type": "string"
+    }
+  }
+}
