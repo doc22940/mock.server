@@ -16,6 +16,7 @@ var express = require('express'),
 	getPreferences = require('./lib/getPreferences'),
 	SwaggerImport = require('./lib/SwaggerImport'),
 	swaggerLog = require('./lib/SwaggerLog'),
+	DTOToClassConverter = require('./lib/DTOToClassConverter'),
 	GetResponse = require('./lib/GetResponse'),
 	ValidatorResponse = require('./lib/ValidatorResponse'),
 	ValidatorResponses = require('./lib/ValidatorResponses'),
@@ -61,6 +62,7 @@ module.exports = function (options) {
 
 		res.render('default.ejs', {
 			apiData: data,
+			dataDto: ui.get('dataDto'),
 			title: obj.title,
 			swaggerImport: ui.get('swaggerImport'),
 			isSwaggerImportAvailable: ui.get('isSwaggerImportAvailable'),
@@ -118,6 +120,17 @@ module.exports = function (options) {
 			res.send(swaggerLog.get());
 			res.end();
 		});
+	});
+
+	app.get('/service/class-dto', function (req, res) {
+		var json = JSON.parse(fs.readFileSync(req.query.path, 'utf8')),
+			dtoToClassConverter = new DTOToClassConverter(req.query.name, json, {
+				jsVersion: req.query.es,
+				isSetter: (req.query.setter === 'true'),
+				isGetter: (req.query.getter === 'true'),
+				isValidator: (req.query.validator === 'true')
+			});
+		res.send(dtoToClassConverter.get());
 	});
 
 	app.post('/service/expected-response', function (req, res) {

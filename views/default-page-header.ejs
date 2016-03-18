@@ -24,5 +24,22 @@
 		</div>
 	</h1>
 	<p>
+		<br/>
+		<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        	DTO's
+        </a>
+        <div class="collapse" id="collapseExample">
+			<div class="well">
+				<div class="list-group">
+					<% for(var i=0; i<dataDto.length; i++) { %>
+                		<% var dto = dataDto[i]; %>
+                		<a href="#" data-toggle="modal" data-target="#_modal_dto_<%=dto.nameClean%>" class="list-group-item">
+                			<%= dto.nameClean %>
+                		</a>
+                        <% include dto-modal.ejs %>
+                	<% } %>
+                </div>
+			</div>
+        </div>
 	</p>
 </div>
