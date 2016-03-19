@@ -60,6 +60,7 @@ swaggerImporter.doImport(function () {
 	describe('GetResponse', require('./tests-get-response').bind(this, serverOptions, _getFile));
 	describe('ValidatorResponses', require('./tests-validator-responses').bind(this, serverOptions, _getFile));
 	describe('DTOImport', require('./tests-dto-import').bind(this, serverOptions, _getFile));
+	describe('DTOToClassConverter', require('./tests-dto-2-class').bind(this, serverOptions, _getFile));
 
 });
 

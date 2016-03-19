@@ -21,33 +21,36 @@ module.exports = function(serverOptions, _getFile) {
 	var pathExpected = './test/expected/mock-server',
 		baseUrl = serverOptions.urlBase + serverOptions.urlPath;
 
-	it('GET /products/search', function () {
+	it('GET /products/search', function (done) {
 		_fetch({
 			url: baseUrl + '/products/search',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/01.json');
 				assert.equal(data, expected);
+				done();
 			}
 		});
 	});
 
-	it('GET /products/{productCode}', function () {
+	it('GET /products/{productCode}', function (done) {
 		_fetch({
 			url: baseUrl + '/products/31221',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/02.json');
 				assert.equal(data, expected);
+				done();
 			}
 		});
 	});
 
-	it('POST /products/{productCode}', function () {
+	it('POST /products/{productCode}', function (done) {
 		_fetch({
 			url: baseUrl + '/products/31221',
 			method: 'POST',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/03.json');
 				assert.equal(data, expected);
+				done();
 			}
 		});
 	});

@@ -20,7 +20,7 @@ module.exports = function(serverOptions, _getFile) {
 			expected = _getFile(pathExpSwagger + '/AddressWsDTO.json');
 		assert.equal(data, expected);
 	});
-å
+
 	// CountryWsDTO
 	it('DTO Schema for CountryWsDTO should be written!', function () {
 		var data = _getFile(pathDTO + '/CountryWsDTO.json'),
