@@ -1,8 +1,11 @@
+[![Build Status](https://travis-ci.org/smollweide/node-mock-server.svg)](https://travis-ci.org/smollweide/node-mock-server)
+[![Dependencies](https://david-dm.org/smollweide/node-mock-server.svg)](https://david-dm.org/smollweide/node-mock-server)
+
 # node-mock-server
 
 > File based Node API mock server
 
-![node-mock-server-ui.png](https://bitbucket.org/repo/aXBqRL/images/4219993214-node-mock-server-ui.png)
+![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/13898299/0ad93a76-edcd-11e5-8eb8-840471a0835b.png)
 
 ## Features
 - Node.js and file based
@@ -13,9 +16,11 @@
 - Error cases
 - Swagger import
 - Mock response validation
+- DTO preview
+- DTO to Class converter
 
 ## Getting Started
-This plugin requires Node `~0.12.7`
+This plugin requires Node `~0.12.7` or higher
 
 ```shell
 brew install node
@@ -256,11 +261,11 @@ mockServer({
 ## Functions in mock data
 - [Add function](https://github.com/smollweide/node-mock-server/blob/develop/func/price.js)
 - [Add function folder to option](https://github.com/smollweide/node-mock-server/blob/develop/app.js#L8)
-- [Use function in mock data](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/%23search/GET/mock/success.json#L3)
+- [Use function in mock data](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/func.json#L2)
 
 ## Use Faker in mock data
 - [Faker](https://www.npmjs.com/package/faker)
-- [Use Faker in mock data](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/%23search/GET/mock/success.json)
+- [Use Faker in mock data](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/faker.json#L4)
 
 ## Expected response
 - use the ui to configure the expected response for each call
@@ -268,7 +273,7 @@ mockServer({
 - use the request header "_expected"
 
 ## Mock response validation
-- In case of you using params (form or get) in mock data, you can simulate them by adding an [".request_data.json"](https://github.com/smollweide/node-mock-server/blob/feature/ValidateResponseSchema/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/.request_data.json) file.
+- In case of you using params (form or get) in mock data, you can simulate them by adding an [".request_data.json"](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/.request_data.json) file.
 
 ## Release History
 - 0.1.0 Specification UI
@@ -279,3 +284,4 @@ mockServer({
 - 0.5.0 Swagger import
 - 0.6.0 Mock response validation
 - 0.6.3 Prettify logs and bug fixes
+- 0.7.0 DTO import and DTO to class converter
