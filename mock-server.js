@@ -78,19 +78,7 @@ module.exports = function (options) {
 	//});
 	//
 	app.get('/view/schema', require('./controller/viewSchemaFormattedController'));
-
-	app.get('/service/schema-file', function (req, res) {
-		if (req.query && req.query.url) {
-			try {
-				res.send(fs.readFileSync(req.query.url, 'utf8'));
-			} catch (err) {
-				res.send('Not Found');
-			}
-
-		} else {
-			res.send('Not Found');
-		}
-	});
+	app.get('/view/schema/file', require('./controller/viewSchemaFileController'));
 
 	app.get('/service/swagger-import', function (req, res) {
 		var swaggerImporter = new SwaggerImport(options.swaggerImport);
