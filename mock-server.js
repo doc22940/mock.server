@@ -73,33 +73,11 @@ module.exports = function (options) {
 	});
 
 	// SERVICES
-	app.get('/service/mock-preview', function (req, res) {
-		res.send(_utils.readFile(req.query.path));
-	});
-
-	app.get('/service/schema', function (req, res) {
-		if (req.query && req.query.url) {
-
-			try {
-				var method = req.query.method || 'GET',
-					title = (req.query.type || '') + ' Schema',
-					path = (req.query.path || '');
-				res.render('service-schema.ejs', {
-					pageTitle: title,
-					title: title + ' | ' + method + ' | ' + path,
-					subTitle: path,
-					method: method,
-					methodLower: method.toLowerCase(),
-					schemaJSON: fs.readFileSync(req.query.url, 'utf8')
-				});
-			} catch (err) {
-				res.send('Not Found');
-			}
-
-		} else {
-			res.send('Not Found');
-		}
-	});
+	//app.get('/service/mock-preview', function (req, res) {
+	//	res.send(_utils.readFile(req.query.path));
+	//});
+	//
+	app.get('/view/schema', require('./controller/viewSchemaFormattedController'));
 
 	app.get('/service/schema-file', function (req, res) {
 		if (req.query && req.query.url) {
