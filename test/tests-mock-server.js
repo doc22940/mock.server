@@ -43,6 +43,48 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products/{productCode} - with request data', function (done) {
+		_fetch({
+			url: baseUrl + '/products/31221?_expected=request-data&currentPage=12',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/02-2.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('GET /products/{productCode} - with functions', function (done) {
+		_fetch({
+			url: baseUrl + '/products/31221?_expected=func',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(typeof data.image, 'object');
+				assert.equal(typeof data.image.url, 'string');
+				assert.equal(typeof data.image.alt, 'string');
+				assert.equal(typeof data.highlight, 'boolean');
+				assert.equal(typeof data.quantity, 'number');
+				done();
+			}
+		});
+	});
+
+	it('GET /products/{productCode} - with faker', function (done) {
+		_fetch({
+			url: baseUrl + '/products/31221?_expected=faker',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(typeof data.price, 'object');
+				assert.equal(typeof data.price.currency, 'string');
+				assert.equal(typeof data.card, 'object');
+				assert.equal(typeof data.card.name, 'string');
+				done();
+			}
+		});
+	});
+
 	it('POST /products/{productCode}', function (done) {
 		_fetch({
 			url: baseUrl + '/products/31221?_expected=success',
