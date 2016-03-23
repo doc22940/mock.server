@@ -2,7 +2,7 @@
 var mockServer = require('./mock-server.js'),
 	dest = __dirname + '/example_rest_folder';
 
-dest = __dirname + '/test/tmp/swagger-import';
+//dest = __dirname + '/test/tmp/swagger-import';
 
 mockServer({
 	restPath: dest,

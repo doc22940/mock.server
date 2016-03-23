@@ -51,11 +51,11 @@ MockController.prototype = extend(MockController.prototype, {
 		var path = req.originalUrl.replace(this.options.urlPath, this.options.restPath),
 			method = req.method,
 			dir = findFolder(path, this.options) + '/' + method + '/',
-			expectedResponse = 'success',
-			expectedResponseFilePath = dir + 'mock/response.txt',
+			expectedResponse = this._getExpectedResponse(req, dir),
 			preferences = getPreferences(this.options),
 			timeout = 0,
-			responseFilePath;
+			responseFilePath,
+			options;
 
 		if (path.search('favicon.ico') >= 0) {
 			res.end();
@@ -65,6 +65,108 @@ MockController.prototype = extend(MockController.prototype, {
 		if (preferences && preferences.responseDelay) {
 			timeout = parseInt(preferences.responseDelay);
 		}
+
+		responseFilePath = dir + 'mock/' + expectedResponse + '.json';
+
+		options = {
+			req: req,
+			res: res,
+			path: path,
+			method: method,
+			dir: dir,
+			expectedResponse: expectedResponse,
+			preferences: preferences,
+			timeout: timeout,
+			responseFilePath: responseFilePath
+		};
+
+		this._writeDefaultHeader(res);
+
+		setTimeout(function () {
+			if (expectedResponse.search('error') >= 0) {
+				this._sendError(options);
+			} else if (method === 'HEAD') {
+				this._sendHead(options);
+			} else {
+				this._sendSuccess(options);
+			}
+		}.bind(this), timeout);
+	},
+
+	/**
+	 * @method _sendSuccess
+	 * @param {object} options
+	 * @returns {void}
+	 * @private
+	 */
+	_sendSuccess: function (options) {
+
+		try {
+			var responseFile = this.readFile(options.responseFilePath),
+				responseData = getResponseData(options.req, options.method),
+				outStr;
+
+			try {
+				responseData = extend(responseData, getFunc(this.options.funcPath));
+				outStr = ejs.render(responseFile, responseData);
+			} catch (err) {
+				console.log(err);
+			}
+
+			if (outStr) {
+				options.res.send(outStr);
+			} else {
+				options.res.send(responseFile);
+			}
+		} catch (err) {
+			console.log(err);
+			options.res.end();
+		}
+
+	},
+
+	/**
+	 * @method _sendError
+	 * @param {object} options
+	 * @returns {void}
+	 * @private
+	 */
+	_sendError: function (options) {
+		var status,
+			reg = /(error)(-)([0-9]{3})/.exec(options.expectedResponse);
+
+		if (reg === null) {
+			status = 500;
+		} else {
+			status = parseInt(reg[3]);
+		}
+
+		options.res.statusCode = status;
+		options.res.send(this.readFile(options.responseFilePath));
+	},
+
+	/**
+	 * @method _sendHead
+	 * @param {object} options
+	 * @returns {void}
+	 * @private
+	 */
+	_sendHead: function (options) {
+		options.res.setHeader('X-Total-Count', Math.floor(Math.random() * 100));
+		options.res.end();
+	},
+
+	/**
+	 * @method _getExpectedResponse
+	 * @param {object} req
+	 * @param {string} dir
+	 * @returns {string}
+	 * @private
+	 */
+	_getExpectedResponse: function (req, dir) {
+
+		var expectedResponse = 'success',
+			expectedResponseFilePath = dir + 'mock/response.txt';
 
 		try {
 			expectedResponse = this.readFile(expectedResponseFilePath);
@@ -78,56 +180,21 @@ MockController.prototype = extend(MockController.prototype, {
 			expectedResponse = req.headers._expected;
 		}
 
-		responseFilePath = dir + 'mock/' + expectedResponse + '.json';
+		return expectedResponse;
+	},
 
+	/**
+	 * @method _writeDefaultHeader
+	 * @param {object} res
+	 * @returns {void}
+	 * @private
+	 */
+	_writeDefaultHeader: function (res) {
 		res.setHeader('Content-Type', this.options.contentType);
 		res.setHeader('Access-Control-Expose-Headers', this.options.accessControlExposeHeaders);
 		res.setHeader('Access-Control-Allow-Origin', this.options.accessControlAllowOrigin);
 		res.setHeader('Access-Control-Allow-Methods', this.options.accessControlAllowMethods);
 		res.setHeader('Access-Control-Allow-Headers', this.options.accessControlAllowHeaders);
-
-		setTimeout(function () {
-
-			if (expectedResponse.search('error') >= 0) {
-				var status,
-					reg = /(error)(-)([0-9]{3})/.exec(expectedResponse);
-
-				if (reg === null) {
-					status = 500;
-				} else {
-					status = parseInt(reg[3]);
-				}
-
-				res.statusCode = status;
-				res.send(this.readFile(responseFilePath));
-			} else if (method === 'HEAD') {
-				res.setHeader('X-Total-Count', Math.floor(Math.random() * 100));
-				res.end();
-			} else {
-
-				try {
-					var responseFile = this.readFile(responseFilePath),
-						responseData = getResponseData(req, method),
-						outStr;
-
-					try {
-						responseData = extend(responseData, getFunc(this.options.funcPath));
-						outStr = ejs.render(responseFile, responseData);
-					} catch (err) {
-						console.log(err);
-					}
-
-					if (outStr) {
-						res.send(outStr);
-					} else {
-						res.send(responseFile);
-					}
-				} catch (err) {
-					console.log(err);
-					res.end();
-				}
-			}
-		}.bind(this), timeout);
 	}
 
 });

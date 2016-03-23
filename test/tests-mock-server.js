@@ -23,7 +23,7 @@ module.exports = function(serverOptions, _getFile) {
 
 	it('GET /products/search', function (done) {
 		_fetch({
-			url: baseUrl + '/products/search',
+			url: baseUrl + '/products/search?_expected=success',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/01.json');
 				assert.equal(data, expected);
@@ -34,7 +34,7 @@ module.exports = function(serverOptions, _getFile) {
 
 	it('GET /products/{productCode}', function (done) {
 		_fetch({
-			url: baseUrl + '/products/31221',
+			url: baseUrl + '/products/31221?_expected=success',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/02.json');
 				assert.equal(data, expected);
@@ -45,7 +45,7 @@ module.exports = function(serverOptions, _getFile) {
 
 	it('POST /products/{productCode}', function (done) {
 		_fetch({
-			url: baseUrl + '/products/31221',
+			url: baseUrl + '/products/31221?_expected=success',
 			method: 'POST',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/03.json');
