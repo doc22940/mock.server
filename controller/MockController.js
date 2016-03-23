@@ -5,12 +5,12 @@ var Utils = require('../lib/Utils'),
 	util = require('util'),
 	extend = util._extend,
 	ejs = require('ejs'),
+	faker = require('faker'),
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance(),
 	findFolder = require('../lib/findFolder'),
 	getPreferences = require('../lib/getPreferences'),
-	getResponseData = require('../lib/getResponseData'),
-	getFunc = require('../lib/getFunc');
+	getResponseData = require('../lib/getResponseData');
 
 /**
  *
@@ -107,7 +107,7 @@ MockController.prototype = extend(MockController.prototype, {
 				outStr;
 
 			try {
-				responseData = extend(responseData, getFunc(this.options.funcPath));
+				responseData = extend(responseData, this._getFunc(this.options.funcPath));
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
 				console.log(err);
@@ -181,6 +181,56 @@ MockController.prototype = extend(MockController.prototype, {
 		}
 
 		return expectedResponse;
+	},
+
+	/**
+	 * @method _getFunc
+	 * @param {string|Array} path
+	 * @returns {object}
+	 * @private
+	 */
+	_getFunc: function (path) {
+		var _this = this,
+			func = {},
+			list = [];
+
+		function addFunc (path) {
+			var out = {};
+
+			try {
+				out = require(path);
+			} catch (err) {}
+
+			func = extend(func, out);
+		}
+
+		function addDirectory (path) {
+			try {
+				list = _this.readDir(path, ['.DS_Store']);
+			} catch (err) {
+				if (process.env.NODE_ENV !== 'test') {
+					console.log('Folder "' + path + '" not found!');
+				}
+			}
+
+			list.forEach(function (item) {
+				addFunc(item.path);
+			});
+		}
+
+		if (path instanceof Array) {
+			path.forEach(function (itemPath) {
+				addDirectory(itemPath);
+			});
+		} else if (typeof(path) === 'string' && path !== '') {
+			addDirectory(path);
+		}
+
+		func = extend(func, {
+			faker: faker
+		});
+
+		return func;
 	},
 
 	/**
