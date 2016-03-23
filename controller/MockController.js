@@ -8,7 +8,6 @@ var Utils = require('../lib/Utils'),
 	faker = require('faker'),
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance(),
-	findFolder = require('../lib/findFolder'),
 	getPreferences = require('../lib/getPreferences');
 
 /**
@@ -49,7 +48,7 @@ MockController.prototype = extend(MockController.prototype, {
 
 		var path = req.originalUrl.replace(this.options.urlPath, this.options.restPath),
 			method = req.method,
-			dir = findFolder(path, this.options) + '/' + method + '/',
+			dir = this._findFolder(path, this.options) + '/' + method + '/',
 			expectedResponse = this._getExpectedResponse(req, dir),
 			preferences = getPreferences(this.options),
 			timeout = 0,
@@ -251,6 +250,76 @@ MockController.prototype = extend(MockController.prototype, {
 		}
 
 		return responseData;
+	},
+
+	/**
+	 *
+	 * @method _isPathMatch
+	 * @param {string} pathPatter
+	 * @param {string} path
+	 * @returns {boolean} isPathMatch
+	 * @private
+	 */
+	_isPathMatch: function (pathPatter, path) {
+
+		var pathPatterSpl = pathPatter.split('#'),
+			pathSpl = path.split('#');
+
+		pathSpl.forEach(function (pathItem, index) {
+			var pathPatterItem = pathPatterSpl[index];
+
+			if (/({)(.*)(})/.test(pathPatterItem)) {
+				pathSpl[index] = pathPatterItem;
+			}
+		});
+
+		return pathSpl.join('#') === pathPatter;
+	},
+
+	/**
+	 * @method _findFolder
+	 * @param {string} path
+	 * @param {object} options
+	 * @returns {object}
+	 * @private
+	 */
+	_findFolder: function (path, options) {
+
+		path = path.split('?')[0];
+
+		var pathArr = path.split('/'),
+			restPathLength = options.restPath.split('/').length + 1,
+			pathRoot = pathArr.splice(0, restPathLength).join('/'),
+			pathFolder = '#' + pathArr.join('#'),
+			pathFolderArr,
+			dirs, output = '', i;
+
+		if (pathFolder === '#') {
+			return pathRoot + '/#';
+		}
+
+		dirs = this.readDir(pathRoot, ['.DS_Store']);
+		pathFolderArr = pathFolder.split('#');
+
+		for (i = 0; i < dirs.length; i += 1) {
+			var item = dirs[i].file,
+				itemArr = item.split('#');
+
+			if (item !== 'preferences.json' && itemArr.length === pathFolderArr.length) {
+
+				if (item === pathFolder) {
+					output = pathRoot + '/' + item;
+					i = dirs.length + 1;
+				} else {
+					if (this._isPathMatch(item, pathFolder)) {
+						output = pathRoot + '/' + item;
+						i = dirs.length + 1;
+					}
+				}
+			}
+		}
+
+		return output;
 	},
 
 	/**
