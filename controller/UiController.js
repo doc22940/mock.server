@@ -6,7 +6,7 @@ var Utils = require('../lib/Utils'),
 	extend = util._extend,
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance(),
-	Ui = require('../lib/ui');
+	Ui = require('../lib/UserInterface');
 
 /**
  *
