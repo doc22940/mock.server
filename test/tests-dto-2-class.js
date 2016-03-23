@@ -161,5 +161,23 @@ module.exports = function(serverOptions, _getFile) {
 		assert.equal(address.getLastName(), 'lastName2');
 	});
 
+	it('ES6 AddressWsDTO test getter, setter and validators', function () {
+		var AddressWsDTO = require('.' + pathExpected + '/08.js'),
+			data = {},
+			address;
+
+		data.email = 'somemail@mail.com';
+		data.lastName = 'lastName';
+
+		address = new AddressWsDTO(data);
+		assert.equal(address.getEmail(), data.email);
+		assert.equal(address.hasValidEmail(), true);
+		assert.equal(address.hasValidFirstName(), false);
+		assert.equal(address.hasValidLastName(), true);
+		assert.equal(address.getLastName(), data.lastName);
+		address.setLastName('lastName2');
+		assert.equal(address.getLastName(), 'lastName2');
+	});
+
 
 };
