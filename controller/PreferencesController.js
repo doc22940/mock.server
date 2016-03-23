@@ -6,7 +6,6 @@ var Utils = require('../lib/Utils'),
 	extend = util._extend,
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance(),
-	getPreferences = require('../lib/getPreferences'),
 	GetResponse = require('../lib/GetResponse');
 
 /**
@@ -33,6 +32,7 @@ PreferencesController.prototype = extend(PreferencesController.prototype, {
 	init: function () {
 
 		this.options = appController.options;
+		this.preferencesFile = this.options.restPath + '/preferences.json';
 
 		appController.app.post('/service/preferences', this._serviceWritePreferences.bind(this));
 	},
@@ -45,13 +45,26 @@ PreferencesController.prototype = extend(PreferencesController.prototype, {
 	 */
 	_serviceWritePreferences: function (req, res) {
 
-		var data = getPreferences(this.options);
+		var data = this._getPreferences();
 
 		data[req.body.key] = req.body.value;
 
-		this.writeFile(this.options.restPath + '/preferences.json', JSON.stringify(data));
+		this.writeFile(this.preferencesFile, JSON.stringify(data));
 
 		res.end();
+	},
+
+	/**
+	 * @method _getPreferences
+	 * @returns {{}}
+	 * @private
+	 */
+	_getPreferences: function () {
+		try {
+			return JSON.parse(this.readFile(this.preferencesFile));
+		} catch (err) {}
+
+		return {};
 	}
 
 });
