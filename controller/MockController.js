@@ -66,7 +66,9 @@ MockController.prototype = extend(MockController.prototype, {
 			timeout = parseInt(preferences.responseDelay);
 		}
 
-		expectedResponse = this.readFile(expectedResponseFilePath);
+		try {
+			expectedResponse = this.readFile(expectedResponseFilePath);
+		} catch (err) {}
 
 		if (req.query && typeof req.query._expected === 'string') {
 			expectedResponse = req.query._expected;
