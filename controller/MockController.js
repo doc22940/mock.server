@@ -7,8 +7,7 @@ var Utils = require('../lib/Utils'),
 	ejs = require('ejs'),
 	faker = require('faker'),
 	AppControllerSingleton = require('./AppController'),
-	appController = AppControllerSingleton.getInstance(),
-	getPreferences = require('../lib/getPreferences');
+	appController = AppControllerSingleton.getInstance();
 
 /**
  *
@@ -50,7 +49,7 @@ MockController.prototype = extend(MockController.prototype, {
 			method = req.method,
 			dir = this._findFolder(path, this.options) + '/' + method + '/',
 			expectedResponse = this._getExpectedResponse(req, dir),
-			preferences = getPreferences(this.options),
+			preferences = this.getPreferences(this.options),
 			timeout = 0,
 			responseFilePath,
 			options;

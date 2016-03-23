@@ -45,26 +45,13 @@ PreferencesController.prototype = extend(PreferencesController.prototype, {
 	 */
 	_serviceWritePreferences: function (req, res) {
 
-		var data = this._getPreferences();
+		var data = this.getPreferences(this.options);
 
 		data[req.body.key] = req.body.value;
 
 		this.writeFile(this.preferencesFile, JSON.stringify(data));
 
 		res.end();
-	},
-
-	/**
-	 * @method _getPreferences
-	 * @returns {{}}
-	 * @private
-	 */
-	_getPreferences: function () {
-		try {
-			return JSON.parse(this.readFile(this.preferencesFile));
-		} catch (err) {}
-
-		return {};
 	}
 
 });
