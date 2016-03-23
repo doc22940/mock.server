@@ -97,4 +97,37 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /search/search.iPhone.result.json', function (done) {
+		_fetch({
+			url: baseUrl + '/search/search.iPhone.result.json?_expected=success',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/04.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('GET /search/search.iPhone.result.json - error response', function (done) {
+		_fetch({
+			url: baseUrl + '/search/search.iPhone.result.json?_expected=error',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/05.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('GET /search/search.iPhone.result.json - error 401 response', function (done) {
+		_fetch({
+			url: baseUrl + '/search/search.iPhone.result.json?_expected=error-401',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/06.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
 };
