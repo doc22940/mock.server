@@ -6,11 +6,11 @@ var Utils = require('../lib/Utils'),
 	extend = util._extend,
 	ejs = require('ejs'),
 	faker = require('faker'),
+	fs = require('fs'),
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance(),
 	findFolder = require('../lib/findFolder'),
-	getPreferences = require('../lib/getPreferences'),
-	getResponseData = require('../lib/getResponseData');
+	getPreferences = require('../lib/getPreferences');
 
 /**
  *
@@ -103,7 +103,7 @@ MockController.prototype = extend(MockController.prototype, {
 
 		try {
 			var responseFile = this.readFile(options.responseFilePath),
-				responseData = getResponseData(options.req, options.method),
+				responseData = this._getResponseData(options.req, options.method),
 				outStr;
 
 			try {
@@ -231,6 +231,27 @@ MockController.prototype = extend(MockController.prototype, {
 		});
 
 		return func;
+	},
+
+	/**
+	 * @method _getResponseData
+	 * @param {object} req
+	 * @param {string} method
+	 * @returns {object}
+	 * @private
+	 */
+	_getResponseData: function (req, method) {
+		var responseData = {};
+
+		switch (method) {
+			case 'POST':	responseData = req.body; break;
+			case 'GET':		responseData = req.query; break;
+			case 'PUT':		responseData = req.body; break;
+			case 'PATCH':	responseData = req.body; break;
+			case 'DELETE':	responseData = req.body; break;
+		}
+
+		return responseData;
 	},
 
 	/**
