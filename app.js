@@ -1,8 +1,8 @@
 
 var mockServer = require('./mock-server.js'),
-	dest = './example_rest_folder';
+	dest = __dirname + '/example_rest_folder';
 
-dest = './test/tmp/swagger-import';
+dest = __dirname + '/test/tmp/swagger-import';
 
 mockServer({
 	restPath: dest,
@@ -16,7 +16,7 @@ mockServer({
 		authPass: undefined,
 		host: 'localhost',
 		port: 3001,
-		path: '/src/swagger/swagger-demo-docs.json',
+		path: __dirname + '/src/swagger/swagger-demo-docs.json',
 		dest: dest,
 		replacePathsStr: '/v2/{baseSiteId}',
 		createErrorFile: true,

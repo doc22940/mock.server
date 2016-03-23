@@ -14,7 +14,7 @@ serverOptions = {
 	urlBase: 'http://localhost:8888',
 	urlPath: '/rest/v1',
 	port: 8888,
-	restPath: './example_rest_folder',
+	restPath: __dirname + '/../example_rest_folder',
 	funcPath: [
 		__dirname + '/../func',
 		__dirname + '/../func2'
@@ -26,7 +26,7 @@ serverOptions = {
 		host: 'localhost',
 		port: 8888,
 		path: '/src/swagger/swagger-api-docs.json',
-		dest: './test/tmp/swagger-import',
+		dest: __dirname + '/../test/tmp/swagger-import',
 		replacePathsStr: '/v2',
 		createErrorFile: true,
 		createEmptyFile: true,
