@@ -1,0 +1,16 @@
+{
+  "validation": {
+    "request-data": {
+      "counter": 1
+    },
+    "success": {
+      "counter": 1
+    },
+    "func": {
+      "counter": 0
+    },
+    "faker": {
+      "counter": 8
+    }
+  }
+}
