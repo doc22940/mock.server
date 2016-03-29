@@ -161,6 +161,7 @@
                                 		<%-label%>
                                 		<%=mock.name%>
                                 	</label>
+                                	&nbsp;<a target="_blank" href="view-source:<%=urlBase%>/view/response?path=<%=encodeURIComponent(method.basePath);%>&method=<%=method.id%>&expected=<%=mock.name%>">preview</a>
                                 	<% if (mock.name.search(/error/) < 0) { %>
 										<button
 											class="btn btn-primary btn-xs pull-right js-validate-single"
