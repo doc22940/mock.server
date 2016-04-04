@@ -2,8 +2,7 @@
 'use strict';
 
 var Utils = require('../lib/Utils'),
-	util = require('util'),
-	extend = util._extend,
+	extend = require('util')._extend,
 	ejs = require('ejs'),
 	faker = require('faker'),
 	AppControllerSingleton = require('./AppController'),
