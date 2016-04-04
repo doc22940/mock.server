@@ -28,4 +28,11 @@ module.exports = function(serverOptions, _getFile) {
 		assert.equal(data, expected);
 	});
 
+	// WithArrayDTO
+	it('DTO Schema for WithArrayDTO should be written!', function () {
+		var data = _getFile(pathDTO + '/WithArrayDTO.json'),
+			expected = _getFile(pathExpSwagger + '/WithArrayDTO.json');
+		assert.equal(data, expected);
+	});
+
 };
