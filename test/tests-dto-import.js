@@ -29,9 +29,9 @@ module.exports = function(serverOptions, _getFile) {
 	});
 
 	// WithArrayDTO
-	it('DTO Schema for WithArrayDTO should be written!', function () {
-		var data = _getFile(pathDTO + '/WithArrayDTO.json'),
-			expected = _getFile(pathExpSwagger + '/WithArrayDTO.json');
+	it('DTO Schema for ComplexDTO should be written!', function () {
+		var data = _getFile(pathDTO + '/ComplexDTO.json'),
+			expected = _getFile(pathExpSwagger + '/ComplexDTO.json');
 		assert.equal(data, expected);
 	});
 

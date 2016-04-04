@@ -1,0 +1,11 @@
+{
+  "list": [
+    {
+      "country": "$ref-#/definitions/CountryWsDTO",
+      "email": "string"
+    }
+  ],
+  "parameters": {
+    "additional": "string"
+  }
+}

@@ -100,7 +100,7 @@
 		}
 	},
 	"definitions": {
-		"WithArrayDTO": {
+		"ComplexDTO": {
 			"properties": {
 				"list": {
 					"type": "array",
@@ -113,6 +113,12 @@
 								"type": "string"
 							}
 						}
+					}
+				},
+				"parameters": {
+					"type": "object",
+					"additional": {
+						"type": "string"
 					}
 				}
 			}
