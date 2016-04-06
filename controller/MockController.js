@@ -105,6 +105,7 @@ MockController.prototype = extend(MockController.prototype, {
 
 			try {
 				responseData = extend(responseData, this._getFunc(this.options.funcPath));
+				responseData = extend(responseData, this._getDynamicPathParams(options));
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
 				console.log(err);
@@ -228,6 +229,40 @@ MockController.prototype = extend(MockController.prototype, {
 		});
 
 		return func;
+	},
+
+	/**
+	 * @method _getDynamicPathParams
+	 * @param {object} options
+	 * @returns {object}
+	 * @private
+	 */
+	_getDynamicPathParams: function (options) {
+
+		var path = options.path.split('?')[0].split('#')[0],
+			pathSpl = path.split('/'),
+			regDirReplace = new RegExp('\/' + options.method + '\/$'),
+			regMatchDyn = /^#{([^}]*)}$/,
+			dir = options.dir.replace(regDirReplace, ''),
+			dirSpl = dir.split('/'),
+			params = {};
+
+		if (dirSpl.length !== pathSpl.length) {
+			return {};
+		}
+
+		this.for(dirSpl, function (dirItem, i) {
+
+			var exp = regMatchDyn.exec(dirItem);
+
+			if (exp !== null && exp.length > 0) {
+				params[exp[1]] = pathSpl[i];
+			}
+		});
+
+		return {
+			params: params
+		}
 	},
 
 	/**
