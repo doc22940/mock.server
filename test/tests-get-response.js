@@ -87,4 +87,22 @@ module.exports = function(serverOptions, _getFile) {
 		assert.equal(data.currentPage, 3);
 	});
 
+	// REQUEST DATA call
+	it('response from GET /product/{productCode} - with request data from path', function() {
+		var response,
+			data;
+
+		response = new GetResponse({
+			path: serverOptions.restPath + '/products/test',
+			method: 'get',
+			expected: 'request-data',
+			queryParams: {
+				currentPage: 12
+			}
+		}, serverOptions);
+		data = response.get();
+
+		assert.equal(data.productCode, 'test');
+	});
+
 };
