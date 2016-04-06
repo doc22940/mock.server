@@ -46,13 +46,20 @@ ResponseController.prototype = extend(ResponseController.prototype, {
 	 * @private
 	 */
 	_viewResponse: function (req, res) {
-		var response = new GetResponse({
+		var data,
+			response = new GetResponse({
 			path: req.query.path,
 			method: req.query.method,
 			expected: req.query.expected
 		}, this.options);
 
-		res.send(response.get());
+		data = response.get();
+
+		try {
+			data = JSON.parse(data);
+		} catch (err) {}
+
+		res.send(JSON.stringify(data, null, 2));
 		res.end();
 	},
 
