@@ -13,7 +13,7 @@ module.exports = function(serverOptions, _getFile) {
 			expected;
 
 		response = new GetResponse({
-			path: serverOptions.restPath + '/products/#{productCode}',
+			path: serverOptions.restPath + '/products/test',
 			method: 'get',
 			expected: 'success'
 		}, serverOptions);
@@ -29,7 +29,7 @@ module.exports = function(serverOptions, _getFile) {
 			expected;
 
 		response = new GetResponse({
-			path: serverOptions.restPath + '/products/#{productCode}',
+			path: serverOptions.restPath + '/products/test',
 			method: 'post',
 			expected: 'success'
 		}, serverOptions);
@@ -44,7 +44,7 @@ module.exports = function(serverOptions, _getFile) {
 			data;
 
 		response = new GetResponse({
-			path: serverOptions.restPath + '/products/#{productCode}',
+			path: serverOptions.restPath + '/products/test',
 			method: 'get',
 			expected: 'faker'
 		}, serverOptions);
@@ -61,7 +61,7 @@ module.exports = function(serverOptions, _getFile) {
 			data;
 
 		response = new GetResponse({
-			path: serverOptions.restPath + '/products/#{productCode}',
+			path: serverOptions.restPath + '/products/test',
 			method: 'get',
 			expected: 'func'
 		}, serverOptions);
@@ -78,9 +78,12 @@ module.exports = function(serverOptions, _getFile) {
 			data;
 
 		response = new GetResponse({
-			path: serverOptions.restPath + '/products/#{productCode}',
+			path: serverOptions.restPath + '/products/test',
 			method: 'get',
-			expected: 'request-data'
+			expected: 'request-data',
+			queryParams: {
+				currentPage: 3
+			}
 		}, serverOptions);
 		data = response.get();
 
