@@ -1,3 +1,6 @@
 {
-	"currentPage": 3
+	"currentPage": 3,
+	"params": {
+		"productCode": "test"
+	}
 }
