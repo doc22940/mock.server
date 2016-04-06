@@ -80,7 +80,9 @@ MockController.prototype = extend(MockController.prototype, {
 		this._writeDefaultHeader(res);
 
 		setTimeout(function () {
-			if (expectedResponse.search('error') >= 0) {
+			if (this._hasEmptyDynamicPathParam(options)) {
+				this._sendErrorEmptyPath(options);
+			} else if (expectedResponse.search('error') >= 0) {
 				this._sendError(options);
 			} else if (method === 'HEAD') {
 				this._sendHead(options);
@@ -144,6 +146,24 @@ MockController.prototype = extend(MockController.prototype, {
 	},
 
 	/**
+	 * @method _sendError
+	 * @param {object} options
+	 * @returns {void}
+	 * @private
+	 */
+	_sendErrorEmptyPath: function (options) {
+		options.res.statusCode = 400;
+		options.res.send(JSON.stringify({
+			errors: [
+				{
+					message: 'Invalid path, please check the path params!',
+					type: 'InvalidPathError'
+				}
+			]
+		}));
+	},
+
+	/**
 	 * @method _sendHead
 	 * @param {object} options
 	 * @returns {void}
@@ -152,6 +172,45 @@ MockController.prototype = extend(MockController.prototype, {
 	_sendHead: function (options) {
 		options.res.setHeader('X-Total-Count', Math.floor(Math.random() * 100));
 		options.res.end();
+	},
+
+	/**
+	 * @method _hasEmptyDynamicPathParam
+	 * @param {object} options
+	 * @returns {void}
+	 * @private
+	 */
+	_hasEmptyDynamicPathParam: function (options) {
+
+		var path = decodeURIComponent(options.path).split('?')[0].split('#')[0],
+			pathSpl = path.split('/'),
+			regDirReplace = new RegExp('\/' + options.method + '\/$'),
+			regMatchDyn = /^{([^}]*)}$/,
+			dir = options.dir.replace(regDirReplace, '').replace(/#/g, '/').replace(/\/\//g, '/'),
+			dirSpl = dir.split('/'),
+			result = false;
+
+		if (dirSpl.length !== pathSpl.length) {
+			return true;
+		}
+
+		if (!this.existDir(options.dir)) {
+			return true;
+		}
+
+		this.for(dirSpl, function (dirItem, i) {
+
+			var exp = regMatchDyn.exec(dirItem);
+
+			if (exp !== null && exp.length > 0) {
+				if (pathSpl[i] === '' || /^{([^}]*)}$/.test(pathSpl[i])) {
+					result = true;
+				}
+			}
+		});
+
+		return result;
+
 	},
 
 	/**
@@ -242,8 +301,8 @@ MockController.prototype = extend(MockController.prototype, {
 		var path = options.path.split('?')[0].split('#')[0],
 			pathSpl = path.split('/'),
 			regDirReplace = new RegExp('\/' + options.method + '\/$'),
-			regMatchDyn = /^#{([^}]*)}$/,
-			dir = options.dir.replace(regDirReplace, ''),
+			regMatchDyn = /^{([^}]*)}$/,
+			dir = options.dir.replace(regDirReplace, '').replace(/#/g, '/').replace(/\/\//g, '/'),
 			dirSpl = dir.split('/'),
 			params = {};
 
