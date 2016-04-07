@@ -80,7 +80,7 @@ MockController.prototype = extend(MockController.prototype, {
 		this._writeDefaultHeader(res);
 
 		setTimeout(function () {
-			if (this._hasEmptyDynamicPathParam(options)) {
+			if (!this._hasValidDynamicPathParam(options)) {
 				this._sendErrorEmptyPath(options);
 			} else if (expectedResponse.search('error') >= 0) {
 				this._sendError(options);
@@ -175,12 +175,12 @@ MockController.prototype = extend(MockController.prototype, {
 	},
 
 	/**
-	 * @method _hasEmptyDynamicPathParam
+	 * @method _hasValidDynamicPathParam
 	 * @param {object} options
 	 * @returns {boolean}
 	 * @private
 	 */
-	_hasEmptyDynamicPathParam: function (options) {
+	_hasValidDynamicPathParam: function (options) {
 
 		var path = decodeURIComponent(options.path).split('?')[0].split('#')[0],
 			pathSpl = path.split('/'),
@@ -188,14 +188,14 @@ MockController.prototype = extend(MockController.prototype, {
 			regMatchDyn = /^{([^}]*)}$/,
 			dir = options.dir.replace(regDirReplace, '').replace(/#/g, '/').replace(/\/\//g, '/'),
 			dirSpl = dir.split('/'),
-			result = false;
+			result = true;
 
 		if (dirSpl.length !== pathSpl.length) {
-			return true;
+			return false;
 		}
 
 		if (!this.existDir(options.dir)) {
-			return true;
+			return false;
 		}
 
 		this.for(dirSpl, function (dirItem, i) {
@@ -204,7 +204,7 @@ MockController.prototype = extend(MockController.prototype, {
 
 			if (exp !== null && exp.length > 0) {
 				if (pathSpl[i] === '' || /^{([^}]*)}$/.test(pathSpl[i])) {
-					result = true;
+					result = false;
 				}
 			}
 		});
