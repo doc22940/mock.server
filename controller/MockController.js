@@ -177,7 +177,7 @@ MockController.prototype = extend(MockController.prototype, {
 	/**
 	 * @method _hasEmptyDynamicPathParam
 	 * @param {object} options
-	 * @returns {void}
+	 * @returns {boolean}
 	 * @private
 	 */
 	_hasEmptyDynamicPathParam: function (options) {
