@@ -98,9 +98,61 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /search/users/{userId}/products/{productCode}/available - with empty dynamic path param', function (done) {
+		_fetch({
+			url: baseUrl + '/search/users//products/1/available?_expected=success',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(data.errors.length > 0, true);
+				assert.equal(data.errors[0].type, 'InvalidPathError');
+				done();
+			}
+		});
+	});
+
+	it('GET /search/users/{userId}/products/{productCode}/available - with empty dynamic path param', function (done) {
+		_fetch({
+			url: baseUrl + '/search/users/1/products//available?_expected=success',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(data.errors.length > 0, true);
+				assert.equal(data.errors[0].type, 'InvalidPathError');
+				done();
+			}
+		});
+	});
+
 	it('GET /products/{productCode} - with placeholder dynamic path param', function (done) {
 		_fetch({
 			url: baseUrl + '/products/{productCode}?_expected=success',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(data.errors.length > 0, true);
+				assert.equal(data.errors[0].type, 'InvalidPathError');
+				done();
+			}
+		});
+	});
+
+	it('GET /search/users/{userId}/products/{productCode}/available - with placeholder dynamic path param', function (done) {
+		_fetch({
+			url: baseUrl + '/search/users/1/products/{productCode}/available?_expected=success',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(data.errors.length > 0, true);
+				assert.equal(data.errors[0].type, 'InvalidPathError');
+				done();
+			}
+		});
+	});
+
+	it('GET /search/users/{userId}/products/{productCode}/available - with placeholder dynamic path param', function (done) {
+		_fetch({
+			url: baseUrl + '/search/users/{userId}/products/1/available?_expected=success',
 			success: function (data) {
 				data = JSON.parse(data);
 				assert.equal(typeof data, 'object');
