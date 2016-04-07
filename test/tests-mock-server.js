@@ -85,6 +85,19 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products/{productCode} - with empty dynamic path param', function (done) {
+		_fetch({
+			url: baseUrl + '/products/?_expected=success',
+			success: function (data) {
+				data = JSON.parse(data);
+				assert.equal(typeof data, 'object');
+				assert.equal(data.errors.length > 0, true);
+				assert.equal(data.errors[0].type, 'InvalidPathError');
+				done();
+			}
+		});
+	});
+
 	it('POST /products/{productCode}', function (done) {
 		_fetch({
 			url: baseUrl + '/products/31221?_expected=success',
