@@ -1,6 +1,6 @@
 {
   "name": "node-mock-server",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "description": "File based Node API mock server",
   "email": "simon.mollweide@web.de",
   "author": "Simon Mollweide <simon.mollweide@web.de>",
@@ -24,7 +24,8 @@
     "rest",
     "rest API",
     "json",
-    "DTO"
+    "DTO",
+    "Swagger"
   ],
   "dependencies": {
     "body-parser": "^1.14.0",
