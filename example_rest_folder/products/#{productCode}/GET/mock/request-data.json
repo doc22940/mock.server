@@ -1,4 +1,5 @@
 {
 	"success": true,
-	"currentPage": <%=currentPage%>
+	"currentPage": <%=currentPage%>,
+	"productCode": "<%=params.productCode%>"
 }

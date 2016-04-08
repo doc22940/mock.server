@@ -3,6 +3,9 @@
   "title": "Product",
   "type": "object",
   "properties": {
+    "productCode": {
+      "type": "string"
+    },
     "price": {
       "type": "object",
       "properties": {

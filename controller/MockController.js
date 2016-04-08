@@ -79,7 +79,9 @@ MockController.prototype = extend(MockController.prototype, {
 		this._writeDefaultHeader(res);
 
 		setTimeout(function () {
-			if (expectedResponse.search('error') >= 0) {
+			if (!this._hasValidDynamicPathParam(options)) {
+				this._sendErrorEmptyPath(options);
+			} else if (expectedResponse.search('error') >= 0) {
 				this._sendError(options);
 			} else if (method === 'HEAD') {
 				this._sendHead(options);
@@ -104,6 +106,8 @@ MockController.prototype = extend(MockController.prototype, {
 
 			try {
 				responseData = extend(responseData, this._getFunc(this.options.funcPath));
+				responseData = extend(responseData, this._getDynamicPathParams(options));
+				responseData = extend(responseData, this._getResponseFiles(options, responseData));
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
 				console.log(err);
@@ -142,6 +146,24 @@ MockController.prototype = extend(MockController.prototype, {
 	},
 
 	/**
+	 * @method _sendError
+	 * @param {object} options
+	 * @returns {void}
+	 * @private
+	 */
+	_sendErrorEmptyPath: function (options) {
+		options.res.statusCode = 400;
+		options.res.send(JSON.stringify({
+			errors: [
+				{
+					message: 'Invalid path, please check the path params!',
+					type: 'InvalidPathError'
+				}
+			]
+		}));
+	},
+
+	/**
 	 * @method _sendHead
 	 * @param {object} options
 	 * @returns {void}
@@ -150,6 +172,101 @@ MockController.prototype = extend(MockController.prototype, {
 	_sendHead: function (options) {
 		options.res.setHeader('X-Total-Count', Math.floor(Math.random() * 100));
 		options.res.end();
+	},
+
+	/**
+	 * @method _cleanPath
+	 * @param {string} path
+	 * @returns {string}
+	 * @private
+	 */
+	_cleanPath: function (path) {
+		return decodeURIComponent(path)
+			.split('?')[0]
+			.split('#')[0]
+			.replace(/\/$/, '')
+		;
+	},
+
+	/**
+	 * @method _cleanDir
+	 * @param {string} dir
+	 * @param {string} method
+	 * @returns {string}
+	 * @private
+	 */
+	_cleanDir: function (dir, method) {
+
+		var regDirReplace = new RegExp('\/' + method + '\/$');
+
+		return dir.replace(regDirReplace, '')
+			.replace(/#/g, '/')
+			.replace(/\/\//g, '/')
+			.replace(/\/$/, '')
+		;
+	},
+
+	/**
+	 * @method _hasValidDynamicPathParam
+	 * @param {object} options
+	 * @returns {boolean}
+	 * @private
+	 */
+	_hasValidDynamicPathParam: function (options) {
+
+		var path = this._cleanPath(options.path),
+			pathSpl = path.split('/'),
+			regMatchDyn = /^{([^}]*)}$/,
+			dir = this._cleanDir(options.dir, options.method),
+			dirSpl = dir.split('/'),
+			result = true;
+
+		if (dirSpl.length !== pathSpl.length) {
+			return false;
+		}
+
+		if (!this.existDir(options.dir)) {
+			return false;
+		}
+
+		this.for(dirSpl, function (dirItem, i) {
+
+			var exp = regMatchDyn.exec(dirItem);
+
+			if (exp !== null && exp.length > 0) {
+				if (pathSpl[i] === '' || /^{([^}]*)}$/.test(pathSpl[i])) {
+					result = false;
+				}
+			}
+		});
+
+		return result;
+
+	},
+
+	/**
+	 * @method _getResponseFiles
+	 * @param {object} options
+	 * @param {object} responseData
+	 * @returns {object}
+	 * @private
+	 */
+	_getResponseFiles: function (options, responseData) {
+
+		var responses = {},
+			path = options.dir + 'mock',
+			files = this.readDir(path, ['.DS_Store']);
+
+		this.for(files, function (filesObj) {
+			try {
+				var fileData = this.readFile(filesObj.path);
+				responses[filesObj.file.replace('.json', '')] = JSON.parse(ejs.render(fileData, responseData));
+			} catch (err) {}
+		}.bind(this));
+
+		return {
+			response: responses
+		};
 	},
 
 	/**
@@ -227,6 +344,40 @@ MockController.prototype = extend(MockController.prototype, {
 		});
 
 		return func;
+	},
+
+	/**
+	 * @method _getDynamicPathParams
+	 * @param {object} options
+	 * @returns {object}
+	 * @private
+	 */
+	_getDynamicPathParams: function (options) {
+
+		var path = options.path.split('?')[0].split('#')[0],
+			pathSpl = path.split('/'),
+			regDirReplace = new RegExp('\/' + options.method + '\/$'),
+			regMatchDyn = /^{([^}]*)}$/,
+			dir = options.dir.replace(regDirReplace, '').replace(/#/g, '/').replace(/\/\//g, '/'),
+			dirSpl = dir.split('/'),
+			params = {};
+
+		if (dirSpl.length !== pathSpl.length) {
+			return {};
+		}
+
+		this.for(dirSpl, function (dirItem, i) {
+
+			var exp = regMatchDyn.exec(dirItem);
+
+			if (exp !== null && exp.length > 0) {
+				params[exp[1]] = pathSpl[i];
+			}
+		});
+
+		return {
+			params: params
+		}
 	},
 
 	/**

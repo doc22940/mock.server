@@ -40,7 +40,7 @@ node app.js
 In your project's root, add a file named for example `app.js`.
 
 ```js
-var mockServer = require('./node_modules/node-mock-server/mock-server.js');
+var mockServer = require('node-mock-server');
 mockServer(options);
 ```
 
@@ -211,21 +211,22 @@ A number that is used to define the deep of recursive DTO replacement.
 #### Default Options
 
 ```js
-var mockServer = require('./node_modules/node-mock-server/mock-server.js');
-mockServer();
+var mockServer = require('node-mock-server');
+mockServer({});
 ```
 
 #### Custom Options
 
 ```js
-var mockServer = require('./node_modules/node-mock-server/mock-server.js');
+var mockServer = require('node-mock-server');
 mockServer({
-	restPath: './mock/rest',
+	restPath: __dirname + '/mock/rest',
     title: 'Api mock server',
     version: 2,
     urlBase: 'http://localhost:3003',
     urlPath: '/rest/v2',
     port: 3003,
+    funcPath: __dirname + '/func',
     swaggerImport: {
     	protocol: 'http',
     	authUser: undefined,
@@ -237,7 +238,8 @@ mockServer({
     	replacePathsStr: '/v2/{baseSiteId}',
     	createErrorFile: true,
     	createEmptyFile: true,
-    	overwriteExistingDescriptions: true
+    	overwriteExistingDescriptions: true,
+    	maxRefDeep: 1
     }
 });
 ```
@@ -246,6 +248,7 @@ mockServer({
 
 - example_rest_folder
 
+```
 |- group
 |--- #path
 |--- #path#{param}
@@ -257,20 +260,44 @@ mockServer({
 |------- desc.json
 |------- request_schema.json
 |------- response_schema.json
+```
 
 ## Functions in mock data
 - [Add function](https://github.com/smollweide/node-mock-server/blob/develop/func/price.js)
 - [Add function folder to option](https://github.com/smollweide/node-mock-server/blob/develop/app.js#L8)
 - [Use function in mock data](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/func.json#L2)
 
-## Use Faker in mock data
+## Faker in mock data
 - [Faker](https://www.npmjs.com/package/faker)
 - [Use Faker in mock data](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/faker.json#L4)
 
+## Query params in mock data
+For example call GET "/products/superProductCode/?currentPage=1"
+[Config in mock response](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/request-data.json#L3)
+Response will be:
+```
+{
+	"currentPage": 1,
+	...
+}
+```
+
+## Dynamic path params in mock data
+For example call GET "/products/superProductCode/?currentPage=2"
+[Config in mock response](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/request-data.json#L4)
+Response will be:
+```
+{
+	"productCode": "superProductCode"
+	...
+}
+```
+
 ## Expected response
-- use the ui to configure the expected response for each call
-- use the get param "_expected"
-- use the request header "_expected"
+- Use the ui to configure the expected response for each call
+- Use the get param "_expected"
+- Use the request header "_expected"
+- If an dynamic path param is empty or in placeholder format an "400 bad request" will be the response
 
 ## Mock response validation
 - In case of you using params (form or get) in mock data, you can simulate them by adding an [".request_data.json"](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/.request_data.json) file.
@@ -285,3 +312,4 @@ mockServer({
 - 0.6.0 Mock response validation
 - 0.6.3 Prettify logs and bug fixes
 - 0.7.0 DTO import and DTO to class converter
+- 0.7.2 Dynamic path parameters in response json
