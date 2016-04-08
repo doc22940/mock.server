@@ -115,6 +115,12 @@
 						}
 					}
 				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ImageDTO"
+					}
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
