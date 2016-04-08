@@ -217,4 +217,16 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products/{productCode} with response files - case productCode = 1', function (done) {
+		_fetch({
+			url: baseUrl + '/products/1?_expected=success',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/07-1.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+
 };
