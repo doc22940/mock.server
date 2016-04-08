@@ -32,6 +32,17 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products', function (done) {
+		_fetch({
+			url: baseUrl + '/products?_expected=success',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/01.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
 	it('GET /products/{productCode}', function (done) {
 		_fetch({
 			url: baseUrl + '/products/31221?_expected=success',
@@ -80,19 +91,6 @@ module.exports = function(serverOptions, _getFile) {
 				assert.equal(typeof data.price.currency, 'string');
 				assert.equal(typeof data.card, 'object');
 				assert.equal(typeof data.card.name, 'string');
-				done();
-			}
-		});
-	});
-
-	it('GET /products/{productCode} - with empty dynamic path param', function (done) {
-		_fetch({
-			url: baseUrl + '/products/?_expected=success',
-			success: function (data) {
-				data = JSON.parse(data);
-				assert.equal(typeof data, 'object');
-				assert.equal(data.errors.length > 0, true);
-				assert.equal(data.errors[0].type, 'InvalidPathError');
 				done();
 			}
 		});

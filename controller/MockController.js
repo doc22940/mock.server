@@ -175,6 +175,38 @@ MockController.prototype = extend(MockController.prototype, {
 	},
 
 	/**
+	 * @method _cleanPath
+	 * @param {string} path
+	 * @returns {string}
+	 * @private
+	 */
+	_cleanPath: function (path) {
+		return decodeURIComponent(path)
+			.split('?')[0]
+			.split('#')[0]
+			.replace(/\/$/, '')
+		;
+	},
+
+	/**
+	 * @method _cleanDir
+	 * @param {string} dir
+	 * @param {string} method
+	 * @returns {string}
+	 * @private
+	 */
+	_cleanDir: function (dir, method) {
+
+		var regDirReplace = new RegExp('\/' + method + '\/$');
+
+		return dir.replace(regDirReplace, '')
+			.replace(/#/g, '/')
+			.replace(/\/\//g, '/')
+			.replace(/\/$/, '')
+		;
+	},
+
+	/**
 	 * @method _hasValidDynamicPathParam
 	 * @param {object} options
 	 * @returns {boolean}
@@ -182,11 +214,10 @@ MockController.prototype = extend(MockController.prototype, {
 	 */
 	_hasValidDynamicPathParam: function (options) {
 
-		var path = decodeURIComponent(options.path).split('?')[0].split('#')[0],
+		var path = this._cleanPath(options.path),
 			pathSpl = path.split('/'),
-			regDirReplace = new RegExp('\/' + options.method + '\/$'),
 			regMatchDyn = /^{([^}]*)}$/,
-			dir = options.dir.replace(regDirReplace, '').replace(/#/g, '/').replace(/\/\//g, '/'),
+			dir = this._cleanDir(options.dir, options.method),
 			dirSpl = dir.split('/'),
 			result = true;
 
