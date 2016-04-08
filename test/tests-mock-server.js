@@ -32,6 +32,17 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products', function (done) {
+		_fetch({
+			url: baseUrl + '/products?_expected=success',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/01.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
 	it('GET /products/{productCode}', function (done) {
 		_fetch({
 			url: baseUrl + '/products/31221?_expected=success',
