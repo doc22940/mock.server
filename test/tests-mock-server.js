@@ -45,7 +45,7 @@ module.exports = function(serverOptions, _getFile) {
 
 	it('GET /products/{productCode}', function (done) {
 		_fetch({
-			url: baseUrl + '/products/31221?_expected=success',
+			url: baseUrl + '/products/31221?_expected=success-default',
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/02.json');
 				assert.equal(data, expected);
