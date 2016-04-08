@@ -1,7 +1,7 @@
 {
-  "country": "$ref-#/definitions/CountryWsDTO",
+  "country": "$ref-CountryWsDTO",
   "countryIsocode": "string",
-  "country2": "$ref-#/definitions/CountryWsDTO",
+  "country2": "$ref-CountryWsDTO",
   "email": "string",
   "firstName": "string",
   "id": "string",
