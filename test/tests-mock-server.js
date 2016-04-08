@@ -206,4 +206,15 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products/{productCode} with response files - case default', function (done) {
+		_fetch({
+			url: baseUrl + '/products/31221?_expected=success',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/07.json');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
 };
