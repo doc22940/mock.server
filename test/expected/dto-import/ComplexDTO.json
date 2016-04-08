@@ -5,6 +5,9 @@
       "email": "string"
     }
   ],
+  "items": [
+    "$ref-ImageDTO"
+  ],
   "parameters": {
     "additional": "string"
   }
