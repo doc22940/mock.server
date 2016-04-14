@@ -1,16 +1,13 @@
 {
   "validation": {
-    "request-data": {
-      "counter": 1
-    },
-    "success": {
-      "counter": 1
+    "faker": {
+      "counter": 58
     },
     "func": {
       "counter": 0
     },
-    "faker": {
-      "counter": 8
+    "request-data": {
+      "counter": 1
     },
     "success-1": {
       "counter": 3
@@ -19,6 +16,9 @@
       "counter": 1
     },
     "success-default": {
+      "counter": 1
+    },
+    "success": {
       "counter": 1
     }
   }
