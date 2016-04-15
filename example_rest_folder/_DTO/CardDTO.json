@@ -1,27 +1,15 @@
 {
-  "name": {
-    "type":"string"
-  },
-  "username": {
-    "type":"string"
-  },
-  "email": {
-    "type":"string"
-  },
-  "phone": {
-    "type":"string"
-  },
-  "website": {
-    "type":"string"
-  },
+  "name": "string",
+  "username": "string",
+  "email": "string",
+  "phone": "string",
+  "website": "string",
   "posts": [
     {
-      "properties": {
-        "words": "string",
-        "sentence": "string",
-        "sentences": "string",
-        "paragraph": "string"
-      }
+      "words": "string",
+      "sentence": "string",
+      "sentences": "string",
+      "paragraph": "string"
     }
   ],
   "accountHistory": [
