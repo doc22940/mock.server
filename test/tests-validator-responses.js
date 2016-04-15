@@ -25,4 +25,9 @@ module.exports = function(serverOptions, _getFile) {
 		assert.equal(data.counter === 0, true);
 	});
 
+	it('deep validation -  DTO references', function () {
+		var data = JSON.parse(_getFile(pathAddresses + '/GET/.store.json')).validation['deep-validation'];
+		assert.equal(data.counter > 0, true);
+	});
+
 };
