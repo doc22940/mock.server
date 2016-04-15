@@ -58,6 +58,11 @@
   "stingArray": [
     "23423423"
   ],
+  "stingObject": [
+    {
+      "name": "firstName lastName"
+    }
+  ],
   "image": {
     "url": "string",
     "alt": "string"

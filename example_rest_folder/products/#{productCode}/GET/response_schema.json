@@ -12,6 +12,11 @@
   "stingArray": [
     "string"
   ],
+  "stingObject": [
+    {
+      "name": "string"
+    }
+  ],
   "image": {
     "url": "string",
     "alt": "string"
