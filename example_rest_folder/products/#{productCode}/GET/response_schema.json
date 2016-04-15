@@ -9,13 +9,20 @@
   "cards": [
     "$ref-CardDTO"
   ],
-  "stingArray": [
+  "arrayString": [
     "string"
   ],
-  "stingObject": [
+  "arrayObject": [
     {
       "name": "string"
     }
+  ],
+  "arrayArray": [
+    [
+      {
+        "name": "string"
+      }
+    ]
   ],
   "image": {
     "url": "string",

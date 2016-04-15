@@ -55,13 +55,20 @@
       }
     }
   ],
-  "stingArray": [
+  "arrayString": [
     "23423423"
   ],
-  "stingObject": [
+  "arrayObject": [
     {
       "name": "firstName lastName"
     }
+  ],
+  "arrayArray": [
+    [
+      {
+        "name": "firstName lastName"
+      }
+    ]
   ],
   "image": {
     "url": "string",
