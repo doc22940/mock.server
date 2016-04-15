@@ -9,50 +9,52 @@
   "highlight": true,
   "quantity": 231,
   "currentPage": "string",
-  "card": {
-	  "name": "string",
-	  "username": "string",
-	  "email": "string",
-	  "phone": "string",
-	  "website": "string",
-	  "posts": [
-		  {
-			  "words": "string",
-			  "sentence": "string",
-			  "sentences": "string",
-			  "paragraph": "string"
-		  }
-	  ],
-	  "accountHistory": [
-		  {
-			  "name": "string",
-			  "type": "string",
-			  "account": "string",
-			  "amount": "string",
-			  "date": "string",
-			  "business": "string"
-		  }
-	  ],
-	  "address": {
-		  "streetA": "string",
-		  "streetB": "string",
-		  "streetC": "string",
-		  "streetD": "string",
-		  "city": "string",
-		  "state": "string",
-		  "country": "string",
-		  "zipcode": "string",
-		  "geo": {
-			  "lat": "string",
-			  "lng": "string"
-		  },
-		  "company": {
-			  "name": "string",
-			  "catchPhrase": "string",
-			  "bs": "string"
+  "cards": [
+	  {
+		  "name": "string",
+		  "username": "string",
+		  "email": "string",
+		  "phone": "string",
+		  "website": "string",
+		  "posts": [
+			  {
+				  "words": "string",
+				  "sentence": "string",
+				  "sentences": "string",
+				  "paragraph": "string"
+			  }
+		  ],
+		  "accountHistory": [
+			  {
+				  "name": "string",
+				  "type": "string",
+				  "account": "string",
+				  "amount": "string",
+				  "date": "string",
+				  "business": "string"
+			  }
+		  ],
+		  "address": {
+			  "streetA": "string",
+			  "streetB": "string",
+			  "streetC": "string",
+			  "streetD": "string",
+			  "city": "string",
+			  "state": "string",
+			  "country": "string",
+			  "zipcode": "string",
+			  "geo": {
+				  "lat": "string",
+				  "lng": "string"
+			  },
+			  "company": {
+				  "name": "string",
+				  "catchPhrase": "string",
+				  "bs": "string"
+			  }
 		  }
 	  }
-  },
+  ],
   "image": {
     "url": "string",
     "alt": "string"

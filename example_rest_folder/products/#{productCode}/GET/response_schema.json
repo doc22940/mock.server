@@ -6,7 +6,9 @@
   "highlight": "boolean",
   "quantity": "integer",
   "currentPage": "string",
-  "card": "$ref-CardDTO",
+  "cards": [
+    "$ref-CardDTO"
+  ],
   "image": {
     "url": "string",
     "alt": "string"
