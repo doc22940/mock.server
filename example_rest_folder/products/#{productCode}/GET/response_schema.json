@@ -9,6 +9,9 @@
   "cards": [
     "$ref-CardDTO"
   ],
+  "stingArray": [
+    "string"
+  ],
   "image": {
     "url": "string",
     "alt": "string"
