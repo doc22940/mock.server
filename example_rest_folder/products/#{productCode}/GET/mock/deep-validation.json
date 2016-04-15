@@ -58,6 +58,9 @@
   "arrayString": [
     "23423423"
   ],
+  "arrayNumber": [
+    23423423
+  ],
   "arrayObject": [
     {
       "name": "firstName lastName"

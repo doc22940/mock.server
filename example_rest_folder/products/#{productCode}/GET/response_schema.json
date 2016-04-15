@@ -12,6 +12,9 @@
   "arrayString": [
     "string"
   ],
+  "arrayNumber": [
+    "number"
+  ],
   "arrayObject": [
     {
       "name": "string"
