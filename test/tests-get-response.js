@@ -15,7 +15,7 @@ module.exports = function(serverOptions, _getFile) {
 		response = new GetResponse({
 			path: serverOptions.restPath + '/products/{productCode}',
 			method: 'get',
-			expected: 'success'
+			expected: 'success-default'
 		}, serverOptions);
 		expected = _getFile(pathExpGetResponse + '/01.json');
 		data = response.get();

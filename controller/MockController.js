@@ -108,6 +108,7 @@ MockController.prototype = extend(MockController.prototype, {
 			try {
 				responseData = extend(responseData, this._getFunc(this.options.funcPath));
 				responseData = extend(responseData, this._getDynamicPathParams(options));
+				responseData = extend(responseData, this._getResponseFiles(options, responseData));
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
 				console.log(err);
@@ -242,6 +243,31 @@ MockController.prototype = extend(MockController.prototype, {
 
 		return result;
 
+	},
+
+	/**
+	 * @method _getResponseFiles
+	 * @param {object} options
+	 * @param {object} responseData
+	 * @returns {object}
+	 * @private
+	 */
+	_getResponseFiles: function (options, responseData) {
+
+		var responses = {},
+			path = options.dir + 'mock',
+			files = this.readDir(path, ['.DS_Store']);
+
+		this.for(files, function (filesObj) {
+			try {
+				var fileData = this.readFile(filesObj.path);
+				responses[filesObj.file.replace('.json', '')] = JSON.parse(ejs.render(fileData, responseData));
+			} catch (err) {}
+		}.bind(this));
+
+		return {
+			response: responses
+		};
 	},
 
 	/**

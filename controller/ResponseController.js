@@ -57,9 +57,10 @@ ResponseController.prototype = extend(ResponseController.prototype, {
 
 		try {
 			data = JSON.parse(data);
+			data = JSON.stringify(data, null, 2);
 		} catch (err) {}
 
-		res.send(JSON.stringify(data, null, 2));
+		res.send(data);
 		res.end();
 	},
 
