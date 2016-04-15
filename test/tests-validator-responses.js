@@ -27,7 +27,7 @@ module.exports = function(serverOptions, _getFile) {
 
 	it('deep validation -  DTO references', function () {
 		var data = JSON.parse(_getFile(pathAddresses + '/GET/.store.json')).validation['deep-validation'];
-		assert.equal(data.counter > 0, true);
+		assert.equal(data.counter === 0, true);
 	});
 
 };
