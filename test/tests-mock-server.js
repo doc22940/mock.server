@@ -89,8 +89,8 @@ module.exports = function(serverOptions, _getFile) {
 				assert.equal(typeof data, 'object');
 				assert.equal(typeof data.price, 'object');
 				assert.equal(typeof data.price.currency, 'string');
-				assert.equal(typeof data.card, 'object');
-				assert.equal(typeof data.card.name, 'string');
+				assert.equal(data.cards instanceof Array, true);
+				assert.equal(typeof data.cards[0].name, 'string');
 				done();
 			}
 		});

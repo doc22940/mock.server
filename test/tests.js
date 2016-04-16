@@ -31,7 +31,6 @@ serverOptions = {
 		createErrorFile: true,
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
-		maxRefDeep: 1,
 		isTest: true
 	}
 };

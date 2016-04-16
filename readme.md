@@ -199,12 +199,6 @@ Default value: `true`
 
 A boolean that is used to decide to replace an old description with the new (imported) description or not.
 
-#### options.swaggerImport.maxRefDeep
-Type: `Number`
-Default value: `1`
-
-A number that is used to define the deep of recursive DTO replacement.
-
 
 ### Usage Examples
 
@@ -238,8 +232,7 @@ mockServer({
     	replacePathsStr: '/v2/{baseSiteId}',
     	createErrorFile: true,
     	createEmptyFile: true,
-    	overwriteExistingDescriptions: true,
-    	maxRefDeep: 1
+    	overwriteExistingDescriptions: true
     }
 });
 ```

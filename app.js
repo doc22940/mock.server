@@ -16,12 +16,11 @@ mockServer({
 		authPass: undefined,
 		host: 'localhost',
 		port: 3001,
-		path: __dirname + '/src/swagger/swagger-demo-docs.json',
+		path: '/src/swagger/swagger-api-docs.json',
 		dest: dest,
 		replacePathsStr: '/v2/{baseSiteId}',
 		createErrorFile: true,
 		createEmptyFile: true,
-		overwriteExistingDescriptions: true,
-		maxRefDeep: 1
+		overwriteExistingDescriptions: true
 	}
 });
