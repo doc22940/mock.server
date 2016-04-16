@@ -51,7 +51,7 @@ module.exports = function(serverOptions, _getFile) {
 		data = response.get();
 
 		assert.equal(typeof data.price, 'object');
-		assert.equal(typeof data.card, 'object');
+		assert.equal(data.cards instanceof Array, true);
 		assert.equal(typeof data.email, 'string');
 	});
 
