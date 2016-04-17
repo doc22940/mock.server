@@ -28,19 +28,19 @@
     "Swagger"
   ],
   "dependencies": {
-    "body-parser": "^1.14.0",
+    "body-parser": "^1.15.0",
     "deasync": "^0.1.4",
-    "ejs": "^2.3.3",
+    "ejs": "^2.4.1",
     "express": "^4.13.4",
     "extend": "^3.0.0",
     "faker": "^3.0.1",
-    "request": "^2.69.0"
+    "request": "^2.72.0"
   },
   "preferGlobal": false,
   "private": false,
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^2.8.0",
     "mocha": "^2.4.5"
   }
 }
