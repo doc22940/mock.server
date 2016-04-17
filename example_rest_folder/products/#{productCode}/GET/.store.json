@@ -1,7 +1,7 @@
 {
   "validation": {
     "faker": {
-      "counter": 9
+      "counter": 4
     },
     "func": {
       "counter": 0
@@ -10,16 +10,16 @@
       "counter": 1
     },
     "success-1": {
-      "counter": 3
+      "counter": 1
     },
     "success-2": {
       "counter": 1
     },
     "success-default": {
-      "counter": 1
+      "counter": 0
     },
     "success": {
-      "counter": 1
+      "counter": 0
     },
     "deep-validation": {
       "counter": 0
