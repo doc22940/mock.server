@@ -4,6 +4,9 @@
   "email": "string",
   "phone": "string",
   "website": "string",
+  "entries": [
+    "$ref-CardDTO"
+  ],
   "posts": [
     {
       "words": "string",
