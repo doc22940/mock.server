@@ -121,6 +121,9 @@
 						"$ref": "#/definitions/ImageDTO"
 					}
 				},
+				"image": {
+					"$ref": "#/definitions/ImageDTO"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
