@@ -1,14 +1,18 @@
 
 var mockServer = require('./mock-server.js'),
-	dest = __dirname + '/example_rest_folder';
+	dest = __dirname + '/example_rest_folder',
+	replacePathsStr = '/v2/{baseSiteId}',
+	responseFuncPath = __dirname + '/func-imported';
 
-//dest = __dirname + '/test/tmp/swagger-import';
+dest = __dirname + '/test/tmp/swagger-import';
+replacePathsStr = '/v2';
 
 mockServer({
 	restPath: dest,
 	funcPath: [
 		__dirname + '/func',
-		__dirname + '/func2'
+		__dirname + '/func2',
+		responseFuncPath
 	],
 	swaggerImport: {
 		protocol: 'http',
@@ -18,9 +22,10 @@ mockServer({
 		port: 3001,
 		path: '/src/swagger/swagger-api-docs.json',
 		dest: dest,
-		replacePathsStr: '/v2/{baseSiteId}',
+		replacePathsStr: replacePathsStr,
 		createErrorFile: true,
 		createEmptyFile: true,
-		overwriteExistingDescriptions: true
+		overwriteExistingDescriptions: true,
+		responseFuncPath: responseFuncPath
 	}
 });
