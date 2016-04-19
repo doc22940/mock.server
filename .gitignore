@@ -6,3 +6,4 @@ rest
 /test/tmp
 /tmp
 npm-debug.log
+/func-imported
