@@ -31,7 +31,8 @@ serverOptions = {
 		createErrorFile: true,
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
-		isTest: true
+		isTest: true,
+		responseFuncPath: __dirname + '/../func-imported'
 	}
 };
 
