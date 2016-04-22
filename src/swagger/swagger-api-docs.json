@@ -147,11 +147,11 @@
 				"items": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/ImageDTO"
+						"$ref": "#/definitions/CountryWsDTO"
 					}
 				},
 				"image": {
-					"$ref": "#/definitions/ImageDTO"
+					"$ref": "#/definitions/CountryWsDTO"
 				},
 				"exampleString": {
 					"type": "string"
@@ -169,6 +169,36 @@
 					"type": "string"
 				},
 				"lastName": {
+					"type": "string"
+				},
+				"country": {
+					"$ref": "#/definitions/CountryWsDTO"
+				},
+				"countryIsocode": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"postalCode": {
+					"type": "string"
+				},
+				"streetName": {
+					"type": "string"
+				},
+				"streetNumber": {
+					"type": "string"
+				},
+				"title": {
+					"type": "string"
+				},
+				"titleCode": {
+					"type": "string"
+				},
+				"town": {
 					"type": "string"
 				},
 				"parameters": {
