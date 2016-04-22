@@ -124,6 +124,24 @@
 				"image": {
 					"$ref": "#/definitions/ImageDTO"
 				},
+				"exampleString": {
+					"type": "string"
+				},
+				"exampleNumber": {
+					"type": "number"
+				},
+				"exampleInteger": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"firstName": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
