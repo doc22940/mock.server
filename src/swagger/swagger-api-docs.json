@@ -121,6 +121,35 @@
 						"$ref": "#/definitions/ImageDTO"
 					}
 				},
+				"parameters": {
+					"type": "object",
+					"additional": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"ResponseFuncTestDTO": {
+			"properties": {
+				"list": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"country": {
+								"$ref": "#/definitions/CountryWsDTO"
+							},
+							"email": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ImageDTO"
+					}
+				},
 				"image": {
 					"$ref": "#/definitions/ImageDTO"
 				},
