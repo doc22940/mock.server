@@ -38,6 +38,10 @@ serverOptions = {
 			ruleTest3: {
 				faker: 'random.arrayElement',
 				fakerArgs: ['a','b','c']
+			},
+			ruleTest4: {
+				name: 'string',
+				company: 'string'
 			}
 		}
 	}
