@@ -216,6 +216,9 @@
 				"ruleTest5": {
 					"type": "array"
 				},
+				"ruleTest6": {
+					"type": "number"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
