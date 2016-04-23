@@ -211,13 +211,42 @@
 					"type": "string"
 				},
 				"ruleTest4": {
-					"type": "object"
+					"type": "object",
+					"email": {
+						"type": "string"
+					}
 				},
 				"ruleTest5": {
-					"type": "array"
+					"type": "array",
+					"items": {
+						"properties": {
+							"email": {
+								"type": "string"
+							}
+						}
+					}
 				},
 				"ruleTest6": {
 					"type": "number"
+				},
+				"ruleTestType1": {
+					"type": "number"
+				},
+				"ruleTestType4": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"email": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"ruleTestType5": {
+					"type": "object",
+					"email": {
+						"type": "string"
+					}
 				},
 				"parameters": {
 					"type": "object",
