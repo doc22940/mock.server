@@ -15,6 +15,9 @@
 - Multiple expected responses
 - Error cases
 - Swagger import
+    - DTO import
+    - DTO response function
+    - Faker expected response
 - Mock response validation
 - DTO preview
 - DTO to Class converter
@@ -87,7 +90,7 @@ A number value that is used to define the port.
 Type: `String|Array`
 Optional
 
-A string or array that is used to define where the functions are located.
+A string or array that is used to define where the response functions are located.
 
 #### options.contentType
 Type: `String`
@@ -199,6 +202,17 @@ Default value: `true`
 
 A boolean that is used to decide to replace an old description with the new (imported) description or not.
 
+#### options.swaggerImport.responseFuncPath
+Type: `String`
+
+A string that is used to define where the imported response functions are located.
+
+
+#### options.swaggerImport.responseFuncRules
+Type: `Object`
+
+A object that is used to define the overwrite rules for the imported response functions.
+
 
 ### Usage Examples
 
@@ -232,7 +246,26 @@ mockServer({
     	replacePathsStr: '/v2/{baseSiteId}',
     	createErrorFile: true,
     	createEmptyFile: true,
-    	overwriteExistingDescriptions: true
+    	overwriteExistingDescriptions: true,
+    	responseFuncPath: __dirname + '/func-imported',
+        responseFuncRules: {
+        	ruleString: 'Rule value',
+        	ruleNumber: 12,
+        	ruleFaker: {
+        		faker: 'random.arrayElement',
+        		fakerArgs: ['a','b','c']
+        	},
+        	ruleObject: {
+        		name: 'string',
+        		company: 'string'
+        	},
+        	ruleArray: [
+        		{
+        			name: 'string',
+        			company: 'string'
+        		}
+        	]
+        }
     }
 });
 ```
@@ -306,3 +339,4 @@ Response will be:
 - 0.6.3 Prettify logs and bug fixes
 - 0.7.0 DTO import and DTO to class converter
 - 0.7.2 Dynamic path parameters in response json
+- 0.8.0 More readable schema structure, faker DTO response functions and faker response.
