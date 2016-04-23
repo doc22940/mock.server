@@ -48,7 +48,8 @@ serverOptions = {
 					name: 'string',
 					company: 'string'
 				}
-			]
+			],
+			ruleTest6: 12
 		}
 	}
 };
