@@ -213,6 +213,9 @@
 				"ruleTest4": {
 					"type": "object"
 				},
+				"ruleTest5": {
+					"type": "array"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
