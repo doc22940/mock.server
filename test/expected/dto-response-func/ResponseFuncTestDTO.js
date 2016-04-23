@@ -1,3 +1,6 @@
+/* eslint-disable */
+/* jshint ignore:start */
+'use strict';
 
 var faker = require('faker');
 
@@ -36,6 +39,20 @@ module.exports = {
   "title": faker.name.prefix(),
   "titleCode": faker.random.arrayElement(["mr","ms"]),
   "town": faker.address.city(),
+  "ruleTest1": "Rule value",
+  "ruleTest2": faker.company.companyName(),
+  "ruleTest3": faker.random.arrayElement(["a","b","c"]),
+  "ruleTest4": {
+    "name": faker.name.findName(),
+    "company": faker.company.companyName()
+  },
+  "ruleTest5": _getArray(function () {return {  "name": faker.name.findName(),  "company": faker.company.companyName()};}),
+  "ruleTest6": faker.random.number(),
+  "ruleTestType1": faker.random.number(),
+  "ruleTestType4": _getArray(function () {return {  "email": faker.internet.email()};}),
+  "ruleTestType5": {
+    "email": faker.internet.email()
+  },
   "parameters": {
     "additional": faker.lorem.word()
   }
@@ -43,3 +60,6 @@ module.exports = {
 	}
 
 };
+
+/* jshint ignore:end */
+/* eslint-enable */
