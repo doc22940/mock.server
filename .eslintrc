@@ -43,6 +43,9 @@
 		"setTimeout": true,
 		"clearTimeout": true,
 		"jQuery": true,
+		"describe": true,
+		"bind": true,
+		"it": true,
 		"$": true
 	}
 }

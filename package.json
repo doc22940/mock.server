@@ -40,6 +40,7 @@
   "private": false,
   "license": "MIT",
   "devDependencies": {
+    "babel-eslint": "^6.0.3",
     "eslint": "^2.8.0",
     "mocha": "^2.4.5"
   }

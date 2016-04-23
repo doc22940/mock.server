@@ -1,7 +1,4 @@
-var assert = require('assert'),
-	request = require('request'),
-	mockServer = require('../mock-server.js'),
-	GetResponse = require('../lib/GetResponse'),
+var mockServer = require('../mock-server.js'),
 	SwaggerImport = require('../lib/SwaggerImport'),
 	ValidatorResponses = require('../lib/ValidatorResponses'),
 	Utils = require('../lib/Utils'),
