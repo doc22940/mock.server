@@ -256,6 +256,13 @@
 				}
 			}
 		},
+		"ResponseFuncLoopDTO": {
+			"properties": {
+				"funcLoop": {
+					"$ref": "#/definitions/ResponseFuncLoopDTO"
+				}
+			}
+		},
 		"AddressResponseWsDTO": {
 			"properties": {
 				"success": {

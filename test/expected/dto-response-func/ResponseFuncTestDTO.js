@@ -18,18 +18,35 @@ function _getArray(getData) {
 
 module.exports = {
 
-	importedResponseFuncTestDTO: function () {
+	importedResponseFuncTestDTO: function (loopArr) {
+
+		var found1;
+
+        if (!(loopArr instanceof Array)) {
+        	loopArr = [];
+        }
+
+        found1 = loopArr.indexOf('importedResponseFuncTestDTO');
+
+        if (found1 >= 0) {
+        	if (loopArr.indexOf('importedResponseFuncTestDTO', found1 + 1) >= 0) {
+        		return '{}';
+        	}
+        }
+
+        loopArr.push('importedResponseFuncTestDTO');
+
 		return JSON.stringify({
-  "list": _getArray(function () {return {  "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO()),  "email": faker.internet.email()};}),
-  "items": _getArray(function () {return JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO());}),
-  "image": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO()),
+  "list": _getArray(function () {return {  "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),  "email": faker.internet.email()};}),
+  "items": _getArray(function () {return JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice()));}),
+  "image": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),
   "exampleString": faker.lorem.word(),
   "exampleNumber": faker.random.number(),
   "exampleInteger": faker.random.number(),
   "name": faker.name.findName(),
   "firstName": faker.name.firstName(),
   "lastName": faker.name.lastName(),
-  "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO()),
+  "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),
   "countryIsocode": "CH",
   "email": faker.internet.email(),
   "phone": faker.phone.phoneNumber(),
