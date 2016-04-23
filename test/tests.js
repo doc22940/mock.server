@@ -49,7 +49,18 @@ serverOptions = {
 					company: 'string'
 				}
 			],
-			ruleTest6: 12
+			ruleTest6: 12,
+			ruleTestType1: 'Rule value',
+			ruleTestType4: {
+				name: 'string',
+				company: 'string'
+			},
+			ruleTestType5: [
+				{
+					name: 'string',
+					company: 'string'
+				}
+			]
 		}
 	}
 };
