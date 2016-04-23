@@ -42,7 +42,13 @@ serverOptions = {
 			ruleTest4: {
 				name: 'string',
 				company: 'string'
-			}
+			},
+			ruleTest5: [
+				{
+					name: 'string',
+					company: 'string'
+				}
+			]
 		}
 	}
 };
