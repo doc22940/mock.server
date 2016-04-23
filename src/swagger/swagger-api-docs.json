@@ -201,6 +201,15 @@
 				"town": {
 					"type": "string"
 				},
+				"ruleTest1": {
+					"type": "string"
+				},
+				"ruleTest2": {
+					"type": "string"
+				},
+				"ruleTest3": {
+					"type": "string"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {

@@ -29,7 +29,17 @@ serverOptions = {
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
 		isTest: true,
-		responseFuncPath: __dirname + '/../func-imported'
+		responseFuncPath: __dirname + '/../func-imported',
+		responseFuncRules: {
+			ruleTest1: 'Rule value',
+			ruleTest2: {
+				faker: 'company.companyName'
+			},
+			ruleTest3: {
+				faker: 'random.arrayElement',
+				fakerArgs: ['a','b','c']
+			}
+		}
 	}
 };
 
