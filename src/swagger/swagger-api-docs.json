@@ -210,6 +210,9 @@
 				"ruleTest3": {
 					"type": "string"
 				},
+				"ruleTest4": {
+					"type": "object"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
