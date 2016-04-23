@@ -1,3 +1,6 @@
+/* eslint-disable */
+/* jshint ignore:start */
+'use strict';
 
 var faker = require('faker');
 
@@ -20,3 +23,6 @@ module.exports = {
 	}
 
 };
+
+/* jshint ignore:end */
+/* eslint-enable */
