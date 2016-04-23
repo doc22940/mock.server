@@ -18,7 +18,24 @@ function _getArray(getData) {
 
 module.exports = {
 
-	<%=funcName%>: function () {
+	<%=funcName%>: function (loopArr) {
+
+		var found1;
+
+        if (!(loopArr instanceof Array)) {
+        	loopArr = [];
+        }
+
+        found1 = loopArr.indexOf('<%=funcName%>');
+
+        if (found1 >= 0) {
+        	if (loopArr.indexOf('<%=funcName%>', found1 + 1) >= 0) {
+        		return '{}';
+        	}
+        }
+
+        loopArr.push('<%=funcName%>');
+
 		return JSON.stringify(<%=data%>, null, 2);
 	}
 
