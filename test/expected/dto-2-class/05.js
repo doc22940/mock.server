@@ -189,6 +189,26 @@ AddressWsDTO.prototype = {
 	 */
 	getTown: function () {
 		return this._data.town;
+	},
+
+	/**
+	 *
+	 * @method getList
+	 * @returns {Array}
+	 * @public
+	 */
+	getList: function () {
+		return this._data.list;
+	},
+
+	/**
+	 *
+	 * @method getItems
+	 * @returns {Array}
+	 * @public
+	 */
+	getItems: function () {
+		return this._data.items;
 	}
 
 };

@@ -1,4 +1,17 @@
-{
+<%
+
+  function _getArray(getData) {
+    var out = [],
+      len = 2,
+      i;
+
+    for (i = 0; i < len; i += 1) {
+      out.push(getData());
+    }
+
+    return JSON.stringify(out);
+  }
+%>{
   "country": "<%-require('../func-imported/CountryWsDTO.js').importedCountryWsDTO();%>",
   "countryIsocode": "<%-faker.random.arrayElement(['CH','DE','AT','FR','UK','US','JP'])%>",
   "country2": "<%-require('../func-imported/CountryWsDTO.js').importedCountryWsDTO();%>",
@@ -13,5 +26,7 @@
   "streetNumber": "<%-faker.random.number()%>",
   "title": "<%-faker.name.prefix()%>",
   "titleCode": "<%-faker.random.arrayElement(['mr','ms'])%>",
-  "town": "<%-faker.address.city()%>"
+  "town": "<%-faker.address.city()%>",
+  "list": <%-_getArray(function () {return {  'country': JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO()),  'email': faker.internet.email()};})%>,
+  "items": <%-_getArray(function () {return JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO());})%>
 }
