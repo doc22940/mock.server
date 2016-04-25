@@ -108,6 +108,9 @@ MockController.prototype = extend(MockController.prototype, {
 				responseData = extend(responseData, this._getFunc(this.options.funcPath));
 				responseData = extend(responseData, this._getDynamicPathParams(options));
 				responseData = extend(responseData, this._getResponseFiles(options, responseData));
+				responseData = extend(responseData, {
+					require: require
+				});
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
 				console.log(err);
