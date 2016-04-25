@@ -56,6 +56,11 @@ Default value: `'./rest'`
 
 A string value that is used to define the path to the rest API folder.
 
+#### options.dirName
+Type: `String`
+
+A string value that is used to define the root directory (__dirname).
+
 #### options.title
 Type: `String`
 Default value: `Api mock server`
@@ -196,6 +201,12 @@ Default value: `true`
 
 A boolean that is used to decide to create an expected response empty file or not.
 
+#### options.swaggerImport.createFakerFile
+Type: `Boolean`
+Default value: `true`
+
+A boolean that is used to decide to create an expected response faker file or not.
+
 #### options.swaggerImport.overwriteExistingDescriptions
 Type: `Boolean`
 Default value: `true`
@@ -229,6 +240,7 @@ mockServer({});
 var mockServer = require('node-mock-server');
 mockServer({
 	restPath: __dirname + '/mock/rest',
+	dirName: __dirname,
     title: 'Api mock server',
     version: 2,
     urlBase: 'http://localhost:3003',
@@ -246,6 +258,7 @@ mockServer({
     	replacePathsStr: '/v2/{baseSiteId}',
     	createErrorFile: true,
     	createEmptyFile: true,
+    	createFakerFile: true,
     	overwriteExistingDescriptions: true,
     	responseFuncPath: __dirname + '/func-imported',
         responseFuncRules: {
