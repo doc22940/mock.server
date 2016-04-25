@@ -16,7 +16,7 @@ module.exports = function(serverOptions, _getFile) {
 
 	// success-faker
 	it('success-faker file should be written!', function () {
-		var data = _getFile(pathRest + '/{id}/#addresses/GET/mock/success-faker.json'),
+		var data = _getFile(pathRest + '/addresses/#/GET/mock/success-faker.json'),
 			expected = _getFile(pathExpSwagger + '/success-faker.json');
 		assert.equal(data, expected);
 	});

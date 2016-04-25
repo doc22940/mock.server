@@ -26,7 +26,7 @@ serverOptions = {
 		port: 8888,
 		path: '/src/swagger/swagger-api-docs.json',
 		dest: __dirname + '/../test/tmp/swagger-import',
-		replacePathsStr: '/v2',
+		replacePathsStr: '/v2/{id}',
 		createErrorFile: true,
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
