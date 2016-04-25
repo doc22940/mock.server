@@ -316,6 +316,25 @@
 				},
 				"town": {
 					"type": "string"
+				},
+				"list": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"country": {
+								"$ref": "#/definitions/CountryWsDTO"
+							},
+							"email": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CountryWsDTO"
+					}
 				}
 			}
 		},
