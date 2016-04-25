@@ -47,7 +47,7 @@ module.exports = {
   "firstName": faker.name.firstName(),
   "lastName": faker.name.lastName(),
   "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),
-  "countryIsocode": "CH",
+  "countryIsocode": faker.random.arrayElement(["CH","DE","AT","FR","UK","US","JP"]),
   "email": faker.internet.email(),
   "phone": faker.phone.phoneNumber(),
   "postalCode": faker.address.zipCode(),

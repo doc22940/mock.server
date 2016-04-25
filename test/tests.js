@@ -10,6 +10,7 @@ process.env.NODE_ENV = 'test';
 serverOptions = {
 	urlBase: 'http://localhost:8888',
 	urlPath: '/rest/v1',
+	dirName: __dirname,
 	port: 8888,
 	restPath: __dirname + '/../example_rest_folder',
 	funcPath: [
@@ -18,6 +19,7 @@ serverOptions = {
 	],
 	swaggerImport: {
 		protocol: 'http',
+		dirName: __dirname,
 		authUser: undefined,
 		authPass: undefined,
 		host: 'localhost',
