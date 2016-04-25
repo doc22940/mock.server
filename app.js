@@ -4,11 +4,12 @@ var mockServer = require('./mock-server.js'),
 	replacePathsStr = '/v2/{baseSiteId}',
 	responseFuncPath = __dirname + '/func-imported';
 
-//dest = __dirname + '/test/tmp/swagger-import';
-//replacePathsStr = '/v2';
+dest = __dirname + '/test/tmp/swagger-import';
+replacePathsStr = '/v2';
 
 mockServer({
 	restPath: dest,
+	dirName: __dirname,
 	funcPath: [
 		__dirname + '/func',
 		__dirname + '/func2',
