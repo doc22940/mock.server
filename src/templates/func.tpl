@@ -16,6 +16,15 @@ function _getArray(getData) {
 	return out;
 }
 
+
+function _getRes(name, loopArr) {
+	try {
+		return JSON.parse(require(__dirname + '/' + name + '.js')['imported' + name](loopArr.slice()));
+	} catch (err) {}
+
+	return {};
+}
+
 module.exports = {
 
 	<%=funcName%>: function (loopArr) {
