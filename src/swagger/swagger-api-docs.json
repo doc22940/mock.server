@@ -254,11 +254,21 @@
 						"type": "string"
 					}
 				},
+				"ruleRef": {
+					"$ref": "#/definitions/RuleWsDTO"
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
 						"type": "string"
 					}
+				}
+			}
+		},
+		"RuleWsDTO": {
+			"properties": {
+				"value": {
+					"type": "string"
 				}
 			}
 		},
