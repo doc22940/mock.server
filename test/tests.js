@@ -63,7 +63,10 @@ serverOptions = {
 					company: 'string'
 				}
 			],
-			'ruleTestParent.email': 'test parent rule'
+			'ruleTestParent.email': 'test parent rule',
+			'RuleWsDTO': {
+				value: 'overwritten value'
+			}
 		}
 	}
 };

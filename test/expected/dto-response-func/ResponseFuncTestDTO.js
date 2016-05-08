@@ -82,6 +82,7 @@ module.exports = {
   "ruleTestParent": {
     "email": "test parent rule"
   },
+  "ruleRef": _getRes('RuleWsDTO', loopArr),
   "parameters": {
     "additional": faker.lorem.word()
   }

@@ -14,6 +14,13 @@ module.exports = function(serverOptions, _getFile) {
 		assert.equal(data, expected);
 	});
 
+	// RuleWsDTO
+	it('DTO Rule (RuleWsDTO) should be written!', function () {
+		var data = _getFile(pathFunc + '/RuleWsDTO.js'),
+			expected = _getFile(pathExpSwagger + '/RuleWsDTO.js');
+		assert.equal(data, expected);
+	});
+
 	// success-faker
 	it('success-faker file should be written!', function () {
 		var data = _getFile(pathRest + '/addresses/#/GET/mock/success-faker.json'),
