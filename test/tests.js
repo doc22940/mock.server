@@ -31,7 +31,7 @@ serverOptions = {
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
 		isTest: true,
-		responseFuncPath: __dirname + '/func-imported',
+		responseFuncPath: __dirname + '/tmp/func-imported',
 		responseFuncRules: {
 			ruleTest1: 'Rule value',
 			ruleTest2: {
@@ -62,7 +62,8 @@ serverOptions = {
 					name: 'string',
 					company: 'string'
 				}
-			]
+			],
+			'ruleTestParent.email': 'test parent rule'
 		}
 	}
 };
@@ -93,7 +94,7 @@ swaggerImporter.doImport(function () {
 	describe('ValidatorResponses', require('./tests-validator-responses').bind(this, serverOptions, _getFile));
 	describe('DTOImport', require('./tests-dto-import').bind(this, serverOptions, _getFile));
 	describe('DTOToClassConverter', require('./tests-dto-2-class').bind(this, serverOptions, _getFile));
-	//describe('DTOToResponseFuncConverter', require('./tests-dto-response-func').bind(this, serverOptions, _getFile));
+	describe('DTOToResponseFuncConverter', require('./tests-dto-response-func').bind(this, serverOptions, _getFile));
 
 });
 

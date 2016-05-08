@@ -1,5 +1,8 @@
 <%
 
+  var _dirname = __dirname,
+      _require = require;
+
   function _getArray(getData) {
     var out = [],
       len = 2,
@@ -9,12 +12,21 @@
       out.push(getData());
     }
 
-    return JSON.stringify(out);
+    return JSON.stringify(out, null, 2);
   }
+
+  function _getRef(name) {
+    try {
+      return JSON.parse(_require(_dirname + '/tmp/func-imported/' + name + '.js')['imported' + name]());
+    } catch (err) {}
+
+    return {};
+  }
+
 %>{
-  "country": "<%-require('../func-imported/CountryWsDTO.js').importedCountryWsDTO();%>",
+  "country": <%-JSON.stringify(_getRef('CountryWsDTO'), null, 2);%>,
   "countryIsocode": "<%-faker.random.arrayElement(['CH','DE','AT','FR','UK','US','JP'])%>",
-  "country2": "<%-require('../func-imported/CountryWsDTO.js').importedCountryWsDTO();%>",
+  "country2": <%-JSON.stringify(_getRef('CountryWsDTO'), null, 2);%>,
   "email": "<%-faker.internet.email()%>",
   "firstName": "<%-faker.name.firstName()%>",
   "id": "<%-faker.lorem.word()%>",
@@ -27,6 +39,6 @@
   "title": "<%-faker.name.prefix()%>",
   "titleCode": "<%-faker.random.arrayElement(['mr','ms'])%>",
   "town": "<%-faker.address.city()%>",
-  "list": <%-_getArray(function () {return {  'country': JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO()),  'email': faker.internet.email()};})%>,
-  "items": <%-_getArray(function () {return JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO());})%>
+  "list": <%-_getArray(function () {return {  'country': _getRef('CountryWsDTO'),  'email': faker.internet.email()};})%>,
+  "items": <%-_getArray(function () {return _getRef('CountryWsDTO');})%>
 }

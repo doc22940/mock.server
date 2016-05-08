@@ -16,6 +16,15 @@ function _getArray(getData) {
 	return out;
 }
 
+
+function _getRes(name, loopArr) {
+	try {
+		return JSON.parse(require(__dirname + '/' + name + '.js')['imported' + name](loopArr.slice()));
+	} catch (err) {}
+
+	return {};
+}
+
 module.exports = {
 
 	importedResponseFuncTestDTO: function (loopArr) {
@@ -37,16 +46,16 @@ module.exports = {
         loopArr.push('importedResponseFuncTestDTO');
 
 		return JSON.stringify({
-  "list": _getArray(function () {return {  "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),  "email": faker.internet.email()};}),
-  "items": _getArray(function () {return JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice()));}),
-  "image": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),
+  "list": _getArray(function () {return {  "country": _getRes('CountryWsDTO', loopArr),  "email": faker.internet.email()};}),
+  "items": _getArray(function () {return _getRes('CountryWsDTO', loopArr);}),
+  "image": _getRes('CountryWsDTO', loopArr),
   "exampleString": faker.lorem.word(),
   "exampleNumber": faker.random.number(),
   "exampleInteger": faker.random.number(),
   "name": faker.name.findName(),
   "firstName": faker.name.firstName(),
   "lastName": faker.name.lastName(),
-  "country": JSON.parse(require('../func-imported/CountryWsDTO.js').importedCountryWsDTO(loopArr.slice())),
+  "country": _getRes('CountryWsDTO', loopArr),
   "countryIsocode": faker.random.arrayElement(["CH","DE","AT","FR","UK","US","JP"]),
   "email": faker.internet.email(),
   "phone": faker.phone.phoneNumber(),
@@ -69,6 +78,9 @@ module.exports = {
   "ruleTestType4": _getArray(function () {return {  "email": faker.internet.email()};}),
   "ruleTestType5": {
     "email": faker.internet.email()
+  },
+  "ruleTestParent": {
+    "email": "test parent rule"
   },
   "parameters": {
     "additional": faker.lorem.word()
