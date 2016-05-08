@@ -248,6 +248,12 @@
 						"type": "string"
 					}
 				},
+				"ruleTestParent": {
+					"type": "object",
+					"email": {
+						"type": "string"
+					}
+				},
 				"parameters": {
 					"type": "object",
 					"additional": {
