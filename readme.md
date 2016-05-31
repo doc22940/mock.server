@@ -201,12 +201,6 @@ Default value: `true`
 
 A boolean that is used to decide to create an expected response empty file or not.
 
-#### options.swaggerImport.createFakerFile
-Type: `Boolean`
-Default value: `true`
-
-A boolean that is used to decide to create an expected response faker file or not.
-
 #### options.swaggerImport.overwriteExistingDescriptions
 Type: `Boolean`
 Default value: `true`
@@ -217,12 +211,6 @@ A boolean that is used to decide to replace an old description with the new (imp
 Type: `String`
 
 A string that is used to define where the imported response functions are located.
-
-
-#### options.swaggerImport.responseFuncRules
-Type: `Object`
-
-A object that is used to define the overwrite rules for the imported response functions.
 
 
 ### Usage Examples
@@ -258,7 +246,6 @@ mockServer({
     	replacePathsStr: '/v2/{baseSiteId}',
     	createErrorFile: true,
     	createEmptyFile: true,
-    	createFakerFile: true,
     	overwriteExistingDescriptions: true,
     	responseFuncPath: __dirname + '/func-imported',
         responseFuncRules: {

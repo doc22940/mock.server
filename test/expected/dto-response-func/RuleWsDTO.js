@@ -46,7 +46,7 @@ module.exports = {
         loopArr.push('importedRuleWsDTO');
 
 		return JSON.stringify({
-  "value": "overwritten value"
+  "value": faker.lorem.word()
 }, null, 2);
 	}
 

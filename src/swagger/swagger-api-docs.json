@@ -201,62 +201,6 @@
 				"town": {
 					"type": "string"
 				},
-				"ruleTest1": {
-					"type": "string"
-				},
-				"ruleTest2": {
-					"type": "string"
-				},
-				"ruleTest3": {
-					"type": "string"
-				},
-				"ruleTest4": {
-					"type": "object",
-					"email": {
-						"type": "string"
-					}
-				},
-				"ruleTest5": {
-					"type": "array",
-					"items": {
-						"properties": {
-							"email": {
-								"type": "string"
-							}
-						}
-					}
-				},
-				"ruleTest6": {
-					"type": "number"
-				},
-				"ruleTestType1": {
-					"type": "number"
-				},
-				"ruleTestType4": {
-					"type": "array",
-					"items": {
-						"properties": {
-							"email": {
-								"type": "string"
-							}
-						}
-					}
-				},
-				"ruleTestType5": {
-					"type": "object",
-					"email": {
-						"type": "string"
-					}
-				},
-				"ruleTestParent": {
-					"type": "object",
-					"email": {
-						"type": "string"
-					}
-				},
-				"ruleRef": {
-					"$ref": "#/definitions/RuleWsDTO"
-				},
 				"parameters": {
 					"type": "object",
 					"additional": {

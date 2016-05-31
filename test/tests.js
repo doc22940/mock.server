@@ -31,43 +31,7 @@ serverOptions = {
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
 		isTest: true,
-		responseFuncPath: __dirname + '/tmp/func-imported',
-		responseFuncRules: {
-			ruleTest1: 'Rule value',
-			ruleTest2: {
-				faker: 'company.companyName'
-			},
-			ruleTest3: {
-				faker: 'random.arrayElement',
-				fakerArgs: ['a','b','c']
-			},
-			ruleTest4: {
-				name: 'string',
-				company: 'string'
-			},
-			ruleTest5: [
-				{
-					name: 'string',
-					company: 'string'
-				}
-			],
-			ruleTest6: 12,
-			ruleTestType1: 'Rule value',
-			ruleTestType4: {
-				name: 'string',
-				company: 'string'
-			},
-			ruleTestType5: [
-				{
-					name: 'string',
-					company: 'string'
-				}
-			],
-			'ruleTestParent.email': 'test parent rule',
-			'RuleWsDTO': {
-				value: 'overwritten value'
-			}
-		}
+		responseFuncPath: __dirname + '/tmp/func-imported'
 	}
 };
 
