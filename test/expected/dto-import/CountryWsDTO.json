@@ -1,13 +1,5 @@
 {
-  "properties": {
-    "code": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "value": {
-      "type": "string"
-    }
-  }
+  "code": "string",
+  "name": "string",
+  "value": "string"
 }

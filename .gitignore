@@ -4,5 +4,7 @@ node_modules
 /example_rest_folder/*/*/*/mock/response.txt
 rest
 /test/tmp
+/test/func-imported
 /tmp
 npm-debug.log
+/func-imported

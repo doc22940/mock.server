@@ -1,0 +1,4 @@
+{
+  "currency": "string",
+  "price": "number"
+}

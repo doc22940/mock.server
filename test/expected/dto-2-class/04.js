@@ -423,6 +423,62 @@ AddressWsDTO.prototype = {
 		}
 
 		return false;
+	},
+
+	/**
+	 *
+	 * @method setList
+	 * @param {Array} value
+	 * @public
+	 */
+	setList: function (value) {
+		this._data.list = value;
+	},
+
+	/**
+	 *
+	 * @method hasValidList
+	 * @public
+	 */
+	hasValidList: function () {
+		try {
+			var v = this._data.list;
+			if (v && this._is('Array', v)) {
+				return true;
+			}
+		} catch (err) {
+			return false;
+		}
+
+		return false;
+	},
+
+	/**
+	 *
+	 * @method setItems
+	 * @param {Array} value
+	 * @public
+	 */
+	setItems: function (value) {
+		this._data.items = value;
+	},
+
+	/**
+	 *
+	 * @method hasValidItems
+	 * @public
+	 */
+	hasValidItems: function () {
+		try {
+			var v = this._data.items;
+			if (v && this._is('Array', v)) {
+				return true;
+			}
+		} catch (err) {
+			return false;
+		}
+
+		return false;
 	}
 
 };

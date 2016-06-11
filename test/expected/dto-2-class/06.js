@@ -568,4 +568,80 @@ class AddressWsDTO {
 		return false;
 	}
 
+	/**
+	 *
+	 * @method getList
+	 * @returns {Array}
+	 * @public
+	 */
+	getList () {
+		return this._data.list;
+	}
+
+	/**
+	 *
+	 * @method setList
+	 * @param {Array} value
+	 * @public
+	 */
+	setList (value) {
+		this._data.list = value;
+	}
+
+	/**
+	 *
+	 * @method hasValidList
+	 * @public
+	 */
+	hasValidList () {
+		try {
+			let v = this._data.list;
+			if (v && this._is('Array', v)) {
+				return true;
+			}
+		} catch (err) {
+			return false;
+		}
+
+		return false;
+	}
+
+	/**
+	 *
+	 * @method getItems
+	 * @returns {Array}
+	 * @public
+	 */
+	getItems () {
+		return this._data.items;
+	}
+
+	/**
+	 *
+	 * @method setItems
+	 * @param {Array} value
+	 * @public
+	 */
+	setItems (value) {
+		this._data.items = value;
+	}
+
+	/**
+	 *
+	 * @method hasValidItems
+	 * @public
+	 */
+	hasValidItems () {
+		try {
+			let v = this._data.items;
+			if (v && this._is('Array', v)) {
+				return true;
+			}
+		} catch (err) {
+			return false;
+		}
+
+		return false;
+	}
+
 }

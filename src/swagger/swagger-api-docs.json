@@ -100,6 +100,129 @@
 		}
 	},
 	"definitions": {
+		"ComplexDTO": {
+			"properties": {
+				"list": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"country": {
+								"$ref": "#/definitions/CountryWsDTO"
+							},
+							"email": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ImageDTO"
+					}
+				},
+				"parameters": {
+					"type": "object",
+					"additional": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"ResponseFuncTestDTO": {
+			"properties": {
+				"list": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"country": {
+								"$ref": "#/definitions/CountryWsDTO"
+							},
+							"email": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CountryWsDTO"
+					}
+				},
+				"image": {
+					"$ref": "#/definitions/CountryWsDTO"
+				},
+				"exampleString": {
+					"type": "string"
+				},
+				"exampleNumber": {
+					"type": "number"
+				},
+				"exampleInteger": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				},
+				"firstName": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
+				"country": {
+					"$ref": "#/definitions/CountryWsDTO"
+				},
+				"countryIsocode": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"postalCode": {
+					"type": "string"
+				},
+				"streetName": {
+					"type": "string"
+				},
+				"streetNumber": {
+					"type": "string"
+				},
+				"title": {
+					"type": "string"
+				},
+				"titleCode": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"parameters": {
+					"type": "object",
+					"additional": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"RuleWsDTO": {
+			"properties": {
+				"value": {
+					"type": "string"
+				}
+			}
+		},
+		"ResponseFuncLoopDTO": {
+			"properties": {
+				"funcLoop": {
+					"$ref": "#/definitions/ResponseFuncLoopDTO"
+				}
+			}
+		},
 		"AddressResponseWsDTO": {
 			"properties": {
 				"success": {
@@ -153,6 +276,25 @@
 				},
 				"town": {
 					"type": "string"
+				},
+				"list": {
+					"type": "array",
+					"items": {
+						"properties": {
+							"country": {
+								"$ref": "#/definitions/CountryWsDTO"
+							},
+							"email": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"items": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CountryWsDTO"
+					}
 				}
 			}
 		},

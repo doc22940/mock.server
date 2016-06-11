@@ -12,5 +12,7 @@ test
 src/swagger
 /tmp
 tmp
+/func-imported
+func-imported
 npm-debug.log
 .eslintrc

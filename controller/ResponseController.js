@@ -48,16 +48,23 @@ ResponseController.prototype = extend(ResponseController.prototype, {
 	_viewResponse: function (req, res) {
 		var data,
 			response = new GetResponse({
-			path: req.query.path,
-			method: req.query.method,
-			expected: req.query.expected
-		}, this.options);
+				path: req.query.path,
+				method: req.query.method,
+				expected: req.query.expected
+			}, this.options);
 
 		data = response.get();
 
+		if (typeof data === 'object') {
+			res.send(JSON.stringify(data, null, 2));
+			res.end();
+			return;
+		}
+
 		try {
-			data = JSON.parse(data);
-			data = JSON.stringify(data, null, 2);
+			res.send(JSON.stringify(JSON.parse(data), null, 2));
+			res.end();
+			return;
 		} catch (err) {}
 
 		res.send(data);

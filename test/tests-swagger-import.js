@@ -4,7 +4,7 @@ var assert = require('assert'),
 
 module.exports = function(serverOptions, _getFile) {
 
-	var pathAddresses = serverOptions.swaggerImport.dest + '/{id}/#addresses/',
+	var pathAddresses = serverOptions.swaggerImport.dest + '/addresses/#',
 		pathExpSwagger = './test/expected/swagger-import';
 
 	// GET /address

@@ -2,8 +2,7 @@
 'use strict';
 
 var Utils = require('../lib/Utils'),
-	util = require('util'),
-	extend = util._extend,
+	extend = require('util')._extend,
 	ejs = require('ejs'),
 	faker = require('faker'),
 	AppControllerSingleton = require('./AppController'),
@@ -109,6 +108,10 @@ MockController.prototype = extend(MockController.prototype, {
 				responseData = extend(responseData, this._getFunc(this.options.funcPath));
 				responseData = extend(responseData, this._getDynamicPathParams(options));
 				responseData = extend(responseData, this._getResponseFiles(options, responseData));
+				responseData = extend(responseData, {
+					require: require,
+					__dirname: this.options.dirName
+				});
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
 				console.log(err);

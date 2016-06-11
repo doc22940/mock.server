@@ -1,7 +1,4 @@
-var assert = require('assert'),
-	request = require('request'),
-	mockServer = require('../mock-server.js'),
-	GetResponse = require('../lib/GetResponse'),
+var mockServer = require('../mock-server.js'),
 	SwaggerImport = require('../lib/SwaggerImport'),
 	ValidatorResponses = require('../lib/ValidatorResponses'),
 	Utils = require('../lib/Utils'),
@@ -13,6 +10,7 @@ process.env.NODE_ENV = 'test';
 serverOptions = {
 	urlBase: 'http://localhost:8888',
 	urlPath: '/rest/v1',
+	dirName: __dirname,
 	port: 8888,
 	restPath: __dirname + '/../example_rest_folder',
 	funcPath: [
@@ -21,18 +19,19 @@ serverOptions = {
 	],
 	swaggerImport: {
 		protocol: 'http',
+		dirName: __dirname,
 		authUser: undefined,
 		authPass: undefined,
 		host: 'localhost',
 		port: 8888,
 		path: '/src/swagger/swagger-api-docs.json',
 		dest: __dirname + '/../test/tmp/swagger-import',
-		replacePathsStr: '/v2',
+		replacePathsStr: '/v2/{id}',
 		createErrorFile: true,
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
-		maxRefDeep: 1,
-		isTest: true
+		isTest: true,
+		responseFuncPath: __dirname + '/tmp/func-imported'
 	}
 };
 
@@ -62,6 +61,7 @@ swaggerImporter.doImport(function () {
 	describe('ValidatorResponses', require('./tests-validator-responses').bind(this, serverOptions, _getFile));
 	describe('DTOImport', require('./tests-dto-import').bind(this, serverOptions, _getFile));
 	describe('DTOToClassConverter', require('./tests-dto-2-class').bind(this, serverOptions, _getFile));
+	describe('DTOToResponseFuncConverter', require('./tests-dto-response-func').bind(this, serverOptions, _getFile));
 
 });
 

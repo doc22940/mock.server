@@ -53,6 +53,24 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('ES5 ComplexDTO Class', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es5',
+				setter: 'true',
+				getter: 'true',
+				validator: 'true',
+				path: pathDTO + 'ComplexDTO.json',
+				name: 'ComplexDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/01-1.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
 	it('ES5 AddressWsDTO Class without validators', function (done) {
 		_fetch({
 			url: _url(baseUrl, {

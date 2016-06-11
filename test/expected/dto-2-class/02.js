@@ -339,6 +339,46 @@ AddressWsDTO.prototype = {
 	 */
 	setTown: function (value) {
 		this._data.town = value;
+	},
+
+	/**
+	 *
+	 * @method getList
+	 * @returns {Array}
+	 * @public
+	 */
+	getList: function () {
+		return this._data.list;
+	},
+
+	/**
+	 *
+	 * @method setList
+	 * @param {Array} value
+	 * @public
+	 */
+	setList: function (value) {
+		this._data.list = value;
+	},
+
+	/**
+	 *
+	 * @method getItems
+	 * @returns {Array}
+	 * @public
+	 */
+	getItems: function () {
+		return this._data.items;
+	},
+
+	/**
+	 *
+	 * @method setItems
+	 * @param {Array} value
+	 * @public
+	 */
+	setItems: function (value) {
+		this._data.items = value;
 	}
 
 };
