@@ -1,5 +1,7 @@
-[![Build Status](https://travis-ci.org/smollweide/node-mock-server.svg)](https://travis-ci.org/smollweide/node-mock-server)
-[![Dependencies](https://david-dm.org/smollweide/node-mock-server.svg)](https://david-dm.org/smollweide/node-mock-server)
+[![Build Status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://travis-ci.org/smollweide/node-mock-server)
+[![Dependencies](https://img.shields.io/david/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://david-dm.org/smollweide/node-mock-server)
+[![npm](https://img.shields.io/npm/v/node-mock-server.svg?maxAge=2592000)](https://www.npmjs.com/package/node-mock-server)
+[![npm](https://img.shields.io/npm/dt/node-mock-server.svg?maxAge=2592000)](https://www.npmjs.com/package/node-mock-server)
 
 # node-mock-server
 
@@ -17,7 +19,6 @@
 - Swagger import
     - DTO import
     - DTO response function
-    - Faker expected response
 - Mock response validation
 - DTO preview
 - DTO to Class converter
@@ -247,25 +248,7 @@ mockServer({
     	createErrorFile: true,
     	createEmptyFile: true,
     	overwriteExistingDescriptions: true,
-    	responseFuncPath: __dirname + '/func-imported',
-        responseFuncRules: {
-        	ruleString: 'Rule value',
-        	ruleNumber: 12,
-        	ruleFaker: {
-        		faker: 'random.arrayElement',
-        		fakerArgs: ['a','b','c']
-        	},
-        	ruleObject: {
-        		name: 'string',
-        		company: 'string'
-        	},
-        	ruleArray: [
-        		{
-        			name: 'string',
-        			company: 'string'
-        		}
-        	]
-        }
+    	responseFuncPath: __dirname + '/func-imported'
     }
 });
 ```
@@ -339,4 +322,4 @@ Response will be:
 - 0.6.3 Prettify logs and bug fixes
 - 0.7.0 DTO import and DTO to class converter
 - 0.7.2 Dynamic path parameters in response json
-- 0.8.0 More readable schema structure, faker DTO response functions and faker response.
+- 0.8.0 More readable schema structure and faker DTO response functions.

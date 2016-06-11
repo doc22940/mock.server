@@ -1,19 +1,19 @@
 {
   "name": "node-mock-server",
-  "version": "0.7.4",
+  "version": "0.8.0",
   "description": "File based Node API mock server",
   "email": "simon.mollweide@web.de",
   "author": "Simon Mollweide <simon.mollweide@web.de>",
-  "url": "https://bitbucket.org/smollweide/node-mock-server",
+  "url": "https://github.com/smollweide/node-mock-server",
   "repository": {
-    "type": "bitbucket",
-    "url": "https://bitbucket.org/smollweide/node-mock-server"
+    "type": "github",
+    "url": "https://github.com/smollweide/node-mock-server"
   },
   "bugs": {
-    "url": "https://bitbucket.org/smollweide/node-mock-server/issues"
+    "url": "https://github.com/smollweide/node-mock-server/issues"
   },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "./node_modules/mocha/bin/mocha ./test/tests.js"
   },
   "main": "mock-server.js",
@@ -27,6 +27,12 @@
     "DTO",
     "Swagger"
   ],
+  "engines" : {
+    "node" : ">=0.12.7"
+  },
+  "preferGlobal": false,
+  "private": false,
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.0",
     "deasync": "^0.1.4",
@@ -36,9 +42,6 @@
     "faker": "^3.0.1",
     "request": "^2.72.0"
   },
-  "preferGlobal": false,
-  "private": false,
-  "license": "MIT",
   "devDependencies": {
     "babel-eslint": "^6.0.3",
     "eslint": "^2.8.0",
