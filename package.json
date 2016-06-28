@@ -1,6 +1,6 @@
 {
   "name": "node-mock-server",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "File based Node API mock server",
   "email": "simon.mollweide@web.de",
   "author": "Simon Mollweide <simon.mollweide@web.de>",
