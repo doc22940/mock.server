@@ -98,7 +98,6 @@ $(document).ready(function() {
 			out;
 
 		if (data instanceof Array && data.length > 0) {
-			data = data.reverse();
 			out = data.map(function (msg) {
 
 				if (msg.type === 'error') {

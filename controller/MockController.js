@@ -4,6 +4,7 @@
 var Utils = require('../lib/Utils'),
 	extend = require('util')._extend,
 	ejs = require('ejs'),
+	log = require('chip')(),
 	faker = require('faker'),
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance();
@@ -114,7 +115,7 @@ MockController.prototype = extend(MockController.prototype, {
 				});
 				outStr = ejs.render(responseFile, responseData);
 			} catch (err) {
-				console.log(err);
+				log.log(err);
 			}
 
 			if (outStr) {
@@ -123,7 +124,7 @@ MockController.prototype = extend(MockController.prototype, {
 				options.res.send(responseFile);
 			}
 		} catch (err) {
-			console.log(err);
+			log.log(err);
 			options.res.end();
 		}
 
@@ -326,7 +327,7 @@ MockController.prototype = extend(MockController.prototype, {
 				list = _this.readDir(path, ['.DS_Store']);
 			} catch (err) {
 				if (process.env.NODE_ENV !== 'test') {
-					console.log('Folder "' + path + '" not found!');
+					log.error('Folder "' + path + '" not found!');
 				}
 			}
 

@@ -4,7 +4,7 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	fs = require('fs'),
+	log = require('chip')(),
 	util = require('util'),
 	extend = util._extend,
 	Utils = require('../lib/Utils'),
@@ -58,7 +58,7 @@ AppController.prototype = extend(AppController.prototype, {
 		this.app = app;
 
 		if (!this.options.dirName) {
-			console.error('options.dirName is required (dirName: __dirname)');
+			log.error('options.dirName is required (dirName: __dirname)');
 			return;
 		}
 
@@ -68,7 +68,7 @@ AppController.prototype = extend(AppController.prototype, {
 
 		app.listen(options.port, function () {
 			if (process.env.NODE_ENV !== 'test') {
-				console.log('server started at port ' + options.port);
+				log.info('server started at port ' + options.port);
 			}
 		});
 

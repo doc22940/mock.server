@@ -1,6 +1,6 @@
 {
   "name": "node-mock-server",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "File based Node API mock server",
   "email": "simon.mollweide@web.de",
   "author": "Simon Mollweide <simon.mollweide@web.de>",
@@ -27,14 +27,15 @@
     "DTO",
     "Swagger"
   ],
-  "engines" : {
-    "node" : ">=0.12.7"
+  "engines": {
+    "node": ">=0.12.7"
   },
   "preferGlobal": false,
   "private": false,
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "chip": "0.0.5",
     "deasync": "^0.1.4",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
