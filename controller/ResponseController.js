@@ -4,6 +4,7 @@
 var Utils = require('../lib/Utils'),
 	util = require('util'),
 	extend = util._extend,
+	log = require('chip')(),
 	AppControllerSingleton = require('./AppController'),
 	appController = AppControllerSingleton.getInstance(),
 	GetResponse = require('../lib/GetResponse');
@@ -94,7 +95,7 @@ ResponseController.prototype = extend(ResponseController.prototype, {
 		});
 
 		if (process.env.NODE_ENV !== 'test') {
-			console.log('Expected response set. Linkable Url: ' + linkableUrl);
+			log.info('Expected response set. Linkable Url: ' + linkableUrl);
 		}
 
 		res.end();
