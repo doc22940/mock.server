@@ -65,6 +65,13 @@ MockController.prototype = extend(MockController.prototype, {
 
 		responseFilePath = dir + 'mock/' + expectedResponse + '.json';
 
+		// Fallback to success.json
+		if (!this.existFile(responseFilePath)) {
+			expectedResponse = 'success';
+			responseFilePath = dir + 'mock/success.json';
+			this.writeFile(dir + 'mock/response.txt', 'success');
+		}
+		
 		options = {
 			req: req,
 			res: res,
