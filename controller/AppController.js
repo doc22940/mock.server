@@ -2,6 +2,7 @@
 'use strict';
 
 var express = require('express'),
+	https = require('https'),
 	app = express(),
 	bodyParser = require('body-parser'),
 	log = require('chip')(),
@@ -47,12 +48,20 @@ AppController.prototype = extend(AppController.prototype, {
 	 * @param {object} options
 	 * @param {string} options.dirName
 	 * @param {object} options.swaggerImport
+	 * @param {string} options.privateKey
+	 * @param {string} options.certificate
 	 * @param {string|undefined} options.jsVersion
 	 * @public
 	 */
 	init: function (options) {
 
 		options = extend(this._defaults, options || {});
+
+		var logFunc = function () {
+			if (process.env.NODE_ENV !== 'test') {
+				log.info('server started at port ' + options.port);
+			}
+		};
 
 		this.options = options;
 		this.app = app;
@@ -66,12 +75,6 @@ AppController.prototype = extend(AppController.prototype, {
 			this.options.swaggerImport.dirName = this.options.dirName;
 		}
 
-		app.listen(options.port, function () {
-			if (process.env.NODE_ENV !== 'test') {
-				log.info('server started at port ' + options.port);
-			}
-		});
-
 		app.use('/src', express.static(__dirname + '/../src'));
 		app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 		app.use(bodyParser.json());
@@ -79,6 +82,16 @@ AppController.prototype = extend(AppController.prototype, {
 		app.set('view engine', 'ejs');
 		app.set('views', __dirname + '/../views');
 
+		if (this.options.privateKey && this.options.certificate) {
+			https.createServer({
+				key: this.options.privateKey,
+				cert: this.options.certificate
+			}, app).listen(this.options.port, logFunc);
+
+			return;
+		}
+
+		app.listen(this.options.port, logFunc);
 	}
 
 });

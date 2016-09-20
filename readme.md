@@ -93,6 +93,16 @@ Default value: `3001`
 
 A number value that is used to define the port.
 
+#### options.privateKey
+Type: `String`
+
+A string value that is used to define the private key for ssl.
+
+#### options.certificate
+Type: `String`
+
+A string value that is used to define the certificate for ssl.
+
 #### options.funcPath
 Type: `String|Array`
 Optional
