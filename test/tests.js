@@ -17,6 +17,9 @@ serverOptions = {
 		__dirname + '/../func',
 		__dirname + '/../func2'
 	],
+	headers: {
+		'Global-Custom-Header': 'Global-Custom-Header'
+	},
 	swaggerImport: {
 		protocol: 'http',
 		dirName: __dirname,
