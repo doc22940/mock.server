@@ -52,6 +52,9 @@ MockController.prototype = extend(MockController.prototype, {
 			preferences = this.getPreferences(this.options),
 			timeout = 0,
 			responseFilePath,
+			responseHeadersFilePath,
+			responseHeaders,
+			headers = this.options.headers || {},
 			options;
 
 		if (path.search('favicon.ico') >= 0) {
@@ -64,12 +67,18 @@ MockController.prototype = extend(MockController.prototype, {
 		}
 
 		responseFilePath = dir + 'mock/' + expectedResponse + '.json';
+		responseHeadersFilePath = dir + 'mock/' + expectedResponse + '.headers.json';
 
 		// Fallback to success.json
 		if (!this.existFile(responseFilePath)) {
 			expectedResponse = 'success';
 			responseFilePath = dir + 'mock/success.json';
 			this.writeFile(dir + 'mock/response.txt', 'success');
+		}
+
+		// Add response headers
+		if (this.existFile(responseHeadersFilePath)) {
+			responseHeaders = JSON.parse(this.readFile(responseHeadersFilePath)) || {};
 		}
 		
 		options = {
@@ -84,7 +93,7 @@ MockController.prototype = extend(MockController.prototype, {
 			responseFilePath: responseFilePath
 		};
 
-		this._writeDefaultHeader(res);
+		this._writeDefaultHeader(res, extend(headers, responseHeaders));
 
 		setTimeout(function () {
 			if (!this._hasValidDynamicPathParam(options)) {
@@ -485,11 +494,16 @@ MockController.prototype = extend(MockController.prototype, {
 
 	/**
 	 * @method _writeDefaultHeader
+	 * @param {object} customHeaders
 	 * @param {object} res
 	 * @returns {void}
 	 * @private
 	 */
-	_writeDefaultHeader: function (res) {
+	_writeDefaultHeader: function (res, customHeaders) {
+		// set custom headers
+		this.forIn(customHeaders, function (key, value) {
+			res.setHeader(key, value);
+		});
 		res.setHeader('Content-Type', this.options.contentType);
 		res.setHeader('Access-Control-Expose-Headers', this.options.accessControlExposeHeaders);
 		res.setHeader('Access-Control-Allow-Origin', this.options.accessControlAllowOrigin);

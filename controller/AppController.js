@@ -38,7 +38,8 @@ AppController.prototype = extend(AppController.prototype, {
 		accessControlExposeHeaders: 'X-Total-Count',
 		accessControlAllowOrigin: '*',
 		accessControlAllowMethods: 'GET, POST, PUT, OPTIONS, DELETE, PATCH, HEAD',
-		accessControlAllowHeaders: 'origin, x-requested-with, content-type'
+		accessControlAllowHeaders: 'origin, x-requested-with, content-type',
+		headers: {}
 	},
 
 	/**
