@@ -4,8 +4,8 @@ var mockServer = require('./mock-server.js'),
 	replacePathsStr = '/v2/{baseSiteId}',
 	responseFuncPath = __dirname + '/func-imported';
 
-dest = __dirname + '/test/tmp/swagger-import';
-replacePathsStr = '/v2/{id}';
+//dest = __dirname + '/test/tmp/swagger-import';
+//replacePathsStr = '/v2/{id}';
 
 mockServer({
 	restPath: dest,
@@ -15,6 +15,9 @@ mockServer({
 		__dirname + '/func2',
 		responseFuncPath
 	],
+	headers: {
+		'Global-Custom-Header': 'Global-Custom-Header'
+	},
 	swaggerImport: {
 		protocol: 'http',
 		authUser: undefined,

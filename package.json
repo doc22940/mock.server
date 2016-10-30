@@ -1,6 +1,6 @@
 {
 	"name": "node-mock-server",
-	"version": "0.9.0",
+	"version": "0.10.0",
 	"description": "File based Node API mock server",
 	"email": "simon.mollweide@web.de",
 	"author": "Simon Mollweide <simon.mollweide@web.de>",
@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"start": "node app.js",
-		"test": "./node_modules/mocha/bin/mocha ./test/tests.js"
+		"test": "mocha test/tests.js"
 	},
 	"main": "mock-server.js",
 	"keywords": [

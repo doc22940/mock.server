@@ -3,7 +3,8 @@
 
 > File based Node API mock server
 
-[![Build Status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://travis-ci.org/smollweide/node-mock-server)
+[![Build status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://travis-ci.org/smollweide/node-mock-server)
+[![Build status](https://ci.appveyor.com/api/projects/status/tfluudfe4s7810w8/branch/master?svg=true)](https://ci.appveyor.com/project/smollweide/node-mock-server/branch/master)
 [![Dependencies](https://img.shields.io/david/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://david-dm.org/smollweide/node-mock-server)
 [![npm](https://img.shields.io/npm/v/node-mock-server.svg?maxAge=2592000)](https://www.npmjs.com/package/node-mock-server)
 [![npm](https://img.shields.io/npm/dt/node-mock-server.svg?maxAge=2592000)](https://www.npmjs.com/package/node-mock-server)
@@ -108,6 +109,13 @@ Type: `String|Array`
 Optional
 
 A string or array that is used to define where the response functions are located.
+
+#### options.headers
+Type: `Object`
+Default value: `{}`
+
+A object that is used to define the global response headers. Will add the given headers to all responses.
+
 
 #### options.contentType
 Type: `String`
@@ -247,6 +255,9 @@ mockServer({
     urlPath: '/rest/v2',
     port: 3003,
     funcPath: __dirname + '/func',
+    headers: {
+    	'Global-Custom-Header': 'Global-Custom-Header'
+    },
     swaggerImport: {
     	protocol: 'http',
     	authUser: undefined,
@@ -275,6 +286,7 @@ mockServer({
 |----- method (GET, POST, DELETE ...)
 |------- mock
 |--------- success.json
+|--------- success.headers.json
 |--------- error.json
 |--------- error-401.json
 |------- desc.json
@@ -322,8 +334,12 @@ Response will be:
 ## Mock response validation
 - In case of you using params (form or get) in mock data, you can simulate them by adding an [".request_data.json"](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/.request_data.json) file.
 
+## Response Header
+- Use the `options.headers` object to define global response header
+- Add an [`*.header.json`](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/#/GET/mock/success.headers.json) beside the expected response file
+
 ## License
 [MIT License](https://github.com/smollweide/node-mock-server/blob/master/LICENSE)
 
 ## Changelog
-Please see the [CHANGELOG.md](https://github.com/smollweide/node-mock-server/blob/master/CHANGELOG.md)
+Please see the [Releases](https://github.com/smollweide/node-mock-server/releases)

@@ -9,9 +9,9 @@ function _fetch (opt) {
 		form: opt.data || {}
 	}, function(error, res, data) {
 		if (error) {
-			opt.error.call(this, data);
+			opt.error.call(this, data, res);
 		} else {
-			opt.success.call(this, data);
+			opt.success.call(this, data, res);
 		}
 	});
 }
@@ -38,6 +38,17 @@ module.exports = function(serverOptions, _getFile) {
 			success: function (data) {
 				var expected = _getFile(pathExpected + '/01.json');
 				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('GET /products - with custom headers', function (done) {
+		_fetch({
+			url: baseUrl + '/products?_expected=success',
+			success: function (data, res) {
+				assert.equal(res.headers['response-custom-header'], 'Response-Custom-Header');
+				assert.equal(res.headers['global-custom-header'], 'Global-Custom-Header');
 				done();
 			}
 		});
@@ -91,6 +102,16 @@ module.exports = function(serverOptions, _getFile) {
 				assert.equal(typeof data.price.currency, 'string');
 				assert.equal(data.cards instanceof Array, true);
 				assert.equal(typeof data.cards[0].name, 'string');
+				done();
+			}
+		});
+	});
+
+	it('GET /products/{productCode} - with global custom headers', function (done) {
+		_fetch({
+			url: baseUrl + '/products/{productCode}?_expected=success',
+			success: function (data, res) {
+				assert.equal(res.headers['global-custom-header'], 'Global-Custom-Header');
 				done();
 			}
 		});
