@@ -3,7 +3,8 @@
 
 > File based Node API mock server
 
-[![Build Status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://travis-ci.org/smollweide/node-mock-server)
+[![Build status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://travis-ci.org/smollweide/node-mock-server)
+[![Build status](https://ci.appveyor.com/api/projects/status/tfluudfe4s7810w8/branch/master?svg=true)](https://ci.appveyor.com/project/smollweide/node-mock-server/branch/master)
 [![Dependencies](https://img.shields.io/david/smollweide/node-mock-server/master.svg?maxAge=2592000)](https://david-dm.org/smollweide/node-mock-server)
 [![npm](https://img.shields.io/npm/v/node-mock-server.svg?maxAge=2592000)](https://www.npmjs.com/package/node-mock-server)
 [![npm](https://img.shields.io/npm/dt/node-mock-server.svg?maxAge=2592000)](https://www.npmjs.com/package/node-mock-server)

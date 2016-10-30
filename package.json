@@ -14,7 +14,7 @@
 	},
 	"scripts": {
 		"start": "node app.js",
-		"test": "./node_modules/mocha/bin/mocha ./test/tests.js"
+		"test": "mocha test/tests.js"
 	},
 	"main": "mock-server.js",
 	"keywords": [
