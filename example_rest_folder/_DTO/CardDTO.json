@@ -1,11 +1,18 @@
 {
   "name": "string",
+  "id": "number",
+  "isActive": "boolean",
   "username": "string",
   "email": "string",
   "phone": "string",
   "website": "string",
+  "card": "$ref-CardDTO",
+  "user": "$ref-UserDTO",
   "entries": [
     "$ref-CardDTO"
+  ],
+  "users": [
+    "$ref-UserDTO"
   ],
   "posts": [
     {

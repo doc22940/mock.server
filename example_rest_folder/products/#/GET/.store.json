@@ -2,6 +2,9 @@
   "validation": {
     "success": {
       "counter": 0
+    },
+    "success.headers": {
+      "counter": 1
     }
   }
 }
