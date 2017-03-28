@@ -1,18 +1,19 @@
 <%
 //PRINT%>// @flow
-
 <%//PRINTEND
 
 	for (var i = 0; i < refs.length; i += 1) {
 		if (refs[i] !== className) {
-//PRINT%>import <%=refs[i]%> from './<%=refs[i]%>.class';
-
-<%//PRINTEND
+//PRINT%>
+import <%=refs[i]%> from './<%=refs[i]%>.class';<%
+//PRINTEND
 		}
 	}
 
 	if (options.isValidator) {
-//PRINT%>const _isValidType = (type: string, value: any): boolean => {
+//PRINT%>
+
+const _isValidType = (type: string, value: any): boolean => {
 	switch (type) {
 		case 'Array': return (value instanceof Array);
 		default: return (typeof value === type.toLowerCase());

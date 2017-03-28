@@ -2,20 +2,21 @@
 
 	for (var i = 0; i < refs.length; i += 1) {
 		if (refs[i] !== className) {
-%>import <%=refs[i]%> from './<%=refs[i]%>.class';
-
-<%
+%>
+import <%=refs[i]%> from './<%=refs[i]%>.class';<%
 		}
 	}
 
 	if (options.isValidator) {
-%>/**
+%>
+
+/**
  * @param {string} type - the typeof the value
  * @param {*} value - the value
  * @returns {boolean} returns true if type is correct
  * @private
  */
- const _isValidType = (type, value) => {
+const _isValidType = (type, value) => {
 	switch (type) {
 		case 'Array': return (value instanceof Array);
 		default: return (typeof value === type.toLowerCase());

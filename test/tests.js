@@ -57,13 +57,13 @@ new ValidatorResponses({
 
 swaggerImporter.doImport(function () {
 
-	// describe('MockServer', require('./tests-mock-server').bind(this, serverOptions, _getFile));
-	// describe('Preferences', require('./tests-preferences').bind(this, serverOptions, _getFile));
-	// describe('SwaggerImport', require('./tests-swagger-import').bind(this, serverOptions, _getFile));
-	// describe('GetResponse', require('./tests-get-response').bind(this, serverOptions, _getFile));
-	// describe('ValidatorResponses', require('./tests-validator-responses').bind(this, serverOptions, _getFile));
-	// describe('DTOImport', require('./tests-dto-import').bind(this, serverOptions, _getFile));
+	describe('MockServer', require('./tests-mock-server').bind(this, serverOptions, _getFile));
+	describe('Preferences', require('./tests-preferences').bind(this, serverOptions, _getFile));
+	describe('SwaggerImport', require('./tests-swagger-import').bind(this, serverOptions, _getFile));
+	describe('GetResponse', require('./tests-get-response').bind(this, serverOptions, _getFile));
+	describe('ValidatorResponses', require('./tests-validator-responses').bind(this, serverOptions, _getFile));
+	describe('DTOImport', require('./tests-dto-import').bind(this, serverOptions, _getFile));
 	describe('DTOToClassConverter', require('./tests-dto-2-class').bind(this, serverOptions, _getFile));
-	// describe('DTOToResponseFuncConverter', require('./tests-dto-response-func').bind(this, serverOptions, _getFile));
+	describe('DTOToResponseFuncConverter', require('./tests-dto-response-func').bind(this, serverOptions, _getFile));
 
 });

@@ -54,7 +54,8 @@ module.exports = {
 			'nameCapitalize': 'Entries',
 			'type': 'Array',
 			'subType': 'ref',
-			'subRef': 'EntryDTO'
+			'subRef': 'EntryDTO',
+			'subRefDecapitalize': 'entryDTO'
 		},
 		{
 			'name': 'card',

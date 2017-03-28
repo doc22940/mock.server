@@ -41,158 +41,163 @@ module.exports = function(serverOptions, _getFile) {
 			result = DTOToClassConverter.prototype.normalize(data),
 			expected = require('./expected/dto-2-class/normalize_01');
 
-		//console.log(JSON.stringify(result, null, 2));
+		assert.deepEqual(result.refs, expected.refs);
+		assert.deepEqual(result.attributes, expected.attributes);
+	});
+
+	it('test normalize method 3', function () {
+		var data = require('./data/dto-2-class/normalize_03'),
+			result = DTOToClassConverter.prototype.normalize(data),
+			expected = require('./expected/dto-2-class/normalize_03');
 
 		assert.deepEqual(result.refs, expected.refs);
 		assert.deepEqual(result.attributes, expected.attributes);
 	});
 
-	//it('ES5 ComplexDTO Class', function (done) {
-	//	_fetch({
-	//		url: _url(baseUrl, {
-	//			es: 'es5',
-	//			setter: 'true',
-	//			getter: 'true',
-	//			validator: 'true',
-	//			path: pathDTO + 'ComplexDTO.json',
-	//			name: 'ComplexDTO'
-	//		}),
-	//		success: function (data) {
-	//			var expected = _getFile(pathExpected + '/01-1.js');
-	//			assert.equal(data, expected);
-	//			done();
-	//		}
-	//	});
-	//});
-	//
-	//it('ES5 AddressWsDTO Class without validators', function (done) {
-	//	_fetch({
-	//		url: _url(baseUrl, {
-	//			es: 'es5',
-	//			setter: 'true',
-	//			getter: 'true',
-	//			validator: 'false',
-	//			path: pathDTO + 'AddressWsDTO.json',
-	//			name: 'AddressWsDTO'
-	//		}),
-	//		success: function (data) {
-	//			var expected = _getFile(pathExpected + '/02.js');
-	//			assert.equal(data, expected);
-	//			done();
-	//		}
-	//	});
-	//});
-	//
-	//it('ES5 AddressWsDTO Class without setter', function (done) {
-	//	_fetch({
-	//		url: _url(baseUrl, {
-	//			es: 'es5',
-	//			setter: 'false',
-	//			getter: 'true',
-	//			validator: 'true',
-	//			path: pathDTO + 'AddressWsDTO.json',
-	//			name: 'AddressWsDTO'
-	//		}),
-	//		success: function (data) {
-	//			var expected = _getFile(pathExpected + '/03.js');
-	//			assert.equal(data, expected);
-	//			done();
-	//		}
-	//	});
-	//});
-	//
-	//it('ES5 AddressWsDTO Class without getter', function (done) {
-	//	_fetch({
-	//		url: _url(baseUrl, {
-	//			es: 'es5',
-	//			setter: 'true',
-	//			getter: 'false',
-	//			validator: 'true',
-	//			path: pathDTO + 'AddressWsDTO.json',
-	//			name: 'AddressWsDTO'
-	//		}),
-	//		success: function (data) {
-	//			var expected = _getFile(pathExpected + '/04.js');
-	//			assert.equal(data, expected);
-	//			done();
-	//		}
-	//	});
-	//});
-	//
-	//it('ES5 AddressWsDTO Class just getter', function (done) {
-	//	_fetch({
-	//		url: _url(baseUrl, {
-	//			es: 'es5',
-	//			setter: 'false',
-	//			getter: 'true',
-	//			validator: 'false',
-	//			path: pathDTO + 'AddressWsDTO.json',
-	//			name: 'AddressWsDTO'
-	//		}),
-	//		success: function (data) {
-	//			var expected = _getFile(pathExpected + '/05.js');
-	//			assert.equal(data, expected);
-	//			done();
-	//		}
-	//	});
-	//});
-	//
-	//it('ES6 AddressWsDTO Class', function (done) {
-	//	_fetch({
-	//		url: _url(baseUrl, {
-	//			es: 'es6',
-	//			setter: 'true',
-	//			getter: 'true',
-	//			validator: 'true',
-	//			path: pathDTO + 'AddressWsDTO.json',
-	//			name: 'AddressWsDTO'
-	//		}),
-	//		success: function (data) {
-	//			var expected = _getFile(pathExpected + '/06.js');
-	//			assert.equal(data, expected);
-	//			done();
-	//		}
-	//	});
-	//});
-	//
-	//it('ES5 AddressWsDTO test getter, setter and validators', function () {
-	//	var AddressWsDTO = require('.' + pathExpected + '/07.js'),
-	//		data = {},
-	//		address;
-	//
-	//	data.email = 'somemail@mail.com';
-	//	data.lastName = 'lastName';
-	//
-	//	address = new AddressWsDTO(data);
-	//	assert.equal(address.getEmail(), data.email);
-	//	assert.equal(address.hasValidEmail(), true);
-	//	assert.equal(address.hasValidFirstName(), false);
-	//	assert.equal(address.hasValidLastName(), true);
-	//	assert.equal(address.getLastName(), data.lastName);
-	//	address.setLastName('lastName2');
-	//	assert.equal(address.getLastName(), 'lastName2');
-	//});
+	it('ES6 ComplexDTO Class', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6',
+				setter: 'true',
+				getter: 'true',
+				validator: 'true',
+				path: pathDTO + 'ComplexDTO.json',
+				name: 'ComplexDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/ComplexDTO-es6.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
 
-	//
-	//	REMOVED BECAUSE OF node 0.12
-	//
-	//it('ES6 AddressWsDTO test getter, setter and validators', function () {
-	//	var AddressWsDTO = require('.' + pathExpected + '/08.js'),
-	//		data = {},
-	//		address;
-	//
-	//	data.email = 'somemail@mail.com';
-	//	data.lastName = 'lastName';
-	//
-	//	address = new AddressWsDTO(data);
-	//	assert.equal(address.getEmail(), data.email);
-	//	assert.equal(address.hasValidEmail(), true);
-	//	assert.equal(address.hasValidFirstName(), false);
-	//	assert.equal(address.hasValidLastName(), true);
-	//	assert.equal(address.getLastName(), data.lastName);
-	//	address.setLastName('lastName2');
-	//	assert.equal(address.getLastName(), 'lastName2');
-	//});
+	it('ES6 Flow ComplexDTO Class', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6flow',
+				setter: 'true',
+				getter: 'true',
+				validator: 'true',
+				path: pathDTO + 'ComplexDTO.json',
+				name: 'ComplexDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/ComplexDTO-es6flow.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
 
+	it('ES6 AddressWsDTO Class without validators', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6flow',
+				setter: 'true',
+				getter: 'true',
+				validator: 'false',
+				path: pathDTO + 'AddressWsDTO.json',
+				name: 'AddressWsDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/AddressWsDTO-es6flow-1.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('ES6 AddressWsDTO Class without setter', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6flow',
+				setter: 'false',
+				getter: 'true',
+				validator: 'true',
+				path: pathDTO + 'AddressWsDTO.json',
+				name: 'AddressWsDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/AddressWsDTO-es6flow-2.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('ES6 AddressWsDTO Class without getter', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6flow',
+				setter: 'true',
+				getter: 'false',
+				validator: 'true',
+				path: pathDTO + 'AddressWsDTO.json',
+				name: 'AddressWsDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/AddressWsDTO-es6flow-3.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('ES6 AddressWsDTO Class just getter', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6flow',
+				setter: 'false',
+				getter: 'true',
+				validator: 'false',
+				path: pathDTO + 'AddressWsDTO.json',
+				name: 'AddressWsDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/AddressWsDTO-es6flow-4.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	it('ES6 AddressWsDTO Class', function (done) {
+		_fetch({
+			url: _url(baseUrl, {
+				es: 'es6',
+				setter: 'true',
+				getter: 'true',
+				validator: 'true',
+				path: pathDTO + 'AddressWsDTO.json',
+				name: 'AddressWsDTO'
+			}),
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/AddressWsDTO-es6-1.js');
+				assert.equal(data, expected);
+				done();
+			}
+		});
+	});
+
+	// REMOVED BECAUSE OF node 0.12
+	//
+	// it('ES6 AddressWsDTO test getter, setter and validators', function () {
+	// 	var AddressWsDTO = require('.' + pathExpected + '/AddressWsDTO-es6-1.js'),
+	// 		data = {},
+	// 		address;
+	//
+	// 	data.email = 'somemail@mail.com';
+	// 	data.lastName = 'lastName';
+	//
+	// 	address = new AddressWsDTO(data);
+	// 	assert.equal(address.email, data.email);
+	// 	assert.equal(address.validEmail(), true);
+	// 	assert.equal(address.validFirstName(), false);
+	// 	assert.equal(address.validLastName(), true);
+	// 	assert.equal(address.lastName, data.lastName);
+	// 	address.lastName = 'lastName2';
+	// 	assert.equal(address.lastName, 'lastName2');
+	// });
 
 };

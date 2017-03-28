@@ -13,7 +13,7 @@
 		"url": "https://github.com/smollweide/node-mock-server/issues"
 	},
 	"scripts": {
-		"start": "node app.js",
+		"start": "nodemon demo/index.js",
 		"test": "mocha test/tests.js"
 	},
 	"main": "mock-server.js",
