@@ -1,5 +1,5 @@
 
-var mockServer = require('./mock-server.js'),
+var mockServer = require('./../mock-server.js'),
 	dest = __dirname + '/example_rest_folder',
 	replacePathsStr = '/v2/{baseSiteId}',
 	responseFuncPath = __dirname + '/func-imported';

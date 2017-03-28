@@ -1,9 +1,9 @@
-/example_rest_folder
-example_rest_folder
-/func
-func
-/func2
-func2
+/demo/example_rest_folder
+demo/example_rest_folder
+/demo/func
+demo/func
+/demo/func2
+demo/func2
 /test
 test
 /.idea
@@ -12,7 +12,7 @@ test
 src/swagger
 /tmp
 tmp
-/func-imported
-func-imported
+/demo/func-imported
+demo/func-imported
 npm-debug.log
 .eslintrc

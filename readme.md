@@ -277,7 +277,7 @@ mockServer({
 
 ### Folder structure
 
-- example_rest_folder
+- see demo/example_rest_folder
 
 ```
 |- group
