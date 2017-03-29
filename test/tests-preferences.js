@@ -1,8 +1,6 @@
 
 var assert = require('assert'),
-	request = require('request'),
-	Utils = require('../lib/Utils'),
-	utils = new Utils();
+	request = require('request');
 
 function _fetch (opt) {
 	request({
@@ -20,9 +18,7 @@ function _fetch (opt) {
 
 module.exports = function(serverOptions, _getFile) {
 
-	var pathExpected = './test/expected/dto-2-class',
-		pathDTO = './test/tmp/swagger-import/_DTO/',
-		baseUrl = serverOptions.urlBase;
+	var baseUrl = serverOptions.urlBase;
 
 	it('Change responseDelay to 333', function (done) {
 		_fetch({
