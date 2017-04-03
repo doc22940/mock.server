@@ -20,6 +20,7 @@ serverOptions = {
 	headers: {
 		'Global-Custom-Header': 'Global-Custom-Header'
 	},
+	customDTOToClassTemplate: __dirname + '/data/class-templates/dto_es6flow.ejs',
 	swaggerImport: {
 		protocol: 'http',
 		dirName: __dirname,

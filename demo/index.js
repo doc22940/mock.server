@@ -18,6 +18,7 @@ mockServer({
 	headers: {
 		'Global-Custom-Header': 'Global-Custom-Header'
 	},
+	customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
 	swaggerImport: {
 		protocol: 'http',
 		authUser: undefined,

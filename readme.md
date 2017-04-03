@@ -156,6 +156,13 @@ Optional
 
 A object that define the swagger import.
 
+#### options.customDTOToClassTemplate
+Type: `String`
+Optional
+
+A string that define the path to the custom DTO to class template.
+[template](/src/templates/dto_es6flow.ejs)
+
 #### options.swaggerImport.protocol
 Type: `String`
 Default value: `http`
@@ -258,6 +265,7 @@ mockServer({
     headers: {
     	'Global-Custom-Header': 'Global-Custom-Header'
     },
+    customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
     swaggerImport: {
     	protocol: 'http',
     	authUser: undefined,

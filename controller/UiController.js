@@ -53,6 +53,7 @@ UiController.prototype = extend(UiController.prototype, {
 			title: options.title,
 			swaggerImport: ui.get('swaggerImport'),
 			isSwaggerImportAvailable: ui.get('isSwaggerImportAvailable'),
+			isCustomDTOToClassAvailable: Boolean(typeof this.options.customDTOToClassTemplate === 'string'),
 			version: options.version,
 			urlBase: options.urlBase,
 			urlPath: options.urlPath

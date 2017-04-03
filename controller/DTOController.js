@@ -49,7 +49,7 @@ DTOController.prototype = extend(DTOController.prototype, {
 				isSetter: (req.query.setter === 'true'),
 				isGetter: (req.query.getter === 'true'),
 				isValidator: (req.query.validator === 'true')
-			});
+			}, this.options);
 		res.send(dtoToClassConverter.get());
 	}
 

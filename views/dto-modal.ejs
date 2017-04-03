@@ -21,6 +21,18 @@
 				<h4>Generate JavaScript Class from schema</h4>
 				<form class="form-horizontal" action="<%=dto.url%>/service/class-dto" method="get" target="_blank">
 					<div class="form-group">
+						<%
+							if (isCustomDTOToClassAvailable) {
+								%>
+						<div class="radio">
+							<label>
+								<input type="radio" name="es" value="custom" checked="checked" />
+								Custom Template
+							</label>
+						</div>
+								<%
+							}
+						%>
 						<div class="radio">
 							<label>
 								<input type="radio" name="es" value="es6" />
@@ -29,7 +41,17 @@
 						</div>
 						<div class="radio">
 							<label>
+								<%
+									if (isCustomDTOToClassAvailable) {
+										%>
+								<input type="radio" name="es" value="es6flow" />
+										<%
+									} else {
+										%>
 								<input type="radio" name="es" value="es6flow" checked="checked" />
+										<%
+									}
+								%>
 								ECMAScript 2015 (ES6) + Flow
 							</label>
 						</div>
