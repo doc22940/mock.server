@@ -1,7 +1,7 @@
 
 # Folder structure
 
-- see demo/example_rest_folder
+- see demo/rest
 
 ```
 |- group

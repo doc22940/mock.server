@@ -1,6 +1,0 @@
-{
-	"success": true,
-	"productCode": 1,
-	"productCodeDynamic": "<%=params.productCode%>",
-	"productData": {}
-}

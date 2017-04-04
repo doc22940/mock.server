@@ -12,7 +12,7 @@ serverOptions = {
 	urlPath: '/rest/v1',
 	dirName: __dirname,
 	port: 8888,
-	restPath: __dirname + '/../demo/example_rest_folder',
+	restPath: __dirname + '/../demo/rest',
 	funcPath: [
 		__dirname + '/../demo/func',
 		__dirname + '/../demo/func2'

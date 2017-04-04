@@ -1,5 +1,0 @@
-{
-	"price": <%-price(12,'CHF');%>,
-	"email": "<%-faker.internet.email();%>",
-	"cards": [<%-JSON.stringify(faker.helpers.createCard());%>]
-}
