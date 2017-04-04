@@ -1,34 +1,34 @@
 
 'use strict';
 
-var AppControllerSingleton = require('./controller/AppController');
+var AppControllerSingleton = require('./lib/controller/AppController');
 
 module.exports = function (options) {
 
 	AppControllerSingleton.getInstance(options);
 
-	var UiController = require('./controller/UiController');
+	var UiController = require('./lib/controller/UiController');
 	new UiController();
 
-	var SchemaController = require('./controller/SchemaController');
+	var SchemaController = require('./lib/controller/SchemaController');
 	new SchemaController();
 
-	var SwaggerImportController = require('./controller/SwaggerImportController');
+	var SwaggerImportController = require('./lib/controller/SwaggerImportController');
 	new SwaggerImportController();
 
-	var DTOController = require('./controller/DTOController');
+	var DTOController = require('./lib/controller/DTOController');
 	new DTOController();
 
-	var ResponseController = require('./controller/ResponseController');
+	var ResponseController = require('./lib/controller/ResponseController');
 	new ResponseController();
 
-	var PreferencesController = require('./controller/PreferencesController');
+	var PreferencesController = require('./lib/controller/PreferencesController');
 	new PreferencesController();
 
-	var ValidatorController = require('./controller/ValidatorController');
+	var ValidatorController = require('./lib/controller/ValidatorController');
 	new ValidatorController();
 
-	var MockController = require('./controller/MockController');
+	var MockController = require('./lib/controller/MockController');
 	new MockController();
 
 };
