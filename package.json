@@ -1,6 +1,6 @@
 {
 	"name": "node-mock-server",
-	"version": "0.11.0",
+	"version": "0.12.0",
 	"description": "File based Node API mock server",
 	"email": "simon.mollweide@web.de",
 	"author": "Simon Mollweide <simon.mollweide@web.de>",
@@ -28,7 +28,7 @@
 		"Swagger"
 	],
 	"engines": {
-		"node": ">=0.12.7"
+		"node": ">=0.12"
 	},
 	"preferGlobal": false,
 	"private": false,

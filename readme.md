@@ -12,21 +12,23 @@
 ![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/13898299/0ad93a76-edcd-11e5-8eb8-840471a0835b.png)
 
 ## Features
-- Node.js and file based
+- Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
 - API documentation UI
-- Mock functions
-- Faker included
-- Multiple expected responses
-- Error cases
-- Swagger import
+- [Functions in mock data](/doc/readme-mock-functions.md)
+- [Faker included](/doc/readme-faker.md)
+- [Query params in mock data](/doc/readme-query-params.md)
+- [Dynamic path params in mock data](/doc/readme-path-params.md)
+- [Multiple expected responses](/doc/readme-expected-response.md)
+- [Error cases](/doc/readme-expected-response.md)
+- [Swagger import](/doc/readme-swagger-import.md)
     - DTO import
     - DTO response function
-- Mock response validation
-- DTO preview
-- DTO to Class converter
+- [Response validation](/doc/readme-response-validation.md)
+- [Response header](/doc/readme-response-header.md)
+- [DTO to Class converter]()
 
 ## Getting Started
-This plugin requires Node `~0.12.7` or higher
+This application requires Node `0.12` or higher
 
 ```shell
 brew install node
@@ -50,195 +52,8 @@ var mockServer = require('node-mock-server');
 mockServer(options);
 ```
 
-
 ### Options
-
-#### options.restPath
-Type: `String`
-Default value: `'./rest'`
-
-A string value that defines the path to the rest API folder.
-
-#### options.dirName
-Type: `String`
-
-A string value that defines the root directory (__dirname).
-
-#### options.title
-Type: `String`
-Default value: `Api mock server`
-
-A string value that defines the title.
-
-#### options.version
-Type: `Number`
-Default value: `1`
-
-A number value that defines the Rest API version.
-
-#### options.urlBase
-Type: `String`
-Default value: `http://localhost:3001`
-
-A string value that defines the mock Rest API url.
-
-#### options.urlPath
-Type: `String`
-Default value: `/rest/v1`
-
-A string value that defines the path for the mock Rest API.
-
-#### options.port
-Type: `Number`
-Default value: `3001`
-
-A number value that defines the application port.
-
-#### options.privateKey
-Type: `String`
-
-A string value that defines the path to the private key for ssl.
-
-#### options.certificate
-Type: `String`
-
-A string value that defines the path to the ssl certificate.
-
-#### options.funcPath
-Type: `String|Array`
-Optional
-
-A string or array that define the location of the response functions.
-
-#### options.headers
-Type: `Object`
-Default value: `{}`
-
-A object that define the global response headers. Will add the given headers to all responses.
-
-
-#### options.contentType
-Type: `String`
-Default value: `application/json`
-
-A string that define the header "Content-Type".
-
-
-#### options.accessControlExposeHeaders
-Type: `String`
-Default value: `X-Total-Count`
-
-A string that define the header "Access-Control-Expose-Headers".
-
-#### options.accessControlAllowOrigin
-Type: `String`
-Default value: `*`
-
-A string that define the header "Access-Control-Allow-Origin".
-
-#### options.accessControlAllowMethods
-Type: `String`
-Default value: `GET, POST, PUT, OPTIONS, DELETE, PATCH, HEAD`
-
-A string that define the header "Access-Control-Allow-Methods".
-
-
-#### options.accessControlAllowHeaders
-Type: `String`
-Default value: `origin, x-requested-with, content-type`
-
-A string that define the header "Access-Control-Allow-Headers".
-
-
-#### options.swaggerImport
-Type: `Object`
-Optional
-
-A object that define the swagger import.
-
-#### options.customDTOToClassTemplate
-Type: `String`
-Optional
-
-A string that define the path to the custom DTO to class template.
-[template](/src/templates/dto_es6flow.ejs)
-
-#### options.swaggerImport.protocol
-Type: `String`
-Default value: `http`
-
-A string that used to define the protocol for the swagger import curl.
-
-#### options.swaggerImport.authUser
-Type: `String`
-Optional
-
-A string that define the basic auth user for the swagger import curl.
-
-
-#### options.swaggerImport.authPass
-Type: `String`
-Optional
-
-A string that define the basic auth password for the swagger import curl.
-
-
-#### options.swaggerImport.host
-Type: `String`
-Required
-
-A string that define the host for the swagger import curl.
-
-
-#### options.swaggerImport.port
-Type: `String`
-Default value: `80`
-
-A string that define the port for the swagger import curl.
-
-
-#### options.swaggerImport.path
-Type: `String`
-Default value: ``
-
-A string that define the path for the swagger import curl.
-
-#### options.swaggerImport.dest
-Type: `String`
-Required
-
-A string that defines the destination path for the swagger import.
-
-#### options.swaggerImport.replacePathsStr
-Type: `String`
-Default value: ``
-
-A string that defines the part of the swagger imported methods path which should be removed.
-
-
-#### options.swaggerImport.createErrorFile
-Type: `Boolean`
-Default value: `true`
-
-A boolean to decide to create an expected response error file or not.
-
-#### options.swaggerImport.createEmptyFile
-Type: `Boolean`
-Default value: `true`
-
-A boolean to decide to create an expected response empty file or not.
-
-#### options.swaggerImport.overwriteExistingDescriptions
-Type: `Boolean`
-Default value: `true`
-
-A boolean to decide to replace an old description with the new (imported) description or not.
-
-#### options.swaggerImport.responseFuncPath
-Type: `String`
-
-A string that defines the location of the imported response functions.
-
+[node-mock-server options](/doc/readme-options.md)
 
 ### Usage Examples
 
@@ -282,69 +97,6 @@ mockServer({
     }
 });
 ```
-
-### Folder structure
-
-- see demo/example_rest_folder
-
-```
-|- group
-|--- #path
-|--- #path#{param}
-|----- method (GET, POST, DELETE ...)
-|------- mock
-|--------- success.json
-|--------- success.headers.json
-|--------- error.json
-|--------- error-401.json
-|------- desc.json
-|------- request_schema.json
-|------- response_schema.json
-```
-
-## Functions in mock data
-- [Add function](https://github.com/smollweide/node-mock-server/blob/develop/func/price.js)
-- [Add function folder to option](https://github.com/smollweide/node-mock-server/blob/develop/app.js#L8)
-- [Use function in mock data](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/func.json#L2)
-
-## Faker in mock data
-- [Faker](https://www.npmjs.com/package/faker)
-- [Use Faker in mock data](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/faker.json#L4)
-
-## Query params in mock data
-For example call GET "/products/superProductCode/?currentPage=1"
-[Config in mock response](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/request-data.json#L3)
-Response will be:
-```
-{
-	"currentPage": 1,
-	...
-}
-```
-
-## Dynamic path params in mock data
-For example call GET "/products/superProductCode/?currentPage=2"
-[Config in mock response](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/request-data.json#L4)
-Response will be:
-```
-{
-	"productCode": "superProductCode"
-	...
-}
-```
-
-## Expected response
-- Use the ui to configure the expected response for each call
-- Use the get param "_expected"
-- Use the request header "_expected"
-- If an dynamic path param is empty or in placeholder format an "400 bad request" will be the response
-
-## Mock response validation
-- In case of you using params (form or get) in mock data, you can simulate them by adding an [".request_data.json"](https://github.com/smollweide/node-mock-server/blob/master/example_rest_folder/products/%23%7BproductCode%7D/GET/mock/.request_data.json) file.
-
-## Response Header
-- Use the `options.headers` object to define global response header
-- Add an [`*.header.json`](https://github.com/smollweide/node-mock-server/blob/develop/example_rest_folder/products/#/GET/mock/success.headers.json) beside the expected response file
 
 ## License
 [MIT License](https://github.com/smollweide/node-mock-server/blob/master/LICENSE)

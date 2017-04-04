@@ -6,6 +6,8 @@ demo/func
 demo/func2
 /test
 test
+/doc
+doc
 /.idea
 .idea
 /src/swagger
