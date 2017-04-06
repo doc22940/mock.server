@@ -1,7 +1,7 @@
 {
 	"name": "node-mock-server",
 	"version": "0.12.0",
-	"description": "File based Node API mock server",
+	"description": "File based Node REST API mock server",
 	"email": "simon.mollweide@web.de",
 	"author": "Simon Mollweide <simon.mollweide@web.de>",
 	"url": "https://github.com/smollweide/node-mock-server",
@@ -22,13 +22,21 @@
 	"main": "mock-server.js",
 	"keywords": [
 		"node",
+		"node.js",
 		"npm",
 		"mock",
 		"rest",
+		"REST",
 		"rest API",
+		"REST API",
+		"api",
+		"API",
 		"json",
 		"DTO",
-		"Swagger"
+		"Datatransferobject"
+		"Swagger",
+		"documentation",
+		"REST API documentation"
 	],
 	"engines": {
 		"node": ">=0.12"

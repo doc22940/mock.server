@@ -1,7 +1,7 @@
 
 # node-mock-server
 
-> File based Node API mock server
+> File based Node REST API mock server
 
 [![Build status](https://img.shields.io/travis/smollweide/node-mock-server/master.svg)](https://travis-ci.org/smollweide/node-mock-server)
 [![Build status](https://ci.appveyor.com/api/projects/status/tfluudfe4s7810w8/branch/master?svg=true)](https://ci.appveyor.com/project/smollweide/node-mock-server/branch/master)
@@ -19,14 +19,14 @@
 - [Faker included](/doc/readme-faker.md)
 - [Query params in mock data](/doc/readme-query-params.md)
 - [Dynamic path params in mock data](/doc/readme-path-params.md)
-- [Multiple expected responses](/doc/readme-expected-response.md)
+- [Expected responses](/doc/readme-expected-response.md)
 - [Error cases](/doc/readme-expected-response.md)
 - [Swagger import](/doc/readme-swagger-import.md)
     - DTO import
     - DTO response function
 - [Response validation](/doc/readme-response-validation.md)
 - [Response header](/doc/readme-response-header.md)
-- [DTO to Class converter]()
+- [DTO to Class converter](/doc/readme-dto-2-class.md)
 
 ## Getting Started
 This application requires Node `0.12` or higher
@@ -45,6 +45,11 @@ yarn add node-mock-server --save-dev
 
 ```shell
 node mock-server.js
+```
+
+.gitignore
+```
+/demo/rest/*/*/*/mock/response.txt
 ```
 
 ## The "mock-server.js" file
