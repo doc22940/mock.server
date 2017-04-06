@@ -180,24 +180,4 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
-	// REMOVED BECAUSE OF node 0.12
-	//
-	// it('ES6 AddressWsDTO test getter, setter and validators', function () {
-	// 	var AddressWsDTO = require('.' + pathExpected + '/AddressWsDTO-es6-1.js'),
-	// 		data = {},
-	// 		address;
-	//
-	// 	data.email = 'somemail@mail.com';
-	// 	data.lastName = 'lastName';
-	//
-	// 	address = new AddressWsDTO(data);
-	// 	assert.equal(address.email, data.email);
-	// 	assert.equal(address.validEmail(), true);
-	// 	assert.equal(address.validFirstName(), false);
-	// 	assert.equal(address.validLastName(), true);
-	// 	assert.equal(address.lastName, data.lastName);
-	// 	address.lastName = 'lastName2';
-	// 	assert.equal(address.lastName, 'lastName2');
-	// });
-
 };

@@ -29,7 +29,8 @@
 - [DTO to Class converter](/doc/readme-dto-2-class.md)
 
 ## Getting Started
-This application requires Node `0.12` or higher
+This application requires Node `4` or higher
+for Node `<4` please use `node-mock-server@0.11.0`
 
 ```shell
 brew install node

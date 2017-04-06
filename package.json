@@ -39,7 +39,7 @@
 		"REST API documentation"
 	],
 	"engines": {
-		"node": ">=0.12"
+		"node": ">=4"
 	},
 	"preferGlobal": false,
 	"private": false,
