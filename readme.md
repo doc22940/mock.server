@@ -8,6 +8,7 @@
 [![Dependencies](https://img.shields.io/david/smollweide/node-mock-server/master.svg)](https://david-dm.org/smollweide/node-mock-server)
 [![npm](https://badge.fury.io/js/node-mock-server.svg)](https://badge.fury.io/js/node-mock-server)
 [![npm](https://img.shields.io/npm/dt/node-mock-server.svg)](https://www.npmjs.com/package/node-mock-server)
+[![Codestyle](https://img.shields.io/badge/codestyle-namics-green.svg)](https://github.com/namics/eslint-config-namics)
 
 ![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/13898299/0ad93a76-edcd-11e5-8eb8-840471a0835b.png)
 
@@ -37,15 +38,19 @@ brew install node
 ```shell
 npm install node-mock-server --save-dev
 ```
-
+or
 ```shell
-node app.js
+yarn add node-mock-server --save-dev
 ```
 
-## The "app.js" file
+```shell
+node mock-server.js
+```
+
+## The "mock-server.js" file
 
 ### Overview
-In your project's root, add a file named for example `app.js`.
+In your project's root, add a file named for example `mock-server.js`.
 
 ```js
 var mockServer = require('node-mock-server');

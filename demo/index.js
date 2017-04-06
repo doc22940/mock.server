@@ -1,11 +1,11 @@
 
-var mockServer = require('./../mock-server.js'),
-	dest = __dirname + '/rest',
-	replacePathsStr = '/v2/{baseSiteId}',
-	responseFuncPath = __dirname + '/func-imported';
+var mockServer = require('./../mock-server.js');
+var dest = __dirname + '/rest';
+var replacePathsStr = '/v2/{baseSiteId}';
+var responseFuncPath = __dirname + '/func-imported';
 
-//dest = __dirname + '/test/tmp/swagger-import';
-//replacePathsStr = '/v2/{id}';
+// dest = __dirname + '/test/tmp/swagger-import';
+// replacePathsStr = '/v2/{id}';
 
 mockServer({
 	restPath: dest,
@@ -13,10 +13,10 @@ mockServer({
 	funcPath: [
 		__dirname + '/func',
 		__dirname + '/func2',
-		responseFuncPath
+		responseFuncPath,
 	],
 	headers: {
-		'Global-Custom-Header': 'Global-Custom-Header'
+		'Global-Custom-Header': 'Global-Custom-Header',
 	},
 	customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
 	swaggerImport: {
@@ -31,6 +31,6 @@ mockServer({
 		createErrorFile: true,
 		createEmptyFile: true,
 		overwriteExistingDescriptions: true,
-		responseFuncPath: responseFuncPath
-	}
+		responseFuncPath: responseFuncPath,
+	},
 });

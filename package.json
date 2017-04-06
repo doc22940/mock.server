@@ -14,7 +14,10 @@
 	},
 	"scripts": {
 		"start": "nodemon demo/index.js",
-		"test": "mocha test/tests.js"
+		"test": "mocha test/tests.js",
+		"posttest": "npm run lint",
+		"lint": "npm run lint:js",
+		"lint:js": "node_modules/.bin/eslint ."
 	},
 	"main": "mock-server.js",
 	"keywords": [
@@ -44,8 +47,10 @@
 		"request": "^2.72.0"
 	},
 	"devDependencies": {
+		"@namics/eslint-config": "^2.2.0",
 		"babel-eslint": "^6.0.3",
-		"eslint": "^2.8.0",
+		"eslint": "^3.19.0",
+		"eslint-plugin-import": "^2.2.0",
 		"mocha": "^2.4.5"
 	}
 }
