@@ -1,0 +1,34 @@
+{
+  "productCode": "string",
+  "price": "$ref-PriceDTO",
+  "email": "string",
+  "success": "boolean",
+  "highlight": "boolean",
+  "quantity": "integer",
+  "currentPage": "string",
+  "cards": [
+    "$ref-CardDTO"
+  ],
+  "arrayString": [
+    "string"
+  ],
+  "arrayNumber": [
+    "number"
+  ],
+  "arrayObject": [
+    {
+      "name": "string"
+    }
+  ],
+  "arrayArray": [
+    [
+      {
+        "name": "string"
+      }
+    ]
+  ],
+  "image": {
+    "url": "string",
+    "alt": "string"
+  }
+}

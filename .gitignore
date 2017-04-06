@@ -2,7 +2,6 @@
 node_modules
 /preferences.json
 /demo/rest/*/*/*/mock/response.txt
-rest
 /test/tmp
 /test/func-imported
 /tmp
