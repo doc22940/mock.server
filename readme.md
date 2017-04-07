@@ -109,6 +109,14 @@ mockServer({
 });
 ```
 
+## Demo
+```shell
+git clone https://github.com/smollweide/node-mock-server.git
+cd node-mock-server
+npm install
+node demo
+```
+
 ## License
 [MIT License](https://github.com/smollweide/node-mock-server/blob/master/LICENSE)
 
