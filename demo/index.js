@@ -4,8 +4,7 @@ var dest = __dirname + '/rest';
 var replacePathsStr = '/v2/{baseSiteId}';
 var responseFuncPath = __dirname + '/func-imported';
 
-// dest = __dirname + '/test/tmp/swagger-import';
-// replacePathsStr = '/v2/{id}';
+// http://petstore.swagger.io/v2/swagger.json
 
 mockServer({
 	restPath: dest,
@@ -23,9 +22,9 @@ mockServer({
 		protocol: 'http',
 		authUser: undefined,
 		authPass: undefined,
-		host: 'localhost',
-		port: 3001,
-		path: '/src/swagger/swagger-api-docs.json',
+		host: 'petstore.swagger.io',
+		port: 80,
+		path: '/v2/swagger.json',
 		dest: dest,
 		replacePathsStr: replacePathsStr,
 		createErrorFile: true,
