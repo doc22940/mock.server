@@ -12,14 +12,15 @@ serverOptions = {
 	urlPath: '/rest/v1',
 	dirName: __dirname,
 	port: 8888,
-	restPath: __dirname + '/../example_rest_folder',
+	restPath: __dirname + '/../demo/rest',
 	funcPath: [
-		__dirname + '/../func',
-		__dirname + '/../func2'
+		__dirname + '/../demo/func',
+		__dirname + '/../demo/func2'
 	],
 	headers: {
 		'Global-Custom-Header': 'Global-Custom-Header'
 	},
+	customDTOToClassTemplate: __dirname + '/data/class-templates/dto_es6flow.ejs',
 	swaggerImport: {
 		protocol: 'http',
 		dirName: __dirname,
@@ -67,6 +68,3 @@ swaggerImporter.doImport(function () {
 	describe('DTOToResponseFuncConverter', require('./tests-dto-response-func').bind(this, serverOptions, _getFile));
 
 });
-
-
-

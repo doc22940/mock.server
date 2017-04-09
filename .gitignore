@@ -1,8 +1,7 @@
 .idea
 node_modules
 /preferences.json
-/example_rest_folder/*/*/*/mock/response.txt
-rest
+/demo/rest/*/*/*/mock/response.txt
 /test/tmp
 /test/func-imported
 /tmp

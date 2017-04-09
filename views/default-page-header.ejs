@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header" data-tpl="default-page-header">
 	<h1>
 		<%=title %>
 		<small>version v<%=version %></small>
@@ -11,35 +11,35 @@
 					<a href="#_modal_preferences" data-toggle="modal" data-target="#_modal_preferences">Preferences</a>
 				</li>
 				<% if (isSwaggerImportAvailable) { %>
-                	<li role="separator" class="divider"></li>
-                    <li>
-                    	<a href="#_modal_swagger_import" data-toggle="modal" data-target="#_modal_swagger_import">Swagger Import</a>
-                    </li>
-                <% } %>
-                <li role="separator" class="divider"></li>
-                <li>
-                	<a href="#" class="js-validate">Validate all mock responses (except error)</a>
-                </li>
+					<li role="separator" class="divider"></li>
+					<li>
+						<a href="#_modal_swagger_import" data-toggle="modal" data-target="#_modal_swagger_import">Swagger Import</a>
+					</li>
+				<% } %>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="#" class="js-validate">Validate all mock responses (except error)</a>
+				</li>
 			</ul>
 		</div>
 	</h1>
 	<p>
 		<br/>
 		<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        	DTO's
-        </a>
-        <div class="collapse" id="collapseExample">
+			DTO's
+		</a>
+		<div class="collapse" id="collapseExample">
 			<div class="well">
 				<div class="list-group">
 					<% for(var i=0; i<dataDto.length; i++) { %>
-                		<% var dto = dataDto[i]; %>
-                		<a href="#" data-toggle="modal" data-target="#_modal_dto_<%=dto.nameClean%>" class="list-group-item">
-                			<%= dto.nameClean %>
-                		</a>
-                        <% include dto-modal.ejs %>
-                	<% } %>
-                </div>
+						<% var dto = dataDto[i]; %>
+						<a href="#" data-toggle="modal" data-target="#_modal_dto_<%=dto.nameClean%>" class="list-group-item">
+							<%= dto.nameClean %>
+						</a>
+						<% include dto-modal.ejs %>
+					<% } %>
+				</div>
 			</div>
-        </div>
+		</div>
 	</p>
 </div>

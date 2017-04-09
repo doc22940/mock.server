@@ -1,0 +1,31 @@
+{
+  "list": [
+    {
+      "country": "$ref-CountryWsDTO",
+      "email": "string"
+    }
+  ],
+  "items": [
+    "$ref-CountryWsDTO"
+  ],
+  "image": "$ref-CountryWsDTO",
+  "exampleString": "string",
+  "exampleNumber": "number",
+  "exampleInteger": "number",
+  "name": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "country": "$ref-CountryWsDTO",
+  "countryIsocode": "string",
+  "email": "string",
+  "phone": "string",
+  "postalCode": "string",
+  "streetName": "string",
+  "streetNumber": "string",
+  "title": "string",
+  "titleCode": "string",
+  "town": "string",
+  "parameters": {
+    "additional": "string"
+  }
+}

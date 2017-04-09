@@ -1,7 +1,7 @@
 {
 	"name": "node-mock-server",
-	"version": "0.11.0",
-	"description": "File based Node API mock server",
+	"version": "0.12.0",
+	"description": "File based Node REST API mock server",
 	"email": "simon.mollweide@web.de",
 	"author": "Simon Mollweide <simon.mollweide@web.de>",
 	"url": "https://github.com/smollweide/node-mock-server",
@@ -13,22 +13,34 @@
 		"url": "https://github.com/smollweide/node-mock-server/issues"
 	},
 	"scripts": {
-		"start": "node app.js",
-		"test": "mocha test/tests.js"
+		"start": "nodemon demo/index.js",
+		"test": "mocha test/tests.js",
+		"posttest": "npm run lint",
+		"lint": "npm run lint:js",
+		"lint:js": "node_modules/.bin/eslint ."
 	},
 	"main": "mock-server.js",
 	"keywords": [
 		"node",
+		"node.js",
 		"npm",
 		"mock",
 		"rest",
+		"REST",
 		"rest API",
+		"REST API",
+		"api",
+		"API",
 		"json",
 		"DTO",
-		"Swagger"
+		"Datatransferobject",
+		"Swagger",
+		"documentation",
+		"REST API documentation",
+		"cli"
 	],
 	"engines": {
-		"node": ">=0.12.7"
+		"node": ">=4"
 	},
 	"preferGlobal": false,
 	"private": false,
@@ -44,8 +56,10 @@
 		"request": "^2.72.0"
 	},
 	"devDependencies": {
+		"@namics/eslint-config": "^2.2.0",
 		"babel-eslint": "^6.0.3",
-		"eslint": "^2.8.0",
+		"eslint": "^3.19.0",
+		"eslint-plugin-import": "^2.2.0",
 		"mocha": "^2.4.5"
 	}
 }

@@ -1,6 +1,5 @@
 
-var assert = require('assert'),
-	SwaggerImport = require('../lib/SwaggerImport');
+var assert = require('assert');
 
 module.exports = function(serverOptions, _getFile) {
 
