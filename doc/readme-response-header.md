@@ -6,4 +6,4 @@ headers: {
 	'Global-Custom-Header': 'Global-Custom-Header'
 }
 ```
-- Add an [`*.header.json`](/demo/rest/products/#/GET/mock/success.headers.json) beside the expected response file
+- Add an [`*.header.json`](/demo/rest/products/%23/GET/mock/success.headers.json) beside the expected response file
