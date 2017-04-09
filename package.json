@@ -36,7 +36,8 @@
 		"Datatransferobject",
 		"Swagger",
 		"documentation",
-		"REST API documentation"
+		"REST API documentation",
+		"cli"
 	],
 	"engines": {
 		"node": ">=4"

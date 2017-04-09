@@ -32,31 +32,8 @@
 This application requires Node `4` or higher
 for Node `<4` please use `node-mock-server@0.11.0`
 
-```shell
-brew install node
-```
-
-```shell
-npm install node-mock-server --save-dev
-```
-or
-```shell
-yarn add node-mock-server --save-dev
-```
-
-```shell
-node mock-server.js
-```
-
-.gitignore
-```
-/demo/rest/*/*/*/mock/response.txt
-```
-
-## The "mock-server.js" file
-
-### Overview
-In your project's root, add a file named for example `mock-server.js`.
+* `npm install node-mock-server --save-dev` or `yarn add node-mock-server --dev`
+* .gitignore add `<restPath>/*/*/*/mock/response.txt`
 
 ```js
 var mockServer = require('node-mock-server');
@@ -108,6 +85,16 @@ mockServer({
     }
 });
 ```
+
+## CLI
+- usage `node <script> [--version] [--help] <command> [<args>]`
+- usage with demo `node demo/index.js [--version] [--help] <command> [<args>]`
+- node-mock-server commands:
+-- start mock server `node <script>`
+-- print help `node <script> --help`
+-- print node-mock-server version `node <script> --version`
+-- run a swagger import `node <script> swagger-import`
+-- run a validation for all mock data `node <script> validate`
 
 ## Demo
 ```shell
