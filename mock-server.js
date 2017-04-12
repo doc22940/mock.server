@@ -6,6 +6,8 @@ var versionCli = require('./lib/cli/version-cli');
 var helpCli = require('./lib/cli/help-cli');
 var swaggerImportCli = require('./lib/cli/swagger-import-cli');
 var validateCli = require('./lib/cli/validate-cli');
+var createDefinedDirectories = require('./lib/commands/create-defined-directories');
+
 var processVersionIndex = process.argv.indexOf('--version');
 var processHelpIndex = process.argv.indexOf('--help');
 var processSwaggerImportIndex = process.argv.indexOf('swagger-import');
@@ -15,6 +17,8 @@ var doExport;
 function runServer(options) {
 
 	var appController = AppControllerSingleton.getInstance(options);
+
+	createDefinedDirectories(appController.options);
 
 	var UiController = require('./lib/controller/UiController');
 	var SchemaController = require('./lib/controller/SchemaController');
