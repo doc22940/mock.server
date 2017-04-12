@@ -7,6 +7,8 @@ var mockServer = require('../mock-server.js'),
 
 process.env.NODE_ENV = 'test';
 
+utils.writeDir('./test/tmp');
+
 serverOptions = {
 	urlBase: 'http://localhost:8888',
 	urlPath: '/rest/v1',
@@ -50,7 +52,6 @@ function _getFile(path) {
 _startMockServer();
 
 var swaggerImporter = new SwaggerImport(serverOptions.swaggerImport);
-utils.writeDir('./test/tmp');
 
 new ValidatorResponses({
 	restPath: serverOptions.restPath
