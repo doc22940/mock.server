@@ -97,6 +97,12 @@ Default value: `origin, x-requested-with, content-type`
 
 A string that define the header "Access-Control-Allow-Headers".
 
+#### options.middleware
+Type: `Object`
+Optional
+
+A object including the middleware functions.
+Read [middleware.md](/doc/readme-middleware.md) for details.
 
 #### options.swaggerImport
 Type: `Object`
