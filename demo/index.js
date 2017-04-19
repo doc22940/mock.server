@@ -20,10 +20,16 @@ mockServer({
 	},
 	customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
 	middleware: {
-		'/rest/products/#{productCode}/GET': function (serverOptions, requestOptions) {
-			requestOptions.res.statusCode = 201;
-			requestOptions.res.end('middware response');
-			return null;
+		'/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
+			var productCode = requestOptions.req.params[0].split('/')[3];
+
+			if (productCode === '1234') {
+				requestOptions.res.statusCode = 201;
+				requestOptions.res.end('product 1234');
+				return null;
+			}
+
+			return 'success';
 		}
 	},
 	swaggerImport: {
