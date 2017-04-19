@@ -23,6 +23,13 @@ serverOptions = {
 		'Global-Custom-Header': 'Global-Custom-Header'
 	},
 	customDTOToClassTemplate: __dirname + '/data/class-templates/dto_es6flow.ejs',
+	middleware: {
+		'/../demo/rest/products/#{productCode}/GET': function (serverOptions, requestOptions) {
+			requestOptions.res.statusCode = 201;
+			requestOptions.res.end('middware response');
+			return null;
+		}
+	},
 	swaggerImport: {
 		protocol: 'http',
 		dirName: __dirname,

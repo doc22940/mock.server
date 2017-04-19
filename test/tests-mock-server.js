@@ -117,6 +117,17 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products/{productCode} - with middleware', function (done) {
+		_fetch({
+			url: baseUrl + '/products/31221?_expected=middleware',
+			success: function (data) {
+				var expected = _getFile(pathExpected + '/02.json');
+				assert.equal(data, 'middware response');
+				done();
+			}
+		});
+	});
+
 	it('GET /search/users/{userId}/products/{productCode}/available - with empty dynamic path param', function (done) {
 		_fetch({
 			url: baseUrl + '/search/users//products/1/available?_expected=success',
