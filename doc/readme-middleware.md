@@ -7,7 +7,7 @@ The middleware function will be called, in case of "middleware" is selected. It'
 
 ## Parameter[0] serverOptions
 
-See (node-mock-server options)[/doc/readme-options.md]
+See [node-mock-server options](/doc/readme-options.md)
 
 ## Parameter[1] responseOptions
 
