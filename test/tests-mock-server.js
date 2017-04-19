@@ -121,8 +121,17 @@ module.exports = function(serverOptions, _getFile) {
 		_fetch({
 			url: baseUrl + '/products/31221?_expected=middleware',
 			success: function (data) {
-				var expected = _getFile(pathExpected + '/02.json');
 				assert.equal(data, 'middware response');
+				done();
+			}
+		});
+	});
+
+	it('GET /products/{productCode} - with middleware 2', function (done) {
+		_fetch({
+			url: baseUrl + '/products/1234?_expected=middleware',
+			success: function (data) {
+				assert.equal(data, 'product 1234');
 				done();
 			}
 		});
