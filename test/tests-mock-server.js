@@ -117,6 +117,26 @@ module.exports = function(serverOptions, _getFile) {
 		});
 	});
 
+	it('GET /products/{productCode} - with middleware', function (done) {
+		_fetch({
+			url: baseUrl + '/products/31221?_expected=middleware',
+			success: function (data) {
+				assert.equal(data, 'middware response');
+				done();
+			}
+		});
+	});
+
+	it('GET /products/{productCode} - with middleware 2', function (done) {
+		_fetch({
+			url: baseUrl + '/products/1234?_expected=middleware',
+			success: function (data) {
+				assert.equal(data, 'product 1234');
+				done();
+			}
+		});
+	});
+
 	it('GET /search/users/{userId}/products/{productCode}/available - with empty dynamic path param', function (done) {
 		_fetch({
 			url: baseUrl + '/search/users//products/1/available?_expected=success',
