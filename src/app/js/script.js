@@ -11,9 +11,15 @@
 		$('.btn[data-toggle="collapse"]', '.js-controlled-collapse').on('click', function (event) {
 			var $btn = $(event.currentTarget);
 			var $controlled = $btn.parents('.js-controlled-collapse');
+			var $collapse = $($btn.attr('href'));
 
 			if ($controlled.length < 1) {
-				return;
+				return true;
+			}
+
+			if ($collapse.hasClass('in')) {
+				$collapse.removeClass('in');
+				return false;
 			}
 
 			$('.collapse', $controlled).each(function () {
@@ -237,7 +243,7 @@
 				url: '/service/collection/' + $btn.data('id') + '/activate',
 				type: 'post',
 				success: function () {
-					$btns.prop('disabled', false);
+					$btns.remove();
 					$outlet.html('<a href="/" class="btn btn-lg btn-primary">Reload</a>');
 				},
 				error: function () {
