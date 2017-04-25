@@ -23,12 +23,15 @@
 			</ul>
 		</div>
 	</h1>
-	<p>
+	<div class="js-controlled-collapse">
 		<br/>
-		<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-			DTO's
-		</a>
-		<div class="collapse" id="collapseExample">
+		<div class="btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-default" data-toggle="collapse" href="#collapseDtos" aria-expanded="false" aria-controls="collapseDtos">DTO's</button>
+			<button type="button" class="btn btn-default" data-toggle="collapse" href="#collapseCollections" aria-expanded="false" aria-controls="collapseCollections">Collections</button>
+		</div>
+		<br />
+		<br />
+		<div class="collapse" id="collapseDtos">
 			<div class="well">
 				<div class="list-group">
 					<% for(var i=0; i<dataDto.length; i++) { %>
@@ -41,5 +44,25 @@
 				</div>
 			</div>
 		</div>
-	</p>
+		<div class="collapse" id="collapseCollections">
+			<a class="btn btn-primary pull-right" href="#" data-toggle="modal" data-target="#_modal_collection_new">
+				+ add new collection
+			</a>
+			<% include collection-new-modal.ejs %>
+			<br />
+			<br />
+			<div class="well">
+				<div class="list-group">
+
+					<% for(var i=0; i<dataCollections.length; i++) { %>
+						<% var collection = dataCollections[i]; %>
+						<a href="#" data-toggle="modal" data-target="#_modal_collection_<%=collection.id%>" class="list-group-item">
+							<%= collection.name %> (<%= collection.description %>)
+						</a>
+						<% include collection-modal.ejs %>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -27,6 +27,8 @@ function runServer(options) {
 	var ResponseController = require('./lib/controller/ResponseController');
 	var PreferencesController = require('./lib/controller/PreferencesController');
 	var ValidatorController = require('./lib/controller/ValidatorController');
+	var CollectionController = require('./lib/controller/CollectionController');
+
 	var MockController = require('./lib/controller/MockController');
 
 	return {
@@ -38,6 +40,7 @@ function runServer(options) {
 		ResponseController: new ResponseController(),
 		preferencesController: new PreferencesController(),
 		validatorController: new ValidatorController(),
+		collectionController: new CollectionController(),
 		mockController: new MockController(),
 	};
 }

@@ -1,0 +1,8 @@
+{
+	"name": "NUM-12",
+	"description": "Sticky header - see spec for details",
+	"selectedResponses": {
+		"products/#{productCode}/GET": "success",
+		"products/#search/GET": "error"
+	}
+}
