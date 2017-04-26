@@ -28,6 +28,7 @@ function runServer(options) {
 	var PreferencesController = require('./lib/controller/PreferencesController');
 	var ValidatorController = require('./lib/controller/ValidatorController');
 	var CollectionController = require('./lib/controller/CollectionController');
+	var FileOpenController = require('./lib/controller/FileOpenController');
 
 	var MockController = require('./lib/controller/MockController');
 
@@ -41,6 +42,7 @@ function runServer(options) {
 		preferencesController: new PreferencesController(),
 		validatorController: new ValidatorController(),
 		collectionController: new CollectionController(),
+		fileOpenController: new FileOpenController(),
 		mockController: new MockController(),
 	};
 }

@@ -22,13 +22,21 @@
 				<div class="alert alert-info">
 					<p><%=method.desc.desc%></p>
 				</div>
+
+				<% var descFilePath = method.desc.descFilePath%>
+				<% if (descFilePath) { %>
+				<a class="btn btn-default js-open-ide" data-path="<%=descFilePath%>">Open description file</a>
+				<br/>
+				<br/>
+				<% } %>
+
 				<% if (method.security.length > 1) { %>
 				<div class="security-info">
 					Security: <%=method.security%>
 				</div>
 				<% } %>
 				<ul class="nav nav-tabs">
-					<li class="active">
+					<li>
 						<a href="#_<%=service.id%>_<%=method.id%>_request" data-toggle="tab">
 							Request
 						</a>
@@ -38,7 +46,7 @@
 							Response
 						</a>
 					</li>
-					<li>
+					<li class="active">
 						<a href="#_<%=service.id%>_<%=method.id%>_mock" data-toggle="tab">
 							Mock
 						</a>
@@ -47,8 +55,10 @@
 				<div class="tab-content">
 
 					<% var request = method.desc.request%>
+					<% var requestFilePath = method.desc.requestFilePath%>
+					<% var responseFilePath = method.desc.responseFilePath%>
 
-					<div class="tab-pane active" id="_<%=service.id%>_<%=method.id%>_request">
+					<div class="tab-pane" id="_<%=service.id%>_<%=method.id%>_request">
 						<%
 							var itemsObj =  (request ? request.uri : undefined);
 							var itemsTitle =  'URI Parameters';
@@ -95,6 +105,9 @@
 							<a target="_blank" href="<%=request.schema.urlFile%>">Open file in new tab</a>
 						</p>
 						<% } %>
+						<% if (requestFilePath) { %>
+						<a class="btn btn-default js-open-ide" data-path="<%=requestFilePath%>">Open request schema file</a>
+						<% } %>
 					</div>
 
 					<% var response = method.desc.response%>
@@ -122,8 +135,11 @@
 							<a target="_blank" href="<%=response.schema.urlFile%>">Open file in new tab</a>
 						</p>
 						<% } %>
+						<% if (responseFilePath) { %>
+						<a class="btn btn-default js-open-ide" data-path="<%=responseFilePath%>">Open response schema file</a>
+						<% } %>
 					</div>
-					<div class="tab-pane" id="_<%=service.id%>_<%=method.id%>_mock">
+					<div class="tab-pane active" id="_<%=service.id%>_<%=method.id%>_mock">
 						<% var urlMock = urlBase + urlPath + method.pathCleaned;%>
 						<h3>Url:</h3>
 						<p>
@@ -163,6 +179,9 @@
 										<%-label%>
 										<%=mock.name%>
 									</label>
+									<% if (!isMiddleware) { %>
+										<a class="spacer-left btn btn-default pull-right btn-xs js-open-ide" data-path="<%=method.path%>/mock/<%=mock.name%>.json">Open file</a>
+									<% }  %>
 									<% if (!isError && !isMiddleware) { %>
 										&nbsp;<a target="_blank" href="<%=urlBase%>/view/response?path=<%=encodeURIComponent(method.basePath);%>&method=<%=method.id%>&expected=<%=mock.name%>">preview</a>
 										<button
@@ -175,40 +194,10 @@
 											Validate
 										</button>
 									<% }  %>
+
 								</div>
 							<% } %>
-							<!--select
-									class="form-control js-change-response-data"
-									data-path="<%=method.mockPath%>"
-									name="<%=service.id%><%=method.id%>_mockdown"
-								>
-								<% for(var m=0; m<method.availableMockResponses.length; m++) { %>
-									<% var mock = method.availableMockResponses[m]; %>
-									<option <%=mock.selected%> value="<%=mock.name%>"><%=mock.name%></option>
-								<% } %>
-							</select-->
 						</div>
-						<!--h3>Mock preview</h3>
-						<ul class="nav nav-pills">
-							<% for(var m=0; m<method.availableMockResponses.length; m++) { %>
-								<% var mock = method.availableMockResponses[m]; %>
-								<li>
-									<a href="#_<%=service.id%><%=method.id%>_mock_<%=mock.name%>" data-toggle="tab" data-load-code-url="<%=mock.path%>">
-										<%=mock.name%>
-									</a>
-								</li>
-							<% } %>
-						</ul>
-						<div class="tab-content no-style">
-							<% for(var m=0; m<method.availableMockResponses.length; m++) { %>
-								<% var mock = method.availableMockResponses[m]; %>
-								<div class="tab-pane" id="_<%=service.id%><%=method.id%>_mock_<%=mock.name%>">
-									<pre>
-										<code></code>
-									</pre>
-								</div>
-							<% } %>
-						</div-->
 					</div>
 
 				</div>

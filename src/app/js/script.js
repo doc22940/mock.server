@@ -278,5 +278,12 @@
 			});
 		});
 
+		$('.js-open-ide').on('click', function (event) {
+			var path = $(event.currentTarget).data('path');
+			$.ajax({
+				url: '/service/open?path=' + encodeURIComponent(path),
+			});
+		});
+
 	});
 })(jQuery));

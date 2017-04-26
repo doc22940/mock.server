@@ -159,3 +159,15 @@
 .align-center {
 	text-align: center;
 }
+
+.spacer-left {
+	margin-left: 5px;
+}
+
+.space-left-l {
+	margin-left: 10px;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
