@@ -109,6 +109,8 @@ mockServer({
 -- print node-mock-server version `node <script> --version`
 -- run a swagger import `node <script> swagger-import`
 -- run a validation for all mock data `node <script> validate`
+-- lists all available collections `node <script> collections`
+-- activate collection `node <script> collection <id>`
 
 ## Demo
 ```shell
