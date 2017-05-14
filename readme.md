@@ -28,6 +28,7 @@
 - [Response validation](/doc/readme-response-validation.md)
 - [Response header](/doc/readme-response-header.md)
 - [DTO to Class converter](/doc/readme-dto-2-class.md)
+- [Collections](/doc/readme-collections.md)
 
 ## Getting Started
 This application requires Node `4` or higher
