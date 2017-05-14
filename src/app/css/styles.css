@@ -155,3 +155,19 @@
 	border: 1px solid rgba(204, 204, 204, 0.57);
 	border-radius:4px;
 }
+
+.align-center {
+	text-align: center;
+}
+
+.spacer-left {
+	margin-left: 5px;
+}
+
+.space-left-l {
+	margin-left: 10px;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}

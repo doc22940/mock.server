@@ -10,7 +10,7 @@
 [![npm](https://img.shields.io/npm/dt/node-mock-server.svg)](https://www.npmjs.com/package/node-mock-server)
 [![Codestyle](https://img.shields.io/badge/codestyle-namics-green.svg)](https://github.com/namics/eslint-config-namics)
 
-![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/13898299/0ad93a76-edcd-11e5-8eb8-840471a0835b.png)
+![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/26034363/c509d2c2-38bb-11e7-9175-4a151f7a550f.jpg)
 
 ## Features
 - Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
@@ -28,6 +28,7 @@
 - [Response validation](/doc/readme-response-validation.md)
 - [Response header](/doc/readme-response-header.md)
 - [DTO to Class converter](/doc/readme-dto-2-class.md)
+- [Collections](/doc/readme-collections.md)
 
 ## Getting Started
 This application requires Node `4` or higher
@@ -109,6 +110,8 @@ mockServer({
 -- print node-mock-server version `node <script> --version`
 -- run a swagger import `node <script> swagger-import`
 -- run a validation for all mock data `node <script> validate`
+-- lists all available collections `node <script> collections`
+-- activate collection `node <script> collection <id>`
 
 ## Demo
 ```shell
