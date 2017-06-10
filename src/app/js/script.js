@@ -1,8 +1,27 @@
 
 /* global window, document, hljs, JSONFormatter, jQuery */
-
+/* eslint no-alert: 0*/
 ((($) => {
 	$(document).ready(function () {
+
+		function init() {
+			var $modal = $(window.location.hash);
+			if ($modal.length < 1) {
+				return;
+			}
+			$modal.eq(0).modal('show');
+		}
+
+		init();
+
+		$('.modal')
+			.on('shown.bs.modal', function (event) {
+				var $modal = $(event.currentTarget);
+				window.location.hash = $modal.attr('id');
+			})
+			.on('hide.bs.modal', function () {
+				window.location.hash = '';
+			});
 
 		$('.page-header pre code, .top-resource-description pre code').each(function (i, block) {
 			hljs.highlightBlock(block);
@@ -282,6 +301,61 @@
 			var path = $(event.currentTarget).data('path');
 			$.ajax({
 				url: '/service/open?path=' + encodeURIComponent(path),
+			});
+		});
+
+		$('.js-add-response').on('click', function (event) {
+			event.preventDefault();
+
+			var $btn = $(event.currentTarget);
+			var name = window.prompt('Enter response name');
+			var path = encodeURIComponent($btn.data('path'));
+			var method = encodeURIComponent($btn.data('method'));
+
+			if (name === null || name === '') {
+				return;
+			}
+
+			$.ajax({
+				url: '/service/response/' + path + '/' + method,
+				type: 'post',
+				data: {
+					name,
+				},
+				success: function () {
+					window.location.reload();
+				},
+				error: function () {
+					window.alert('Error: please try again later!');
+				},
+			});
+		});
+
+		$('.js-delete-response').on('click', function (event) {
+			event.preventDefault();
+
+			var $btn = $(event.currentTarget);
+			var path = encodeURIComponent($btn.data('path'));
+			var method = encodeURIComponent($btn.data('method'));
+			var name = $btn.data('name');
+			var accepted = window.confirm('Are you sure?');
+
+			if (accepted !== true) {
+				return;
+			}
+
+			$.ajax({
+				url: '/service/response/' + path + '/' + method,
+				type: 'delete',
+				data: {
+					name,
+				},
+				success: function () {
+					window.location.reload();
+				},
+				error: function () {
+					window.alert('Error: please try again later!');
+				},
 			});
 		});
 

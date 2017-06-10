@@ -39,7 +39,20 @@
 					<%=mock.name%>
 				</label>
 				<% if (!isMiddleware) { %>
-					<a class="spacer-left btn btn-default pull-right btn-xs js-open-ide" data-path="<%=method.path%>/mock/<%=mock.name%>.json">Open file</a>
+					<a
+						class="spacer-left btn btn-danger pull-right btn-xs js-delete-response"
+						data-path="<%=method.basePath%>"
+						data-method="<%=method.id%>"
+						data-name="<%=mock.name%>"
+					>
+						delete
+					</a>
+					<a
+						class="spacer-left btn btn-default pull-right btn-xs js-open-ide"
+						data-path="<%=method.path%>/mock/<%=mock.name%>.json"
+					>
+						open
+					</a>
 				<% }  %>
 				<% if (!isError && !isMiddleware) { %>
 					&nbsp;<a target="_blank" href="<%=urlBase%>/view/response?path=<%=encodeURIComponent(method.basePath);%>&method=<%=method.id%>&expected=<%=mock.name%>">preview</a>
@@ -56,5 +69,13 @@
 
 			</div>
 		<% } %>
+		<button
+			class="btn btn-primary btn-xs js-add-response"
+			href="#"
+			data-path="<%=method.basePath%>"
+			data-method="<%=method.id%>"
+		>
+			+ add
+		</button>
 	</div>
 </div>
