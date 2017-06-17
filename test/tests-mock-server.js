@@ -1,6 +1,7 @@
 
 var assert = require('assert'),
-	request = require('request');
+	request = require('request'),
+	MockController = require('../lib/controller/MockController.js');
 
 function _fetch (opt) {
 	request({
@@ -20,6 +21,32 @@ module.exports = function(serverOptions, _getFile) {
 
 	var pathExpected = './test/expected/mock-server',
 		baseUrl = serverOptions.urlBase + serverOptions.urlPath;
+
+	it('method _getPath', function () {
+		var originalUrl = '/rest/v1/products/search',
+			urlPath = '/rest/v1',
+			restPath = '/node-mock-server/demo/rest',
+			path = MockController.prototype._getPath(originalUrl, urlPath, restPath);
+		assert.equal(path, '/node-mock-server/demo/rest/products/search');
+	});
+
+	it('method _getPath - dynamic param', function () {
+		var originalUrl = '/rest/v1/products/search',
+			urlPath = '/rest/{apiVersion}',
+			restPath = '/node-mock-server/demo/rest',
+			path = MockController.prototype._getPath(originalUrl, urlPath, restPath);
+
+		assert.equal(path, '/node-mock-server/demo/rest/products/search');
+	});
+
+	it('method _getPath - dynamic param 2', function () {
+		var originalUrl = '/rest/v1/t/v2/products/search',
+			urlPath = '/rest/{apiVersion}/t/{v2}',
+			restPath = '/node-mock-server/demo/rest',
+			path = MockController.prototype._getPath(originalUrl, urlPath, restPath);
+
+		assert.equal(path, '/node-mock-server/demo/rest/products/search');
+	});
 
 	it('GET /products/search', function (done) {
 		_fetch({
