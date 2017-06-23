@@ -1,0 +1,31 @@
+{
+  "validation": {
+    "example.png": {
+      "counter": 0
+    },
+    "success": {
+      "counter": 0
+    },
+    "document.txt": {
+      "counter": 0
+    },
+    "example.gif": {
+      "counter": 0
+    },
+    "example.jpg": {
+      "counter": 0
+    },
+    "example.xml": {
+      "counter": 0
+    },
+    "javascript.js": {
+      "counter": 0
+    },
+    "success.json": {
+      "counter": 0
+    },
+    "styles.css": {
+      "counter": 0
+    }
+  }
+}

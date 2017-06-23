@@ -186,7 +186,7 @@
 				type: 'get',
 				success: function (data) {
 					$result.html(getLogRows(data));
-					$outlet.html('<a href="/" class="btn btn-lg btn-primary">Reload</a>');
+					$outlet.html('<a href="/" class="btn btn-lg btn-primary js-reload">Reload</a>');
 				},
 			});
 		});
@@ -220,7 +220,7 @@
 				},
 				success: function (data) {
 					$result.html(getLogRows(data));
-					$outlet.html('<a href="/" class="btn btn-lg btn-primary">Reload</a>');
+					$outlet.html('<a href="/" class="btn btn-lg btn-primary js-reload">Reload</a>');
 				},
 			});
 
@@ -241,7 +241,7 @@
 				type: 'get',
 				success: function (data) {
 					$result.html(getLogRows(data));
-					$outlet.html('<a href="/" class="btn btn-lg btn-primary">Reload</a>');
+					$outlet.html('<a href="/" class="btn btn-lg btn-primary js-reload">Reload</a>');
 				},
 			});
 
@@ -263,7 +263,7 @@
 				type: 'post',
 				success: function () {
 					$btns.remove();
-					$outlet.html('<a href="/" class="btn btn-lg btn-primary">Reload</a>');
+					$outlet.html('<a href="/" class="btn btn-lg btn-primary js-reload">Reload</a>');
 				},
 				error: function () {
 					$btns.prop('disabled', false);
@@ -288,7 +288,7 @@
 				type: 'delete',
 				success: function () {
 					$btns.remove();
-					$outlet.html('<br /><a href="/" class="btn btn-lg btn-primary">Reload</a>');
+					$outlet.html('<br /><a href="/" class="btn btn-lg btn-primary js-reload">Reload</a>');
 				},
 				error: function () {
 					$btns.prop('disabled', false);
@@ -302,6 +302,11 @@
 			$.ajax({
 				url: '/service/open?path=' + encodeURIComponent(path),
 			});
+		});
+
+		$('.js-reload').on('click', function (event) {
+			event.preventDefault();
+			window.location.reload();
 		});
 
 		$('.js-add-response').on('click', function (event) {

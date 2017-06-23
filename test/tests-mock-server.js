@@ -22,6 +22,51 @@ module.exports = function(serverOptions, _getFile) {
 	var pathExpected = './test/expected/mock-server',
 		baseUrl = serverOptions.urlBase + serverOptions.urlPath;
 
+	describe('method _getExpectedResponse', function () {
+
+		var func = MockController.prototype._getExpectedResponse;
+
+		it('success', function () {
+			var obj = func({}, '', function () { return 'success' });
+			assert.deepEqual(obj, { name: 'success', type: 'json' });
+		});
+
+		it('error', function () {
+			var obj = func({}, '', function () { return 'error' });
+			assert.deepEqual(obj, { name: 'error', type: 'json' });
+		});
+
+		it('error-401', function () {
+			var obj = func({}, '', function () { return 'error-401' });
+			assert.deepEqual(obj, { name: 'error-401', type: 'json' });
+		});
+
+		it('success-301', function () {
+			var obj = func({}, '', function () { return 'success-301' });
+			assert.deepEqual(obj, { name: 'success-301', type: 'json' });
+		});
+
+		it('image.png', function () {
+			var obj = func({}, '', function () { return 'image.png' });
+			assert.deepEqual(obj, { name: 'image', type: 'png' });
+		});
+
+		it('image.JPEG', function () {
+			var obj = func({}, '', function () { return 'image.JPEG' });
+			assert.deepEqual(obj, { name: 'image', type: 'jpg' });
+		});
+
+		it('image.JPG', function () {
+			var obj = func({}, '', function () { return 'image.JPG' });
+			assert.deepEqual(obj, { name: 'image', type: 'jpg' });
+		});
+
+		it('text.txt', function () {
+			var obj = func({}, '', function () { return 'text.txt' });
+			assert.deepEqual(obj, { name: 'text', type: 'txt' });
+		});
+	});
+
 	it('method _getPath', function () {
 		var originalUrl = '/rest/v1/products/search',
 			urlPath = '/rest/v1',
