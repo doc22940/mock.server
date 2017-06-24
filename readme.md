@@ -14,7 +14,7 @@
 
 ## Features
 - Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
-- API documentation UI
+- [Node Mock Server UI](/doc/readme-ui-documentation.md)
 - [Functions in mock data](/doc/readme-mock-functions.md)
 - [Faker included](/doc/readme-faker.md)
 - [Query params in mock data](/doc/readme-query-params.md)
