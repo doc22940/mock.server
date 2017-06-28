@@ -57,6 +57,7 @@ mockServer({});
 #### Custom Options
 
 ```js
+var express = require('express');
 var mockServer = require('node-mock-server');
 mockServer({
 	restPath: __dirname + '/mock/rest',
@@ -84,6 +85,9 @@ mockServer({
 			return 'success';
 		}
 	},
+	expressMiddleware: [
+		['/public', express.static(__dirname + '/public')]
+	],
 	swaggerImport: {
 		protocol: 'http',
 		authUser: undefined,

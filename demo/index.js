@@ -1,4 +1,5 @@
 
+var express = require('express');
 var mockServer = require('./../mock-server.js');
 var dest = __dirname + '/rest';
 var replacePathsStr = '/v2/{baseSiteId}';
@@ -32,6 +33,9 @@ mockServer({
 			return 'success';
 		}
 	},
+	expressMiddleware: [
+		['/public', express.static(__dirname + '/public')]
+	],
 	swaggerImport: {
 		protocol: 'http',
 		authUser: undefined,

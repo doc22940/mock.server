@@ -104,6 +104,18 @@ Optional
 A object including the middleware functions.
 Read [middleware.md](/doc/readme-middleware.md) for details.
 
+#### options.expressMiddleware
+Type: `Array`
+Optional
+
+A array includes an array of two or one string or a function or a string.
+Read [express middleware documentation](http://expressjs.com/en/api.html#app.use) for details.
+examples:
+* `expressMiddleware: [ ['/public', express.static('/public')] ]`
+* `expressMiddleware: [ ['/public', function (req, res, next) {}] ]`
+* `expressMiddleware: [ [function (req, res, next) {}] ]`
+* `expressMiddleware: [ function (req, res, next) {} ]`
+
 #### options.swaggerImport
 Type: `Object`
 Optional
