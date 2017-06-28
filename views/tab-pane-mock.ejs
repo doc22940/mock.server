@@ -22,11 +22,10 @@
 			<% var mock = method.availableMockResponses[m]; %>
 			<% var checked = mock.isSelected ? 'checked' : ''; %>
 
-
 			<% var isDocument = true; %>
 			<% var isMiddleware = mock.name.search(/^middleware$/) >= 0; %>
-			<% var isImage = mock.mime.search(/^image\//) >= 0; %>
-			<% var isJSON = mock.mime.search(/json$/) >= 0; %>
+			<% var isImage = (mock.mime || '').search(/^image\//) >= 0; %>
+			<% var isJSON = (mock.mime || '').search(/json$/) >= 0; %>
 			<% var isError = mock.name.search(/error/) >= 0; %>
 			<% if (isImage || isJSON || isError || isMiddleware) { isDocument = false;  } %>
 
