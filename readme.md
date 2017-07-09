@@ -67,6 +67,7 @@ mockServer({
   urlBase: 'http://localhost:3003',
   urlPath: '/rest/v2',
   port: 3003,
+  uiPath: '/',
   funcPath: __dirname + '/func',
   headers: {
     'Global-Custom-Header': 'Global-Custom-Header'
