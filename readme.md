@@ -24,8 +24,8 @@
 - [Express Middleware](/doc/readme-express-middleware.md)
 - [Error cases](/doc/readme-expected-response.md)
 - [Swagger import](/doc/readme-swagger-import.md)
-	- DTO import
-	- DTO response function
+  - DTO import
+  - DTO response function
 - [Response validation](/doc/readme-response-validation.md)
 - [Response header](/doc/readme-response-header.md)
 - [DTO to Class converter](/doc/readme-dto-2-class.md)
@@ -58,51 +58,52 @@ mockServer({});
 #### Custom Options
 
 ```js
-var express = require('express');
 var mockServer = require('node-mock-server');
 mockServer({
-	restPath: __dirname + '/mock/rest',
-	dirName: __dirname,
-	title: 'Api mock server',
-	version: 2,
-	urlBase: 'http://localhost:3003',
-	urlPath: '/rest/v2',
-	port: 3003,
-	funcPath: __dirname + '/func',
-	headers: {
-		'Global-Custom-Header': 'Global-Custom-Header'
-	},
-	customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
-	middleware: {
-		'/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
-			var productCode = requestOptions.req.params[0].split('/')[3];
+  restPath: __dirname + '/mock/rest',
+  dirName: __dirname,
+  title: 'Api mock server',
+  version: 2,
+  urlBase: 'http://localhost:3003',
+  urlPath: '/rest/v2',
+  port: 3003,
+  funcPath: __dirname + '/func',
+  headers: {
+    'Global-Custom-Header': 'Global-Custom-Header'
+  },
+  customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
+  middleware: {
+    '/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
+      var productCode = requestOptions.req.params[0].split('/')[3];
 
-			if (productCode === '1234') {
-				requestOptions.res.statusCode = 201;
-				requestOptions.res.end('product 1234');
-				return null;
-			}
+      if (productCode === '1234') {
+        requestOptions.res.statusCode = 201;
+        requestOptions.res.end('product 1234');
+        return null;
+      }
 
-			return 'success';
-		}
-	},
-	expressMiddleware: [
-		['/public', express.static(__dirname + '/public')]
-	],
-	swaggerImport: {
-		protocol: 'http',
-		authUser: undefined,
-		authPass: undefined,
-		host: 'petstore.swagger.io',
-		port: 80,
-		path: '/v2/swagger.json',
-		dest: dest,
-		replacePathsStr: '/v2/{baseSiteId}',
-		createErrorFile: true,
-		createEmptyFile: true,
-		overwriteExistingDescriptions: true,
-		responseFuncPath: __dirname + '/func-imported'
-	}
+      return 'success';
+    }
+  },
+  expressMiddleware: [
+    function (express) {
+      return ['/public', express.static(__dirname + '/public')];
+    }
+  ],
+  swaggerImport: {
+    protocol: 'http',
+    authUser: undefined,
+    authPass: undefined,
+    host: 'petstore.swagger.io',
+    port: 80,
+    path: '/v2/swagger.json',
+    dest: dest,
+    replacePathsStr: '/v2/{baseSiteId}',
+    createErrorFile: true,
+    createEmptyFile: true,
+    overwriteExistingDescriptions: true,
+    responseFuncPath: __dirname + '/func-imported'
+  }
 });
 ```
 

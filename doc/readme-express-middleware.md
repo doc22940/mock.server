@@ -3,12 +3,16 @@
 For static content delivery beside the mock response itself, you can define express middleware.
 Read more in [express documentation](http://expressjs.com/en/4x/api.html#app.use).
 
-Each first level entry describes one `app.use` and each each second entry the arguments.
+Each entry needs to be a function witch returns the `app.use` arguments.
 
 ```
 expressMiddleware: [
-	['/public', express.static(__dirname + '/public')],
-	['/dist', express.static(__dirname + '/dist')]
+  function (express) {
+    return ['/public', express.static(__dirname + '/public')];
+  },
+  function (express) {
+    return ['/dist', express.static(__dirname + '/dist')];
+  }
 ],
 ```
 

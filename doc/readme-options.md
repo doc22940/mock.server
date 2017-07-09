@@ -105,16 +105,16 @@ A object including the middleware functions.
 Read [middleware.md](/doc/readme-middleware.md) for details.
 
 #### options.expressMiddleware
-Type: `Array`
+Type: `Array<Function<Array<path: string, callback: Function>>>`
 Optional
 
-A array includes an array of two or one string or a function or a string.
+A array of functions that returns the express `app.use` arguments.
 Read [express middleware documentation](http://expressjs.com/en/api.html#app.use) for details.
 examples:
-* `expressMiddleware: [ ['/public', express.static('/public')] ]`
-* `expressMiddleware: [ ['/public', function (req, res, next) {}] ]`
-* `expressMiddleware: [ [function (req, res, next) {}] ]`
-* `expressMiddleware: [ function (req, res, next) {} ]`
+* `expressMiddleware: [ function () { return ['/public', express.static('/public')]; } ]`
+* `expressMiddleware: [ function () { return ['/public', function (req, res, next) {}]; } ]`
+* `expressMiddleware: [ function () { return [function (req, res, next) {}] } ]`
+* `expressMiddleware: [ function () { return function (req, res, next) {}; } ]`
 
 #### options.swaggerImport
 Type: `Object`
