@@ -40,6 +40,14 @@
 					<% var group = apiData[i]; %>
 					<% include group.ejs %>
 				<% } %>
+				<a
+					class="btn btn-primary"
+					href="#_modal_add_endpoint"
+					data-toggle="modal"
+					data-target="#_modal_add_endpoint"
+				>
+					+ add
+				</a>
 			</div>
 			<div class="col-md-3">
 				<div id="sidebar" class="hidden-print affix" role="complementary">
@@ -48,6 +56,7 @@
 			</div>
 		</div>
 	</div>
+	<% include add-endpoint-modal.ejs %>
 	<% include swagger-import-modal.ejs %>
 	<% include preferences-modal.ejs %>
 	<% include validate-result-modal.ejs %>

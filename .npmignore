@@ -20,3 +20,4 @@ src/swagger
 tmp
 npm-debug.log
 .eslintrc
+package-lock.json
