@@ -21,6 +21,7 @@
 - [Dynamic path params in mock data](/doc/readme-path-params.md)
 - [Expected responses](/doc/readme-expected-response.md)
 - [Middleware responses](/doc/readme-middleware.md)
+- [Express Middleware](/doc/readme-express-middleware.md)
 - [Error cases](/doc/readme-expected-response.md)
 - [Swagger import](/doc/readme-swagger-import.md)
 	- DTO import
@@ -31,8 +32,8 @@
 - [Collections](/doc/readme-collections.md)
 
 ## Getting Started
-This application requires Node `4` or higher
-for Node `<4` please use `node-mock-server@0.11.0`
+This application requires Node `4` or higher.
+For Node `<4` please use `node-mock-server@0.11.0`
 
 * `npm install node-mock-server --save-dev` or `yarn add node-mock-server --dev`
 * .gitignore add `<restPath>/*/*/*/mock/response.txt`
@@ -106,16 +107,25 @@ mockServer({
 ```
 
 ## CLI
-- usage `node <script> [--version] [--help] <command> [<args>]`
-- usage with demo `node demo/index.js [--version] [--help] <command> [<args>]`
-- node-mock-server commands:
--- start mock server `node <script>`
--- print help `node <script> --help`
--- print node-mock-server version `node <script> --version`
--- run a swagger import `node <script> swagger-import`
--- run a validation for all mock data `node <script> validate`
--- lists all available collections `node <script> collections`
--- activate collection `node <script> collection <id>`
+```
+$ node <nodeScript> --help
+
+  Usage
+    $ node <nodeScript> [--version] [--help] <command> [<args>]
+
+  Options
+    $                  start mock server
+    $ --version        print node-mock-server version
+    $ --help           print help
+    $ swagger-import   run a swagger import
+    $ validate         run a validation for all mock data
+    $ collections      print all available collections
+    $ collection <id>  activate collection
+
+  Examples
+    $ node demo/index.js --version
+    $ node demo/index.js collections
+```
 
 ## Demo
 ```shell
