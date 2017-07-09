@@ -14,25 +14,26 @@
 
 ## Features
 - Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
-- API documentation UI
+- [Node Mock Server UI](/doc/readme-ui-documentation.md)
 - [Functions in mock data](/doc/readme-mock-functions.md)
 - [Faker included](/doc/readme-faker.md)
 - [Query params in mock data](/doc/readme-query-params.md)
 - [Dynamic path params in mock data](/doc/readme-path-params.md)
 - [Expected responses](/doc/readme-expected-response.md)
 - [Middleware responses](/doc/readme-middleware.md)
+- [Express Middleware](/doc/readme-express-middleware.md)
 - [Error cases](/doc/readme-expected-response.md)
 - [Swagger import](/doc/readme-swagger-import.md)
-	- DTO import
-	- DTO response function
+  - DTO import
+  - DTO response function
 - [Response validation](/doc/readme-response-validation.md)
 - [Response header](/doc/readme-response-header.md)
 - [DTO to Class converter](/doc/readme-dto-2-class.md)
 - [Collections](/doc/readme-collections.md)
 
 ## Getting Started
-This application requires Node `4` or higher
-for Node `<4` please use `node-mock-server@0.11.0`
+This application requires Node `4` or higher.
+For Node `<4` please use `node-mock-server@0.11.0`
 
 * `npm install node-mock-server --save-dev` or `yarn add node-mock-server --dev`
 * .gitignore add `<restPath>/*/*/*/mock/response.txt`
@@ -59,59 +60,74 @@ mockServer({});
 ```js
 var mockServer = require('node-mock-server');
 mockServer({
-	restPath: __dirname + '/mock/rest',
-	dirName: __dirname,
-	title: 'Api mock server',
-	version: 2,
-	urlBase: 'http://localhost:3003',
-	urlPath: '/rest/v2',
-	port: 3003,
-	funcPath: __dirname + '/func',
-	headers: {
-		'Global-Custom-Header': 'Global-Custom-Header'
-	},
-	customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
-	middleware: {
-		'/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
-			var productCode = requestOptions.req.params[0].split('/')[3];
+  restPath: __dirname + '/mock/rest',
+  dirName: __dirname,
+  title: 'Api mock server',
+  version: 2,
+  urlBase: 'http://localhost:3003',
+  urlPath: '/rest/v2',
+  port: 3003,
+  uiPath: '/',
+  funcPath: __dirname + '/func',
+  headers: {
+    'Global-Custom-Header': 'Global-Custom-Header'
+  },
+  customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
+  middleware: {
+    '/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
+      var productCode = requestOptions.req.params[0].split('/')[3];
 
-			if (productCode === '1234') {
-				requestOptions.res.statusCode = 201;
-				requestOptions.res.end('product 1234');
-				return null;
-			}
+      if (productCode === '1234') {
+        requestOptions.res.statusCode = 201;
+        requestOptions.res.end('product 1234');
+        return null;
+      }
 
-			return 'success';
-		}
-	},
-	swaggerImport: {
-		protocol: 'http',
-		authUser: undefined,
-		authPass: undefined,
-		host: 'petstore.swagger.io',
-		port: 80,
-		path: '/v2/swagger.json',
-		dest: dest,
-		replacePathsStr: '/v2/{baseSiteId}',
-		createErrorFile: true,
-		createEmptyFile: true,
-		overwriteExistingDescriptions: true,
-		responseFuncPath: __dirname + '/func-imported'
-	}
+      return 'success';
+    }
+  },
+  expressMiddleware: [
+    function (express) {
+      return ['/public', express.static(__dirname + '/public')];
+    }
+  ],
+  swaggerImport: {
+    protocol: 'http',
+    authUser: undefined,
+    authPass: undefined,
+    host: 'petstore.swagger.io',
+    port: 80,
+    path: '/v2/swagger.json',
+    dest: dest,
+    replacePathsStr: '/v2/{baseSiteId}',
+    createErrorFile: true,
+    createEmptyFile: true,
+    overwriteExistingDescriptions: true,
+    responseFuncPath: __dirname + '/func-imported'
+  }
 });
 ```
 
 ## CLI
-- usage `node <script> [--version] [--help] <command> [<args>]`
-- usage with demo `node demo/index.js [--version] [--help] <command> [<args>]`
-- node-mock-server commands:
--- start mock server `node <script>`
--- print help `node <script> --help`
--- print node-mock-server version `node <script> --version`
--- run a swagger import `node <script> swagger-import`
--- run a validation for all mock data `node <script> validate`
--- lists all available collections `node <script> collections`
--- activate collection `node <script> collection <id>`
+```
+$ node <nodeScript> --help
+
+  Usage
+    $ node <nodeScript> [--version] [--help] <command> [<args>]
+
+  Options
+    $                  start mock server
+    $ --version        print node-mock-server version
+    $ --help           print help
+    $ swagger-import   run a swagger import
+    $ validate         run a validation for all mock data
+    $ collections      print all available collections
+    $ collection <id>  activate collection
+
+  Examples
+    $ node demo/index.js --version
+    $ node demo/index.js collections
+```
 
 ## Demo
 ```shell

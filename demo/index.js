@@ -10,6 +10,7 @@ var responseFuncPath = __dirname + '/func-imported';
 mockServer({
 	restPath: dest,
 	dirName: __dirname,
+	uiPath: '/',
 	funcPath: [
 		__dirname + '/func',
 		__dirname + '/func2',
@@ -32,6 +33,11 @@ mockServer({
 			return 'success';
 		}
 	},
+	expressMiddleware: [
+		function (express) {
+			return ['/public', express.static(__dirname + '/public')];
+		}
+	],
 	swaggerImport: {
 		protocol: 'http',
 		authUser: undefined,

@@ -42,6 +42,12 @@ Default value: `3001`
 
 A number value that defines the application port.
 
+#### options.uiPath
+Type: `string`
+Default value: `/`
+
+A string value that defines the path for the node-mock-server UI.
+
 #### options.privateKey
 Type: `String`
 
@@ -103,6 +109,18 @@ Optional
 
 A object including the middleware functions.
 Read [middleware.md](/doc/readme-middleware.md) for details.
+
+#### options.expressMiddleware
+Type: `Array<Function<Array<path: string, callback: Function>>>`
+Optional
+
+A array of functions that returns the express `app.use` arguments.
+Read [express middleware documentation](http://expressjs.com/en/api.html#app.use) for details.
+examples:
+* `expressMiddleware: [ function () { return ['/public', express.static('/public')]; } ]`
+* `expressMiddleware: [ function () { return ['/public', function (req, res, next) {}]; } ]`
+* `expressMiddleware: [ function () { return [function (req, res, next) {}] } ]`
+* `expressMiddleware: [ function () { return function (req, res, next) {}; } ]`
 
 #### options.swaggerImport
 Type: `Object`
