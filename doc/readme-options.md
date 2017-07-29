@@ -128,13 +128,6 @@ Optional
 
 A object that define the swagger import.
 
-#### options.customDTOToClassTemplate
-Type: `String`
-Optional
-
-A string that define the path to the custom DTO to class template.
-[template](/src/templates/dto_es6flow.ejs)
-
 #### options.swaggerImport.protocol
 Type: `String`
 Default value: `http`
@@ -210,3 +203,11 @@ A boolean to decide to replace an old description with the new (imported) descri
 Type: `String`
 
 A string that defines the location of the imported response functions.
+
+
+#### options.customDTOToClassTemplate
+Type: `String`
+Optional
+
+A string that define the path to the custom DTO to class template.
+[template](/src/templates/dto_es6flow.ejs)
