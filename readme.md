@@ -35,78 +35,20 @@
 This application requires Node `4` or higher.
 For Node `<4` please use `node-mock-server@0.11.0`
 
-* `npm install node-mock-server --save-dev` or `yarn add node-mock-server --dev`
-* .gitignore add `<restPath>/*/*/*/mock/response.txt`
-
-```js
-var mockServer = require('node-mock-server');
-mockServer(options);
+##### 1. Install npm package:
+```
+$ npm install node-mock-server --save-dev
+```
+##### 2. Start init process:
+```
+$ node node_modules/node-mock-server/init
 ```
 
 ### Options
 [node-mock-server options](/doc/readme-options.md)
 
-### Usage Examples
-
-#### Default Options
-
-```js
-var mockServer = require('node-mock-server');
-mockServer({});
-```
-
-#### Custom Options
-
-```js
-var mockServer = require('node-mock-server');
-mockServer({
-  restPath: __dirname + '/mock/rest',
-  dirName: __dirname,
-  title: 'Api mock server',
-  version: 2,
-  urlBase: 'http://localhost:3003',
-  urlPath: '/rest/v2',
-  port: 3003,
-  uiPath: '/',
-  funcPath: __dirname + '/func',
-  headers: {
-    'Global-Custom-Header': 'Global-Custom-Header'
-  },
-  customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
-  middleware: {
-    '/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
-      var productCode = requestOptions.req.params[0].split('/')[3];
-
-      if (productCode === '1234') {
-        requestOptions.res.statusCode = 201;
-        requestOptions.res.end('product 1234');
-        return null;
-      }
-
-      return 'success';
-    }
-  },
-  expressMiddleware: [
-    function (express) {
-      return ['/public', express.static(__dirname + '/public')];
-    }
-  ],
-  swaggerImport: {
-    protocol: 'http',
-    authUser: undefined,
-    authPass: undefined,
-    host: 'petstore.swagger.io',
-    port: 80,
-    path: '/v2/swagger.json',
-    dest: dest,
-    replacePathsStr: '/v2/{baseSiteId}',
-    createErrorFile: true,
-    createEmptyFile: true,
-    overwriteExistingDescriptions: true,
-    responseFuncPath: __dirname + '/func-imported'
-  }
-});
-```
+### Usage examples
+[node-mock-server usage examples](/doc/readme-usage-examples.md)
 
 ## CLI
 ```
