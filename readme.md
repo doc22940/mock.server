@@ -12,25 +12,6 @@
 
 ![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/26034363/c509d2c2-38bb-11e7-9175-4a151f7a550f.jpg)
 
-## Features
-- Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
-- [Node Mock Server UI](/doc/readme-ui-documentation.md)
-- [Functions in mock data](/doc/readme-mock-functions.md)
-- [Faker included](/doc/readme-faker.md)
-- [Query params in mock data](/doc/readme-query-params.md)
-- [Dynamic path params in mock data](/doc/readme-path-params.md)
-- [Expected responses](/doc/readme-expected-response.md)
-- [Middleware responses](/doc/readme-middleware.md)
-- [Express Middleware](/doc/readme-express-middleware.md)
-- [Error cases](/doc/readme-expected-response.md)
-- [Swagger import](/doc/readme-swagger-import.md)
-  - DTO import
-  - DTO response function
-- [Response validation](/doc/readme-response-validation.md)
-- [Response header](/doc/readme-response-header.md)
-- [DTO to Class converter](/doc/readme-dto-2-class.md)
-- [Collections](/doc/readme-collections.md)
-
 ## Getting Started
 This application requires Node `4` or higher.
 For Node `<4` please use `node-mock-server@0.11.0`
@@ -49,6 +30,26 @@ $ node node_modules/node-mock-server/init
 
 ### Usage examples
 [node-mock-server usage examples](/doc/readme-usage-examples.md)
+
+
+## Features
+- Node.js and file based ([folder structure](/doc/readme-folder-structure.md))
+- [Node Mock Server UI](/doc/readme-ui-documentation.md)
+- [Functions in mock data](/doc/readme-mock-functions.md)
+- [Faker included](/doc/readme-faker.md)
+- [Query params in mock data](/doc/readme-query-params.md)
+- [Dynamic path params in mock data](/doc/readme-path-params.md)
+- [Expected responses](/doc/readme-expected-response.md)
+- [Middleware responses](/doc/readme-middleware.md)
+- [Express Middleware](/doc/readme-express-middleware.md)
+- [Error cases](/doc/readme-expected-response.md)
+- [Swagger import](/doc/readme-swagger-import.md)
+  - DTO import
+  - DTO response function
+- [Response validation](/doc/readme-response-validation.md)
+- [Response header](/doc/readme-response-header.md)
+- [DTO to Class converter](/doc/readme-dto-2-class.md)
+- [Collections](/doc/readme-collections.md)
 
 ## CLI
 ```
