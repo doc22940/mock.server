@@ -39,7 +39,7 @@ function setHeaders(res) {
 
 app.get('/rest/v1/products', (req, res) => {
 	setHeaders(res);
-	var response = { success: true }
+	var response = { tunnelResponse: { success: true, headers: req.headers } };
 	res.send(JSON.stringify(response, null, 2));
 	res.end();
 });
