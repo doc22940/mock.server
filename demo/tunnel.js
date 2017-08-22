@@ -18,7 +18,7 @@ options = jQueryExtend(defaultOptions, options);
 var logFunc = function () {
 	if (process.env.NODE_ENV !== 'test') {
 		log.info('server started at port ' + options.tunnel.port);
-		if (options.shouldOpenOnStart) {
+		if (options.open) {
 			open('http://localhost:' + options.tunnel.port);
 		}
 	}

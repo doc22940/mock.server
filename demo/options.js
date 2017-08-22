@@ -53,7 +53,7 @@ module.exports = {
 		overwriteExistingDescriptions: true,
 		responseFuncPath: responseFuncPath,
 	},
-	shouldOpenOnStart: false,
+	open: false,
 	tunnel: {
 		protocol: 'http',
 		authUser: undefined,

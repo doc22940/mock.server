@@ -59,6 +59,6 @@ mockServer({
     overwriteExistingDescriptions: true,
     responseFuncPath: path.join(__dirname, '/func-imported')
   },
-  shouldOpenOnStart: true
+  open: true
 });
 ```

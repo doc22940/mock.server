@@ -213,7 +213,7 @@ A string that define the path to the custom DTO to class template.
 [template](/src/templates/dto_es6flow.ejs)
 
 
-#### options.shouldOpenOnStart
+#### options.open
 Type: `Boolean`
 Optional
 
