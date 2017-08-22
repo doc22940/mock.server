@@ -59,6 +59,10 @@ module.exports = {
 		authUser: undefined,
 		authPass: undefined,
 		host: 'localhost',
-		port: 3333
+		port: 3333,
+		requestHeaders: {
+			host: 'www.test.com',
+			referer: "http://www.test.com/",
+		},
 	}
 }
