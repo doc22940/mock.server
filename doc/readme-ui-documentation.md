@@ -2,13 +2,13 @@
 
 The mock server UI is available at _http://localhost:3003_ (or at the port you have defined via options).
 
-If the service you want to mock provides a Swagger definition and you have provided a [`swaggerImport` configuration item](https://github.com/smollweide/node-mock-server/blob/c52adcf2a80999dd6876062006cf72c1ef124a78/demo/index.js#L41-L53), you may perform a Swagger import via the small triangle button in the head of the UI page.
+If the service you want to mock provides a Swagger definition and you have provided a [`swaggerImport` configuration item](https://github.com/smollweide/node-mock-server/blob/c52adcf2a80999dd6876062006cf72c1ef124a78/demo/index.js#L41-L53), you may perform a Swagger import via the small triangle button in the top right of the UI page.
  
 In the same location you find general preferences such as a response delay and you can trigger a validation of all responses.
 
-In addition to Swagger imports, you may also create resources manually using the **+add new endpoint** button at the bottom of the mock server UI page. You will be asked to enter a path, a http method and a description. The path must always begin with a slash and a path segment denoting the base url of the api. After the base url you can enter a sequence of more path segments separated by /. If path segments should be variables, use a parameter name in curly braces:
+In addition to Swagger imports, you may create resources manually using the **+add new endpoint** button at the bottom of the mock server UI page. You will be asked to enter a path, a http method and a description. The path must always begin with a slash and a path segment denoting the base url of the api. After the base url you can enter a sequence of more path segments separated by /. If path segments should be variables, use a parameter name in curly braces:
 
-    /users                    points to the api base url
+    /users                    points to the users api base url
     /users/{userid}/address   contains a path variable userid
 
 Once a resource has been defined that way, you can continue to work with the resource and edit the possible responses. 
