@@ -1,8 +1,0 @@
-{
-  "errors": [
-    {
-      "message": "No valid SearchConfig found for the current context",
-      "type": "ConversionError"
-    }
-  ]
-}

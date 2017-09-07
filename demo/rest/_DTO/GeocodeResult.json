@@ -1,6 +1,0 @@
-{
-	"address_components": [
-		"$ref-AddressComponent"
-	],
-	"formatted_address": "string"
-}

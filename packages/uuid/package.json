@@ -1,0 +1,15 @@
+{
+    "name": "node-mock-server-uuid",
+    "version": "1.0.0",
+    "private": false,
+    "devDependencies": {
+        "node-package-scripts": "0.1.0"
+    },
+    "scripts": {
+        "start": "node-package-scripts start",
+        "build": "node-package-scripts build",
+        "test": "CI=true node-package-scripts test --env=jsdom",
+        "test:coverage": "CI=true node-package-scripts test --env=jsdom --coverage",
+        "test:watch": "node-package-scripts test --env=jsdom"
+    }
+}
