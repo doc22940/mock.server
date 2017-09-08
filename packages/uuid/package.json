@@ -3,6 +3,8 @@
     "version": "1.0.0",
     "private": false,
     "devDependencies": {
+        "flow-bin": "^0.54.1",
+        "flow-typed": "^2.1.5",
         "node-flow-config": "0.1.0"
     },
     "main": "build/index.js",
@@ -12,6 +14,10 @@
         "build": "node-flow-config build",
         "test": "CI=true node-flow-config test --env=jsdom",
         "test:coverage": "CI=true node-flow-config test --env=jsdom --coverage",
-        "test:watch": "node-flow-config test --env=jsdom"
+        "test:watch": "node-flow-config test --env=jsdom",
+        "lint": "npm-run-all lint:*",
+        "lint:js": "node_modules/.bin/eslint .",
+        "flow": "node_modules/.bin/flow",
+        "flow-install": "node_modules/.bin/flow-typed install -i dev"
     }
 }
