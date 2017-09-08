@@ -1,48 +1,57 @@
 {
-  "name": "node-mock-server",
-  "version": "1.0.0",
-  "description": "File based Node REST API mock server",
-  "email": "simon.mollweide@web.de",
-  "author": "Simon Mollweide <simon.mollweide@web.de>",
-  "url": "https://github.com/smollweide/node-mock-server",
-  "repository": {
-    "type": "github",
-    "url": "https://github.com/smollweide/node-mock-server"
-  },
-  "bugs": {
-    "url": "https://github.com/smollweide/node-mock-server/issues"
-  },
-  "scripts": {
-    "lint": "npm run lint:js",
-    "lint:js": "node_modules/.bin/eslint ."
-  },
-  "main": "index.js",
-  "keywords": [
-    "node",
-    "node.js",
-    "npm",
-    "mock",
-    "rest",
-    "REST",
-    "rest API",
-    "REST API",
-    "api",
-    "API",
-    "json",
-    "DTO",
-    "Datatransferobject",
-    "Swagger",
-    "documentation",
-    "REST API documentation",
-    "cli"
-  ],
-  "engines": {
-    "node": ">=4"
-  },
-  "preferGlobal": false,
-  "private": false,
-  "license": "MIT",
-  "devDependencies": {
-    "@namics/eslint-config": "^4.1.0"
-  }
+    "name": "node-mock-server",
+    "version": "1.0.0",
+    "description": "File based Node REST API mock server",
+    "email": "simon.mollweide@web.de",
+    "author": "Simon Mollweide <simon.mollweide@web.de>",
+    "url": "https://github.com/smollweide/node-mock-server",
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/smollweide/node-mock-server"
+    },
+    "bugs": {
+        "url": "https://github.com/smollweide/node-mock-server/issues"
+    },
+    "main": "build/index.js",
+    "keywords": [
+        "node",
+        "node.js",
+        "npm",
+        "mock",
+        "rest",
+        "REST",
+        "rest API",
+        "REST API",
+        "api",
+        "API",
+        "json",
+        "DTO",
+        "Datatransferobject",
+        "Swagger",
+        "documentation",
+        "REST API documentation",
+        "cli"
+    ],
+    "engines": {
+        "node": ">=4"
+    },
+    "preferGlobal": false,
+    "private": false,
+    "license": "MIT",
+    "dependencies": {
+        "node-mock-server-uuid": "1.0.0"
+    },
+    "devDependencies": {
+        "@namics/eslint-config": "^4.1.0",
+        "node-flow-config": "0.1.0"
+    },
+    "scripts": {
+        "start": "node-flow-config start",
+        "build": "node-flow-config build",
+        "test": "CI=true node-flow-config test --env=jsdom",
+        "test:coverage": "CI=true node-flow-config test --env=jsdom --coverage",
+        "test:watch": "node-flow-config test --env=jsdom",
+        "lint": "npm run lint:js",
+        "lint:js": "node_modules/.bin/eslint ."
+    }
 }

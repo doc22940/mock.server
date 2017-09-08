@@ -3,13 +3,15 @@
     "version": "1.0.0",
     "private": false,
     "devDependencies": {
-        "node-package-scripts": "0.1.0"
+        "node-flow-config": "0.1.0"
     },
+    "main": "build/index.js",
+    "typings": "src/index.js",
     "scripts": {
-        "start": "node-package-scripts start",
-        "build": "node-package-scripts build",
-        "test": "CI=true node-package-scripts test --env=jsdom",
-        "test:coverage": "CI=true node-package-scripts test --env=jsdom --coverage",
-        "test:watch": "node-package-scripts test --env=jsdom"
+        "start": "node-flow-config start",
+        "build": "node-flow-config build",
+        "test": "CI=true node-flow-config test --env=jsdom",
+        "test:coverage": "CI=true node-flow-config test --env=jsdom --coverage",
+        "test:watch": "node-flow-config test --env=jsdom"
     }
 }

@@ -21,7 +21,7 @@ if (!process.env.CI && argv.indexOf("--coverage") < 0) {
 }
 
 // This is not necessary after eject because we embed config into package.json.
-const createJestConfig = require("../jest/jest-config.js");
+const createJestConfig = require("../jest/create-config.js");
 const path = require("path");
 const paths = require("../config/paths");
 argv.push(

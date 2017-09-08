@@ -17,7 +17,9 @@ function babelify(file) {
 	try {
 		const result = babel.transformFileSync(file, babelTransformOptions);
 		fs.writeFileSync(path.join(appBuild, fileName), result.code);
-		console.log(`wrote file ${file}`);
+		const date = new Date();
+		const dateF = `${date.toLocaleTimeString()}`;
+		console.log(`[${dateF}] ${require(paths.appPackageJson).name}${file.replace(paths.currentDirectory, "")}`);
 	} catch (err) {
 		console.error(err);
 	}

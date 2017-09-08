@@ -15,9 +15,9 @@ module.exports = (resolve, rootDir) => {
 		testEnvironment: "node",
 		testURL: "http://localhost",
 		transform: {
-			"^.+\\.(js|jsx)$": resolve("jest/jest-babel-transform.js"),
-			"^.+\\.css$": resolve("jest/jest-css-transform.js"),
-			"^(?!.*\\.(js|jsx|css|json)$)": resolve("jest/jest-file-transform.js")
+			"^.+\\.(js|jsx)$": resolve("jest/babel-transform.js"),
+			"^.+\\.css$": resolve("jest/css-transform.js"),
+			"^(?!.*\\.(js|jsx|css|json)$)": resolve("jest/file-transform.js")
 		},
 		transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
 		moduleNameMapper: {
