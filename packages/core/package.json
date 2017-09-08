@@ -43,7 +43,9 @@
     },
     "devDependencies": {
         "@namics/eslint-config": "^4.1.0",
-        "node-flow-config": "0.1.0"
+        "eslint-config": "0.1.0",
+        "node-flow-config": "0.1.0",
+        "npm-run-all": "^4.1.1"
     },
     "scripts": {
         "start": "node-flow-config start",
@@ -51,7 +53,7 @@
         "test": "CI=true node-flow-config test --env=jsdom",
         "test:coverage": "CI=true node-flow-config test --env=jsdom --coverage",
         "test:watch": "node-flow-config test --env=jsdom",
-        "lint": "npm run lint:js",
+        "lint": "npm-s lint:*",
         "lint:js": "node_modules/.bin/eslint ."
     }
 }
