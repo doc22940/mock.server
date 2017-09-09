@@ -1,3 +1,4 @@
+/* global describe it expect */
 import { encode } from "./index.js";
 
 describe("encode", () => {
