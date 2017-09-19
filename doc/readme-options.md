@@ -218,3 +218,11 @@ Type: `Boolean`
 Optional
 
 A boolean to decide to open the UI after start or not.
+
+
+#### options.optionsFallbackPath
+Type: `String`
+Optional
+
+A string that defines and enables the options fallback.
+This allows you to define a fallback for every options call except there is one defined for the affected endpoint.
