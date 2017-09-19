@@ -21,6 +21,7 @@ module.exports = {
 		'Global-Custom-Header': 'Global-Custom-Header',
 	},
 	customDTOToClassTemplate: __dirname + '/templates/dto_es6flow.ejs',
+	optionsFallbackPath: __dirname + '/rest/_fallbacks/#/OPTIONS/',
 	middleware: {
 		'/rest/products/#{productCode}/GET'(serverOptions, requestOptions) {
 			var productCode = requestOptions.req.params[0].split('/')[3];
