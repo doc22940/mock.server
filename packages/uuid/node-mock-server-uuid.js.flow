@@ -1,4 +1,4 @@
 declare module "node-mock-server-uuid" {
-	declare export var decode: (encodedPath: string) => string;
-	declare export var encode: (path: string) => string;
+	declare function decode(encodedPath: number): string;
+	declare function encode(path: string): string;
 }
