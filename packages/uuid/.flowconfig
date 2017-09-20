@@ -6,6 +6,7 @@
 [include]
 
 [libs]
+../../flow-typed
 
 [options]
 module.system.node.resolve_dirname=src

@@ -6,3 +6,4 @@
 /.storybook/
 /storybook-static/
 /flow-typed/
+spectre-ui.js.flow

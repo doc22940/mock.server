@@ -1,9 +1,10 @@
-declare module "spectre-ui" {
+
+declare module "spectre-ui/Button" {
 	declare export type TypeEnumType = "button" | "submit" | "reset";
 	declare export type ModifierEnumType = "primary" | "link" | "action" | "action circle";
 	declare export type SizeEnumType = "sm" | "lg" | "block";
 
-	declare export class Button extends React$Component<{
+	declare export default class Button extends React$Component<{
 		disabled?: boolean,
 		tabIndex?: number,
 		type?: TypeEnumType,
