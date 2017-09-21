@@ -43,4 +43,11 @@ storiesOf("Button", module)
 	))
 	.add("disabled button", (): Element<*> => (
 		<Button label="disabled button" disabled onClick={action("clicked disabled button")} />
+	))
+	.add("button with className", (): Element<*> => (
+		<Button
+			label="button with className"
+			className="custom-class"
+			onClick={action("clicked button with className")}
+		/>
 	));
