@@ -1,0 +1,401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blockquote render snapshot: default 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    dangerouslySetInnerHTML={
+        Object {
+            "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+          }
+    }
+/>,
+  "nodes": Array [
+    <div
+      dangerouslySetInnerHTML={
+            Object {
+                  "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+                }
+      }
+/>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Paragraph
+        innerHtml="<span>Inner Html</span>"
+        lang="zh-Hans"
+>
+        <div />
+</Paragraph>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Paragraph {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <div />,
+          "innerHtml": "<span>Inner Html</span>",
+          "lang": "zh-Hans",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+                            }
+          }
+/>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+                            }
+          }
+/>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Paragraph
+    innerHtml="<span>Inner Html</span>"
+    lang="zh-Hans"
+>
+    <div />
+</Paragraph>,
+}
+`;
+
+exports[`Blockquote render snapshot: no children 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    dangerouslySetInnerHTML={
+        Object {
+            "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+          }
+    }
+/>,
+  "nodes": Array [
+    <div
+      dangerouslySetInnerHTML={
+            Object {
+                  "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+                }
+      }
+/>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Paragraph
+        innerHtml="<span>Inner Html</span>"
+        lang="zh-Hans"
+/>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Paragraph {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": undefined,
+          "innerHtml": "<span>Inner Html</span>",
+          "lang": "zh-Hans",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+                            }
+          }
+/>,
+        "_debugID": 4,
+        "_renderedOutput": <div
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
+                            }
+          }
+/>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Paragraph
+    innerHtml="<span>Inner Html</span>"
+    lang="zh-Hans"
+/>,
+}
+`;
+
+exports[`Blockquote render snapshot: no innerHtml 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <p
+    className=""
+    lang="zh-Hans"
+>
+    <div />
+</p>,
+  "nodes": Array [
+    <p
+      className=""
+      lang="zh-Hans"
+>
+      <div />
+</p>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Paragraph
+        innerHtml={undefined}
+        lang="zh-Hans"
+>
+        <div />
+</Paragraph>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Paragraph {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <div />,
+          "innerHtml": undefined,
+          "lang": "zh-Hans",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <p
+          className=""
+          lang="zh-Hans"
+>
+          <div />
+</p>,
+        "_debugID": 6,
+        "_renderedOutput": <p
+          className=""
+          lang="zh-Hans"
+>
+          <div />
+</p>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Paragraph
+    innerHtml={undefined}
+    lang="zh-Hans"
+>
+    <div />
+</Paragraph>,
+}
+`;
+
+exports[`Blockquote render snapshot: no lang 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    dangerouslySetInnerHTML={
+        Object {
+            "__html": "<p><span>Inner Html</span></p>",
+          }
+    }
+/>,
+  "nodes": Array [
+    <div
+      dangerouslySetInnerHTML={
+            Object {
+                  "__html": "<p><span>Inner Html</span></p>",
+                }
+      }
+/>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Paragraph
+        innerHtml="<span>Inner Html</span>"
+        lang={undefined}
+>
+        <div />
+</Paragraph>,
+      "_debugID": 7,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Paragraph {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <div />,
+          "innerHtml": "<span>Inner Html</span>",
+          "lang": undefined,
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 4,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": "<p><span>Inner Html</span></p>",
+                            }
+          }
+/>,
+        "_debugID": 8,
+        "_renderedOutput": <div
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": "<p><span>Inner Html</span></p>",
+                            }
+          }
+/>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Paragraph
+    innerHtml="<span>Inner Html</span>"
+    lang={undefined}
+>
+    <div />
+</Paragraph>,
+}
+`;

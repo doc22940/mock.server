@@ -27,10 +27,6 @@ class List extends Component {
 		return `${value.replace(/ /g, "").trim()}-${index}`;
 	}
 
-	get className(): string {
-		return "";
-	}
-
 	get rootTag(): string {
 		const { type = "ul" } = this.props;
 		return `${type}`;
@@ -41,9 +37,6 @@ class List extends Component {
 	renderEntry = (entry: EntryType, index: number): Children => {
 		const Tag = `${this.getItemTag(index)}`;
 		if (typeof entry === "object") {
-			if (entry.entries.length < 1) {
-				return <Tag key={this.getKeyFromValue(entry.name, index)}>{entry.name}</Tag>;
-			}
 			if (entry.entries.length >= 1) {
 				return (
 					<Tag key={this.getKeyFromValue(entry.name, index)}>
@@ -52,7 +45,7 @@ class List extends Component {
 					</Tag>
 				);
 			}
-			return <Tag key={`${index}`} />;
+			return <Tag key={this.getKeyFromValue(entry.name, index)}>{entry.name}</Tag>;
 		}
 		return <Tag key={this.getKeyFromValue(entry, index)}>{entry}</Tag>;
 	};

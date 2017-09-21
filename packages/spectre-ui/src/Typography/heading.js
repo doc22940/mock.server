@@ -14,10 +14,6 @@ export type HeadingPropsType = {
 };
 
 class Heading extends Component {
-	static defaultProps = {
-		type: "h1"
-	};
-
 	props: HeadingPropsType;
 
 	get className(): string {
