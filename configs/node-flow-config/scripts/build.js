@@ -1,6 +1,5 @@
 "use strict";
 
-const fs = require("fs");
 const getSrcFiles = require("../utils/get-src-files");
 const babelify = require("../utils/babelify");
 

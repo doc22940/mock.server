@@ -11,6 +11,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "watch": "node-flow-config start",
         "build": "node-flow-config build",
         "test": "react-scripts test --env=jsdom",
         "test:coverage": "react-scripts test --env=jsdom --coverage",

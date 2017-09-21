@@ -1,3 +1,5 @@
+/* eslint global-require: 0*/
+/* eslint no-console: 0*/
 "use strict";
 
 const fs = require("fs");
@@ -9,8 +11,6 @@ const babelTransformOptions = require("../config/babel-transform-options");
 
 process.env.BABEL_ENV = "production";
 process.env.NODE_ENV = "production";
-
-const appBuild = path.join(paths.currentDirectory, "build");
 
 function babelify(file) {
 	try {
