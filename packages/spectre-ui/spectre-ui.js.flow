@@ -10,6 +10,37 @@ declare module "spectre-ui/Button" {
 		type?: TypeEnumType,
 		label?: string,
 		modifier?: ModifierEnumType,
-		size?: SizeEnumType
+		size?: SizeEnumType,
+		className?: string,
+		onClick?: Function
+	}> {}
+}
+
+declare module "spectre-ui/Typography" {
+
+	declare export type TypeEnumType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+	declare export type ListTypeEnumType = "ul" | "ol" | "dl";
+	declare export type EntryType = string | { name: string, entries: Array<EntryType> };
+	declare export type EntriesType = Array<EntryType>;
+
+	declare export default class Heading extends React$Component<{
+		children?: Children,
+		type?: TypeEnumType,
+		tag?: string
+	}> {}
+
+	declare export default class Paragraph extends React$Component<{
+		children?: Children,
+		innerHtml?: string,
+		lang?: string
+	}> {}
+
+	declare export default class Blockquote extends React$Component<{
+		children?: Children
+	}> {}
+
+	declare export default class List extends React$Component<{
+		entries: EntriesType,
+		type?: ListTypeEnumType
 	}> {}
 }
