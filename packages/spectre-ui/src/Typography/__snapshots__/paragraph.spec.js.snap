@@ -9,6 +9,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
+    className="class-name"
     dangerouslySetInnerHTML={
         Object {
             "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -17,6 +18,7 @@ ShallowWrapper {
 />,
   "nodes": Array [
     <div
+      className="class-name"
       dangerouslySetInnerHTML={
             Object {
                   "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -70,6 +72,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
+          className="class-name"
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -78,6 +81,7 @@ ShallowWrapper {
 />,
         "_debugID": 2,
         "_renderedOutput": <div
+          className="class-name"
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -114,6 +118,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
+    className="class-name"
     dangerouslySetInnerHTML={
         Object {
             "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -122,6 +127,7 @@ ShallowWrapper {
 />,
   "nodes": Array [
     <div
+      className="class-name"
       dangerouslySetInnerHTML={
             Object {
                   "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -140,7 +146,7 @@ ShallowWrapper {
         innerHtml="<span>Inner Html</span>"
         lang="zh-Hans"
 />,
-      "_debugID": 3,
+      "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Paragraph {
@@ -165,7 +171,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 2,
+      "_mountOrder": 3,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -173,14 +179,16 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
+          className="class-name"
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
                             }
           }
 />,
-        "_debugID": 4,
+        "_debugID": 6,
         "_renderedOutput": <div
+          className="class-name"
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -215,6 +223,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
+    className=""
     dangerouslySetInnerHTML={
         Object {
             "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -223,6 +232,7 @@ ShallowWrapper {
 />,
   "nodes": Array [
     <div
+      className=""
       dangerouslySetInnerHTML={
             Object {
                   "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -243,7 +253,7 @@ ShallowWrapper {
 >
         <div />
 </Paragraph>,
-      "_debugID": 5,
+      "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Paragraph {
@@ -268,7 +278,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 3,
+      "_mountOrder": 2,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -276,14 +286,16 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
+          className=""
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
                             }
           }
 />,
-        "_debugID": 6,
+        "_debugID": 4,
         "_renderedOutput": <div
+          className=""
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -421,6 +433,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
+    className="class-name"
     dangerouslySetInnerHTML={
         Object {
             "__html": "<p><span>Inner Html</span></p>",
@@ -429,6 +442,7 @@ ShallowWrapper {
 />,
   "nodes": Array [
     <div
+      className="class-name"
       dangerouslySetInnerHTML={
             Object {
                   "__html": "<p><span>Inner Html</span></p>",
@@ -482,6 +496,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
+          className="class-name"
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p><span>Inner Html</span></p>",
@@ -490,6 +505,7 @@ ShallowWrapper {
 />,
         "_debugID": 10,
         "_renderedOutput": <div
+          className="class-name"
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p><span>Inner Html</span></p>",

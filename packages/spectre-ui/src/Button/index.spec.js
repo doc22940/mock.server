@@ -2,6 +2,7 @@
 
 import React from "react";
 import { shallow } from "enzyme";
+import { itOptionalProps } from "../utils/test-utils";
 import Button from "./index";
 
 const props: Object = {
@@ -22,48 +23,18 @@ describe("Button", () => {
 			const tree = shallow(<Button {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});
+		itOptionalProps(Button, props, [
+			"disabled",
+			"tabIndex",
+			"type",
+			"label",
+			"modifier",
+			"size",
+			"className",
+			"onClick"
+		]);
 		it("snapshot: disabled", () => {
 			const _props = { ...props, disabled: false };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no disabled", () => {
-			const _props = { ...props, disabled: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no tabIndex", () => {
-			const _props = { ...props, tabIndex: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no type", () => {
-			const _props = { ...props, type: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no label", () => {
-			const _props = { ...props, label: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no modifier", () => {
-			const _props = { ...props, modifier: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no size", () => {
-			const _props = { ...props, size: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no className", () => {
-			const _props = { ...props, className: undefined };
-			const tree = shallow(<Button {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no onClick", () => {
-			const _props = { ...props, onClick: undefined };
 			const tree = shallow(<Button {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});

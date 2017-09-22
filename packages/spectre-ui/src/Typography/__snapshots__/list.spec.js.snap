@@ -243,7 +243,7 @@ ShallowWrapper {
         entries={Array []}
         type="ol"
 />,
-      "_debugID": 11,
+      "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": List {
@@ -269,7 +269,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 6,
+      "_mountOrder": 5,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -277,7 +277,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div />,
-        "_debugID": 12,
+        "_debugID": 10,
         "_renderedOutput": <div />,
       },
       "_renderedNodeType": 0,
@@ -1199,7 +1199,7 @@ ShallowWrapper {
         }
         type="dl"
 />,
-      "_debugID": 9,
+      "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": List {
@@ -1234,7 +1234,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 5,
+      "_mountOrder": 6,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -1269,7 +1269,7 @@ ShallowWrapper {
                     list item 3
           </dd>
 </dl>,
-        "_debugID": 10,
+        "_debugID": 12,
         "_renderedOutput": <dl
           className="class-name"
 >

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { shallow } from "enzyme";
+import { itOptionalProps, itArrayProps } from "../utils/test-utils";
 import List from "./list";
 
 const propsEntries = [{ name: "list item 2", entries: ["list item 2.1", "list item 2.2"] }, "list item 3"];
@@ -20,28 +21,10 @@ describe("List", () => {
 			const tree = shallow(<List {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});
-		it("snapshot: no className", () => {
-			const _props = { ...props, className: undefined };
-			const tree = shallow(<List {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no classNameEntry", () => {
-			const _props = { ...props, classNameEntry: undefined };
-			const tree = shallow(<List {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no type", () => {
-			const _props = { ...props, type: undefined };
-			const tree = shallow(<List {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
+		itOptionalProps(List, props, ["className", "classNameEntry", "type"]);
+		itArrayProps(List, props, ["entries"]);
 		it("snapshot: type dl", () => {
 			const _props = { ...props, type: "dl" };
-			const tree = shallow(<List {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: empty entries", () => {
-			const _props = { ...props, entries: [] };
 			const tree = shallow(<List {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});

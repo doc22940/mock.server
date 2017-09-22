@@ -2,6 +2,7 @@
 
 import React from "react";
 import { shallow } from "enzyme";
+import { itOptionalProps } from "../utils/test-utils";
 import Blockquote from "./blockquote";
 
 const props: Object = {
@@ -16,15 +17,6 @@ describe("Blockquote", () => {
 			const tree = shallow(<Blockquote {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});
-		it("snapshot: no children", () => {
-			const _props = { ...props, children: undefined };
-			const tree = shallow(<Blockquote {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
-		it("snapshot: no className", () => {
-			const _props = { ...props, className: undefined };
-			const tree = shallow(<Blockquote {..._props} />);
-			expect(tree).toMatchSnapshot();
-		});
+		itOptionalProps(Blockquote, props, ["children", "className"]);
 	});
 });

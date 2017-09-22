@@ -27,7 +27,12 @@ class Paragraph extends Component {
 			if (lang) {
 				langAttr = ` lang="${lang}"`;
 			}
-			return <div dangerouslySetInnerHTML={{ __html: `<p${langAttr}>${innerHtml}</p>` }} />;
+			return (
+				<div
+					className={this.className}
+					dangerouslySetInnerHTML={{ __html: `<p${langAttr}>${innerHtml}</p>` }}
+				/>
+			);
 		}
 		return (
 			<p className={this.className} lang={lang}>
