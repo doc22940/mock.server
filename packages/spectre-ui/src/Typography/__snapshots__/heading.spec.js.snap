@@ -9,13 +9,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2"
+    className="h2class-name"
 >
     <div />
 </h2>,
   "nodes": Array [
     <h2
-      className="h2"
+      className="h2class-name"
 >
       <div />
 </h2>,
@@ -27,6 +27,7 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Heading
+        className="class-name"
         tag="h2"
         type="h2"
 >
@@ -40,6 +41,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "children": <div />,
+          "className": "class-name",
           "tag": "h2",
           "type": "h2",
         },
@@ -64,13 +66,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h2"
+          className="h2class-name"
 >
           <div />
 </h2>,
         "_debugID": 2,
         "_renderedOutput": <h2
-          className="h2"
+          className="h2class-name"
 >
           <div />
 </h2>,
@@ -86,6 +88,7 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Heading
+    className="class-name"
     tag="h2"
     type="h2"
 >
@@ -103,11 +106,11 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2"
+    className="h2class-name"
 />,
   "nodes": Array [
     <h2
-      className="h2"
+      className="h2class-name"
 />,
   ],
   "options": Object {},
@@ -117,10 +120,11 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Heading
+        className="class-name"
         tag="h2"
         type="h2"
 />,
-      "_debugID": 3,
+      "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": Heading {
@@ -128,6 +132,98 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "children": undefined,
+          "className": "class-name",
+          "tag": "h2",
+          "type": "h2",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <h2
+          className="h2class-name"
+/>,
+        "_debugID": 6,
+        "_renderedOutput": <h2
+          className="h2class-name"
+/>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Heading
+    className="class-name"
+    tag="h2"
+    type="h2"
+/>,
+}
+`;
+
+exports[`Heading render snapshot: no className 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <h2
+    className="h2"
+>
+    <div />
+</h2>,
+  "nodes": Array [
+    <h2
+      className="h2"
+>
+      <div />
+</h2>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Heading
+        className={undefined}
+        tag="h2"
+        type="h2"
+>
+        <div />
+</Heading>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Heading {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <div />,
+          "className": undefined,
           "tag": "h2",
           "type": "h2",
         },
@@ -153,11 +249,15 @@ ShallowWrapper {
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
           className="h2"
-/>,
+>
+          <div />
+</h2>,
         "_debugID": 4,
         "_renderedOutput": <h2
           className="h2"
-/>,
+>
+          <div />
+</h2>,
       },
       "_renderedNodeType": 0,
       "_rootNodeID": 0,
@@ -170,9 +270,12 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Heading
+    className={undefined}
     tag="h2"
     type="h2"
-/>,
+>
+    <div />
+</Heading>,
 }
 `;
 
@@ -185,13 +288,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h1
-    className="h1"
+    className="h1class-name"
 >
     <div />
 </h1>,
   "nodes": Array [
     <h1
-      className="h1"
+      className="h1class-name"
 >
       <div />
 </h1>,
@@ -203,8 +306,106 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Heading
+        className="class-name"
         tag={undefined}
         type={undefined}
+>
+        <div />
+</Heading>,
+      "_debugID": 11,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Heading {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <div />,
+          "className": "class-name",
+          "tag": undefined,
+          "type": undefined,
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 6,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <h1
+          className="h1class-name"
+>
+          <div />
+</h1>,
+        "_debugID": 12,
+        "_renderedOutput": <h1
+          className="h1class-name"
+>
+          <div />
+</h1>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Heading
+    className="class-name"
+    tag={undefined}
+    type={undefined}
+>
+    <div />
+</Heading>,
+}
+`;
+
+exports[`Heading render snapshot: no tag 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <h2
+    className="h2class-name"
+>
+    <div />
+</h2>,
+  "nodes": Array [
+    <h2
+      className="h2class-name"
+>
+      <div />
+</h2>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Heading
+        className="class-name"
+        tag={undefined}
+        type="h2"
 >
         <div />
 </Heading>,
@@ -216,8 +417,9 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "children": <div />,
+          "className": "class-name",
           "tag": undefined,
-          "type": undefined,
+          "type": "h2",
         },
         "refs": Object {},
         "state": null,
@@ -239,17 +441,17 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <h1
-          className="h1"
+        "_currentElement": <h2
+          className="h2class-name"
 >
           <div />
-</h1>,
+</h2>,
         "_debugID": 10,
-        "_renderedOutput": <h1
-          className="h1"
+        "_renderedOutput": <h2
+          className="h2class-name"
 >
           <div />
-</h1>,
+</h2>,
       },
       "_renderedNodeType": 0,
       "_rootNodeID": 0,
@@ -262,15 +464,16 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Heading
+    className="class-name"
     tag={undefined}
-    type={undefined}
+    type="h2"
 >
     <div />
 </Heading>,
 }
 `;
 
-exports[`Heading render snapshot: no tag 1`] = `
+exports[`Heading render snapshot: no type 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -279,13 +482,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2"
+    className="h1class-name"
 >
     <div />
 </h2>,
   "nodes": Array [
     <h2
-      className="h2"
+      className="h1class-name"
 >
       <div />
 </h2>,
@@ -297,8 +500,9 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <Heading
-        tag={undefined}
-        type="h2"
+        className="class-name"
+        tag="h2"
+        type={undefined}
 >
         <div />
 </Heading>,
@@ -310,8 +514,9 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "children": <div />,
-          "tag": undefined,
-          "type": "h2",
+          "className": "class-name",
+          "tag": "h2",
+          "type": undefined,
         },
         "refs": Object {},
         "state": null,
@@ -334,13 +539,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h2"
+          className="h1class-name"
 >
           <div />
 </h2>,
         "_debugID": 8,
         "_renderedOutput": <h2
-          className="h2"
+          className="h1class-name"
 >
           <div />
 </h2>,
@@ -356,100 +561,7 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <Heading
-    tag={undefined}
-    type="h2"
->
-    <div />
-</Heading>,
-}
-`;
-
-exports[`Heading render snapshot: no type 1`] = `
-ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
-  "length": 1,
-  "node": <h2
-    className="h1"
->
-    <div />
-</h2>,
-  "nodes": Array [
-    <h2
-      className="h1"
->
-      <div />
-</h2>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
-      "_context": Object {},
-      "_currentElement": <Heading
-        tag="h2"
-        type={undefined}
->
-        <div />
-</Heading>,
-      "_debugID": 5,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": Heading {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "children": <div />,
-          "tag": "h2",
-          "type": undefined,
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 3,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <h2
-          className="h1"
->
-          <div />
-</h2>,
-        "_debugID": 6,
-        "_renderedOutput": <h2
-          className="h1"
->
-          <div />
-</h2>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Heading
+    className="class-name"
     tag="h2"
     type={undefined}
 >

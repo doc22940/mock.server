@@ -9,13 +9,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <blockquote
-    className=""
+    className="class-name"
 >
     <div />
 </blockquote>,
   "nodes": Array [
     <blockquote
-      className=""
+      className="class-name"
 >
       <div />
 </blockquote>,
@@ -26,7 +26,9 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <Blockquote>
+      "_currentElement": <Blockquote
+        className="class-name"
+>
         <div />
 </Blockquote>,
       "_debugID": 1,
@@ -37,6 +39,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "children": <div />,
+          "className": "class-name",
         },
         "refs": Object {},
         "state": null,
@@ -59,13 +62,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <blockquote
-          className=""
+          className="class-name"
 >
           <div />
 </blockquote>,
         "_debugID": 2,
         "_renderedOutput": <blockquote
-          className=""
+          className="class-name"
 >
           <div />
 </blockquote>,
@@ -80,7 +83,9 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Blockquote>
+  "unrendered": <Blockquote
+    className="class-name"
+>
     <div />
 </Blockquote>,
 }
@@ -95,11 +100,11 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <blockquote
-    className=""
+    className="class-name"
 />,
   "nodes": Array [
     <blockquote
-      className=""
+      className="class-name"
 />,
   ],
   "options": Object {},
@@ -108,7 +113,9 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 0,
       "_context": Object {},
-      "_currentElement": <Blockquote />,
+      "_currentElement": <Blockquote
+        className="class-name"
+/>,
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -117,6 +124,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "children": undefined,
+          "className": "class-name",
         },
         "refs": Object {},
         "state": null,
@@ -139,11 +147,11 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <blockquote
-          className=""
+          className="class-name"
 />,
         "_debugID": 4,
         "_renderedOutput": <blockquote
-          className=""
+          className="class-name"
 />,
       },
       "_renderedNodeType": 0,
@@ -156,6 +164,99 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Blockquote />,
+  "unrendered": <Blockquote
+    className="class-name"
+/>,
+}
+`;
+
+exports[`Blockquote render snapshot: no className 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <blockquote
+    className=""
+>
+    <div />
+</blockquote>,
+  "nodes": Array [
+    <blockquote
+      className=""
+>
+      <div />
+</blockquote>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Blockquote
+        className={undefined}
+>
+        <div />
+</Blockquote>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Blockquote {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "children": <div />,
+          "className": undefined,
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <blockquote
+          className=""
+>
+          <div />
+</blockquote>,
+        "_debugID": 6,
+        "_renderedOutput": <blockquote
+          className=""
+>
+          <div />
+</blockquote>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Blockquote
+    className={undefined}
+>
+    <div />
+</Blockquote>,
 }
 `;

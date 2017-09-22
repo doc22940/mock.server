@@ -8,13 +8,25 @@ const propsEntries = [{ name: "list item 2", entries: ["list item 2.1", "list it
 
 const props: Object = {
 	entries: propsEntries,
-	type: "ol"
+	type: "ol",
+	className: "class-name",
+	classNameEntry: "class-name-entry"
 };
 
 describe("List", () => {
 	describe("render", () => {
 		it("snapshot: default", () => {
 			const _props = { ...props };
+			const tree = shallow(<List {..._props} />);
+			expect(tree).toMatchSnapshot();
+		});
+		it("snapshot: no className", () => {
+			const _props = { ...props, className: undefined };
+			const tree = shallow(<List {..._props} />);
+			expect(tree).toMatchSnapshot();
+		});
+		it("snapshot: no classNameEntry", () => {
+			const _props = { ...props, classNameEntry: undefined };
 			const tree = shallow(<List {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});

@@ -11,7 +11,9 @@ export type EntriesType = Array<EntryType>;
 
 export type ListPropsType = {
 	entries: EntriesType,
-	type?: TypeEnumType
+	type?: TypeEnumType,
+	className?: string,
+	classNameEntry?: string
 };
 
 class List extends Component {
@@ -32,6 +34,14 @@ class List extends Component {
 		return `${type}`;
 	}
 
+	get className(): string {
+		return this.props.className || "";
+	}
+
+	get classNameEntry(): string {
+		return this.props.classNameEntry || "";
+	}
+
 	props: ListPropsType;
 
 	renderEntry = (entry: EntryType, index: number): Children => {
@@ -39,15 +49,23 @@ class List extends Component {
 		if (typeof entry === "object") {
 			if (entry.entries.length >= 1) {
 				return (
-					<Tag key={this.getKeyFromValue(entry.name, index)}>
+					<Tag key={this.getKeyFromValue(entry.name, index)} className={this.classNameEntry}>
 						{entry.name}
-						<this.rootTag>{entry.entries.map(this.renderEntry)}</this.rootTag>
+						<this.rootTag className={this.className}>{entry.entries.map(this.renderEntry)}</this.rootTag>
 					</Tag>
 				);
 			}
-			return <Tag key={this.getKeyFromValue(entry.name, index)}>{entry.name}</Tag>;
+			return (
+				<Tag key={this.getKeyFromValue(entry.name, index)} className={this.classNameEntry}>
+					{entry.name}
+				</Tag>
+			);
 		}
-		return <Tag key={this.getKeyFromValue(entry, index)}>{entry}</Tag>;
+		return (
+			<Tag key={this.getKeyFromValue(entry, index)} className={this.classNameEntry}>
+				{entry}
+			</Tag>
+		);
 	};
 
 	render(): Element<*> {
@@ -57,7 +75,7 @@ class List extends Component {
 			return <div />;
 		}
 
-		return <this.rootTag>{entries.map(this.renderEntry)}</this.rootTag>;
+		return <this.rootTag className={this.className}>{entries.map(this.renderEntry)}</this.rootTag>;
 	}
 }
 

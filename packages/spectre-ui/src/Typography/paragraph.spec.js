@@ -7,7 +7,8 @@ import Paragraph from "./paragraph";
 const props: Object = {
 	children: <div />,
 	innerHtml: "<span>Inner Html</span>",
-	lang: "zh-Hans"
+	lang: "zh-Hans",
+	className: "class-name"
 };
 
 describe("Blockquote", () => {
@@ -19,6 +20,11 @@ describe("Blockquote", () => {
 		});
 		it("snapshot: no children", () => {
 			const _props = { ...props, children: undefined };
+			const tree = shallow(<Paragraph {..._props} />);
+			expect(tree).toMatchSnapshot();
+		});
+		it("snapshot: no className", () => {
+			const _props = { ...props, className: undefined };
 			const tree = shallow(<Paragraph {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});

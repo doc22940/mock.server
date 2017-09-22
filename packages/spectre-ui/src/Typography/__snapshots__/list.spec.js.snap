@@ -8,36 +8,60 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <ol>
-    <li>
+  "node": <ol
+    className="class-name"
+>
+    <li
+        className="class-name-entry"
+    >
         list item 2
-        <ol>
-            <li>
+        <ol
+            className="class-name"
+        >
+            <li
+                className="class-name-entry"
+            >
                 list item 2.1
             </li>
-            <li>
+            <li
+                className="class-name-entry"
+            >
                 list item 2.2
             </li>
         </ol>
     </li>
-    <li>
+    <li
+        className="class-name-entry"
+    >
         list item 3
     </li>
 </ol>,
   "nodes": Array [
-    <ol>
-      <li>
+    <ol
+      className="class-name"
+>
+      <li
+            className="class-name-entry"
+      >
             list item 2
-            <ol>
-                  <li>
+            <ol
+                  className="class-name"
+            >
+                  <li
+                        className="class-name-entry"
+                  >
                         list item 2.1
                   </li>
-                  <li>
+                  <li
+                        className="class-name-entry"
+                  >
                         list item 2.2
                   </li>
             </ol>
       </li>
-      <li>
+      <li
+            className="class-name-entry"
+      >
             list item 3
       </li>
 </ol>,
@@ -49,6 +73,8 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <List
+        className="class-name"
+        classNameEntry="class-name-entry"
         entries={
                 Array [
                         Object {
@@ -70,6 +96,8 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
+          "className": "class-name",
+          "classNameEntry": "class-name-entry",
           "entries": Array [
             Object {
               "entries": Array [
@@ -103,36 +131,60 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <ol>
-          <li>
+        "_currentElement": <ol
+          className="class-name"
+>
+          <li
+                    className="class-name-entry"
+          >
                     list item 2
-                    <ol>
-                              <li>
+                    <ol
+                              className="class-name"
+                    >
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.1
                               </li>
-                              <li>
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.2
                               </li>
                     </ol>
           </li>
-          <li>
+          <li
+                    className="class-name-entry"
+          >
                     list item 3
           </li>
 </ol>,
         "_debugID": 2,
-        "_renderedOutput": <ol>
-          <li>
+        "_renderedOutput": <ol
+          className="class-name"
+>
+          <li
+                    className="class-name-entry"
+          >
                     list item 2
-                    <ol>
-                              <li>
+                    <ol
+                              className="class-name"
+                    >
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.1
                               </li>
-                              <li>
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.2
                               </li>
                     </ol>
           </li>
-          <li>
+          <li
+                    className="class-name-entry"
+          >
                     list item 3
           </li>
 </ol>,
@@ -148,6 +200,8 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <List
+    className="class-name"
+    classNameEntry="class-name-entry"
     entries={
         Array [
             Object {
@@ -184,16 +238,20 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <List
+        className="class-name"
+        classNameEntry="class-name-entry"
         entries={Array []}
         type="ol"
 />,
-      "_debugID": 7,
+      "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": List {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
+          "className": "class-name",
+          "classNameEntry": "class-name-entry",
           "entries": Array [],
           "type": "ol",
         },
@@ -211,7 +269,7 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 4,
+      "_mountOrder": 6,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
@@ -219,7 +277,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div />,
-        "_debugID": 8,
+        "_debugID": 12,
         "_renderedOutput": <div />,
       },
       "_renderedNodeType": 0,
@@ -233,6 +291,8 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <List
+    className="class-name"
+    classNameEntry="class-name-entry"
     entries={Array []}
     type="ol"
 />,
@@ -247,20 +307,32 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <ol>
-    <li>
+  "node": <ol
+    className="class-name"
+>
+    <li
+        className="class-name-entry"
+    >
         list item 2
     </li>
-    <li>
+    <li
+        className="class-name-entry"
+    >
         list item 3
     </li>
 </ol>,
   "nodes": Array [
-    <ol>
-      <li>
+    <ol
+      className="class-name"
+>
+      <li
+            className="class-name-entry"
+      >
             list item 2
       </li>
-      <li>
+      <li
+            className="class-name-entry"
+      >
             list item 3
       </li>
 </ol>,
@@ -272,6 +344,8 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <List
+        className="class-name"
+        classNameEntry="class-name-entry"
         entries={
                 Array [
                         Object {
@@ -283,13 +357,15 @@ ShallowWrapper {
         }
         type="ol"
 />,
-      "_debugID": 9,
+      "_debugID": 13,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": List {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
+          "className": "class-name",
+          "classNameEntry": "class-name-entry",
           "entries": Array [
             Object {
               "entries": Array [],
@@ -313,27 +389,39 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 5,
+      "_mountOrder": 7,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <ol>
-          <li>
+        "_currentElement": <ol
+          className="class-name"
+>
+          <li
+                    className="class-name-entry"
+          >
                     list item 2
           </li>
-          <li>
+          <li
+                    className="class-name-entry"
+          >
                     list item 3
           </li>
 </ol>,
-        "_debugID": 10,
-        "_renderedOutput": <ol>
-          <li>
+        "_debugID": 14,
+        "_renderedOutput": <ol
+          className="class-name"
+>
+          <li
+                    className="class-name-entry"
+          >
                     list item 2
           </li>
-          <li>
+          <li
+                    className="class-name-entry"
+          >
                     list item 3
           </li>
 </ol>,
@@ -349,10 +437,450 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <List
+    className="class-name"
+    classNameEntry="class-name-entry"
     entries={
         Array [
             Object {
               "entries": Array [],
+              "name": "list item 2",
+            },
+            "list item 3",
+          ]
+    }
+    type="ol"
+/>,
+}
+`;
+
+exports[`List render snapshot: no className 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <ol
+    className=""
+>
+    <li
+        className="class-name-entry"
+    >
+        list item 2
+        <ol
+            className=""
+        >
+            <li
+                className="class-name-entry"
+            >
+                list item 2.1
+            </li>
+            <li
+                className="class-name-entry"
+            >
+                list item 2.2
+            </li>
+        </ol>
+    </li>
+    <li
+        className="class-name-entry"
+    >
+        list item 3
+    </li>
+</ol>,
+  "nodes": Array [
+    <ol
+      className=""
+>
+      <li
+            className="class-name-entry"
+      >
+            list item 2
+            <ol
+                  className=""
+            >
+                  <li
+                        className="class-name-entry"
+                  >
+                        list item 2.1
+                  </li>
+                  <li
+                        className="class-name-entry"
+                  >
+                        list item 2.2
+                  </li>
+            </ol>
+      </li>
+      <li
+            className="class-name-entry"
+      >
+            list item 3
+      </li>
+</ol>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <List
+        className={undefined}
+        classNameEntry="class-name-entry"
+        entries={
+                Array [
+                        Object {
+                          "entries": Array [
+                            "list item 2.1",
+                            "list item 2.2",
+                          ],
+                          "name": "list item 2",
+                        },
+                        "list item 3",
+                      ]
+        }
+        type="ol"
+/>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": List {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "className": undefined,
+          "classNameEntry": "class-name-entry",
+          "entries": Array [
+            Object {
+              "entries": Array [
+                "list item 2.1",
+                "list item 2.2",
+              ],
+              "name": "list item 2",
+            },
+            "list item 3",
+          ],
+          "type": "ol",
+        },
+        "refs": Object {},
+        "renderEntry": [Function],
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <ol
+          className=""
+>
+          <li
+                    className="class-name-entry"
+          >
+                    list item 2
+                    <ol
+                              className=""
+                    >
+                              <li
+                                        className="class-name-entry"
+                              >
+                                        list item 2.1
+                              </li>
+                              <li
+                                        className="class-name-entry"
+                              >
+                                        list item 2.2
+                              </li>
+                    </ol>
+          </li>
+          <li
+                    className="class-name-entry"
+          >
+                    list item 3
+          </li>
+</ol>,
+        "_debugID": 4,
+        "_renderedOutput": <ol
+          className=""
+>
+          <li
+                    className="class-name-entry"
+          >
+                    list item 2
+                    <ol
+                              className=""
+                    >
+                              <li
+                                        className="class-name-entry"
+                              >
+                                        list item 2.1
+                              </li>
+                              <li
+                                        className="class-name-entry"
+                              >
+                                        list item 2.2
+                              </li>
+                    </ol>
+          </li>
+          <li
+                    className="class-name-entry"
+          >
+                    list item 3
+          </li>
+</ol>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <List
+    className={undefined}
+    classNameEntry="class-name-entry"
+    entries={
+        Array [
+            Object {
+              "entries": Array [
+                "list item 2.1",
+                "list item 2.2",
+              ],
+              "name": "list item 2",
+            },
+            "list item 3",
+          ]
+    }
+    type="ol"
+/>,
+}
+`;
+
+exports[`List render snapshot: no classNameEntry 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <ol
+    className="class-name"
+>
+    <li
+        className=""
+    >
+        list item 2
+        <ol
+            className="class-name"
+        >
+            <li
+                className=""
+            >
+                list item 2.1
+            </li>
+            <li
+                className=""
+            >
+                list item 2.2
+            </li>
+        </ol>
+    </li>
+    <li
+        className=""
+    >
+        list item 3
+    </li>
+</ol>,
+  "nodes": Array [
+    <ol
+      className="class-name"
+>
+      <li
+            className=""
+      >
+            list item 2
+            <ol
+                  className="class-name"
+            >
+                  <li
+                        className=""
+                  >
+                        list item 2.1
+                  </li>
+                  <li
+                        className=""
+                  >
+                        list item 2.2
+                  </li>
+            </ol>
+      </li>
+      <li
+            className=""
+      >
+            list item 3
+      </li>
+</ol>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <List
+        className="class-name"
+        classNameEntry={undefined}
+        entries={
+                Array [
+                        Object {
+                          "entries": Array [
+                            "list item 2.1",
+                            "list item 2.2",
+                          ],
+                          "name": "list item 2",
+                        },
+                        "list item 3",
+                      ]
+        }
+        type="ol"
+/>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": List {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "className": "class-name",
+          "classNameEntry": undefined,
+          "entries": Array [
+            Object {
+              "entries": Array [
+                "list item 2.1",
+                "list item 2.2",
+              ],
+              "name": "list item 2",
+            },
+            "list item 3",
+          ],
+          "type": "ol",
+        },
+        "refs": Object {},
+        "renderEntry": [Function],
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <ol
+          className="class-name"
+>
+          <li
+                    className=""
+          >
+                    list item 2
+                    <ol
+                              className="class-name"
+                    >
+                              <li
+                                        className=""
+                              >
+                                        list item 2.1
+                              </li>
+                              <li
+                                        className=""
+                              >
+                                        list item 2.2
+                              </li>
+                    </ol>
+          </li>
+          <li
+                    className=""
+          >
+                    list item 3
+          </li>
+</ol>,
+        "_debugID": 6,
+        "_renderedOutput": <ol
+          className="class-name"
+>
+          <li
+                    className=""
+          >
+                    list item 2
+                    <ol
+                              className="class-name"
+                    >
+                              <li
+                                        className=""
+                              >
+                                        list item 2.1
+                              </li>
+                              <li
+                                        className=""
+                              >
+                                        list item 2.2
+                              </li>
+                    </ol>
+          </li>
+          <li
+                    className=""
+          >
+                    list item 3
+          </li>
+</ol>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <List
+    className="class-name"
+    classNameEntry={undefined}
+    entries={
+        Array [
+            Object {
+              "entries": Array [
+                "list item 2.1",
+                "list item 2.2",
+              ],
               "name": "list item 2",
             },
             "list item 3",
@@ -371,36 +899,60 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <ul>
-    <li>
+  "node": <ul
+    className="class-name"
+>
+    <li
+        className="class-name-entry"
+    >
         list item 2
-        <ul>
-            <li>
+        <ul
+            className="class-name"
+        >
+            <li
+                className="class-name-entry"
+            >
                 list item 2.1
             </li>
-            <li>
+            <li
+                className="class-name-entry"
+            >
                 list item 2.2
             </li>
         </ul>
     </li>
-    <li>
+    <li
+        className="class-name-entry"
+    >
         list item 3
     </li>
 </ul>,
   "nodes": Array [
-    <ul>
-      <li>
+    <ul
+      className="class-name"
+>
+      <li
+            className="class-name-entry"
+      >
             list item 2
-            <ul>
-                  <li>
+            <ul
+                  className="class-name"
+            >
+                  <li
+                        className="class-name-entry"
+                  >
                         list item 2.1
                   </li>
-                  <li>
+                  <li
+                        className="class-name-entry"
+                  >
                         list item 2.2
                   </li>
             </ul>
       </li>
-      <li>
+      <li
+            className="class-name-entry"
+      >
             list item 3
       </li>
 </ul>,
@@ -412,6 +964,8 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <List
+        className="class-name"
+        classNameEntry="class-name-entry"
         entries={
                 Array [
                         Object {
@@ -426,13 +980,15 @@ ShallowWrapper {
         }
         type={undefined}
 />,
-      "_debugID": 3,
+      "_debugID": 7,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": List {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
+          "className": "class-name",
+          "classNameEntry": "class-name-entry",
           "entries": Array [
             Object {
               "entries": Array [
@@ -459,43 +1015,67 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 2,
+      "_mountOrder": 4,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <ul>
-          <li>
+        "_currentElement": <ul
+          className="class-name"
+>
+          <li
+                    className="class-name-entry"
+          >
                     list item 2
-                    <ul>
-                              <li>
+                    <ul
+                              className="class-name"
+                    >
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.1
                               </li>
-                              <li>
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.2
                               </li>
                     </ul>
           </li>
-          <li>
+          <li
+                    className="class-name-entry"
+          >
                     list item 3
           </li>
 </ul>,
-        "_debugID": 4,
-        "_renderedOutput": <ul>
-          <li>
+        "_debugID": 8,
+        "_renderedOutput": <ul
+          className="class-name"
+>
+          <li
+                    className="class-name-entry"
+          >
                     list item 2
-                    <ul>
-                              <li>
+                    <ul
+                              className="class-name"
+                    >
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.1
                               </li>
-                              <li>
+                              <li
+                                        className="class-name-entry"
+                              >
                                         list item 2.2
                               </li>
                     </ul>
           </li>
-          <li>
+          <li
+                    className="class-name-entry"
+          >
                     list item 3
           </li>
 </ul>,
@@ -511,6 +1091,8 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <List
+    className="class-name"
+    classNameEntry="class-name-entry"
     entries={
         Array [
             Object {
@@ -536,36 +1118,60 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <dl>
-    <dt>
+  "node": <dl
+    className="class-name"
+>
+    <dt
+        className="class-name-entry"
+    >
         list item 2
-        <dl>
-            <dt>
+        <dl
+            className="class-name"
+        >
+            <dt
+                className="class-name-entry"
+            >
                 list item 2.1
             </dt>
-            <dd>
+            <dd
+                className="class-name-entry"
+            >
                 list item 2.2
             </dd>
         </dl>
     </dt>
-    <dd>
+    <dd
+        className="class-name-entry"
+    >
         list item 3
     </dd>
 </dl>,
   "nodes": Array [
-    <dl>
-      <dt>
+    <dl
+      className="class-name"
+>
+      <dt
+            className="class-name-entry"
+      >
             list item 2
-            <dl>
-                  <dt>
+            <dl
+                  className="class-name"
+            >
+                  <dt
+                        className="class-name-entry"
+                  >
                         list item 2.1
                   </dt>
-                  <dd>
+                  <dd
+                        className="class-name-entry"
+                  >
                         list item 2.2
                   </dd>
             </dl>
       </dt>
-      <dd>
+      <dd
+            className="class-name-entry"
+      >
             list item 3
       </dd>
 </dl>,
@@ -577,6 +1183,8 @@ ShallowWrapper {
       "_compositeType": 0,
       "_context": Object {},
       "_currentElement": <List
+        className="class-name"
+        classNameEntry="class-name-entry"
         entries={
                 Array [
                         Object {
@@ -591,13 +1199,15 @@ ShallowWrapper {
         }
         type="dl"
 />,
-      "_debugID": 5,
+      "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
       "_instance": List {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
+          "className": "class-name",
+          "classNameEntry": "class-name-entry",
           "entries": Array [
             Object {
               "entries": Array [
@@ -624,43 +1234,67 @@ ShallowWrapper {
           "validateCallback": [Function],
         },
       },
-      "_mountOrder": 3,
+      "_mountOrder": 5,
       "_pendingCallbacks": null,
       "_pendingElement": null,
       "_pendingForceUpdate": false,
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <dl>
-          <dt>
+        "_currentElement": <dl
+          className="class-name"
+>
+          <dt
+                    className="class-name-entry"
+          >
                     list item 2
-                    <dl>
-                              <dt>
+                    <dl
+                              className="class-name"
+                    >
+                              <dt
+                                        className="class-name-entry"
+                              >
                                         list item 2.1
                               </dt>
-                              <dd>
+                              <dd
+                                        className="class-name-entry"
+                              >
                                         list item 2.2
                               </dd>
                     </dl>
           </dt>
-          <dd>
+          <dd
+                    className="class-name-entry"
+          >
                     list item 3
           </dd>
 </dl>,
-        "_debugID": 6,
-        "_renderedOutput": <dl>
-          <dt>
+        "_debugID": 10,
+        "_renderedOutput": <dl
+          className="class-name"
+>
+          <dt
+                    className="class-name-entry"
+          >
                     list item 2
-                    <dl>
-                              <dt>
+                    <dl
+                              className="class-name"
+                    >
+                              <dt
+                                        className="class-name-entry"
+                              >
                                         list item 2.1
                               </dt>
-                              <dd>
+                              <dd
+                                        className="class-name-entry"
+                              >
                                         list item 2.2
                               </dd>
                     </dl>
           </dt>
-          <dd>
+          <dd
+                    className="class-name-entry"
+          >
                     list item 3
           </dd>
 </dl>,
@@ -676,6 +1310,8 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <List
+    className="class-name"
+    classNameEntry="class-name-entry"
     entries={
         Array [
             Object {

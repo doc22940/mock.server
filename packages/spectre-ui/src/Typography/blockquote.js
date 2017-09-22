@@ -6,14 +6,15 @@ import React, { Component } from "react";
 import type { Element, Children } from "react";
 
 export type BlockquotePropsType = {
-	children?: Children
+	children?: Children,
+	className?: string
 };
 
 class Blockquote extends Component {
 	props: BlockquotePropsType;
 
 	get className(): string {
-		return "";
+		return this.props.className || "";
 	}
 
 	render(): Element<*> {

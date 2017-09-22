@@ -8,14 +8,15 @@ import type { Children } from "react";
 export type ParagraphPropsType = {
 	children?: Children,
 	innerHtml?: string,
-	lang?: string
+	lang?: string,
+	className?: string
 };
 
 class Paragraph extends Component {
 	props: ParagraphPropsType;
 
 	get className(): string {
-		return "";
+		return this.props.className || "";
 	}
 
 	render(): Children {

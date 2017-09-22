@@ -7,13 +7,19 @@ import Heading from "./heading";
 const props: Object = {
 	children: <div />,
 	type: "h2",
-	tag: "h2"
+	tag: "h2",
+	className: "class-name"
 };
 
 describe("Heading", () => {
 	describe("render", () => {
 		it("snapshot: default", () => {
 			const _props = { ...props };
+			const tree = shallow(<Heading {..._props} />);
+			expect(tree).toMatchSnapshot();
+		});
+		it("snapshot: no className", () => {
+			const _props = { ...props, className: undefined };
 			const tree = shallow(<Heading {..._props} />);
 			expect(tree).toMatchSnapshot();
 		});
