@@ -1,11 +1,13 @@
 // @flow
-/* global props defaultProps */
 
 import "spectre.css";
 import React, { Component } from "react";
-import type { ListPropsType, ListEntryType } from "../../spectre-ui.js.flow";
+import type { ListPropsType, ListEntryType } from "../../../spectre-ui.js.flow";
 
 class List extends Component<ListPropsType> {
+	// eslint-disable-next-line
+	static displayName = "Typography/List";
+
 	getItemTag(index: number): string {
 		const { type = "ul" } = this.props;
 		if (type === "dl") {
@@ -30,8 +32,6 @@ class List extends Component<ListPropsType> {
 	get classNameEntry(): string {
 		return this.props.classNameEntry || "";
 	}
-
-	props: ListPropsType;
 
 	// eslint-disable-next-line
 	renderEntry = (entry: ListEntryType, index: number): React$Element<*> => {

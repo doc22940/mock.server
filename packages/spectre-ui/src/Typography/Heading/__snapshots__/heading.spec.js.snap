@@ -26,13 +26,13 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Heading
+      "_currentElement": <Typography/Heading
         className="class-name"
         tag="h2"
         type="h2"
 >
         <div />
-</Heading>,
+</Typography/Heading>,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -87,13 +87,13 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Heading
+  "unrendered": <Typography/Heading
     className="class-name"
     tag="h2"
     type="h2"
 >
     <div />
-</Heading>,
+</Typography/Heading>,
 }
 `;
 
@@ -119,7 +119,7 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Heading
+      "_currentElement": <Typography/Heading
         className="class-name"
         tag="h2"
         type="h2"
@@ -174,7 +174,7 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Heading
+  "unrendered": <Typography/Heading
     className="class-name"
     tag="h2"
     type="h2"
@@ -208,13 +208,13 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Heading
+      "_currentElement": <Typography/Heading
         className={undefined}
         tag="h2"
         type="h2"
 >
         <div />
-</Heading>,
+</Typography/Heading>,
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -269,13 +269,13 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Heading
+  "unrendered": <Typography/Heading
     className={undefined}
     tag="h2"
     type="h2"
 >
     <div />
-</Heading>,
+</Typography/Heading>,
 }
 `;
 
@@ -305,13 +305,13 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Heading
+      "_currentElement": <Typography/Heading
         className="class-name"
         tag={undefined}
         type={undefined}
 >
         <div />
-</Heading>,
+</Typography/Heading>,
       "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -366,13 +366,13 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Heading
+  "unrendered": <Typography/Heading
     className="class-name"
     tag={undefined}
     type={undefined}
 >
     <div />
-</Heading>,
+</Typography/Heading>,
 }
 `;
 
@@ -402,13 +402,13 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Heading
+      "_currentElement": <Typography/Heading
         className="class-name"
         tag={undefined}
         type="h2"
 >
         <div />
-</Heading>,
+</Typography/Heading>,
       "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -463,13 +463,13 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Heading
+  "unrendered": <Typography/Heading
     className="class-name"
     tag={undefined}
     type="h2"
 >
     <div />
-</Heading>,
+</Typography/Heading>,
 }
 `;
 
@@ -499,13 +499,13 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Heading
+      "_currentElement": <Typography/Heading
         className="class-name"
         tag="h2"
         type={undefined}
 >
         <div />
-</Heading>,
+</Typography/Heading>,
       "_debugID": 7,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -560,12 +560,12 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Heading
+  "unrendered": <Typography/Heading
     className="class-name"
     tag="h2"
     type={undefined}
 >
     <div />
-</Heading>,
+</Typography/Heading>,
 }
 `;

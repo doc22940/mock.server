@@ -2,8 +2,8 @@
 
 import React from "react";
 import { shallow } from "enzyme";
-import { itOptionalProps } from "../utils/test-utils";
-import Heading from "./heading";
+import { itOptionalProps } from "../../utils/test-utils";
+import Heading from "./index";
 
 const props: Object = {
 	children: <div />,

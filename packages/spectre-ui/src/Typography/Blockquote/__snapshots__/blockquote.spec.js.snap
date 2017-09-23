@@ -26,11 +26,11 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Blockquote
+      "_currentElement": <Typography/Blockquote
         className="class-name"
 >
         <div />
-</Blockquote>,
+</Typography/Blockquote>,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -83,11 +83,11 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Blockquote
+  "unrendered": <Typography/Blockquote
     className="class-name"
 >
     <div />
-</Blockquote>,
+</Typography/Blockquote>,
 }
 `;
 
@@ -113,7 +113,7 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Blockquote
+      "_currentElement": <Typography/Blockquote
         className="class-name"
 />,
       "_debugID": 3,
@@ -164,7 +164,7 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Blockquote
+  "unrendered": <Typography/Blockquote
     className="class-name"
 />,
 }
@@ -196,11 +196,11 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <Blockquote
+      "_currentElement": <Typography/Blockquote
         className={undefined}
 >
         <div />
-</Blockquote>,
+</Typography/Blockquote>,
       "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
@@ -253,10 +253,10 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <Blockquote
+  "unrendered": <Typography/Blockquote
     className={undefined}
 >
     <div />
-</Blockquote>,
+</Typography/Blockquote>,
 }
 `;

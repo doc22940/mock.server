@@ -3,7 +3,7 @@
 
 import "spectre.css";
 import React from "react";
-import type { ParagraphPropsType } from "../../spectre-ui.js.flow";
+import type { ParagraphPropsType } from "../../../spectre-ui.js.flow";
 
 const Paragraph = ({ children, innerHtml, lang, className }: ParagraphPropsType): React$Element<*> => {
 	if (typeof innerHtml === "string") {
@@ -19,5 +19,7 @@ const Paragraph = ({ children, innerHtml, lang, className }: ParagraphPropsType)
 		</p>
 	);
 };
+
+Paragraph.displayName = "Typography/Paragraph";
 
 export default Paragraph;

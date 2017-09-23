@@ -1,9 +1,9 @@
 // @flow
 /* global props defaultProps */
 
-import Heading from "./heading";
-import Paragraph from "./paragraph";
-import Blockquote from "./blockquote";
-import List from "./list";
+import Heading from "./Heading";
+import Paragraph from "./Paragraph";
+import Blockquote from "./Blockquote";
+import List from "./List";
 
 export { Heading, Paragraph, Blockquote, List };

@@ -2,8 +2,8 @@
 
 import React from "react";
 import { shallow } from "enzyme";
-import { itOptionalProps, itArrayProps } from "../utils/test-utils";
-import List from "./list";
+import { itOptionalProps, itArrayProps } from "../../utils/test-utils";
+import List from "./index";
 
 const propsEntries = [{ name: "list item 2", entries: ["list item 2.1", "list item 2.2"] }, "list item 3"];
 
