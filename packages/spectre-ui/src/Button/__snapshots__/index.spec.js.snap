@@ -32,7 +32,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -47,7 +47,7 @@ ShallowWrapper {
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -155,7 +155,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -170,7 +170,7 @@ ShallowWrapper {
       "_debugID": 19,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -278,7 +278,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className={undefined}
@@ -293,7 +293,7 @@ ShallowWrapper {
       "_debugID": 15,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -401,11 +401,11 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
-        disabled={false}
+        disabled={undefined}
         label="label"
         modifier="primary"
         onClick={[Function]}
@@ -416,12 +416,12 @@ ShallowWrapper {
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
           "className": "className",
-          "disabled": false,
+          "disabled": undefined,
           "label": "label",
           "modifier": "primary",
           "onClick": [Function],
@@ -481,7 +481,7 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <Button
     className="className"
-    disabled={false}
+    disabled={undefined}
     label="label"
     modifier="primary"
     onClick={[Function]}
@@ -520,7 +520,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -535,7 +535,7 @@ ShallowWrapper {
       "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -639,7 +639,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -654,7 +654,7 @@ ShallowWrapper {
       "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -762,14 +762,14 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
         disabled={false}
         label="label"
         modifier="primary"
-        onClick={[Function]}
+        onClick={undefined}
         size="sm"
         tabIndex={-1}
         type="button"
@@ -777,7 +777,7 @@ ShallowWrapper {
       "_debugID": 17,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -785,7 +785,7 @@ ShallowWrapper {
           "disabled": false,
           "label": "label",
           "modifier": "primary",
-          "onClick": [Function],
+          "onClick": undefined,
           "size": "sm",
           "tabIndex": -1,
           "type": "button",
@@ -845,7 +845,7 @@ ShallowWrapper {
     disabled={false}
     label="label"
     modifier="primary"
-    onClick={[Function]}
+    onClick={undefined}
     size="sm"
     tabIndex={-1}
     type="button"
@@ -885,7 +885,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -900,7 +900,7 @@ ShallowWrapper {
       "_debugID": 13,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -1008,7 +1008,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -1017,13 +1017,13 @@ ShallowWrapper {
         modifier="primary"
         onClick={[Function]}
         size="sm"
-        tabIndex={-1}
+        tabIndex={undefined}
         type="button"
 />,
       "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -1033,7 +1033,7 @@ ShallowWrapper {
           "modifier": "primary",
           "onClick": [Function],
           "size": "sm",
-          "tabIndex": -1,
+          "tabIndex": undefined,
           "type": "button",
         },
         "refs": Object {},
@@ -1093,7 +1093,7 @@ ShallowWrapper {
     modifier="primary"
     onClick={[Function]}
     size="sm"
-    tabIndex={-1}
+    tabIndex={undefined}
     type="button"
 />,
 }
@@ -1131,7 +1131,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Button
         className="className"
@@ -1141,12 +1141,12 @@ ShallowWrapper {
         onClick={[Function]}
         size="sm"
         tabIndex={-1}
-        type="button"
+        type={undefined}
 />,
       "_debugID": 7,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Button {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -1157,7 +1157,7 @@ ShallowWrapper {
           "onClick": [Function],
           "size": "sm",
           "tabIndex": -1,
-          "type": "button",
+          "type": undefined,
         },
         "refs": Object {},
         "state": null,
@@ -1217,7 +1217,7 @@ ShallowWrapper {
     onClick={[Function]}
     size="sm"
     tabIndex={-1}
-    type="button"
+    type={undefined}
 />,
 }
 `;

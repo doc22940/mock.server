@@ -39,8 +39,7 @@
     "private": false,
     "license": "MIT",
     "dependencies": {
-        "node-mock-server-uuid": "1.0.0",
-        "spectre-ui": "0.1.0"
+        "node-mock-server-uuid": "1.0.0"
     },
     "devDependencies": {
         "@namics/eslint-config": "^4.1.0",

@@ -3,6 +3,8 @@
 <PROJECT_ROOT>/node_modules/radium/.*
 <PROJECT_ROOT>/node_modules/eslint-plugin-jsx-a11y/.*
 <PROJECT_ROOT>/node_modules/custom-react-scripts/.*
+<PROJECT_ROOT>/node_modules/immutable/.*
+<PROJECT_ROOT>/node_modules/most/.*
 <PROJECT_ROOT>/build/.*
 
 [include]

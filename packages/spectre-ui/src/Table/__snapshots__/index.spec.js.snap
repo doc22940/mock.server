@@ -152,7 +152,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -192,12 +192,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -232,7 +231,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -442,7 +440,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -515,7 +512,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -542,12 +539,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 27,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -571,7 +567,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -684,7 +679,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -795,7 +789,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -827,12 +821,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 25,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -861,7 +854,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -1017,7 +1009,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -1174,7 +1165,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -1209,12 +1200,11 @@ ShallowWrapper {
                       ]
         }
         modifiers={Array []}
-        onClick={[Function]}
 />,
       "_debugID": 29,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -1246,7 +1236,6 @@ ShallowWrapper {
             ],
           ],
           "modifiers": Array [],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -1451,7 +1440,6 @@ ShallowWrapper {
           ]
     }
     modifiers={Array []}
-    onClick={[Function]}
 />,
 }
 `;
@@ -1608,7 +1596,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={undefined}
@@ -1648,12 +1636,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 23,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -1688,7 +1675,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -1898,7 +1884,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -1971,7 +1956,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -1998,12 +1983,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -2027,7 +2011,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -2140,7 +2123,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -2297,7 +2279,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -2337,12 +2319,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -2377,7 +2358,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -2587,7 +2567,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -2744,7 +2723,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -2784,12 +2763,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 17,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -2824,7 +2802,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -3034,7 +3011,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -3191,7 +3167,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -3231,12 +3207,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 21,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -3271,7 +3246,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -3481,7 +3455,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -3638,7 +3611,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -3678,12 +3651,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 19,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -3718,7 +3690,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -3928,7 +3899,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -4085,7 +4055,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -4125,12 +4095,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -4165,7 +4134,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -4375,7 +4343,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -4532,7 +4499,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -4572,12 +4539,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 15,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -4612,7 +4578,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -4822,7 +4787,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -4979,7 +4943,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -5019,12 +4983,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 13,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -5059,7 +5022,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -5269,7 +5231,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -5380,7 +5341,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -5412,12 +5373,11 @@ ShallowWrapper {
                         "hover",
                       ]
         }
-        onClick={[Function]}
 />,
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -5446,7 +5406,6 @@ ShallowWrapper {
             "striped",
             "hover",
           ],
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -5602,7 +5561,6 @@ ShallowWrapper {
             "hover",
           ]
     }
-    onClick={[Function]}
 />,
 }
 `;
@@ -5759,7 +5717,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Table
         activeRow={1}
@@ -5794,12 +5752,11 @@ ShallowWrapper {
                       ]
         }
         modifiers={undefined}
-        onClick={[Function]}
 />,
       "_debugID": 7,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Table {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -5831,7 +5788,6 @@ ShallowWrapper {
             ],
           ],
           "modifiers": undefined,
-          "onClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -6036,7 +5992,6 @@ ShallowWrapper {
           ]
     }
     modifiers={undefined}
-    onClick={[Function]}
 />,
 }
 `;

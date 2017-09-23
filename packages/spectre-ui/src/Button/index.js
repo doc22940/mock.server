@@ -1,64 +1,48 @@
 // @flow
-/* global props defaultProps */
 
 import "spectre.css";
-import React, { Component } from "react";
-import type { Element } from "react";
+import React from "react";
 
 import noop from "../utils/noop.js";
-export type TypeEnumType = "button" | "submit" | "reset";
-export type ModifierEnumType = "primary" | "link" | "action" | "action circle";
-export type SizeEnumType = "sm" | "lg" | "block";
+import type { ButtonClassPropsType, ButtonPropsType } from "../../spectre-ui.js.flow";
 
-export type ButtonPropsType = {
-	disabled?: boolean,
-	tabIndex?: number,
-	type?: TypeEnumType,
-	label?: string,
-	modifier?: ModifierEnumType,
-	size?: SizeEnumType,
-	className?: string,
-	onClick?: Function
-};
+function getClassName({ modifier, size, className }: ButtonClassPropsType): string {
+	const classNames: Array<string> = ["btn"];
 
-class Button extends Component {
-	static defaultProps = {
-		type: "button",
-		disabled: false,
-		tabIndex: -1,
-		onClick: noop
-	};
-
-	props: ButtonPropsType;
-
-	get className(): string {
-		const { modifier, size, className } = this.props;
-		const classNames: Array<string> = ["btn"];
-
-		if (modifier) {
-			classNames.push(`btn-${modifier}`);
-		}
-
-		if (size) {
-			classNames.push(`btn-${size}`);
-		}
-
-		if (className) {
-			classNames.push(className);
-		}
-
-		return classNames.join(" ");
+	if (modifier) {
+		classNames.push(`btn-${modifier}`);
 	}
 
-	render(): Element<*> {
-		const { type, disabled, tabIndex, label, onClick } = this.props;
-
-		return (
-			<button className={this.className} type={type} disabled={disabled} tabIndex={tabIndex} onClick={onClick}>
-				{label}
-			</button>
-		);
+	if (size) {
+		classNames.push(`btn-${size}`);
 	}
+
+	if (className) {
+		classNames.push(className);
+	}
+
+	return classNames.join(" ");
 }
+
+const Button = ({
+	modifier,
+	size,
+	className,
+	type = "button",
+	disabled = false,
+	tabIndex = -1,
+	label,
+	onClick = noop
+}: ButtonPropsType): React$Element<*> => (
+	<button
+		className={getClassName({ modifier, size, className })}
+		type={type}
+		disabled={disabled}
+		tabIndex={tabIndex}
+		onClick={onClick}
+	>
+		{label}
+	</button>
+);
 
 export default Button;

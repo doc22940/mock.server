@@ -30,7 +30,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Paragraph
         className="class-name"
@@ -42,7 +42,7 @@ ShallowWrapper {
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Paragraph {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -139,7 +139,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Paragraph
         className="class-name"
@@ -149,7 +149,7 @@ ShallowWrapper {
       "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Paragraph {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -223,7 +223,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
-    className=""
+    className={undefined}
     dangerouslySetInnerHTML={
         Object {
             "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -232,7 +232,7 @@ ShallowWrapper {
 />,
   "nodes": Array [
     <div
-      className=""
+      className={undefined}
       dangerouslySetInnerHTML={
             Object {
                   "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -244,7 +244,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Paragraph
         className={undefined}
@@ -256,7 +256,7 @@ ShallowWrapper {
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Paragraph {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -286,7 +286,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
-          className=""
+          className={undefined}
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -295,7 +295,7 @@ ShallowWrapper {
 />,
         "_debugID": 4,
         "_renderedOutput": <div
-          className=""
+          className={undefined}
           dangerouslySetInnerHTML={
                     Object {
                               "__html": "<p lang=\\"zh-Hans\\"><span>Inner Html</span></p>",
@@ -349,7 +349,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Paragraph
         className="class-name"
@@ -361,7 +361,7 @@ ShallowWrapper {
       "_debugID": 7,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Paragraph {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -454,7 +454,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Paragraph
         className="class-name"
@@ -466,7 +466,7 @@ ShallowWrapper {
       "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Paragraph {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {

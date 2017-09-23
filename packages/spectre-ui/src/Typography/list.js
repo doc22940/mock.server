@@ -3,20 +3,9 @@
 
 import "spectre.css";
 import React, { Component } from "react";
-import type { Element, Children } from "react";
+import type { ListPropsType, ListEntryType } from "../../spectre-ui.js.flow";
 
-export type TypeEnumType = "ul" | "ol" | "dl";
-export type EntryType = string | { name: string, entries: Array<EntryType> };
-export type EntriesType = Array<EntryType>;
-
-export type ListPropsType = {
-	entries: EntriesType,
-	type?: TypeEnumType,
-	className?: string,
-	classNameEntry?: string
-};
-
-class List extends Component {
+class List extends Component<ListPropsType> {
 	getItemTag(index: number): string {
 		const { type = "ul" } = this.props;
 		if (type === "dl") {
@@ -44,14 +33,16 @@ class List extends Component {
 
 	props: ListPropsType;
 
-	renderEntry = (entry: EntryType, index: number): Children => {
+	// eslint-disable-next-line
+	renderEntry = (entry: ListEntryType, index: number): React$Element<*> => {
 		const Tag = `${this.getItemTag(index)}`;
+		const RootTag = this.rootTag;
 		if (typeof entry === "object") {
 			if (entry.entries.length >= 1) {
 				return (
 					<Tag key={this.getKeyFromValue(entry.name, index)} className={this.classNameEntry}>
 						{entry.name}
-						<this.rootTag className={this.className}>{entry.entries.map(this.renderEntry)}</this.rootTag>
+						<RootTag className={this.className}>{entry.entries.map(this.renderEntry)}</RootTag>
 					</Tag>
 				);
 			}
@@ -68,14 +59,13 @@ class List extends Component {
 		);
 	};
 
-	render(): Element<*> {
+	render(): React$Element<*> {
 		const { entries } = this.props;
-
 		if (!(entries instanceof Array) || entries.length < 1) {
 			return <div />;
 		}
-
-		return <this.rootTag className={this.className}>{entries.map(this.renderEntry)}</this.rootTag>;
+		const RootTag = this.rootTag;
+		return <RootTag className={this.className}>{entries.map(this.renderEntry)}</RootTag>;
 	}
 }
 

@@ -9,13 +9,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2class-name"
+    className="class-name h2"
 >
     <div />
 </h2>,
   "nodes": Array [
     <h2
-      className="h2class-name"
+      className="class-name h2"
 >
       <div />
 </h2>,
@@ -24,7 +24,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Heading
         className="class-name"
@@ -36,7 +36,7 @@ ShallowWrapper {
       "_debugID": 1,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Heading {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -66,13 +66,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h2class-name"
+          className="class-name h2"
 >
           <div />
 </h2>,
         "_debugID": 2,
         "_renderedOutput": <h2
-          className="h2class-name"
+          className="class-name h2"
 >
           <div />
 </h2>,
@@ -106,18 +106,18 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2class-name"
+    className="class-name h2"
 />,
   "nodes": Array [
     <h2
-      className="h2class-name"
+      className="class-name h2"
 />,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Heading
         className="class-name"
@@ -127,7 +127,7 @@ ShallowWrapper {
       "_debugID": 5,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Heading {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -157,11 +157,11 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h2class-name"
+          className="class-name h2"
 />,
         "_debugID": 6,
         "_renderedOutput": <h2
-          className="h2class-name"
+          className="class-name h2"
 />,
       },
       "_renderedNodeType": 0,
@@ -191,13 +191,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2"
+    className=" h2"
 >
     <div />
 </h2>,
   "nodes": Array [
     <h2
-      className="h2"
+      className=" h2"
 >
       <div />
 </h2>,
@@ -206,7 +206,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Heading
         className={undefined}
@@ -218,7 +218,7 @@ ShallowWrapper {
       "_debugID": 3,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Heading {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -248,13 +248,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h2"
+          className=" h2"
 >
           <div />
 </h2>,
         "_debugID": 4,
         "_renderedOutput": <h2
-          className="h2"
+          className=" h2"
 >
           <div />
 </h2>,
@@ -288,13 +288,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h1
-    className="h1class-name"
+    className="class-name h1"
 >
     <div />
 </h1>,
   "nodes": Array [
     <h1
-      className="h1class-name"
+      className="class-name h1"
 >
       <div />
 </h1>,
@@ -303,7 +303,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Heading
         className="class-name"
@@ -315,7 +315,7 @@ ShallowWrapper {
       "_debugID": 11,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Heading {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -345,13 +345,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h1
-          className="h1class-name"
+          className="class-name h1"
 >
           <div />
 </h1>,
         "_debugID": 12,
         "_renderedOutput": <h1
-          className="h1class-name"
+          className="class-name h1"
 >
           <div />
 </h1>,
@@ -385,13 +385,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h2class-name"
+    className="class-name h2"
 >
     <div />
 </h2>,
   "nodes": Array [
     <h2
-      className="h2class-name"
+      className="class-name h2"
 >
       <div />
 </h2>,
@@ -400,7 +400,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Heading
         className="class-name"
@@ -412,7 +412,7 @@ ShallowWrapper {
       "_debugID": 9,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Heading {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -442,13 +442,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h2class-name"
+          className="class-name h2"
 >
           <div />
 </h2>,
         "_debugID": 10,
         "_renderedOutput": <h2
-          className="h2class-name"
+          className="class-name h2"
 >
           <div />
 </h2>,
@@ -482,13 +482,13 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <h2
-    className="h1class-name"
+    className="class-name h1"
 >
     <div />
 </h2>,
   "nodes": Array [
     <h2
-      className="h1class-name"
+      className="class-name h1"
 >
       <div />
 </h2>,
@@ -497,7 +497,7 @@ ShallowWrapper {
   "renderer": ReactShallowRenderer {
     "_instance": ShallowComponentWrapper {
       "_calledComponentWillUnmount": false,
-      "_compositeType": 0,
+      "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <Heading
         className="class-name"
@@ -509,7 +509,7 @@ ShallowWrapper {
       "_debugID": 7,
       "_hostContainerInfo": null,
       "_hostParent": null,
-      "_instance": Heading {
+      "_instance": StatelessComponent {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
@@ -539,13 +539,13 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <h2
-          className="h1class-name"
+          className="class-name h1"
 >
           <div />
 </h2>,
         "_debugID": 8,
         "_renderedOutput": <h2
-          className="h1class-name"
+          className="class-name h1"
 >
           <div />
 </h2>,

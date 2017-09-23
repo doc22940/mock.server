@@ -1,46 +1,91 @@
+// @flow
 
+
+
+/**
+
+	Button
+
+**/
+export type ButtonTypeType = "button" | "submit" | "reset";
+export type ButtonModifierType = "primary" | "link" | "action" | "action circle";
+export type ButtonSizeType = "sm" | "lg" | "block";
+export type ButtonClassPropsType = {
+	modifier?: ButtonModifierType,
+	size?: ButtonSizeType,
+	className?: string,
+};
+export type ButtonPropsType = ButtonClassPropsType & {
+	disabled?: boolean,
+	tabIndex?: number,
+	type?: ButtonTypeType,
+	label?: string,
+	onClick?: Function
+};
 declare module "spectre-ui/Button" {
-	declare export type TypeEnumType = "button" | "submit" | "reset";
-	declare export type ModifierEnumType = "primary" | "link" | "action" | "action circle";
-	declare export type SizeEnumType = "sm" | "lg" | "block";
-
-	declare export default class Button extends React$Component<{
-		disabled?: boolean,
-		tabIndex?: number,
-		type?: TypeEnumType,
-		label?: string,
-		modifier?: ModifierEnumType,
-		size?: SizeEnumType,
-		className?: string,
-		onClick?: Function
-	}> {}
+	declare export default function Button(ButtonPropsType): React$Element<*>;
 }
 
+
+
+/**
+
+	Typography
+
+**/
+export type HeadingTypeEnumType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type HeadingClassPropsType = {
+	type?: HeadingTypeEnumType,
+	className?: string
+};
+export type HeadingPropsType = HeadingClassPropsType & {
+	children?: React$Node,
+	tag?: string
+};
+export type BlockquotePropsType = {
+	children?: React$Node,
+	className?: string
+};
+export type ParagraphPropsType = {
+	children?: React$Node,
+	innerHtml?: string,
+	lang?: string,
+	className?: string
+};
+export type ListTypeEnumType = "ul" | "ol" | "dl";
+export type ListEntryType = string | { name: string, entries: Array<ListEntryType> };
+export type ListEntriesType = Array<ListEntryType>;
+export type ListPropsType = {
+	entries: ListEntriesType,
+	type?: ListTypeEnumType,
+	className?: string,
+	classNameEntry?: string
+};
 declare module "spectre-ui/Typography" {
+	declare export default function Heading(HeadingPropsType): React$Element<*>;
+	declare export default function Paragraph(ParagraphPropsType): React$Element<*>;
+	declare export default function Blockquote(BlockquotePropsType): React$Element<*>;
+	declare export default class List extends React$Component<ListPropsType> {}
+}
 
-	declare export type TypeEnumType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-	declare export type ListTypeEnumType = "ul" | "ol" | "dl";
-	declare export type EntryType = string | { name: string, entries: Array<EntryType> };
-	declare export type EntriesType = Array<EntryType>;
-
-	declare export default class Heading extends React$Component<{
-		children?: Children,
-		type?: TypeEnumType,
-		tag?: string
-	}> {}
-
-	declare export default class Paragraph extends React$Component<{
-		children?: Children,
-		innerHtml?: string,
-		lang?: string
-	}> {}
-
-	declare export default class Blockquote extends React$Component<{
-		children?: Children
-	}> {}
-
-	declare export default class List extends React$Component<{
-		entries: EntriesType,
-		type?: ListTypeEnumType
-	}> {}
+export type TableModifierEnumType = "striped" | "hover";
+export type TableValueType = string | number;
+export type TableArrayType = Array<Array<TableValueType>>;
+export type TableClassPropsType = {
+	modifiers?: Array<TableModifierEnumType>,
+	className?: string,
+};
+export type TablePropsType = TableClassPropsType & {
+	head?: TableArrayType,
+	body?: TableArrayType,
+	classNameHead?: string,
+	classNameHeadRow?: string,
+	classNameHeadCell?: string,
+	classNameBody?: string,
+	classNameBodyRow?: string,
+	classNameBodyCell?: string,
+	activeRow?: number
+};
+declare module "spectre-ui/Table" {
+	declare export default class Table extends React$Component<TablePropsType> {}
 }

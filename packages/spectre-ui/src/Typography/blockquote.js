@@ -2,26 +2,12 @@
 /* global props defaultProps */
 
 import "spectre.css";
-import React, { Component } from "react";
-import type { Element, Children } from "react";
+import React from "react";
 
-export type BlockquotePropsType = {
-	children?: Children,
-	className?: string
-};
+import type { BlockquotePropsType } from "../../spectre-ui.js.flow";
 
-class Blockquote extends Component {
-	props: BlockquotePropsType;
-
-	get className(): string {
-		return this.props.className || "";
-	}
-
-	render(): Element<*> {
-		const { children } = this.props;
-
-		return <blockquote className={this.className}>{children}</blockquote>;
-	}
-}
+const Blockquote = ({ children, className }: BlockquotePropsType): React$Element<*> => (
+	<blockquote className={className}>{children}</blockquote>
+);
 
 export default Blockquote;
