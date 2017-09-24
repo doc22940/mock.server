@@ -1,73 +1,74 @@
 {
-	"name": "node-mock-server",
-	"version": "0.18.1",
-	"description": "File based Node REST API mock server",
-	"email": "simon.mollweide@web.de",
-	"author": "Simon Mollweide <simon.mollweide@web.de>",
-	"url": "https://github.com/smollweide/node-mock-server",
-	"repository": {
-		"type": "github",
-		"url": "https://github.com/smollweide/node-mock-server"
-	},
-	"bugs": {
-		"url": "https://github.com/smollweide/node-mock-server/issues"
-	},
-	"scripts": {
-		"start": "nodemon demo/index.js",
-		"test": "mocha test/tests.js",
-		"posttest": "npm run lint",
-		"lint": "npm run lint:js",
-		"lint:js": "node_modules/.bin/eslint ."
-	},
-	"main": "mock-server.js",
-	"keywords": [
-		"node",
-		"node.js",
-		"npm",
-		"mock",
-		"rest",
-		"REST",
-		"rest API",
-		"REST API",
-		"api",
-		"API",
-		"json",
-		"DTO",
-		"Datatransferobject",
-		"Swagger",
-		"documentation",
-		"REST API documentation",
-		"cli"
-	],
-	"engines": {
-		"node": ">=4"
-	},
-	"preferGlobal": false,
-	"private": false,
-	"license": "MIT",
-	"dependencies": {
-		"body-parser": "^1.15.0",
-		"chip": "0.0.5",
-		"cookie-parser": "^1.4.3",
-		"deasync": "^0.1.4",
-		"ejs": "^2.4.1",
-		"es6-promise-polyfill": "^1.2.0",
-		"express": "^4.15.3",
-		"extend": "^3.0.0",
-		"faker": "^4.1.0",
-		"inflect": "^0.4.0",
-		"inquirer": "^3.2.1",
-		"make-dir": "^1.0.0",
-		"mime-types": "^2.1.15",
-		"open": "0.0.5",
-		"p-series": "^1.0.0",
-		"request": "^2.72.0"
-	},
-	"devDependencies": {
-		"@namics/eslint-config": "^2.2.0",
-		"babel-eslint": "^6.0.3",
-		"eslint": "^3.19.0",
-		"eslint-plugin-import": "^2.2.0",
-		"mocha": "^2.4.5"
-	}
+  "name": "node-mock-server",
+  "version": "0.18.1",
+  "description": "File based Node REST API mock server",
+  "email": "simon.mollweide@web.de",
+  "author": "Simon Mollweide <simon.mollweide@web.de>",
+  "url": "https://github.com/smollweide/node-mock-server",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/smollweide/node-mock-server"
+  },
+  "bugs": {
+    "url": "https://github.com/smollweide/node-mock-server/issues"
+  },
+  "scripts": {
+    "start": "nodemon demo/index.js",
+    "test": "mocha test/tests.js",
+    "posttest": "npm run lint",
+    "lint": "npm run lint:js",
+    "lint:js": "node_modules/.bin/eslint ."
+  },
+  "main": "mock-server.js",
+  "keywords": [
+    "node",
+    "node.js",
+    "npm",
+    "mock",
+    "rest",
+    "REST",
+    "rest API",
+    "REST API",
+    "api",
+    "API",
+    "json",
+    "DTO",
+    "Datatransferobject",
+    "Swagger",
+    "documentation",
+    "REST API documentation",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "preferGlobal": false,
+  "private": false,
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "chip": "0.0.5",
+    "cookie-parser": "^1.4.3",
+    "deasync": "^0.1.4",
+    "ejs": "^2.4.1",
+    "es6-promise-polyfill": "^1.2.0",
+    "express": "^4.15.3",
+    "extend": "^3.0.0",
+    "faker": "^4.1.0",
+    "inflect": "^0.4.0",
+    "inquirer": "^3.2.1",
+    "make-dir": "^1.0.0",
+    "mime-types": "^2.1.15",
+    "minimatch": "^3.0.4",
+    "open": "0.0.5",
+    "p-series": "^1.0.0",
+    "request": "^2.72.0"
+  },
+  "devDependencies": {
+    "@namics/eslint-config": "^2.2.0",
+    "babel-eslint": "^6.0.3",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^2.4.5"
+  }
 }
