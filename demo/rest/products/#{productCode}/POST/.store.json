@@ -2,6 +2,9 @@
   "validation": {
     "success": {
       "counter": 1
+    },
+    "tunnel-latest": {
+      "counter": 4
     }
   }
 }

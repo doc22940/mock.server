@@ -11,6 +11,9 @@
     },
     "success.json": {
       "counter": 0
+    },
+    "tunnel-latest": {
+      "counter": 0
     }
   }
 }
