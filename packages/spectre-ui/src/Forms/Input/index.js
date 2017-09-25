@@ -5,7 +5,11 @@ import "spectre.css";
 import React, { Component } from "react";
 import noop from "../../utils/noop.js";
 
-import type { InputPropsType, InputStateType, DirtyCheckObjType } from "../../../spectre-ui.js.flow";
+import type {
+	InputPropsType,
+	InputStateType,
+	DirtyCheckObjType,
+} from "../../../spectre-ui.js.flow";
 
 // Supports determination of isControlled().
 // Controlled input accepts its current value as a prop.
@@ -37,7 +41,7 @@ class Input extends Component<InputPropsType, InputStateType> {
 	static displayName = "Forms/Input";
 
 	state = {
-		focused: false
+		focused: false,
 	};
 
 	componentWillMount() {
@@ -123,8 +127,13 @@ class Input extends Component<InputPropsType, InputStateType> {
 		return hasValue(this.props.value);
 	}
 
+	get isTextarea(): boolean {
+		const { rows } = this.props;
+		return Boolean(rows && parseInt(rows, 10) > 1);
+	}
+
 	render(): React$Element<*> {
-		const Tag = `input`;
+		const Tag = this.isTextarea ? `textarea` : `input`;
 		const {
 			id,
 			autoComplete,
@@ -140,7 +149,7 @@ class Input extends Component<InputPropsType, InputStateType> {
 			placeholder,
 			type = "text",
 			rows,
-			inputProps
+			inputProps,
 		} = this.props;
 
 		return (

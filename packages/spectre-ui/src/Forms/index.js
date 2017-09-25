@@ -3,5 +3,7 @@
 
 import Input from "./Input";
 import Label from "./Label";
+import Group from "./Group";
+import TextField from "./TextField";
 
-export { Input, Label };
+export { Input, Label, Group, TextField };

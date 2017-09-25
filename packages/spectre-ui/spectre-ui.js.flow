@@ -136,13 +136,24 @@ export type DirtyCheckObjType = HTMLInputElement | null | InputPropsType;
 export type InputStateType = {
 	focused: boolean
 };
-
 export type LabelPropsType = {
 	children: React$Node,
 	className?: string,
 	htmlFor?: string
 };
+export type GroupPropsType = {
+	children: React$Node,
+	className?: string
+};
+export type TextFieldDefaultPropsType = {
+	id: string,
+	label?: string,
+	classNameLabel?: string,
+	classNameInput?: string
+};
+export type TextFieldPropsType = InputPropsType & TextFieldDefaultPropsType;
 declare module "spectre-ui/Forms" {
 	declare export default class Input extends React$Component<InputPropsType, InputStateType> {}
 	declare export default function Label(LabelPropsType): React$Element<*>;
+	declare export default function Group(GroupPropsType): React$Element<*>;
 }

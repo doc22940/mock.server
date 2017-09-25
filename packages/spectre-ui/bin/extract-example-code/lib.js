@@ -17,7 +17,7 @@ function beautifyFile(codeString) {
 
 function getFiles() {
 	return glob.sync(`${dir}/**/*.js`, {
-		ignore: [`${dir}/Doc/**`, `${dir}/tmp/**`]
+		ignore: [`${dir}/Doc/**`, `${dir}/tmp/**`],
 	});
 }
 
@@ -27,8 +27,8 @@ function extract() {
 	getFiles().forEach(filePath => {
 		const data = fs
 			.readFileSync(filePath, "utf8")
-			.replace(/\n/g, "")
-			.replace(/\t/g, "");
+			.replace(/\n/g, " ")
+			.replace(/\t/g, " ");
 
 		data.split("<DocElement ").forEach(dataSpl => {
 			const dataSplSpl = dataSpl.split("</DocElement>");
@@ -64,5 +64,5 @@ function watch() {
 
 module.exports = {
 	extract,
-	watch
+	watch,
 };
