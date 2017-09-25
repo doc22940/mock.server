@@ -9,6 +9,7 @@
 # production
 /build
 /storybook-static
+/stories/tmp
 
 # misc
 .DS_Store

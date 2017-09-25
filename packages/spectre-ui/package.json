@@ -1,38 +1,45 @@
 {
-  "name": "spectre-ui",
-  "version": "0.1.0",
-  "private": true,
-  "main": "build",
-  "dependencies": {
-    "custom-react-scripts": "0.2.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "spectre.css": "^0.4.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "watch": "node-flow-config start",
-    "build": "node-flow-config build",
-    "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --env=jsdom --coverage",
-    "storybook": "start-storybook -p 3002",
-    "build-storybook": "build-storybook",
-    "lint": "npm-run-all lint:*",
-    "lint:js": "node_modules/.bin/eslint .",
-    "flow": "node_modules/.bin/flow",
-    "flow-install": "node_modules/.bin/flow-typed install"
-  },
-  "devDependencies": {
-    "@namics/eslint-config": "^4.1.0",
-    "@storybook/addon-actions": "^3.2.6",
-    "@storybook/addon-links": "^3.2.6",
-    "@storybook/react": "^3.2.8",
-    "enzyme": "^2.9.1",
-    "eslint-config": "0.1.0",
-    "flow-bin": "^0.55.0",
-    "flow-typed": "^2.1.5",
-    "node-flow-config": "0.1.0",
-    "npm-run-all": "^4.1.1",
-    "react-test-renderer": "^15.6.1"
-  }
+    "name": "spectre-ui",
+    "version": "0.1.0",
+    "private": true,
+    "main": "build",
+    "dependencies": {
+        "custom-react-scripts": "0.2.0",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "spectre.css": "^0.4.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "watch": "node-flow-config start",
+        "build": "node-flow-config build",
+        "test": "react-scripts test --env=jsdom",
+        "test:coverage": "react-scripts test --env=jsdom --coverage",
+        "storybook": "start-storybook -p 3002",
+        "build-storybook": "build-storybook",
+        "lint": "npm-run-all lint:*",
+        "lint:js": "node_modules/.bin/eslint .",
+        "flow": "node_modules/.bin/flow",
+        "flow-install": "node_modules/.bin/flow-typed install",
+        "build-example-code": "node ./bin/extract-example-code",
+        "watch-example-code": "node ./bin/extract-example-code/watch",
+        "build-props-doc": "node ./bin/extract-prop-types",
+        "watch-props-doc": "node ./bin/extract-prop-types/watch"
+    },
+    "devDependencies": {
+        "@namics/eslint-config": "^4.1.0",
+        "@storybook/addon-actions": "^3.2.6",
+        "@storybook/addon-knobs": "^3.2.10",
+        "@storybook/addon-links": "^3.2.6",
+        "@storybook/react": "^3.2.8",
+        "enzyme": "^2.9.1",
+        "eslint-config": "0.1.0",
+        "flow-bin": "^0.55.0",
+        "flow-typed": "^2.1.5",
+        "js-beautify": "^1.7.3",
+        "make-dir": "^1.0.0",
+        "node-flow-config": "0.1.0",
+        "npm-run-all": "^4.1.1",
+        "react-test-renderer": "^15.6.1"
+    }
 }

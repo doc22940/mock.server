@@ -14,14 +14,16 @@ export type ButtonClassPropsType = {
 	modifier?: ButtonModifierType,
 	size?: ButtonSizeType,
 	className?: string,
+	loading?: boolean
 };
-export type ButtonPropsType = ButtonClassPropsType & {
+export type ButtonDefaultPropsType = {
 	disabled?: boolean,
 	tabIndex?: number,
 	type?: ButtonTypeType,
 	label?: string,
 	onClick?: Function
 };
+export type ButtonPropsType = ButtonClassPropsType & ButtonDefaultPropsType;
 declare module "spectre-ui/Button" {
 	declare export default function Button(ButtonPropsType): React$Element<*>;
 }
@@ -38,10 +40,11 @@ export type HeadingClassPropsType = {
 	type?: HeadingTypeEnumType,
 	className?: string
 };
-export type HeadingPropsType = HeadingClassPropsType & {
+export type HeadingDefaultPropsType = {
 	children?: React$Node,
 	tag?: string
 };
+export type HeadingPropsType = HeadingClassPropsType & HeadingDefaultPropsType;
 export type BlockquotePropsType = {
 	children?: React$Node,
 	className?: string
@@ -53,7 +56,11 @@ export type ParagraphPropsType = {
 	className?: string
 };
 export type ListTypeEnumType = "ul" | "ol" | "dl";
-export type ListEntryType = string | { name: string, entries: Array<ListEntryType> };
+export type ListEntryObjectType = {
+	name: string,
+	entries: Array<ListEntryType>
+};
+export type ListEntryType = string | ListEntryObjectType;
 export type ListEntriesType = Array<ListEntryType>;
 export type ListPropsType = {
 	entries: ListEntriesType,
@@ -75,7 +82,7 @@ export type TableClassPropsType = {
 	modifiers?: Array<TableModifierEnumType>,
 	className?: string,
 };
-export type TablePropsType = TableClassPropsType & {
+export type TableDefaultPropsType = {
 	head?: TableArrayType,
 	body?: TableArrayType,
 	classNameHead?: string,
@@ -86,6 +93,56 @@ export type TablePropsType = TableClassPropsType & {
 	classNameBodyCell?: string,
 	activeRow?: number
 };
+export type TablePropsType = TableClassPropsType & TableDefaultPropsType;
 declare module "spectre-ui/Table" {
 	declare export default class Table extends React$Component<TablePropsType> {}
+}
+
+
+
+/**
+
+	Forms/Input
+
+**/
+export type InputPropsType = {
+	id?: string,
+	className?: string,
+	autoComplete?: string,
+	autoFocus?: boolean,
+	onKeyUp?: (event: SyntheticKeyboardEvent<>) => void,
+	onKeyDown?: (event: SyntheticKeyboardEvent<>) => void,
+	onBlur?: (event: SyntheticFocusEvent<>) => void,
+	onChange?: (event: SyntheticInputEvent<>) => void,
+	onFocus?: (event: SyntheticFocusEvent<>) => void,
+	onDirty?: () => void,
+	onClean?: () => void,
+	inputRef?: (node: HTMLElement) => void,
+	placeholder?: string,
+	rows?: string | number,
+	rowsMax?: string | number,
+	type?: string,
+	value?: string | number | Array<string | number>,
+	name?: string,
+	multiline?: boolean,
+	disabled?: boolean,
+	required?: boolean,
+	readOnly?: boolean,
+	defaultValue?: string | number,
+	error?: boolean,
+	inputProps?: Object
+};
+export type DirtyCheckObjType = HTMLInputElement | null | InputPropsType;
+export type InputStateType = {
+	focused: boolean
+};
+
+export type LabelPropsType = {
+	children: React$Node,
+	className?: string,
+	htmlFor?: string
+};
+declare module "spectre-ui/Forms" {
+	declare export default class Input extends React$Component<InputPropsType, InputStateType> {}
+	declare export default function Label(LabelPropsType): React$Element<*>;
 }

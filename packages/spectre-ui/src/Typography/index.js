@@ -6,4 +6,7 @@ import Paragraph from "./Paragraph";
 import Blockquote from "./Blockquote";
 import List from "./List";
 
-export { Heading, Paragraph, Blockquote, List };
+const H = Heading;
+const P = Paragraph;
+
+export { Heading, Paragraph, Blockquote, List, H, P };
