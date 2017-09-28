@@ -14,19 +14,21 @@ const Doc = ({ title, desc, children }) => (
 					<p>{desc}</p>
 				</div>
 			)}
-			{children}
 		</div>
+		{children}
 	</div>
 );
 Doc.displayName = "Doc";
 
 export const DocSection = ({ title, children }) => (
 	<div>
-		{title && (
-			<h4 id="buttons-sizes" className="s-subtitle">
-				{title}
-			</h4>
-		)}
+		<div className="container">
+			{title && (
+				<h4 id="buttons-sizes" className="s-subtitle">
+					{title}
+				</h4>
+			)}
+		</div>
 		{children}
 	</div>
 );
@@ -140,8 +142,14 @@ export const DocPropsType = ({ prop }) => {
 DocCode.displayName = "DocPropsType";
 
 export const DocProps = ({ props }) => (
-	<div>
-		{props.map((prop, index) => <DocPropsType key={`${prop.name}-${index}`} prop={prop} />)}
+	<div className="container">
+		<div className="columns">
+			<div className="column col-xs-12">
+				{props.map((prop, index) => (
+					<DocPropsType key={`${prop.name}-${index}`} prop={prop} />
+				))}
+			</div>
+		</div>
 	</div>
 );
 DocCode.displayName = "DocProps";

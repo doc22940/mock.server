@@ -255,3 +255,37 @@ export type NotificationsPropsType = {
 export type NotificationsStateType = {
 	notifications?: { [key: string]: NotificationInnerType }
 };
+declare module "spectre-ui/Notifications" {
+	declare export default class Notifications extends React$Component<NotificationsPropsType, NotificationsStateType> {}
+}
+
+export type ContainerSizeEnumType = "xs" | "sm" | "md" | "lg" | "xl";
+export type ContainerPropsType = {
+	children: React$Node,
+	size?: ContainerSizeEnumType,
+	className?: string
+};
+export type RowPropsType = {
+	children: React$Node,
+	className?: string,
+	gapless?: boolean,
+	oneline?: boolean,
+};
+export type ColumnSizeEnumType = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type ColumnAlignEnumType = "center" | "right" | "left";
+export type ColumnPropsType = {
+	children: React$Node,
+	className?: string,
+	flex?: ColumnSizeEnumType,
+	xs?: ColumnSizeEnumType,
+	sm?: ColumnSizeEnumType,
+	md?: ColumnSizeEnumType,
+	lg?: ColumnSizeEnumType,
+	xl?: ColumnSizeEnumType,
+	align?: ColumnAlignEnumType
+};
+declare module "spectre-ui/Grid" {
+	declare export default function Container(ContainerPropsType): React$Element<*>;
+	declare export default function Row(RowPropsType): React$Element<*>;
+	declare export default function Column(ColumnPropsType): React$Element<*>;
+}

@@ -4,6 +4,7 @@
 import React from "react";
 import type { Element } from "react";
 import { storiesOf } from "@storybook/react";
+import "./index.css";
 
 import Buttons from "./buttons";
 import Forms, { DocTextField, DocTextarea, DocCheckbox, DocSwitch, DocSelect } from "./forms";
@@ -11,6 +12,7 @@ import Typography, { DocHeading, DocParagraphs, DocBlockquote, DocLists } from "
 import Tables from "./tables";
 import Toasts from "./toasts";
 import Notifications from "./notifications";
+import Grid, { DocFlexbox, DocResponsive, DocOffset } from "./grid";
 
 storiesOf("Elements/Typography", module)
 	.add("Intro", (): Element<*> => <Typography />)
@@ -27,6 +29,11 @@ storiesOf("Elements/Forms", module)
 	.add("Checkbox", (): Element<*> => <DocCheckbox />)
 	.add("Switch", (): Element<*> => <DocSwitch />)
 	.add("Select", (): Element<*> => <DocSelect />);
+storiesOf("Layout/Grid", module)
+	.add("Intro", (): Element<*> => <Grid />)
+	.add("Flexbox", (): Element<*> => <DocFlexbox />)
+	.add("Offset", (): Element<*> => <DocOffset />)
+	.add("Responsive", (): Element<*> => <DocResponsive />);
 storiesOf("Components/Toasts", module).add("Intro", (): Element<*> => <Toasts />);
 storiesOf("Components/Notifications", module).add("Intro", (): Element<*> => <Notifications />);
 // .add("Notifications", (): Element<*> => <Notifications />);
