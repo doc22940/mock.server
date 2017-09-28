@@ -10,11 +10,8 @@ import React from "react";
 import Doc, { DocSection, DocElement, DocCode, DocProps } from "./Doc";
 import { H, P, Blockquote, List } from "../src/Typography";
 
-const DocTypography = (): React$Element<*> => (
-	<Doc
-		title="Typography"
-		desc="Typography sets default styles for headings, paragraphs, semantic text, blockquote and lists elements."
-	>
+export const DocHeading = (): React$Element<*> => (
+	<Doc>
 		<DocSection title="Headings">
 			<DocElement id="headings">
 				<H>
@@ -41,9 +38,19 @@ const DocTypography = (): React$Element<*> => (
 			</DocElement>
 			<DocCode id="headings" />
 			<DocProps
-				props={["HeadingPropsType", "HeadingClassPropsType", "HeadingDefaultPropsType", "HeadingTypeEnumType"]}
+				props={[
+					"HeadingPropsType",
+					"HeadingClassPropsType",
+					"HeadingDefaultPropsType",
+					"HeadingTypeEnumType",
+				]}
 			/>
 		</DocSection>
+	</Doc>
+);
+
+export const DocParagraphs = (): React$Element<*> => (
+	<Doc>
 		<DocSection title="Paragraphs">
 			<DocElement id="paragraphs">
 				<P>Lorem ipsum dolor sit amet, ...</P>
@@ -51,17 +58,24 @@ const DocTypography = (): React$Element<*> => (
 				<H type="h6" tag="p">
 					Chinese (Simplified)
 				</H>
-				<P lang="zh-Hans">革命不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不迫，“文质彬彬”，那样“温良恭俭让”。革命就是暴动，是一个阶级推翻一个阶级的暴烈的行动。</P>
+				<P lang="zh-Hans">
+					革命不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不迫，“文质彬彬”，那样“温良恭俭让”。革命就是暴动，是一个阶级推翻一个阶级的暴烈的行动。
+				</P>
 			</DocElement>
 			<DocCode id="paragraphs" />
 			<DocProps props={["ParagraphPropsType"]} />
 		</DocSection>
+	</Doc>
+);
+
+export const DocBlockquote = (): React$Element<*> => (
+	<Doc>
 		<DocSection title="Blockquote">
 			<DocElement id="blockquote">
 				<Blockquote>
 					<P>
-						The advance of technology is based on making it fit in so that you don't really even notice it,
-						so it's part of everyday life.{" "}
+						The advance of technology is based on making it fit in so that you don't
+						really even notice it, so it's part of everyday life.{" "}
 					</P>
 					<cite>- Bill Gates</cite>
 				</Blockquote>
@@ -69,21 +83,46 @@ const DocTypography = (): React$Element<*> => (
 			<DocCode id="blockquote" />
 			<DocProps props={["BlockquotePropsType"]} />
 		</DocSection>
+	</Doc>
+);
+export const DocLists = (): React$Element<*> => (
+	<Doc>
 		<DocSection title="Lists">
 			<DocElement id="lists">
 				<H type="h6">Unordered List</H>
-				<List entries={[{ name: "list item 2", entries: ["list item 2.1", "list item 2.2"] }, "list item 3"]} />
+				<List
+					entries={[
+						{ name: "list item 2", entries: ["list item 2.1", "list item 2.2"] },
+						"list item 3",
+					]}
+				/>
 				<H type="h6">Ordered List</H>
-				<List type="ol" entries={[{ name: "list item 2", entries: ["list item 2.1", "list item 2.2"] }]} />
+				<List
+					type="ol"
+					entries={[{ name: "list item 2", entries: ["list item 2.1", "list item 2.2"] }]}
+				/>
 				<H type="h6">Description List</H>
 				<List type="dl" entries={["Desc 1", "Value 1", "Desc 2", "Value 2"]} />
 			</DocElement>
 			<DocCode id="lists" />
 			<DocProps
-				props={["ListPropsType", "ListTypeEnumType", "ListEntryType", "ListEntryObjectType", "ListEntriesType"]}
+				props={[
+					"ListPropsType",
+					"ListTypeEnumType",
+					"ListEntryType",
+					"ListEntryObjectType",
+					"ListEntriesType",
+				]}
 			/>
 		</DocSection>
 	</Doc>
+);
+
+const DocTypography = (): React$Element<*> => (
+	<Doc
+		title="Typography"
+		desc="Typography sets default styles for headings, paragraphs, semantic text, blockquote and lists elements."
+	/>
 );
 
 export default DocTypography;

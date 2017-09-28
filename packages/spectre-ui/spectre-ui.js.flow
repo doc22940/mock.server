@@ -105,11 +105,16 @@ declare module "spectre-ui/Table" {
 	Forms/Input
 
 **/
-export type InputPropsType = {
+export type InputOverridePropsType = {
 	id?: string,
+	type?: string
+};
+export type InputDefaultPropsType = {
 	className?: string,
 	autoComplete?: string,
 	autoFocus?: boolean,
+	checked?: boolean,
+	defaultChecked?: boolean,
 	onKeyUp?: (event: SyntheticKeyboardEvent<>) => void,
 	onKeyDown?: (event: SyntheticKeyboardEvent<>) => void,
 	onBlur?: (event: SyntheticFocusEvent<>) => void,
@@ -121,7 +126,6 @@ export type InputPropsType = {
 	placeholder?: string,
 	rows?: string | number,
 	rowsMax?: string | number,
-	type?: string,
 	value?: string | number | Array<string | number>,
 	name?: string,
 	multiline?: boolean,
@@ -132,6 +136,7 @@ export type InputPropsType = {
 	error?: boolean,
 	inputProps?: Object
 };
+export type InputPropsType = InputDefaultPropsType & InputOverridePropsType;
 export type DirtyCheckObjType = HTMLInputElement | null | InputPropsType;
 export type InputStateType = {
 	focused: boolean
@@ -151,9 +156,102 @@ export type TextFieldDefaultPropsType = {
 	classNameLabel?: string,
 	classNameInput?: string
 };
-export type TextFieldPropsType = InputPropsType & TextFieldDefaultPropsType;
+export type TextFieldPropsType = InputDefaultPropsType & TextFieldDefaultPropsType;
+
+export type LabeledInputTypeEnumType = "checkbox" | "radio" | "switch";
+export type LabeledInputOverridePropsType = {
+	type?: LabeledInputTypeEnumType
+};
+export type LabeledInputDefaultPropsType = {
+	id: string,
+	label: string,
+	classNameLabel?: string,
+	classNameIcon?: string
+};
+export type LabeledInputPropsType = InputDefaultPropsType & LabeledInputOverridePropsType & LabeledInputDefaultPropsType;
+
+export type CheckboxTypeEnumType = "checkbox" | "switch";
+export type CheckboxOverridePropsType = {
+	type?: CheckboxTypeEnumType,
+	asSwitch?: boolean
+};
+export type CheckboxDefaultPropsType = {
+	classNameGroup?: string,
+};
+export type CheckboxPropsType = InputDefaultPropsType & LabeledInputDefaultPropsType & CheckboxOverridePropsType & CheckboxDefaultPropsType;
+export type SwitchPropsType = InputDefaultPropsType & LabeledInputDefaultPropsType & CheckboxDefaultPropsType;
+
+export type SelectOptionPropsType = {
+	name: string,
+	value?: string
+};
+export type SelectPropsType = {
+	id?: string,
+	className?: string,
+	classNameOption?: string,
+	multiple?: boolean,
+	autoFocus?: boolean,
+	onKeyUp?: (event: SyntheticKeyboardEvent<>) => void,
+	onKeyDown?: (event: SyntheticKeyboardEvent<>) => void,
+	onBlur?: (event: SyntheticFocusEvent<>) => void,
+	onChange?: (event: SyntheticInputEvent<>) => void,
+	onFocus?: (event: SyntheticFocusEvent<>) => void,
+	inputRef?: (node: HTMLElement) => void,
+	chooseText?: string,
+	value?: string | number,
+	defaultValue?: string | number,
+	name?: string,
+	disabled?: boolean,
+	required?: boolean,
+	readOnly?: boolean,
+	error?: boolean,
+	entries?: Array<SelectOptionPropsType>,
+	selectProps?: Object,
+};
+export type SelectStateType = {
+	focused: boolean
+};
 declare module "spectre-ui/Forms" {
 	declare export default class Input extends React$Component<InputPropsType, InputStateType> {}
+	declare export default class Select extends React$Component<SelectPropsType, SelectStateType> {}
 	declare export default function Label(LabelPropsType): React$Element<*>;
 	declare export default function Group(GroupPropsType): React$Element<*>;
+	declare export default function LabeledInput(LabeledInputPropsType): React$Element<*>;
+	declare export default function Checkbox(CheckboxPropsType): React$Element<*>;
+	declare export default function Switch(SwitchPropsType): React$Element<*>;
 }
+
+export type ToastTypeEnumType = "" | "primary" | "success" | "warning" | "error";
+export type ToastPropsType = {
+	title?: string,
+	text?: string,
+	className?: string,
+	classNameTitle?: string,
+	classNameButton?: string,
+	closable?: boolean,
+	onClickClose?: (event: SyntheticMouseEvent<>) => void,
+	onClickBackground?: (event: SyntheticMouseEvent<>) => void,
+	type?: ToastTypeEnumType
+};
+declare module "spectre-ui/Toast" {
+	declare export default function Toast(ToastPropsType): React$Element<*>;
+}
+
+export type NotificationRenderArgsType = {
+	handleCloseNotification?: (event: SyntheticMouseEvent<>) => void,
+};
+export type NotificationType = {
+	channel?: string,
+	delay?: number,
+	render: (NotificationRenderArgsType) => React$Element<*>,
+};
+export type NotificationInnerDefaultType = {
+	id: string,
+};
+export type NotificationInnerType = NotificationType & NotificationInnerDefaultType;
+export type NotificationsPropsType = {
+	channel?: string
+};
+export type NotificationsStateType = {
+	notifications?: { [key: string]: NotificationInnerType }
+};
