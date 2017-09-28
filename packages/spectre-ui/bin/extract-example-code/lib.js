@@ -6,13 +6,27 @@
 const path = require("path");
 const glob = require("glob");
 const fs = require("fs");
-const beautify = require("js-beautify");
+const prettier = require("prettier");
+const hljs = require("highlight.js");
 const makeDir = require("make-dir");
 
 const dir = path.join(__dirname, "/../../stories");
 
 function beautifyFile(codeString) {
-	return beautify.html(codeString.replace(/{" "}/g, "").replace(/<br \/>/g, ""));
+	const code = prettier
+		.format(
+			`<prettier>${codeString.replace(/{" "}/g, "").replace(/<br \/>/g, "")}</prettier>`,
+			{
+				trailingComma: "es5",
+				printWidth: 70,
+			}
+		)
+		.replace("<prettier>", "")
+		.replace("</prettier>", "")
+		.replace(/;\n$/, "")
+		.replace(/^\n/, "")
+		.replace(/^ {2}/gm, "");
+	return hljs.highlight("xml", code).value;
 }
 
 function getFiles() {
@@ -25,17 +39,14 @@ function extract() {
 	const out = ["/* eslint-disable */", "// prettier-ignore", "const exampleCode = {};"];
 
 	getFiles().forEach(filePath => {
-		const data = fs
-			.readFileSync(filePath, "utf8")
-			.replace(/\n/g, " ")
-			.replace(/\t/g, " ");
+		const data = fs.readFileSync(filePath, "utf8");
 
 		data.split("<DocElement ").forEach(dataSpl => {
 			const dataSplSpl = dataSpl.split("</DocElement>");
 			if (dataSplSpl[0].search(/^id="/) < 0) {
 				return;
 			}
-			const reg = new RegExp('id="([^"]*)">(.*)', "g");
+			const reg = new RegExp('id="([^"]*)">([^]*)', "g");
 			const result = reg.exec(dataSplSpl[0]);
 			if (!result || !Array.isArray(result) || result.length < 3) {
 				return;

@@ -3,6 +3,7 @@ import "spectre.css/docs/css/docs.css";
 import React from "react";
 import propTypes from "../tmp/types";
 import exampleCode from "../tmp/code";
+import "./highlight.css";
 
 const Doc = ({ title, desc, children }) => (
 	<div className="s-content">
@@ -44,7 +45,7 @@ export const DocCode = ({ id }) => {
 	}
 	return (
 		<pre className="code" data-lang="JSX">
-			<code>{exampleCode[id]}</code>
+			<code dangerouslySetInnerHTML={{ __html: exampleCode[id] }} />
 		</pre>
 	);
 };
@@ -57,7 +58,7 @@ export const DocPropsType = ({ prop }) => {
 	const type = propTypes[prop];
 	const stylesTitle = {
 		paddingTop: "2rem",
-		paddingBottom: "1rem"
+		paddingBottom: "1rem",
 	};
 
 	if (type.type === "string (enum)") {
@@ -139,7 +140,9 @@ export const DocPropsType = ({ prop }) => {
 DocCode.displayName = "DocPropsType";
 
 export const DocProps = ({ props }) => (
-	<div>{props.map((prop, index) => <DocPropsType key={`${prop.name}-${index}`} prop={prop} />)}</div>
+	<div>
+		{props.map((prop, index) => <DocPropsType key={`${prop.name}-${index}`} prop={prop} />)}
+	</div>
 );
 DocCode.displayName = "DocProps";
 
