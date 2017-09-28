@@ -3,23 +3,14 @@
 
 import "spectre.css";
 import React, { Component } from "react";
-import noop from "../../utils/noop.js";
+import noop from "../../utils/noop";
+import hasValue from "../../utils/has-value";
 
 import type {
 	InputPropsType,
 	InputStateType,
 	DirtyCheckObjType,
 } from "../../../spectre-ui.js.flow";
-
-// Supports determination of isControlled().
-// Controlled input accepts its current value as a prop.
-//
-// @see https://facebook.github.io/react/docs/forms.html#controlled-components
-// @param value
-// @returns {boolean} true if string (including '') or number (including zero)
-export function hasValue(value: ?(number | string | Array<*>)): boolean {
-	return value !== undefined && value !== null && !(Array.isArray(value) && value.length === 0);
-}
 
 // Determine if field is dirty (a.k.a. filled).
 //
@@ -124,7 +115,7 @@ class Input extends Component<InputPropsType, InputStateType> {
 	}
 
 	get isControlled(): boolean {
-		return hasValue(this.props.value);
+		return hasValue(this.props.value) || typeof this.props.defaultChecked !== "boolean";
 	}
 
 	get isTextarea(): boolean {
@@ -150,7 +141,15 @@ class Input extends Component<InputPropsType, InputStateType> {
 			type = "text",
 			rows,
 			inputProps,
+			checked,
+			defaultChecked,
 		} = this.props;
+
+		const additionalProps = {};
+
+		if (typeof defaultChecked === "boolean") {
+			additionalProps.defaultChecked = defaultChecked;
+		}
 
 		return (
 			<Tag
@@ -173,6 +172,8 @@ class Input extends Component<InputPropsType, InputStateType> {
 				placeholder={placeholder}
 				type={type}
 				rows={rows}
+				checked={checked}
+				{...additionalProps}
 				{...inputProps}
 			/>
 		);
