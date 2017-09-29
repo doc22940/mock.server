@@ -7,7 +7,14 @@ import { storiesOf } from "@storybook/react";
 import "./index.css";
 
 import Buttons from "./buttons";
-import Forms, { DocTextField, DocTextarea, DocCheckbox, DocSwitch, DocSelect } from "./forms";
+import Forms, {
+	DocTextField,
+	DocTextarea,
+	DocCheckbox,
+	DocSwitch,
+	DocSelect,
+	DocRadios,
+} from "./forms";
 import Typography, { DocHeading, DocParagraphs, DocBlockquote, DocLists } from "./typography";
 import Tables from "./tables";
 import Toasts from "./toasts";
@@ -26,6 +33,7 @@ storiesOf("Elements/Forms", module)
 	.add("Into", (): Element<*> => <Forms />)
 	.add("TextField", (): Element<*> => <DocTextField />)
 	.add("Textarea", (): Element<*> => <DocTextarea />)
+	.add("Radios", (): Element<*> => <DocRadios />)
 	.add("Checkbox", (): Element<*> => <DocCheckbox />)
 	.add("Switch", (): Element<*> => <DocSwitch />)
 	.add("Select", (): Element<*> => <DocSelect />);

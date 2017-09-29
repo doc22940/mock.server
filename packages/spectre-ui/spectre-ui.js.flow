@@ -107,7 +107,8 @@ declare module "spectre-ui/Table" {
 **/
 export type InputOverridePropsType = {
 	id?: string,
-	type?: string
+	type?: string,
+	name?: string,
 };
 export type InputDefaultPropsType = {
 	className?: string,
@@ -127,7 +128,6 @@ export type InputDefaultPropsType = {
 	rows?: string | number,
 	rowsMax?: string | number,
 	value?: string | number | Array<string | number>,
-	name?: string,
 	multiline?: boolean,
 	disabled?: boolean,
 	required?: boolean,
@@ -152,6 +152,7 @@ export type GroupPropsType = {
 };
 export type TextFieldDefaultPropsType = {
 	id: string,
+	name?: string,
 	label?: string,
 	classNameLabel?: string,
 	classNameInput?: string
@@ -160,7 +161,8 @@ export type TextFieldPropsType = InputDefaultPropsType & TextFieldDefaultPropsTy
 
 export type LabeledInputTypeEnumType = "checkbox" | "radio" | "switch";
 export type LabeledInputOverridePropsType = {
-	type?: LabeledInputTypeEnumType
+	type?: LabeledInputTypeEnumType,
+	name?: string,
 };
 export type LabeledInputDefaultPropsType = {
 	id: string,
@@ -211,6 +213,18 @@ export type SelectPropsType = {
 export type SelectStateType = {
 	focused: boolean
 };
+export type RadioDefaultPropsType = {
+	name: string,
+};
+export type RadioPropsType = RadioDefaultPropsType & InputDefaultPropsType & LabeledInputDefaultPropsType;
+export type RadioEntryPropsType = InputDefaultPropsType & LabeledInputDefaultPropsType;
+export type RadiosPropsType = {
+	name: string,
+	label?: string,
+	value?: string,
+	defaultValue?: string,
+	entries: Array<RadioEntryPropsType>
+};
 declare module "spectre-ui/Forms" {
 	declare export default class Input extends React$Component<InputPropsType, InputStateType> {}
 	declare export default class Select extends React$Component<SelectPropsType, SelectStateType> {}
@@ -219,6 +233,8 @@ declare module "spectre-ui/Forms" {
 	declare export default function LabeledInput(LabeledInputPropsType): React$Element<*>;
 	declare export default function Checkbox(CheckboxPropsType): React$Element<*>;
 	declare export default function Switch(SwitchPropsType): React$Element<*>;
+	declare export default function Radio(RadioPropsType): React$Element<*>;
+	declare export default function Radios(RadiosPropsType): React$Element<*>;
 }
 
 export type ToastTypeEnumType = "" | "primary" | "success" | "warning" | "error";

@@ -6,7 +6,57 @@ import React from "react";
 // import { action } from "@storybook/addon-actions";
 
 import Doc, { DocSection, DocElement, DocCode, DocProps } from "./Doc";
-import { Group, TextField, Checkbox, Switch, Select } from "../src/Forms";
+import { Label, Group, TextField, Checkbox, Switch, Select, Radio, Radios } from "../src/Forms";
+
+export const DocRadios = (): React$Element<*> => (
+	<Doc>
+		<DocSection title="Radios">
+			<DocElement id="radios1">
+				{/* controlled */}
+				<Radios
+					name="gender-1"
+					label="Controlled"
+					value="gender-m-1"
+					entries={[
+						{ id: "gender-m-1", label: "Male" },
+						{ id: "gender-f-1", label: "Female" },
+					]}
+				/>
+
+				{/* uncontrolled */}
+				<Radios
+					name="gender-2"
+					label="Uncontrolled"
+					defaultValue="gender-m-2"
+					entries={[
+						{ id: "gender-m-2", label: "Male" },
+						{ id: "gender-f-2", label: "Female" },
+					]}
+				/>
+			</DocElement>
+			<DocCode id="radios1" />
+			<DocProps
+				props={[
+					"RadiosPropsType",
+					"RadioEntryPropsType",
+					"InputDefaultPropsType",
+					"LabeledInputDefaultPropsType",
+				]}
+			/>
+		</DocSection>
+		<DocSection title="Radio">
+			<DocElement id="radio1">
+				<Group>
+					<Label>Gender</Label>
+					<Radio defaultchecked name="gender-3" id="gender-m" label="Male" />
+					<Radio defaultchecked={false} name="gender-3" id="gender-f" label="Female" />
+				</Group>
+			</DocElement>
+			<DocCode id="radio1" />
+			<DocProps props={["RadioPropsType", "InputDefaultPropsType"]} />
+		</DocSection>
+	</Doc>
+);
 
 export const DocTextField = (): React$Element<*> => (
 	<Doc>

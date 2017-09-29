@@ -9,5 +9,7 @@ import LabeledInput from "./LabeledInput";
 import Checkbox from "./Checkbox";
 import Switch from "./Switch";
 import Select from "./Select";
+import Radio from "./Radio";
+import Radios from "./Radios";
 
-export { Input, Label, Group, TextField, LabeledInput, Checkbox, Switch, Select };
+export { Input, Label, Group, TextField, LabeledInput, Checkbox, Switch, Select, Radio, Radios };
