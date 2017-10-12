@@ -1,17 +1,17 @@
 // @flow
 
-import "spectre.css";
-import React from "react";
+// import 'spectre.css/dist/spectre.min.css';
+import React from 'react';
 
 import type {
 	TablePropsType,
 	TableClassPropsType,
 	TableModifierEnumType,
-	TableValueType
-} from "../../spectre-ui.js.flow";
+	TableValueType,
+} from '../../spectre-ui.js.flow';
 
-function getClassName({ modifiers, className }: TableClassPropsType): string {
-	const classNames: Array<string> = ["table"];
+function getClassName({modifiers, className}: TableClassPropsType): string {
+	const classNames: Array<string> = ['table'];
 
 	if (modifiers) {
 		modifiers.forEach((modifier: TableModifierEnumType) => {
@@ -23,7 +23,7 @@ function getClassName({ modifiers, className }: TableClassPropsType): string {
 		classNames.push(className);
 	}
 
-	return classNames.join(" ");
+	return classNames.join(' ');
 }
 
 const Table = ({
@@ -37,9 +37,9 @@ const Table = ({
 	classNameHeadCell,
 	classNameBody,
 	classNameBodyRow,
-	classNameBodyCell
+	classNameBodyCell,
 }: TablePropsType): React$Element<*> => (
-	<table className={getClassName({ modifiers, className })}>
+	<table className={getClassName({modifiers, className})}>
 		{head &&
 			head.length > 0 && (
 				<thead className={classNameHead}>
@@ -61,7 +61,7 @@ const Table = ({
 					{body.map((cells: Array<TableValueType>, rowIndex: number): React$Element<*> => (
 						<tr
 							key={rowIndex}
-							className={`${classNameBodyRow || ""} ${activeRow === rowIndex ? "active" : ""}`}
+							className={`${classNameBodyRow || ''} ${activeRow === rowIndex ? 'active' : ''}`}
 						>
 							{cells.length > 0 &&
 								cells.map((cell: TableValueType, index: number): React$Element<*> => (

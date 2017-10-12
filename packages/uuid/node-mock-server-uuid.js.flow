@@ -1,9 +1,4 @@
-export type TestType = {
-	name: string
-};
-
 declare module "node-mock-server-uuid" {
-	declare var test: TestType;
 	declare function decode(encodedPath: string): string;
 	declare function encode(path: string): string;
 }

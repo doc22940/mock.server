@@ -46,6 +46,7 @@ module.exports = {
 	appHtml: resolveApp("public/index.html"),
 	appIndexJs: resolveApp("src/index.js"),
 	appPackageJson: resolveApp("package.json"),
+	appFlowConfig: resolveApp(".flowconfig"),
 	appSrc: resolveApp("src"),
 	testsSetup: resolveApp("src/setupTests.js"),
 	appNodeModules: resolveApp("node_modules"),
@@ -54,5 +55,5 @@ module.exports = {
 	servedPath: getServedPath(resolveApp("package.json")),
 	// These properties only exist before ejecting:
 	ownPath: resolveOwn("."),
-	ownNodeModules: resolveOwn("node_modules") // This is empty on npm 3
+	ownNodeModules: resolveOwn("node_modules"), // This is empty on npm 3
 };

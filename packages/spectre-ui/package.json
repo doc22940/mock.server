@@ -1,18 +1,23 @@
 {
-    "name": "spectre-ui",
+    "name": "spectre-ui-src",
+    "buildPackage": {
+        "name": "spectre-ui",
+        "src": "src",
+        "dest": "build",
+        "ignore": ["devDependencies", "scripts"]
+    },
     "version": "0.1.0",
-    "private": true,
-    "main": "build",
+    "private": false,
     "dependencies": {
         "custom-react-scripts": "0.2.0",
-        "react": "^15.6.1",
-        "react-dom": "^15.6.1",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
         "spectre.css": "^0.4.0"
     },
     "scripts": {
         "start": "react-scripts start",
-        "watch": "node-flow-config start",
-        "build": "node-flow-config build",
+        "watch": "node-flow-config start --files README.md spectre-ui.js.flow",
+        "build": "node-flow-config build --files README.md spectre-ui.js.flow",
         "test": "react-scripts test --env=jsdom",
         "test:coverage": "react-scripts test --env=jsdom --coverage",
         "storybook": "start-storybook -p 3002",
@@ -36,6 +41,7 @@
         "eslint-config": "0.1.0",
         "flow-bin": "^0.55.0",
         "flow-typed": "^2.1.5",
+        "highlight.js": "^9.12.0",
         "js-beautify": "^1.7.3",
         "make-dir": "^1.0.0",
         "node-flow-config": "0.1.0",

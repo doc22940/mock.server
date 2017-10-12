@@ -44,7 +44,7 @@
     "devDependencies": {
         "@namics/eslint-config": "^4.1.0",
         "eslint-config": "0.1.0",
-        "flow-bin": "^0.54.1",
+        "flow-bin": "^0.55.0",
         "flow-typed": "^2.1.5",
         "node-flow-config": "0.1.0",
         "npm-run-all": "^4.1.1"

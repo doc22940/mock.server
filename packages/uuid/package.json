@@ -1,17 +1,22 @@
 {
-    "name": "node-mock-server-uuid",
+    "name": "node-mock-server-uuid-src",
     "version": "1.0.0",
     "private": false,
+    "buildPackage": {
+        "name": "node-mock-server-uuid",
+        "src": "src",
+        "dest": "build",
+        "ignore": ["devDependencies", "scripts"]
+    },
     "devDependencies": {
         "@namics/eslint-config": "^4.1.0",
         "eslint-config": "0.1.0",
-        "flow-bin": "^0.54.1",
+        "flow-bin": "^0.55.0",
         "flow-typed": "^2.1.5",
         "node-flow-config": "0.1.0",
         "npm-run-all": "^4.1.1"
     },
-    "main": "build/index.js",
-    "typings": "src/index.js",
+    "main": "index.js",
     "scripts": {
         "start": "node-flow-config start",
         "build": "node-flow-config build",

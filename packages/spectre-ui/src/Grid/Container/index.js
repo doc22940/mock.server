@@ -1,6 +1,6 @@
 // @flow
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React from "react";
 
 import type { ContainerPropsType } from "../../../spectre-ui.js.flow";

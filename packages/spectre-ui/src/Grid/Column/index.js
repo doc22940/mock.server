@@ -1,7 +1,7 @@
 // @flow
 /* eslint complexity: 0*/
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React from "react";
 
 import type { ColumnPropsType, ColumnSizeEnumType } from "../../../spectre-ui.js.flow";

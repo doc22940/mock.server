@@ -1,6 +1,6 @@
 // @flow
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React, { Component } from "react";
 import type { ListPropsType, ListEntryType } from "../../../spectre-ui.js.flow";
 

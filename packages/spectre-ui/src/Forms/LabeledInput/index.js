@@ -1,6 +1,6 @@
 // @flow
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React from "react";
 import { Input } from "../index";
 import type { LabeledInputPropsType } from "../../../spectre-ui.js.flow";

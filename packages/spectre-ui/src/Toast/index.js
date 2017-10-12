@@ -1,7 +1,7 @@
 // @flow
 /* global props defaultProps */
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React from "react";
 import Button from "../Button";
 import type { ToastPropsType, ToastTypeEnumType } from "../../spectre-ui.js.flow";

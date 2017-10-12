@@ -17,7 +17,12 @@ try {
 
 function getSrcFiles(onMatch) {
 	const files = glob.sync(`${appSrc}/**/*.js`, {
-		ignore: [`${appSrc}/*.spec.js`, `${appSrc}/**/*.spec.js`, `${appSrc}/*.test.js`, `${appSrc}/**/*.test.js`]
+		ignore: [
+			`${appSrc}/*.spec.js`,
+			`${appSrc}/**/*.spec.js`,
+			`${appSrc}/*.test.js`,
+			`${appSrc}/**/*.test.js`,
+		],
 	});
 	files.forEach(onMatch);
 }

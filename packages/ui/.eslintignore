@@ -1,0 +1,9 @@
+/.idea/
+/node_modules/
+/build/
+/coverage/
+/public/
+/.storybook/
+/storybook-static/
+/flow-typed/
+spectre-ui.js.flow

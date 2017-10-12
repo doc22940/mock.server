@@ -1,6 +1,6 @@
 // @flow
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React from "react";
 import type { HeadingPropsType } from "../../../spectre-ui.js.flow";
 

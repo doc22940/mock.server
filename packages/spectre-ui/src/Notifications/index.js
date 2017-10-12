@@ -1,23 +1,23 @@
 // @flow
 /* eslint no-undef: 0*/
 
-import "spectre.css";
-import React, { PureComponent } from "react";
-import "./index.css";
-import delayed from "../utils/delayed";
+// import 'spectre.css';
+import React, {PureComponent} from 'react';
+import './index.css';
+import delayed from '../utils/delayed';
 import type {
 	NotificationType,
 	NotificationsPropsType,
 	NotificationsStateType,
 	NotificationInnerType,
-} from "../../spectre-ui.js.flow";
+} from '../../spectre-ui.js.flow';
 
-function getEventName(channel?: string = "n"): string {
+function getEventName(channel?: string = 'n'): string {
 	return `spectre-ui-notifications-${channel}`;
 }
 
 class Notifications extends PureComponent<NotificationsPropsType, NotificationsStateType> {
-	static displayName = "Notifications";
+	static displayName = 'Notifications';
 
 	state = {
 		notifications: undefined,
@@ -32,13 +32,13 @@ class Notifications extends PureComponent<NotificationsPropsType, NotificationsS
 	}
 
 	handleEventRecieved = (event: Event) => {
-		const { notifications } = this.state;
+		const {notifications} = this.state;
 		// $FlowFixMe
 		const notification: NotificationInnerType = event.detail;
 		// $FlowFixMe
 		notification.id = new Date().getTime().toString();
 
-		const _notifications = { ...notifications };
+		const _notifications = {...notifications};
 		_notifications[notification.id] = notification;
 
 		this.setState(
@@ -47,18 +47,15 @@ class Notifications extends PureComponent<NotificationsPropsType, NotificationsS
 			},
 			() => {
 				if ((notification.delay || -1) > 0) {
-					delayed(
-						this.updateNotifications.bind(this, notification.id),
-						notification.delay
-					);
+					delayed(this.updateNotifications.bind(this, notification.id), notification.delay);
 				}
 			}
 		);
 	};
 
 	updateNotifications = (key: string) => {
-		const { notifications } = this.state;
-		const _notifications = { ...notifications };
+		const {notifications} = this.state;
+		const _notifications = {...notifications};
 		delete _notifications[key];
 		this.setState({
 			notifications: _notifications,
@@ -66,7 +63,7 @@ class Notifications extends PureComponent<NotificationsPropsType, NotificationsS
 	};
 
 	renderNotification = (key: string): React$Element<*> => {
-		const { notifications } = this.state;
+		const {notifications} = this.state;
 		if (!notifications) {
 			return <li />;
 		}
@@ -81,7 +78,7 @@ class Notifications extends PureComponent<NotificationsPropsType, NotificationsS
 	};
 
 	render(): React$Element<*> {
-		const { notifications } = this.state;
+		const {notifications} = this.state;
 		const notificationArr: Array<string> = Object.keys(notifications || {});
 		if (notificationArr.length < 1) {
 			return <div />;

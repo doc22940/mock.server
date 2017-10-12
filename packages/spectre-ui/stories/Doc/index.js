@@ -1,11 +1,11 @@
-import "spectre.css";
-import "spectre.css/docs/css/docs.css";
-import React from "react";
-import propTypes from "../tmp/types";
-import exampleCode from "../tmp/code";
-import "./highlight.css";
+import 'spectre.css/dist/spectre.min.css';
+import 'spectre.css/docs/css/docs.css';
+import React from 'react';
+import propTypes from '../tmp/types';
+import exampleCode from '../tmp/code';
+import './highlight.css';
 
-const Doc = ({ title, desc, children }) => (
+const Doc = ({title, desc, children}) => (
 	<div className="s-content">
 		<div className="container">
 			{title && <h3 className="s-title">{title}</h3>}
@@ -18,9 +18,9 @@ const Doc = ({ title, desc, children }) => (
 		{children}
 	</div>
 );
-Doc.displayName = "Doc";
+Doc.displayName = 'Doc';
 
-export const DocSection = ({ title, children }) => (
+export const DocSection = ({title, children}) => (
 	<div>
 		<div className="container">
 			{title && (
@@ -32,38 +32,38 @@ export const DocSection = ({ title, children }) => (
 		{children}
 	</div>
 );
-DocSection.displayName = "DocSection";
+DocSection.displayName = 'DocSection';
 
-export const DocElement = ({ children }) => (
+export const DocElement = ({children}) => (
 	<div className="columns">
 		<div className="column col-xs-12">{children}</div>
 	</div>
 );
-DocElement.displayName = "DocElement";
+DocElement.displayName = 'DocElement';
 
-export const DocCode = ({ id }) => {
+export const DocCode = ({id}) => {
 	if (!exampleCode[id]) {
 		return <div />;
 	}
 	return (
 		<pre className="code" data-lang="JSX">
-			<code dangerouslySetInnerHTML={{ __html: exampleCode[id] }} />
+			<code dangerouslySetInnerHTML={{__html: exampleCode[id]}} />
 		</pre>
 	);
 };
-DocCode.displayName = "DocCode";
+DocCode.displayName = 'DocCode';
 
-export const DocPropsType = ({ prop }) => {
+export const DocPropsType = ({prop}) => {
 	if (!propTypes[prop]) {
 		return <div />;
 	}
 	const type = propTypes[prop];
 	const stylesTitle = {
-		paddingTop: "2rem",
-		paddingBottom: "1rem",
+		paddingTop: '2rem',
+		paddingBottom: '1rem',
 	};
 
-	if (type.type === "string (enum)") {
+	if (type.type === 'string (enum)') {
 		return (
 			<div>
 				<h6 className="s-subtitle" style={stylesTitle}>
@@ -85,7 +85,7 @@ export const DocPropsType = ({ prop }) => {
 		);
 	}
 
-	if (type.type !== "object") {
+	if (type.type !== 'object') {
 		return (
 			<div>
 				<h6 className="s-subtitle" style={stylesTitle}>
@@ -139,19 +139,17 @@ export const DocPropsType = ({ prop }) => {
 		</div>
 	);
 };
-DocCode.displayName = "DocPropsType";
+DocCode.displayName = 'DocPropsType';
 
-export const DocProps = ({ props }) => (
+export const DocProps = ({props}) => (
 	<div className="container">
 		<div className="columns">
 			<div className="column col-xs-12">
-				{props.map((prop, index) => (
-					<DocPropsType key={`${prop.name}-${index}`} prop={prop} />
-				))}
+				{props.map((prop, index) => <DocPropsType key={`${prop.name}-${index}`} prop={prop} />)}
 			</div>
 		</div>
 	</div>
 );
-DocCode.displayName = "DocProps";
+DocCode.displayName = 'DocProps';
 
 export default Doc;

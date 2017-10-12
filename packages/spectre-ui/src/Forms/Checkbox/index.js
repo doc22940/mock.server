@@ -1,6 +1,6 @@
 // @flow
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React from "react";
 import { Group, LabeledInput } from "../index";
 import type { CheckboxPropsType } from "../../../spectre-ui.js.flow";

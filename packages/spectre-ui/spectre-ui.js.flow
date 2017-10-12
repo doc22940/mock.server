@@ -2,11 +2,7 @@
 
 
 
-/**
-
-	Button
-
-**/
+/** Button **/
 export type ButtonTypeType = "button" | "submit" | "reset";
 export type ButtonModifierType = "primary" | "link" | "action" | "action circle";
 export type ButtonSizeType = "sm" | "lg" | "block";
@@ -25,16 +21,18 @@ export type ButtonDefaultPropsType = {
 };
 export type ButtonPropsType = ButtonClassPropsType & ButtonDefaultPropsType;
 declare module "spectre-ui/Button" {
-	declare export default function Button(ButtonPropsType): React$Element<*>;
+	declare export type ButtonTypeType = ButtonTypeType;
+	declare export type ButtonModifierType = ButtonModifierType;
+	declare export type ButtonSizeType = ButtonSizeType;
+	declare export type ButtonClassPropsType = ButtonClassPropsType;
+	declare export type ButtonDefaultPropsType = ButtonDefaultPropsType;
+	declare export type ButtonPropsType = ButtonPropsType;
+	declare class Button extends React$Component<ButtonPropsType> {}
+	declare export default typeof Button;
 }
 
 
-
-/**
-
-	Typography
-
-**/
+/** Typography **/
 export type HeadingTypeEnumType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export type HeadingClassPropsType = {
 	type?: HeadingTypeEnumType,
@@ -69,12 +67,27 @@ export type ListPropsType = {
 	classNameEntry?: string
 };
 declare module "spectre-ui/Typography" {
-	declare export default function Heading(HeadingPropsType): React$Element<*>;
-	declare export default function Paragraph(ParagraphPropsType): React$Element<*>;
-	declare export default function Blockquote(BlockquotePropsType): React$Element<*>;
-	declare export default class List extends React$Component<ListPropsType> {}
+	declare export type HeadingTypeEnumType = HeadingTypeEnumType;
+	declare export type HeadingClassPropsType = HeadingClassPropsType;
+	declare export type HeadingDefaultPropsType = HeadingDefaultPropsType;
+	declare export type HeadingPropsType = HeadingPropsType;
+	declare class Heading extends React$Component<HeadingPropsType> {}
+
+	declare export type ParagraphPropsType = ParagraphPropsType;
+	declare class Paragraph extends React$Component<ParagraphPropsType> {}
+
+	declare export type BlockquotePropsType = BlockquotePropsType;
+	declare class Blockquote extends React$Component<BlockquotePropsType> {}
+
+	declare export type ListTypeEnumType = ListTypeEnumType;
+	declare export type ListEntryObjectType = ListEntryObjectType;
+	declare export type ListEntryType = ListEntryType;
+	declare export type ListEntriesType = ListEntriesType;
+	declare export type ListPropsType = ListPropsType;
+	declare class List extends React$Component<ListPropsType> {}
 }
 
+/** Table **/
 export type TableModifierEnumType = "striped" | "hover";
 export type TableValueType = string | number;
 export type TableArrayType = Array<Array<TableValueType>>;
@@ -95,16 +108,19 @@ export type TableDefaultPropsType = {
 };
 export type TablePropsType = TableClassPropsType & TableDefaultPropsType;
 declare module "spectre-ui/Table" {
-	declare export default class Table extends React$Component<TablePropsType> {}
+	declare export type TableModifierEnumType = TableModifierEnumType;
+	declare export type TableValueType = TableValueType;
+	declare export type TableArrayType = TableArrayType;
+	declare export type TableClassPropsType = TableClassPropsType;
+	declare export type TableDefaultPropsType = TableDefaultPropsType;
+	declare export type TablePropsType = TablePropsType;
+	declare class Table extends React$Component<TablePropsType> {}
+	declare export default typeof Table;
 }
 
 
 
-/**
-
-	Forms/Input
-
-**/
+/** Forms **/
 export type InputOverridePropsType = {
 	id?: string,
 	type?: string,
@@ -226,17 +242,35 @@ export type RadiosPropsType = {
 	entries: Array<RadioEntryPropsType>
 };
 declare module "spectre-ui/Forms" {
-	declare export default class Input extends React$Component<InputPropsType, InputStateType> {}
-	declare export default class Select extends React$Component<SelectPropsType, SelectStateType> {}
-	declare export default function Label(LabelPropsType): React$Element<*>;
-	declare export default function Group(GroupPropsType): React$Element<*>;
-	declare export default function LabeledInput(LabeledInputPropsType): React$Element<*>;
-	declare export default function Checkbox(CheckboxPropsType): React$Element<*>;
-	declare export default function Switch(SwitchPropsType): React$Element<*>;
-	declare export default function Radio(RadioPropsType): React$Element<*>;
-	declare export default function Radios(RadiosPropsType): React$Element<*>;
+	declare export type InputPropsType = InputPropsType;
+	declare class Input extends React$Component<InputPropsType, InputStateType> {}
+
+	declare export type SelectPropsType = SelectPropsType;
+	declare class Select extends React$Component<SelectPropsType, SelectStateType> {}
+
+	declare export type LabelPropsType = LabelPropsType;
+	declare class Label extends React$Component<LabelPropsType> {}
+
+	declare export type GroupPropsType = GroupPropsType;
+	declare class Group extends React$Component<GroupPropsType> {}
+
+	declare export type LabeledInputPropsType = LabeledInputPropsType;
+	declare class LabeledInput extends React$Component<LabeledInputPropsType> {}
+
+	declare export type CheckboxPropsType = CheckboxPropsType;
+	declare class Checkbox extends React$Component<CheckboxPropsType> {}
+
+	declare export type SwitchPropsType = SwitchPropsType;
+	declare class Switch extends React$Component<SwitchPropsType> {}
+
+	declare export type RadioPropsType = RadioPropsType;
+	declare class Radio extends React$Component<RadioPropsType> {}
+
+	declare export type RadiosPropsType = RadiosPropsType;
+	declare class Radios extends React$Component<RadiosPropsType> {}
 }
 
+/** Toast **/
 export type ToastTypeEnumType = "" | "primary" | "success" | "warning" | "error";
 export type ToastPropsType = {
 	title?: string,
@@ -250,9 +284,13 @@ export type ToastPropsType = {
 	type?: ToastTypeEnumType
 };
 declare module "spectre-ui/Toast" {
-	declare export default function Toast(ToastPropsType): React$Element<*>;
+	declare export type ToastTypeEnumType = ToastTypeEnumType;
+	declare export type ToastPropsType = ToastPropsType;
+	declare class Toast extends React$Component<ToastPropsType> {}
+	declare export default typeof Toast;
 }
 
+/** Notifications **/
 export type NotificationRenderArgsType = {
 	handleCloseNotification?: (event: SyntheticMouseEvent<>) => void,
 };
@@ -272,9 +310,17 @@ export type NotificationsStateType = {
 	notifications?: { [key: string]: NotificationInnerType }
 };
 declare module "spectre-ui/Notifications" {
-	declare export default class Notifications extends React$Component<NotificationsPropsType, NotificationsStateType> {}
+	declare export type NotificationRenderArgsType = NotificationRenderArgsType;
+	declare export type NotificationType = NotificationType;
+	declare export type NotificationInnerDefaultType = NotificationInnerDefaultType;
+	declare export type NotificationInnerType = NotificationInnerType;
+	declare export type NotificationsPropsType = NotificationsPropsType;
+	declare export type NotificationsStateType = NotificationsStateType;
+	declare class Notifications extends React$Component<NotificationsPropsType, NotificationsStateType> {}
+	declare export default typeof Notifications;
 }
 
+/** Grid **/
 export type ContainerSizeEnumType = "xs" | "sm" | "md" | "lg" | "xl";
 export type ContainerPropsType = {
 	children: React$Node,
@@ -301,7 +347,16 @@ export type ColumnPropsType = {
 	align?: ColumnAlignEnumType
 };
 declare module "spectre-ui/Grid" {
-	declare export default function Container(ContainerPropsType): React$Element<*>;
-	declare export default function Row(RowPropsType): React$Element<*>;
-	declare export default function Column(ColumnPropsType): React$Element<*>;
+
+	declare export type ContainerSizeEnumType = ContainerSizeEnumType;
+	declare export type ContainerPropsType = ContainerPropsType;
+	declare class Container extends React$Component<ContainerPropsType> {}
+
+	declare export type RowPropsType = RowPropsType;
+	declare class Row extends React$Component<RowPropsType> {}
+
+	declare export type ColumnSizeEnumType = ColumnSizeEnumType;
+	declare export type ColumnAlignEnumType = ColumnAlignEnumType;
+	declare export type ColumnPropsType = ColumnPropsType;
+	declare class Column extends React$Component<ColumnPropsType> {}
 }

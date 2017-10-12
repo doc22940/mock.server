@@ -1,7 +1,7 @@
 // @flow
 /* eslint no-undef: 0*/
 
-import "spectre.css";
+import 'spectre.css/dist/spectre.min.css';
 import React, { Component } from "react";
 import noop from "../../utils/noop";
 import hasValue from "../../utils/has-value";

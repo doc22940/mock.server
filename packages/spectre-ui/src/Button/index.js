@@ -1,13 +1,13 @@
 // @flow
 
-import "spectre.css";
-import React from "react";
+import 'spectre.css/dist/spectre.min.css';
+import React from 'react';
 
-import noop from "../utils/noop.js";
-import type { ButtonClassPropsType, ButtonPropsType } from "../../spectre-ui.js.flow";
+import noop from '../utils/noop.js';
+import type {ButtonClassPropsType, ButtonPropsType} from '../../spectre-ui.js.flow';
 
-function getClassName({ modifier, size, className, loading }: ButtonClassPropsType): string {
-	const classNames: Array<string> = ["btn"];
+function getClassName({modifier, size, className, loading}: ButtonClassPropsType): string {
+	const classNames: Array<string> = ['btn'];
 
 	if (modifier) {
 		classNames.push(`btn-${modifier}`);
@@ -25,22 +25,22 @@ function getClassName({ modifier, size, className, loading }: ButtonClassPropsTy
 		classNames.push(className);
 	}
 
-	return classNames.join(" ");
+	return classNames.join(' ');
 }
 
 const Button = ({
 	modifier,
 	size,
 	className,
-	type = "button",
+	type = 'button',
 	disabled = false,
 	tabIndex = -1,
 	label,
 	onClick = noop,
-	loading = false
+	loading = false,
 }: ButtonPropsType): React$Element<*> => (
 	<button
-		className={getClassName({ modifier, size, className, loading })}
+		className={getClassName({modifier, size, className, loading})}
 		type={type}
 		disabled={disabled || loading}
 		tabIndex={tabIndex}
@@ -50,6 +50,6 @@ const Button = ({
 	</button>
 );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export default Button;
