@@ -1,0 +1,30 @@
+{
+    "name": "node-mock-server-log-src",
+    "version": "0.1.0",
+    "private": false,
+    "buildPackage": {
+        "name": "node-mock-server-log",
+        "src": "src",
+        "dest": "build",
+        "ignore": ["devDependencies", "scripts"]
+    },
+    "dependencies": {
+        "chip": "0.0.5"
+    },
+    "devDependencies": {
+        "@namics/eslint-config": "^4.1.0",
+        "eslint-config": "0.1.0",
+        "flow-bin": "^0.55.0",
+        "flow-typed": "^2.1.5",
+        "node-flow-config": "0.1.0"
+    },
+    "main": "index.js",
+    "scripts": {
+        "start": "node-flow-config start",
+        "build": "node-flow-config build",
+        "lint": "npm-run-all lint:*",
+        "lint:js": "node_modules/.bin/eslint .",
+        "flow": "node_modules/.bin/flow",
+        "flow-install": "node_modules/.bin/flow-typed install -i dev"
+    }
+}
