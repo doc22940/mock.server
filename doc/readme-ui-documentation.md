@@ -1,6 +1,6 @@
 # Using the node-mock-server UI
 
-The mock server UI is available at _http://localhost:3003_ (or at the port you have defined via options).
+The mock server UI is available at _http://localhost:3001_ (or at the port you have defined via options).
 
 If the service you want to mock provides a Swagger definition and you have provided a [`swaggerImport` configuration item](https://github.com/smollweide/node-mock-server/blob/c52adcf2a80999dd6876062006cf72c1ef124a78/demo/index.js#L41-L53), you may perform a Swagger import via the small triangle button in the top right of the UI page.
  
