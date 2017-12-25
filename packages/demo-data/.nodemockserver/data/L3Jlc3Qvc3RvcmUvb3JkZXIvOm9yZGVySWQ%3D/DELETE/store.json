@@ -1,0 +1,29 @@
+{
+  "desc": "Delete purchase order by ID",
+  "desc2": "For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "orderId",
+          "required": true,
+          "type": "integer",
+          "desc": "ID of the order that needs to be deleted"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/store/order/:orderId",
+  "method": "DELETE",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

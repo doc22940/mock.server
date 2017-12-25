@@ -1,0 +1,29 @@
+{
+  "desc": "Delete user",
+  "desc2": "This can only be done by the logged in user.",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "username",
+          "required": true,
+          "type": "string",
+          "desc": "The name that needs to be deleted"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/user/:username",
+  "method": "DELETE",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

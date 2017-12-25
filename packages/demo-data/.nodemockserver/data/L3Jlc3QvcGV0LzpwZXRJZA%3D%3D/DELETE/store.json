@@ -1,0 +1,29 @@
+{
+  "desc": "Deletes a pet",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "petId",
+          "required": true,
+          "type": "integer",
+          "desc": "Pet id to delete"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/pet/:petId",
+  "method": "DELETE",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

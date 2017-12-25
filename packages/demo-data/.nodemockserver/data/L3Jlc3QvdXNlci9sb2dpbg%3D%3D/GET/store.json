@@ -1,0 +1,35 @@
+{
+  "desc": "Logs user into the system",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "query": {
+      "parameters": [
+        {
+          "name": "username",
+          "required": true,
+          "type": "string",
+          "desc": "The user name for login"
+        },
+        {
+          "name": "password",
+          "required": true,
+          "type": "string",
+          "desc": "The password for login in clear text"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/user/login",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

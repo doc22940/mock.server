@@ -1,0 +1,12 @@
+{
+    "name": "node-mock-server-demo-data",
+    "version": "0.1.0",
+    "private": false,
+    "dependencies": {
+        "node-mock-server-migration-script-0.x.x-1.x.x": "0.1.0"
+    },
+    "scripts": {
+        "help": "node_modules/.bin/node-mock-server-migration-script-0.x.x-1.x.x --help",
+        "migrate": "node_modules/.bin/node-mock-server-migration-script-0.x.x-1.x.x -s data-v0.x.x/rest"
+    }
+}

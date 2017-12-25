@@ -1,0 +1,29 @@
+{
+  "desc": "uploads an image",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "petId",
+          "required": true,
+          "type": "integer",
+          "desc": "ID of pet to update"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/pet/:petId/uploadImage",
+  "method": "POST",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/json"
+      }
+    }
+  ]
+}

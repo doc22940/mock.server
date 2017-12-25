@@ -1,0 +1,29 @@
+{
+  "desc": "Find purchase order by ID",
+  "desc2": "For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "orderId",
+          "required": true,
+          "type": "integer",
+          "desc": "ID of pet that needs to be fetched"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/store/order/:orderId",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "number",
+  "category": "$ref-Category",
+  "name": "string",
+  "photoUrls": [
+    {}
+  ],
+  "tags": [
+    "$ref-Tag"
+  ],
+  "status": "string"
+}

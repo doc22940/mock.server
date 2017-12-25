@@ -1,0 +1,43 @@
+{
+  "desc": "Updated user",
+  "desc2": "This can only be done by the logged in user.",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "username",
+          "required": true,
+          "type": "string",
+          "desc": "name that need to be updated"
+        }
+      ]
+    },
+    "body": {
+      "parameters": [
+        {
+          "name": "body",
+          "required": true,
+          "type": "",
+          "desc": "Updated user object",
+          "schemaType": " "
+        }
+      ]
+    },
+    "schema": {
+      "type": " "
+    }
+  },
+  "endpoint": "/rest/user/:username",
+  "method": "PUT",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

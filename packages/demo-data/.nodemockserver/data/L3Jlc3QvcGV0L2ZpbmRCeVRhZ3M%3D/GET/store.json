@@ -1,0 +1,29 @@
+{
+  "desc": "Finds Pets by tags",
+  "desc2": "Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "query": {
+      "parameters": [
+        {
+          "name": "tags",
+          "required": true,
+          "type": "array",
+          "desc": "Tags to filter by"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/pet/findByTags",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

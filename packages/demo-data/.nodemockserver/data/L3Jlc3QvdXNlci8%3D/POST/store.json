@@ -1,0 +1,33 @@
+{
+  "desc": "Create user",
+  "desc2": "This can only be done by the logged in user.",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "body": {
+      "parameters": [
+        {
+          "name": "body",
+          "required": true,
+          "type": "",
+          "desc": "Created user object",
+          "schemaType": " "
+        }
+      ]
+    },
+    "schema": {
+      "type": " "
+    }
+  },
+  "endpoint": "/rest/user/",
+  "method": "POST",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

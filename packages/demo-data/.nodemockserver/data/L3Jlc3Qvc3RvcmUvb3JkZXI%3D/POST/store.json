@@ -1,0 +1,33 @@
+{
+  "desc": "Place an order for a pet",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "body": {
+      "parameters": [
+        {
+          "name": "body",
+          "required": true,
+          "type": "",
+          "desc": "order placed for purchasing the pet",
+          "schemaType": " "
+        }
+      ]
+    },
+    "schema": {
+      "type": " "
+    }
+  },
+  "endpoint": "/rest/store/order",
+  "method": "POST",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

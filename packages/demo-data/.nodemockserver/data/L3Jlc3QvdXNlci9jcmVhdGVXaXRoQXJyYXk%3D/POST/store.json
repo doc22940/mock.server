@@ -1,0 +1,33 @@
+{
+  "desc": "Creates list of users with given input array",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "body": {
+      "parameters": [
+        {
+          "name": "body",
+          "required": true,
+          "type": "",
+          "desc": "List of user object",
+          "schemaType": " "
+        }
+      ]
+    },
+    "schema": {
+      "type": " "
+    }
+  },
+  "endpoint": "/rest/user/createWithArray",
+  "method": "POST",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

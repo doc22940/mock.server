@@ -1,0 +1,29 @@
+{
+  "desc": "Get user by user name",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "username",
+          "required": true,
+          "type": "string",
+          "desc": "The name that needs to be fetched. Use user1 for testing. "
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/user/:username",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

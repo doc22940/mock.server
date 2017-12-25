@@ -1,0 +1,18 @@
+{
+  "desc": "Logs out current logged in user session",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {},
+  "endpoint": "/rest/user/logout",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

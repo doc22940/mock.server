@@ -1,0 +1,29 @@
+{
+  "desc": "Find pet by ID",
+  "desc2": "Returns a single pet",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "uri": {
+      "parameters": [
+        {
+          "name": "petId",
+          "required": true,
+          "type": "integer",
+          "desc": "ID of pet to return"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/pet/:petId",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

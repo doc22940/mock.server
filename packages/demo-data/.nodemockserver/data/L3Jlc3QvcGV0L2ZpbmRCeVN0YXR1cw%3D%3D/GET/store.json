@@ -1,0 +1,29 @@
+{
+  "desc": "Finds Pets by status",
+  "desc2": "Multiple status values can be provided with comma separated strings",
+  "security": [],
+  "protected": false,
+  "status": "swagger-imported",
+  "request": {
+    "query": {
+      "parameters": [
+        {
+          "name": "status",
+          "required": true,
+          "type": "array",
+          "desc": "Status values that need to be considered for filter"
+        }
+      ]
+    }
+  },
+  "endpoint": "/rest/pet/findByStatus",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/xml, application/json"
+      }
+    }
+  ]
+}

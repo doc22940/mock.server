@@ -1,0 +1,18 @@
+{
+  "desc": "",
+  "desc2": "",
+  "security": [],
+  "protected": false,
+  "status": "created",
+  "request": {},
+  "endpoint": "/rest/store/inventory",
+  "method": "GET",
+  "responses": [
+    {
+      "statusCode": "200",
+      "schema": {
+        "type": "application/json"
+      }
+    }
+  ]
+}
