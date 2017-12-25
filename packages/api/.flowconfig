@@ -1,0 +1,17 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/.*.json
+<PROJECT_ROOT>/dist/.*
+.*/log/.*
+.*/uuid/.*
+.*/utils/.*
+
+[include]
+
+[libs]
+./node_modules/node-mock-server-log/node-mock-server-log.js.flow
+./node_modules/node-mock-server-uuid/node-mock-server-uuid.js.flow
+./node_modules/node-mock-server-utils/node-mock-server-utils.js.flow
+
+[options]
+unsafe.enable_getters_and_setters=true
+esproposal.decorators=ignore

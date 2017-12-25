@@ -1,0 +1,130 @@
+// @flow
+
+// RESPONSE
+export type ResponseConstructorType = {
+	src: string,
+	endpointId: string,
+	methodId: string,
+	responseId: string,
+};
+
+export type ResponseJsonType = {
+	response: string,
+	responseId: string,
+	status: number,
+	data: ?string,
+};
+
+// METHOD
+export type MethodConstructorType = {
+	src: string,
+	endpointId: string,
+	methodId: string,
+};
+
+export type MethodJsonType = {
+	method: string,
+	methodId: string,
+	responses: Array<{ name: string, id: string }>,
+};
+
+// ENDPOINT
+export type EndpointConstructorType = {
+	endpointId: string,
+	src: string,
+};
+
+export type EndpointJsonType = {
+	endpoint: string,
+	endpointId: string,
+	methods: Array<string>,
+};
+
+export type EndpointDetailedJsonType = {
+	endpoint: string,
+	endpointId: string,
+	methods: Array<MethodJsonType>,
+};
+
+export type EndpointCreateDataType = {
+	endpoint: string,
+	desc?: string,
+	method?: string,
+};
+
+export type MethodCreateDataType = {
+	method: string,
+	desc?: string
+};
+
+// ENDPOINTS
+export type EndpointsConstructorType = {
+	src: string,
+};
+
+declare module 'node-mock-server-api' {
+
+	declare export type $EndpointCreateDataType = EndpointCreateDataType;
+	declare export type $MethodCreateDataType = MethodCreateDataType;
+
+	declare export class Response {
+		src: string;
+		endpointId: string;
+		methodId: string;
+		response: string;
+		responseId: string;
+		status: number;
+		data: ?string;
+
+		constructor(options: ResponseConstructorType): void;
+		getData(): ?string;
+		updateResponse(data: string): boolean;
+		toJson(): ResponseJsonType;
+	}
+
+	declare export class Method {
+		src: string;
+		endpointId: string;
+		methodId: string;
+		responses: Array<Response>;
+		responsesById: {[key: string]: Response};
+
+		constructor(options: MethodConstructorType): void,
+		getResponses(): Array<Response>,
+		getResponse(responseId: string): Response,
+		createResponse(responseId: string, data: string): boolean,
+		toJson(): MethodJsonType,
+	}
+
+	declare export class Endpoint {
+		src: string,
+		endpoint: string,
+		endpointId: string,
+		methods: Array<Method>,
+		methodsById: {[key: string]: Method},
+
+		constructor(options: EndpointConstructorType): void,
+		getMethods(): Array<Method>,
+		getMethod(methodId: string): Method,
+		createMethod(options: MethodCreateDataType): ?Method,
+		removeMethod(methodId: string): boolean,
+		toJson(): EndpointJsonType,
+		toDetailedJson(): EndpointDetailedJsonType,
+	}
+
+	declare export class Endpoints {
+		src: string,
+		endpoints: Array<Endpoint>,
+		endpointsById: {[key: string]: Endpoint},
+
+		constructor(options: EndpointsConstructorType): void,
+		getEndpoints(): Array<Endpoint>,
+		getEndpoint(endpointId: string): Endpoint,
+		getEndpointsAsJson(): Array<EndpointJsonType>,
+		getDetailedEndpointsAsJson(): Array<EndpointDetailedJsonType>,
+		createEndpoint(data: EndpointCreateDataType): Endpoint,
+		removeEndpoint(endpointId: string): boolean,
+	}
+
+	declare export default Endpoints;
+}
