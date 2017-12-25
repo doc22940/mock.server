@@ -1,14 +1,10 @@
 /* eslint no-empty: 0*/
-"use strict";
+'use strict';
 
-const rimraf = require("rimraf");
-const makeDir = require("make-dir");
-const glob = require("glob");
-const path = require("path");
-const paths = require("../config/paths");
-
-const appSrc = paths.appSrc;
-const appBuild = path.join(paths.currentDirectory, "build");
+const rimraf = require('rimraf');
+const makeDir = require('make-dir');
+const glob = require('glob');
+const {appSrc, appBuild} = require('../config/paths');
 
 try {
 	rimraf.sync(appBuild);
@@ -17,12 +13,7 @@ try {
 
 function getSrcFiles(onMatch) {
 	const files = glob.sync(`${appSrc}/**/*.js`, {
-		ignore: [
-			`${appSrc}/*.spec.js`,
-			`${appSrc}/**/*.spec.js`,
-			`${appSrc}/*.test.js`,
-			`${appSrc}/**/*.test.js`,
-		],
+		ignore: [`${appSrc}/*.spec.js`, `${appSrc}/**/*.spec.js`, `${appSrc}/*.test.js`, `${appSrc}/**/*.test.js`],
 	});
 	files.forEach(onMatch);
 }

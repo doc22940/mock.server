@@ -4,12 +4,12 @@
     "private": true,
     "files": ["index.js", "node.js"],
     "dependencies": {
-        "@namics/eslint-config": "^4.1.0",
-        "babel-eslint": "^7.2.3",
-        "eslint": "^4.6.0",
-        "eslint-plugin-flowtype": "^2.34.1",
-        "eslint-plugin-import": "^2.6.0",
-        "eslint-plugin-jsx-a11y": "^5.1.1",
-        "eslint-plugin-react": "^7.1.0"
+        "@namics/eslint-config": "4.1.0",
+        "babel-eslint": "7.2.3",
+        "eslint": "4.6.0",
+        "eslint-plugin-flowtype": "2.34.1",
+        "eslint-plugin-import": "2.6.0",
+        "eslint-plugin-jsx-a11y": "5.1.1",
+        "eslint-plugin-react": "7.1.0"
     }
 }

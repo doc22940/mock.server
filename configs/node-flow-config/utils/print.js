@@ -1,7 +1,7 @@
 /* eslint global-require: 0*/
 /* eslint no-console: 0*/
 /* eslint prefer-rest-params: 0*/
-"use strict";
+'use strict';
 
 function getTimestamp() {
 	const date = new Date();

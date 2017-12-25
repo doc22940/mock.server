@@ -1,16 +1,17 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/.*.json
-<PROJECT_ROOT>/node_modules/eslint-plugin-jsx-a11y/.*
-<PROJECT_ROOT>/node_modules/radium/.*
-<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/dist/.*
+.*/api/.*
+.*/log/.*
+.*/utils/.*
 
 [include]
 
 [libs]
-../../flow-typed
+./node_modules/node-mock-server-log/node-mock-server-log.js.flow
+./node_modules/node-mock-server-uuid/node-mock-server-uuid.js.flow
+./node_modules/node-mock-server-api/node-mock-server-api.js.flow
 
 [options]
-module.system.node.resolve_dirname=src
-module.system.node.resolve_dirname=node_modules
 unsafe.enable_getters_and_setters=true
 esproposal.decorators=ignore

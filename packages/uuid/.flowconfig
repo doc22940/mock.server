@@ -1,15 +1,11 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/.*.json
-<PROJECT_ROOT>/node_modules/eslint-plugin-jsx-a11y/.*
-<PROJECT_ROOT>/build/.*
+<PROJECT_ROOT>/dist/.*
 
 [include]
 
 [libs]
-../../flow-typed
 
 [options]
-module.system.node.resolve_dirname=src
-module.system.node.resolve_dirname=node_modules
 unsafe.enable_getters_and_setters=true
 esproposal.decorators=ignore

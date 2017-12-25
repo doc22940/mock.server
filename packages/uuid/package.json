@@ -1,28 +1,21 @@
 {
-    "name": "node-mock-server-uuid-src",
+    "name": "node-mock-server-uuid",
     "version": "1.0.0",
     "private": false,
-    "buildPackage": {
-        "name": "node-mock-server-uuid",
-        "src": "src",
-        "dest": "build",
-        "ignore": ["devDependencies", "scripts"]
-    },
     "devDependencies": {
-        "@namics/eslint-config": "^4.1.0",
+        "@namics/eslint-config": "4.1.0",
         "eslint-config": "0.1.0",
-        "flow-bin": "^0.55.0",
-        "flow-typed": "^2.1.5",
+        "flow-bin": "0.61.0",
+        "flow-typed": "2.2.3",
         "node-flow-config": "0.1.0",
-        "npm-run-all": "^4.1.1"
+        "npm-run-all": "4.1.1"
     },
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "start": "node-flow-config start",
+        "dev": "node-flow-config start",
         "build": "node-flow-config build",
-        "test": "CI=true node-flow-config test --env=jsdom",
-        "test:coverage": "CI=true node-flow-config test --env=jsdom --coverage",
-        "test:watch": "node-flow-config test --env=jsdom",
+        "test": "CI=true node-flow-config test --env=jsdom --coverage",
+        "test:dev": "node-flow-config test --env=jsdom",
         "lint": "npm-run-all lint:*",
         "lint:js": "node_modules/.bin/eslint .",
         "flow": "node_modules/.bin/flow",

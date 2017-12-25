@@ -1,9 +1,9 @@
 // @flow
 
 export function decode(encodedPath: string): string {
-	return new Buffer(encodedPath, "base64").toString("ascii").replace(/\/\//g, "/");
+	return new Buffer(decodeURIComponent(encodedPath), 'base64').toString('ascii').replace(/\/\//g, '/');
 }
 
 export function encode(path: string): string {
-	return new Buffer(path).toString("base64");
+	return encodeURIComponent(new Buffer(path).toString('base64'));
 }
