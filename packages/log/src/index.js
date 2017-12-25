@@ -3,4 +3,4 @@
 import chip from 'chip';
 const log = chip();
 
-export default log;
+export default {...log, default: console.log};
