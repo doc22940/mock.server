@@ -1,0 +1,31 @@
+{
+    "name": "node-mock-server-utils",
+    "version": "0.1.0",
+    "private": false,
+    "dependencies": {
+        "@sindresorhus/is": "0.3.0",
+        "camel-case": "3.0.0",
+        "capitalize": "1.0.0",
+        "del": "3.0.0",
+        "make-dir": "1.0.0",
+        "node-mock-server-log": "0.1.0",
+        "to-pascal-case": "1.0.0"
+    },
+    "devDependencies": {
+        "eslint-config": "0.1.0",
+        "flow-bin": "0.61.0",
+        "flow-typed": "2.2.3",
+        "node-flow-config": "0.1.0"
+    },
+    "main": "dist/index.js",
+    "scripts": {
+        "dev": "node-flow-config start",
+        "build": "node-flow-config build",
+        "test": "CI=true node-flow-config test --env=jsdom --coverage",
+        "test:dev": "node-flow-config test --env=jsdom",
+        "lint": "npm-run-all lint:*",
+        "lint:js": "node_modules/.bin/eslint .",
+        "flow": "node_modules/.bin/flow",
+        "flow-install": "node_modules/.bin/flow-typed install -i dev"
+    }
+}

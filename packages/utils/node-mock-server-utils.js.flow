@@ -1,0 +1,58 @@
+export type TypeOfValueType = null | string | number | Object | Array<any>;
+export type TypeOfType = 'undefined' | 'null' | 'string' | 'symbol' | 'Array' | 'Function' | 'Object';
+export type IsType = {
+	undefined: (value: any) => boolean,
+	null: (value: any) => boolean,
+	string: (value: any) => boolean,
+	number: (value: any) => boolean,
+	boolean: (value: any) => boolean,
+	symbol: (value: any) => boolean,
+	array: (value: any) => boolean,
+	function: (value: any) => boolean,
+	buffer: (value: any) => boolean,
+	object: (value: any) => boolean,
+	regExp: (value: any) => boolean,
+	date: (value: any) => boolean,
+	error: (value: any) => boolean,
+	nativePromise: (value: any) => boolean,
+	promise: (value: any) => boolean,
+	generator: (value: any) => boolean,
+	generatorFunction: (value: any) => boolean,
+	map: (value: any) => boolean,
+	set: (value: any) => boolean,
+	weakMap: (value: any) => boolean,
+	weakSet: (value: any) => boolean,
+	nan: (value: any) => boolean,
+	nullOrUndefined: (value: any) => boolean,
+	primitive: (value: any) => boolean,
+	integer: (value: any) => boolean,
+	plainObject: (value: any) => boolean,
+	inRange: (value: any) => boolean,
+	domElement: (value: any) => boolean,
+	empty: (value: any) => boolean,
+};
+export type MethodEnumType = 'GET' | 'PUT' | 'POST' | 'OPTIONS' | 'DELETE';
+
+declare module 'node-mock-server-utils' {
+
+	declare export type $MethodEnumType = MethodEnumType;
+
+	declare export function readDir(dirPath: string, ignore: ?Array<string | RegExp>): Array<string>;
+	declare export function writeDir(dirPath: string): void;
+	declare export function removeDir(dirPath: string): boolean;
+	declare export function isDir(dirPath: string): boolean;
+
+	declare export function readFile(filePath: string): ?string;
+	declare export function writeFile(filePath: string, data: string): void;
+	declare export function removeFile(filePath: string): boolean;
+	declare export function isFile(dirPath: string): boolean;
+
+	declare export function capitalize(value: string): string;
+	declare export function toCamelCase(value: string): string;
+	declare export function toPascalCase(value: string): string;
+
+	declare export function typeOf(value: TypeOfValueType): TypeOfType;
+	declare export var is: IsType;
+
+	declare export function toMethodEnum(value: string): $MethodEnumType;
+}
