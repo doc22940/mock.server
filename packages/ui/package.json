@@ -6,7 +6,16 @@
         "custom-react-scripts": "0.2.0",
         "node-mock-server-uuid": "1.0.0",
         "react": "16.0.0",
-        "react-dom": "16.0.0"
+        "react-dom": "16.0.0",
+        "react-router-dom": "4.2.2",
+        "react-router-transition": "1.1.3",
+        "jss": "9.4.0",
+        "jss-preset-default": "4.0.1",
+        "material-ui": "1.0.0-beta.25",
+        "material-ui-icons": "1.0.0-beta.17",
+        "react-jss": "8.2.0",
+        "recompose": "0.26.0",
+        "classnames": "2.2.5"
     },
     "devDependencies": {
         "@namics/eslint-config": "4.1.0",
@@ -25,7 +34,6 @@
         "lint:js": "node_modules/.bin/eslint .",
         "flow": "node_modules/.bin/flow",
         "flow-version": "node_modules/.bin/flow version",
-        "flow-install": "node_modules/.bin/flow-typed install -i dev",
-        "flow-cache": "node_modules/.bin/flow-typed update-cache --debug"
+        "flow-install": "node_modules/.bin/flow-typed install -i dev"
     }
 }

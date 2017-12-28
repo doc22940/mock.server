@@ -10,6 +10,7 @@
         "inquirer": "3.2.3",
         "lerna": "2.0.0",
         "lerna-changelog": "0.6.0",
+        "lerna-terminal": "1.1.1",
         "lint-staged": "4.1.3",
         "make-dir": "1.0.0",
         "node-find-files": "0.0.4",
@@ -21,16 +22,14 @@
     },
     "scripts": {
         "clean": "node_modules/.bin/lerna clean",
-        "start": "lerna-terminal start",
-        "dev": "lerna-terminal dev -i spectre-ui",
+        "start": "node_modules/.bin/lerna-terminal start",
+        "dev": "node_modules/.bin/lerna-terminal dev -i spectre-ui",
         "flow": "node_modules/.bin/lerna run flow",
         "test": "node_modules/.bin/lerna run test",
-        "test:dev": "lerna-terminal test:dev",
+        "test:dev": "node_modules/.bin/lerna-terminal test:dev",
         "bootstrap": "node_modules/.bin/lerna bootstrap --hoist",
         "lint": "node_modules/.bin/lerna run lint",
-        "test": "node_modules/.bin/lerna run test",
-        "prettier": "node_modules/.bin/prettier '{bin,__{tests,mocks}__}/**/*.js' --config package.json",
-        "migrade": "node packages/migration-script-0.x.x-1.x.x -s packages/demo-data/data-v0.x.x -d packages/demo-data/.nodemockserver"
+        "prettier": "node_modules/.bin/prettier '{bin,__{tests,mocks}__}/**/*.js' --config package.json"
     },
     "lint-staged": {
         "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"]

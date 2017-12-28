@@ -1,6 +1,19 @@
 // @flow
 /* eslint no-inline-comments: 0*/
 import React, {Component} from 'react';
+import {withStyles} from 'material-ui/styles';
+import Routes from './components/Routes/Routes';
+
+import withRoot from './hoc/withRoot/withRoot';
+
+import './App.css';
+
+const styles = {
+	root: {
+		textAlign: 'center',
+		paddingTop: 200,
+	},
+};
 
 class App extends Component<*, *> {
 	get name(): string {
@@ -11,8 +24,12 @@ class App extends Component<*, *> {
 	}
 
 	render(): React$Element<*> {
-		return <div className="App" />;
+		return (
+			<div className={styles.root}>
+				<Routes />
+			</div>
+		);
 	}
 }
 
-export default App;
+export default withRoot(withStyles(styles)(App));
