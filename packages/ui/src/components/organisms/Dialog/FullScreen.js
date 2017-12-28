@@ -14,7 +14,7 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import CloseIcon from 'material-ui-icons/Close';
 import Slide from 'material-ui/transitions/Slide';
-import type {ClassesType} from '../../types/classes';
+import type {ClassesType} from '../../../types/classes';
 
 export type DialogFullScreenPropsType = {
 	classes?: ClassesType,
@@ -38,6 +38,8 @@ function Transition(props: Object): React$Element<*> {
 }
 
 class DialogFullScreen extends React.Component<DialogFullScreenPropsType, DialogFullScreenStateType> {
+	static displayName = 'DialogFullScreen';
+
 	state = {
 		open: true,
 	};

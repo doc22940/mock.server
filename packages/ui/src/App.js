@@ -2,7 +2,7 @@
 /* eslint no-inline-comments: 0*/
 import React, {Component} from 'react';
 import {withStyles} from 'material-ui/styles';
-import Routes from './components/Routes/Routes';
+import Routes from './components/organisms/Routes/Routes';
 
 import withRoot from './hoc/withRoot/withRoot';
 

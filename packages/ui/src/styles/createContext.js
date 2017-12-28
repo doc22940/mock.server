@@ -3,7 +3,7 @@
 import {create, SheetsRegistry} from 'jss';
 import preset from 'jss-preset-default';
 import {createMuiTheme, createGenerateClassName} from 'material-ui/styles';
-import {purple, green} from 'material-ui/colors';
+import {blue, pink} from 'material-ui/colors';
 
 export type CreateContextReturnType = {
 	jss: Object,
@@ -15,8 +15,8 @@ export type CreateContextReturnType = {
 
 const theme = createMuiTheme({
 	palette: {
-		primary: purple,
-		secondary: green,
+		primary: blue,
+		secondary: pink,
 	},
 });
 

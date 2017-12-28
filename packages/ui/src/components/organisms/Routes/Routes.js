@@ -3,8 +3,8 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import type {ContextRouter} from 'react-router-dom';
 import SwitchFade from './SwitchFade/SwitchFade';
-import PersistentDrawer from '../PersistentDrawer/PersistentDrawer';
-import DialogFullScreen from '../DialogFullScreen/DialogFullScreen';
+import TemplateDefault from '../../templates/Default/Default';
+import DialogFullScreen from '../Dialog/FullScreen';
 
 export type RoutesPropType = {
 	renderBefore?: React$Node,
@@ -101,7 +101,7 @@ const Overlay = ({history}: ContextRouter): React$Element<*> => (
 const Routes = (): React$Element<*> => (
 	<Router>
 		<div>
-			<PersistentDrawer>
+			<TemplateDefault>
 				<ul>
 					<li>
 						<Link to="/">Home</Link>
@@ -124,7 +124,7 @@ const Routes = (): React$Element<*> => (
 					<Route path="/topics" component={Topics} />
 				</SwitchFade>
 				<Route path="/overlay" component={Overlay} />
-			</PersistentDrawer>
+			</TemplateDefault>
 		</div>
 	</Router>
 );

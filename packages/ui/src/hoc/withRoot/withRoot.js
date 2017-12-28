@@ -7,14 +7,8 @@ import JssProvider from 'react-jss/lib/JssProvider';
 import {withStyles, MuiThemeProvider} from 'material-ui/styles';
 import wrapDisplayName from 'recompose/wrapDisplayName';
 import createContext from '../../styles/createContext';
+import type {ThemeType} from '../../types/theme';
 
-export type ThemeType = {
-	palette: {
-		background: {
-			default: string,
-		},
-	},
-};
 export type StylesReturnType = {};
 
 // Apply some reset

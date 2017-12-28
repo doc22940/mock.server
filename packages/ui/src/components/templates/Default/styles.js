@@ -1,7 +1,7 @@
 // @flow
 /* eslint quote-props: 0*/
-import type {ThemeType} from '../../types/theme';
-import type {StylesType} from '../../types/styles';
+import type {ThemeType} from '../../../types/theme';
+import type {StylesType} from '../../../types/styles';
 
 export const drawerWidth: number = 240;
 

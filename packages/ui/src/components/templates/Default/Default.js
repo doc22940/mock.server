@@ -15,22 +15,22 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import ChevronLeftIcon from 'material-ui-icons/ChevronLeft';
 import ChevronRightIcon from 'material-ui-icons/ChevronRight';
-import {mailFolderListItems, otherMailFolderListItems} from './tileData';
+import {MainItems, ServiceItems, SystemItems} from './tileData';
 import styles from './styles';
-import type {ThemeType} from '../../types/theme';
-import type {ClassesType} from '../../types/classes';
+import type {ThemeType} from '../../../types/theme';
+import type {ClassesType} from '../../../types/classes';
 
-export type PersistentDrawerPropsType = {
+export type TemplateDefaultPropsType = {
 	classes?: ClassesType,
 	theme?: ThemeType,
 	children: React$Node,
 };
-export type PersistentDrawerStateType = {
+export type TemplateDefaultStateType = {
 	open: boolean,
 };
 
-class PersistentDrawer extends React.Component<PersistentDrawerPropsType, PersistentDrawerStateType> {
-	static displayName = 'PersistentDrawer';
+class TemplateDefault extends React.Component<TemplateDefaultPropsType, TemplateDefaultStateType> {
+	static displayName = 'TemplateDefault';
 
 	state = {
 		open: false,
@@ -67,10 +67,19 @@ class PersistentDrawer extends React.Component<PersistentDrawerPropsType, Persis
 					<div>
 						<Divider />
 						{/* $FlowFixMe */}
-						<List className={classes.list}>{mailFolderListItems}</List>
+						<List className={classes.list}>
+							<MainItems />
+						</List>
 						<Divider />
 						{/* $FlowFixMe */}
-						<List className={classes.list}>{otherMailFolderListItems}</List>
+						<List className={classes.list}>
+							<ServiceItems />
+						</List>
+						<Divider />
+						{/* $FlowFixMe */}
+						<List className={classes.list}>
+							<SystemItems />
+						</List>
 					</div>
 				</div>
 			</Drawer>
@@ -119,4 +128,4 @@ class PersistentDrawer extends React.Component<PersistentDrawerPropsType, Persis
 	}
 }
 
-export default withStyles(styles, {withTheme: true})(PersistentDrawer);
+export default withStyles(styles, {withTheme: true})(TemplateDefault);
