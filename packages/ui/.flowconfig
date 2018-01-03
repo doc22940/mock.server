@@ -1,10 +1,15 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/.*.json
 <PROJECT_ROOT>/dist/.*
+.*/rest-api/.*
+.*/log/.*
+.*/utils/.*
+.*/api/.*
 
 [include]
 
 [libs]
+./node_modules/node-mock-server-rest-api/node-mock-server-rest-api.js.flow
 
 [options]
 unsafe.enable_getters_and_setters=true

@@ -1,12 +1,21 @@
 // @flow
 /* eslint no-inline-comments: 0*/
-import React, {Component} from 'react';
-import {withStyles} from 'material-ui/styles';
+import React, { Component } from 'react';
+import { withStyles } from 'material-ui/styles';
+import { Provider } from 'mobx-react';
+
 import Routes from './components/organisms/Routes/Routes';
 
 import withRoot from './hoc/withRoot/withRoot';
+import EndpointsStore from './stores/EndpointsStore';
 
-import './App.css';
+export type StoresType = {
+	endpointsStore: EndpointsStore,
+};
+
+const stores: StoresType = {
+	endpointsStore: new EndpointsStore(),
+};
 
 const styles = {
 	root: {
@@ -16,20 +25,18 @@ const styles = {
 };
 
 class App extends Component<*, *> {
-	get name(): string {
-		// const type: ButtonTypeType = 'primary';
-		// eslint-disable-next-line
-		// console.log('type', type);
-		return 'App';
+	componentDidMount() {
+		// stores.endpointsStore.fetch();
 	}
 
 	render(): React$Element<*> {
 		return (
-			<div className={styles.root}>
-				<Routes />
-			</div>
+			<Provider {...stores}>
+				<div className={styles.root}>
+					<Routes />
+				</div>
+			</Provider>
 		);
 	}
 }
-
 export default withRoot(withStyles(styles)(App));

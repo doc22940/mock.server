@@ -6,6 +6,7 @@
     "dependencies": {
         "body-parser": "1.18.1",
         "express": "4.16.2",
+        "cors": "2.8.4",
         "node-mock-server-log": "0.1.0",
         "node-mock-server-uuid": "1.0.0",
         "node-mock-server-utils": "0.1.0",

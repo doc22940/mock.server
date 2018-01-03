@@ -1,62 +1,17 @@
 // @flow
-import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import type {ContextRouter} from 'react-router-dom';
+import React, { Component } from 'react';
+import { observer, inject } from 'mobx-react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import type { ContextRouter } from 'react-router-dom';
 import SwitchFade from './SwitchFade/SwitchFade';
 import TemplateDefault from '../../templates/Default/Default';
 import DialogFullScreen from '../Dialog/FullScreen';
+import EndpointsStore from '../../../stores/EndpointsStore';
 
-export type RoutesPropType = {
-	renderBefore?: React$Node,
-};
+// Pages
+import Endpoints from '../../pages/Endpoints/Endpoints';
 
-const Home = (): React$Element<*> => (
-	<div>
-		<h2>Home</h2>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<p>Hallo</p>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<p>Hallo</p>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<p>Hallo</p>
-	</div>
-);
+import './Routes.css';
 
 const About = (): React$Element<*> => (
 	<div>
@@ -64,13 +19,13 @@ const About = (): React$Element<*> => (
 	</div>
 );
 
-const Topic = ({match}: ContextRouter): React$Element<*> => (
+const Topic = ({ match }: ContextRouter): React$Element<*> => (
 	<div>
 		<h3>{match.params.topicId}</h3>
 	</div>
 );
 
-const Topics = ({match}: ContextRouter): React$Element<*> => (
+const Topics = ({ match }: ContextRouter): React$Element<*> => (
 	<div>
 		<h2>Topics</h2>
 		<ul>
@@ -90,7 +45,7 @@ const Topics = ({match}: ContextRouter): React$Element<*> => (
 	</div>
 );
 
-const Overlay = ({history}: ContextRouter): React$Element<*> => (
+const Overlay = ({ history }: ContextRouter): React$Element<*> => (
 	<DialogFullScreen
 		onClose={() => {
 			history.goBack();
@@ -98,37 +53,47 @@ const Overlay = ({history}: ContextRouter): React$Element<*> => (
 	/>
 );
 
-const Routes = (): React$Element<*> => (
-	<Router>
-		<div>
-			<TemplateDefault>
-				<ul>
-					<li>
-						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/about">About</Link>
-					</li>
-					<li>
-						<Link to="/topics">Topics</Link>
-					</li>
-					<li>
-						<Link to="/overlay">Overlay</Link>
-					</li>
-				</ul>
+export type RoutesPropsType = {
+	endpointsStore: EndpointsStore,
+};
 
-				<hr />
-				<SwitchFade>
-					<Route exact path="/" component={Home} />
-					<Route path="/about" component={About} />
-					<Route path="/topics" component={Topics} />
-				</SwitchFade>
-				<Route path="/overlay" component={Overlay} />
-			</TemplateDefault>
-		</div>
-	</Router>
-);
+class Routes extends Component<*> {
+	componentDidMount() {
+		this.props.endpointsStore.fetch();
+	}
 
-Routes.displayName = 'Routes';
+	render(): React$Element<*> {
+		return (
+			<Router>
+				<div>
+					<TemplateDefault>
+						{/* <ul>
+							<li>
+								<Link to="/">Home</Link>
+							</li>
+							<li>
+								<Link to="/about">About</Link>
+							</li>
+							<li>
+								<Link to="/topics">Topics</Link>
+							</li>
+							<li>
+								<Link to="/overlay">Overlay</Link>
+							</li>
+						</ul>
 
-export default Routes;
+						<hr /> */}
+						<SwitchFade>
+							<Route exact path="/" component={Endpoints} />
+							<Route path="/about" component={About} />
+							<Route path="/topics" component={Topics} />
+						</SwitchFade>
+						<Route exact path="/overlay" component={Overlay} />
+					</TemplateDefault>
+				</div>
+			</Router>
+		);
+	}
+}
+
+export default inject('endpointsStore')(observer(Routes));

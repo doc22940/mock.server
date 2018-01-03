@@ -3,4 +3,4 @@
 /dist/
 /coverage/
 /flow-typed/
-node-mock-server-api.js.flow
+node-mock-server-rest-api.js.flow

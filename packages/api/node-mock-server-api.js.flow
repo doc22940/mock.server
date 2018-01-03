@@ -66,6 +66,7 @@ declare module 'node-mock-server-api' {
 
 	declare export type $EndpointCreateDataType = EndpointCreateDataType;
 	declare export type $MethodCreateDataType = MethodCreateDataType;
+	declare export type $EndpointJsonType = EndpointJsonType;
 
 	declare export class Response {
 		src: string;

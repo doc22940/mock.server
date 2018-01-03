@@ -31,7 +31,18 @@
         "lint": "node_modules/.bin/lerna run lint",
         "prettier": "node_modules/.bin/prettier '{bin,__{tests,mocks}__}/**/*.js' --config package.json"
     },
+    "prettier": {
+        "useTabs": true,
+        "printWidth": 120,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "jsxBracketSameLine": false,
+        "parser": "babylon",
+        "semi": true
+    },
     "lint-staged": {
-        "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"]
+        "*.js": ["prettier", "git add"]
     }
 }

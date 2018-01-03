@@ -2,31 +2,33 @@
 import fs from 'fs';
 import path from 'path';
 import express from 'express';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 import log from 'node-mock-server-log';
-import {Endpoints} from 'node-mock-server-api';
-import type {$EndpointCreateDataType, $MethodCreateDataType} from 'node-mock-server-api';
-import {is} from 'node-mock-server-utils';
-import type {$Request, $Response} from 'express';
+import { Endpoints } from 'node-mock-server-api';
+import type { $EndpointCreateDataType, $MethodCreateDataType } from 'node-mock-server-api';
+import { is } from 'node-mock-server-utils';
+import type { $Request, $Response } from 'express';
 
 export type StartType = {
 	port: number,
 	src: string,
 };
 
-export default function start({port, src}: StartType) {
+export default function start({ port, src }: StartType) {
 	const app = express();
-	const api = new Endpoints({src});
+	const api = new Endpoints({ src });
 
+	app.use(cors());
 	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({extended: true}));
+	app.use(bodyParser.urlencoded({ extended: true }));
 
 	app.get('/endpoints', (req: $Request, res: $Response) => {
 		res.send(api.getEndpointsAsJson());
 	});
 	app.post('/endpoints', (req: $Request, res: $Response) => {
 		const body: $EndpointCreateDataType = req.body;
-		const {endpoint, method, desc} = body;
+		const { endpoint, method, desc } = body;
 
 		if (!is.object(body) || !is.string(endpoint)) {
 			log.error(`rest-api: Endpoint "${endpoint}" couldn't be created!`);
@@ -35,7 +37,7 @@ export default function start({port, src}: StartType) {
 			return;
 		}
 
-		const endpointInst = api.createEndpoint({endpoint, method, desc});
+		const endpointInst = api.createEndpoint({ endpoint, method, desc });
 
 		log.info(`rest-api: New endpoint ${endpoint} was created!`);
 
@@ -60,7 +62,7 @@ export default function start({port, src}: StartType) {
 	// CREATE METHOD
 	app.post('/endpoints/:endpointId', (req: $Request, res: $Response) => {
 		const body: $MethodCreateDataType = req.body;
-		const {method, desc} = body;
+		const { method, desc } = body;
 
 		if (!is.object(body) || !is.string(method)) {
 			log.error(`rest-api: Method "${method}" couldn't be created!`);
@@ -120,6 +122,6 @@ export default function start({port, src}: StartType) {
 }
 
 start({
-	port: 3001,
+	port: 3003,
 	src: path.join(fs.realpathSync(process.cwd()), '/../demo-data/.nodemockserver/data'),
 });

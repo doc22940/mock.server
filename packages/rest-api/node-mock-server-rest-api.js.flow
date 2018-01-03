@@ -1,0 +1,11 @@
+// @flow
+
+import type { $EndpointJsonType } from 'node-mock-server-api';
+
+export type ResponseGetEndpointType = $EndpointJsonType;
+export type ResponseGetEndpointsType = Array<ResponseGetEndpointType>;
+
+declare module 'node-mock-server-rest-api' {
+	declare export type $ResponseGetEndpointType = ResponseGetEndpointType;
+	declare export type $ResponseGetEndpointsType = ResponseGetEndpointsType;
+}
