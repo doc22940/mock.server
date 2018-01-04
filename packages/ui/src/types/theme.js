@@ -27,11 +27,17 @@ export type ThemeType = {
 		},
 	},
 	palette: {
+		text: {
+			[key: string]: ThemeValueType,
+		},
 		background: {
 			[key: string]: ThemeValueType,
 		},
 	},
 	breakpoints: {
 		up: (value: string) => ThemeValueType,
+	},
+	typography: {
+		pxToRem: (value: number) => ThemeValueType,
 	},
 };

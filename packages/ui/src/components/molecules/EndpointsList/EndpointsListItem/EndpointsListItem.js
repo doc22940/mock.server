@@ -4,7 +4,7 @@
 import React from 'react';
 import { ListItem, ListItemText, ListItemSecondaryAction } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
-import EndpointListItemMenu from './EndpointListItemMenu/EndpointListItemMenu';
+import EndpointContextMenu from '../../EndpointContextMenu/EndpointContextMenu';
 import endpointIcon from '../../../atoms/EndpointIcon/EndpointIcon';
 
 export type EndpointsListItemPropsType = {
@@ -32,7 +32,7 @@ const EndpointsListItem = ({ title, subTitle, onClick }: EndpointsListItemPropsT
 			<Avatar>{endpointIcon}</Avatar>
 			<ListItemText primary={title} secondary={subTitle} />
 			<ListItemSecondaryAction>
-				<EndpointListItemMenu menuItems={menuItems} />
+				<EndpointContextMenu menuItems={menuItems} />
 			</ListItemSecondaryAction>
 		</ListItem>
 	);

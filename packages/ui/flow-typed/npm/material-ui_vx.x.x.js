@@ -275,88 +275,92 @@ declare module "material-ui/Chip" {
   declare module.exports: $Exports<"material-ui/Chip/Chip">;
 }
 
+declare module "material-ui/color" {
+  declare module.exports: { [key: number]: string };
+}
+
 declare module "material-ui/colors/amber" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/blue" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/blueGrey" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/brown" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/common" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/cyan" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/deepOrange" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/deepPurple" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/green" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/grey" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/indigo" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/lightBlue" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/lightGreen" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/lime" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/orange" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/pink" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/purple" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/red" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/teal" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/colors/yellow" {
-  declare module.exports: any;
+  declare module.exports: $Exports<"material-ui/color">;
 }
 
 declare module "material-ui/Dialog/Dialog" {

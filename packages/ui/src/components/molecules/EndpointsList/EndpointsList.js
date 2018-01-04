@@ -4,6 +4,8 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import List from 'material-ui/List';
+import Paper from 'material-ui/Paper';
+
 import type { ThemeType } from '../../../types/theme';
 import type { StylesType } from '../../../types/styles';
 import type { ClassesType } from '../../../types/classes';
@@ -24,8 +26,10 @@ const styles = (theme: ThemeType): StylesType => ({
 const EndpointsList = ({ children, classes = {} }: EndpointsListPropsType): React$Element<*> => {
 	return (
 		<div className={classes.root}>
-			{/* $FlowFixMe */}
-			<List>{children}</List>
+			<Paper>
+				{/* $FlowFixMe */}
+				<List>{children}</List>
+			</Paper>
 		</div>
 	);
 };

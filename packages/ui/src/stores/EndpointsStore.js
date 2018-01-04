@@ -56,6 +56,11 @@ class EndpointsStore {
 	}
 
 	@action
+	setFilterQuery = (query: string) => {
+		this.filterQuery = query;
+	};
+
+	@action
 	fetch = () => {
 		this.stateFetch = asyncState.PENDING;
 		axios

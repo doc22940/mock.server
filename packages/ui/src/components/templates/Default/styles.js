@@ -1,7 +1,7 @@
 // @flow
 /* eslint quote-props: 0*/
-import type {ThemeType} from '../../../types/theme';
-import type {StylesType} from '../../../types/styles';
+import type { ThemeType } from '../../../types/theme';
+import type { StylesType } from '../../../types/styles';
 
 export const drawerWidth: number = 240;
 
@@ -66,7 +66,6 @@ const styles = (theme: ThemeType): StylesType => ({
 		width: '100%',
 		flexGrow: 1,
 		backgroundColor: theme.palette.background.default,
-		padding: theme.spacing.unit * 3,
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen,

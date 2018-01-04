@@ -6,6 +6,7 @@ import type { ContextRouter } from 'react-router-dom';
 import EndpointsStore from '../../../stores/EndpointsStore';
 import Endpoint from '../../../models/Endpoint';
 import EndpointsList, { EndpointsListItem } from '../../molecules/EndpointsList/EndpointsList';
+import EndpointsFilter from '../../molecules/EndpointsFilter/EndpointsFilter';
 
 export type EndpointsPropsType = ContextRouter & {
 	endpointsStore: EndpointsStore,
@@ -24,6 +25,7 @@ const Endpoints = ({ endpointsStore, history }: EndpointsPropsType): React$Eleme
 
 	return (
 		<div>
+			<EndpointsFilter />
 			<EndpointsList>
 				{filteredEndpoints.map(({ endpoint, endpointId, methods }: Endpoint): React$Element<*> => (
 					<EndpointsListItem

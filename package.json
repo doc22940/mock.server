@@ -18,12 +18,16 @@
         "prettier": "1.7.0",
         "rimraf": "2.6.1",
         "string-length": "2.0.0",
-        "sync": "0.2.5"
+        "sync": "0.2.5",
+        "opn": "5.1.0",
+        "execa": "0.8.0",
+        "p-series": "1.0.0"
     },
     "scripts": {
         "clean": "node_modules/.bin/lerna clean",
+        "prestart": "node bin/onBeforeStart.js",
         "start": "node_modules/.bin/lerna-terminal start",
-        "dev": "node_modules/.bin/lerna-terminal dev -i spectre-ui",
+        "dev": "node_modules/.bin/lerna-terminal dev",
         "flow": "node_modules/.bin/lerna run flow",
         "test": "node_modules/.bin/lerna run test",
         "test:dev": "node_modules/.bin/lerna-terminal test:dev",

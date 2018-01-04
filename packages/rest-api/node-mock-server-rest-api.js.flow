@@ -3,7 +3,7 @@
 import type { $EndpointJsonType } from 'node-mock-server-api';
 
 export type ResponseGetEndpointType = $EndpointJsonType;
-export type ResponseGetEndpointsType = Array<ResponseGetEndpointType>;
+export type ResponseGetEndpointsType = Array<$EndpointJsonType>;
 
 declare module 'node-mock-server-rest-api' {
 	declare export type $ResponseGetEndpointType = ResponseGetEndpointType;

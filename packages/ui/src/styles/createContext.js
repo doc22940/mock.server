@@ -1,9 +1,10 @@
 // @flow
 
-import {create, SheetsRegistry} from 'jss';
+import { create, SheetsRegistry } from 'jss';
 import preset from 'jss-preset-default';
-import {createMuiTheme, createGenerateClassName} from 'material-ui/styles';
-import {blue, pink} from 'material-ui/colors';
+import { createMuiTheme, createGenerateClassName } from 'material-ui/styles';
+import blue from 'material-ui/colors/blue';
+import pink from 'material-ui/colors/pink';
 
 export type CreateContextReturnType = {
 	jss: Object,

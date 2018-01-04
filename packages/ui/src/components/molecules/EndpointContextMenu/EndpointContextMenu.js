@@ -5,38 +5,23 @@ import IconButton from 'material-ui/IconButton';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import MoreVertIcon from 'material-ui-icons/MoreVert';
 
-const options = [
-	'None',
-	'Atria',
-	'Callisto',
-	'Dione',
-	'Ganymede',
-	'Hangouts Call',
-	'Luna',
-	'Oberon',
-	'Phobos',
-	'Pyxis',
-	'Sedna',
-	'Titania',
-	'Triton',
-	'Umbriel',
-];
-
 const ITEM_HEIGHT = 48;
 
-export type EndpointListItemMenuItemType = {
+export type EndpointContextMenuItemType = {
 	name: string,
 	icon?: string,
 	onClick: () => void,
 };
-export type EndpointListItemMenuPropsType = {
-	menuItems: Array<EndpointListItemMenuItemType>,
+export type EndpointContextMenuPropsType = {
+	menuItems: Array<EndpointContextMenuItemType>,
 };
-export type EndpointListItemMenuStateType = {
+export type EndpointContextMenuStateType = {
 	anchorEl: null | HTMLButtonElement,
 };
 
-class EndpointListItemMenu extends React.Component<EndpointListItemMenuPropsType, EndpointListItemMenuStateType> {
+class EndpointContextMenu extends React.Component<EndpointContextMenuPropsType, EndpointContextMenuStateType> {
+	static displayName = 'EndpointContextMenu';
+
 	state = {
 		anchorEl: null,
 	};
@@ -76,7 +61,7 @@ class EndpointListItemMenu extends React.Component<EndpointListItemMenuPropsType
 						},
 					}}
 				>
-					{menuItems.map(({ name }: EndpointListItemMenuItemType): React$Element<*> => (
+					{menuItems.map(({ name }: EndpointContextMenuItemType): React$Element<*> => (
 						<MenuItem key={name} selected={name === 'Delete'} onClick={this.handleClose}>
 							{name}
 						</MenuItem>
@@ -87,4 +72,4 @@ class EndpointListItemMenu extends React.Component<EndpointListItemMenuPropsType
 	}
 }
 
-export default EndpointListItemMenu;
+export default EndpointContextMenu;

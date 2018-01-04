@@ -1,7 +1,7 @@
 // @flow
-import type {MethodEnumType} from '../node-mock-server-utils.js.flow';
+import type { MethodEnumType } from '../node-mock-server-utils.js.flow';
 
-export const METHODS: {[key: MethodEnumType]: MethodEnumType} = {
+export const METHODS: { [key: MethodEnumType]: MethodEnumType } = {
 	GET: 'GET',
 	PUT: 'PUT',
 	POST: 'POST',
