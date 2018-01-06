@@ -2,14 +2,17 @@
 /* eslint no-inline-comments: 0*/
 import React from 'react';
 import { observer, inject } from 'mobx-react';
-// import debounce from 'debounce';
+import { METHODS } from 'node-mock-server-utils';
+import type { $MethodEnumType } from 'node-mock-server-utils';
 import { withStyles } from 'material-ui/styles';
 import ExpansionPanel, { ExpansionPanelDetails, ExpansionPanelSummary } from 'material-ui/ExpansionPanel';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
+// import List, { ListItem, ListItemIcon, ListItemSecondaryAction, ListItemText, ListSubheader } from 'material-ui/List';
+// import Switch from 'material-ui/Switch';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
-import MethodAvatar from '../../atoms/MethodAvatar/MethodAvatar';
+import MethodCheckbox from '../../atoms/MethodCheckbox/MethodCheckbox';
 import styles from './styles';
 import EndpointsStore from '../../../stores/EndpointsStore';
 import type { ClassesType } from '../../../types/classes';
@@ -24,21 +27,23 @@ export type EndpointsFilterStateType = {
 
 class EndpointsFilter extends React.Component<EndpointsFilterPropsType, EndpointsFilterStateType> {
 	state = {
-		expanded: null,
+		expanded: 'filter',
 	};
 
-	handleChangeFactory = (panel: string): ((event: Event, expanded: boolean) => void) => {
-		return (event: Event, expanded: boolean) => {
+	handleChangeFactory = (panel: string): ((event: SyntheticMouseEvent<>, expanded: boolean) => void) => {
+		return (event: SyntheticMouseEvent<>, expanded: boolean) => {
 			this.setState({
 				expanded: expanded ? panel : false,
 			});
 		};
 	};
 
-	// handleQueryChangeFactory = (delay: number): ((event: SyntheticInputEvent<>) => void) => {
-	// 	const value = event.target.value;
-	// 	return debounce(this.handleQueryChange.bind(this, value), delay);
-	// };
+	handleMethodFilterFactory = (method: $MethodEnumType): ((event: SyntheticMouseEvent<>) => void) => {
+		return (event: SyntheticMouseEvent<>) => {
+			event.preventDefault();
+			this.props.endpointsStore.toggleFilterMethod(method);
+		};
+	};
 
 	handleQueryChange = (event: SyntheticInputEvent<>) => {
 		this.props.endpointsStore.setFilterQuery(event.target.value);
@@ -58,7 +63,6 @@ class EndpointsFilter extends React.Component<EndpointsFilterPropsType, Endpoint
 				>
 					<ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
 						<Typography className={classes.heading}>Filter</Typography>
-						{/* <Typography className={classes.secondaryHeading}>I am an expansion panel</Typography> */}
 					</ExpansionPanelSummary>
 					<ExpansionPanelDetails>
 						<TextField
@@ -72,12 +76,17 @@ class EndpointsFilter extends React.Component<EndpointsFilterPropsType, Endpoint
 					</ExpansionPanelDetails>
 					<Divider />
 					<ExpansionPanelDetails>
-						<Typography>
-							Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget maximus
-							est, id dignissim quam.
-						</Typography>
-						<MethodAvatar method="get" />
-						<MethodAvatar method="post" />
+						<ul className={classes.methodSelector}>
+							{Object.keys(METHODS).map((method: $MethodEnumType): React$Element<*> => (
+								<li key={method} className={classes.methodSelectorItem}>
+									<MethodCheckbox
+										onClick={this.handleMethodFilterFactory(method)}
+										checked={endpointsStore.filterMethods.indexOf(method) >= 0}
+										method={method}
+									/>
+								</li>
+							))}
+						</ul>
 					</ExpansionPanelDetails>
 				</ExpansionPanel>
 			</div>

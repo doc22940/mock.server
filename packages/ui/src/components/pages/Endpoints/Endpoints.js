@@ -29,9 +29,9 @@ const Endpoints = ({ endpointsStore, history }: EndpointsPropsType): React$Eleme
 			<EndpointsList>
 				{filteredEndpoints.map(({ endpoint, endpointId, methods }: Endpoint): React$Element<*> => (
 					<EndpointsListItem
-						key={endpointId}
+						key={`${endpointId}_${methods[0]}`}
 						title={endpoint}
-						subTitle={methods.join(', ')}
+						method={methods[0]}
 						onClick={(): void => history.push(`/endpoints/${endpointId}`)}
 					/>
 				))}

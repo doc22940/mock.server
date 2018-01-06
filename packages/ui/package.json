@@ -5,6 +5,7 @@
     "dependencies": {
         "custom-react-scripts": "0.2.0",
         "node-mock-server-uuid": "1.0.0",
+        "node-mock-server-utils": "0.1.0",
         "node-mock-server-rest-api": "0.1.0",
         "react": "16.0.0",
         "react-dom": "16.0.0",

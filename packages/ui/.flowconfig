@@ -11,6 +11,7 @@
 [libs]
 ./node_modules/node-mock-server-uuid/node-mock-server-uuid.js.flow
 ./node_modules/node-mock-server-rest-api/node-mock-server-rest-api.js.flow
+./node_modules/node-mock-server-utils/node-mock-server-utils.js.flow
 
 [options]
 unsafe.enable_getters_and_setters=true

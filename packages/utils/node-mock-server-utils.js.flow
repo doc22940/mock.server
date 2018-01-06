@@ -54,5 +54,6 @@ declare module 'node-mock-server-utils' {
 	declare export function typeOf(value: TypeOfValueType): TypeOfType;
 	declare export var is: IsType;
 
+	declare export var METHODS: { [key: $MethodEnumType]: $MethodEnumType };
 	declare export function toMethodEnum(value: string): $MethodEnumType;
 }

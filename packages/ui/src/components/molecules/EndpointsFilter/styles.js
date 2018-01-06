@@ -27,6 +27,16 @@ const styles = (theme: ThemeType): StylesType => ({
 		marginRight: 0,
 		width: '100%',
 	},
+	methodSelector: {
+		width: '100%',
+		padding: 0,
+		margin: `${theme.spacing.unit * 2}px 0 0 -${theme.spacing.unit * 2}px`,
+		listStyleType: 'none',
+	},
+	methodSelectorItem: {
+		float: 'left',
+		marginLeft: theme.spacing.unit,
+	},
 });
 
 export default styles;

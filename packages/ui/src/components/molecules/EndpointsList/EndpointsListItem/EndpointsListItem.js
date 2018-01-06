@@ -2,14 +2,14 @@
 /* eslint no-inline-comments: 0*/
 
 import React from 'react';
+import type { $MethodEnumType } from 'node-mock-server-utils';
 import { ListItem, ListItemText, ListItemSecondaryAction } from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
 import EndpointContextMenu from '../../EndpointContextMenu/EndpointContextMenu';
-import endpointIcon from '../../../atoms/EndpointIcon/EndpointIcon';
+import MethodAvatar from '../../../atoms/MethodAvatar/MethodAvatar';
 
 export type EndpointsListItemPropsType = {
 	title: string,
-	subTitle?: string,
+	method: $MethodEnumType,
 	onClick: () => void,
 };
 
@@ -26,11 +26,11 @@ const menuItems: Array<Object> = [
 	},
 ];
 
-const EndpointsListItem = ({ title, subTitle, onClick }: EndpointsListItemPropsType): React$Element<*> => {
+const EndpointsListItem = ({ title, method, onClick }: EndpointsListItemPropsType): React$Element<*> => {
 	return (
 		<ListItem button onClick={onClick}>
-			<Avatar>{endpointIcon}</Avatar>
-			<ListItemText primary={title} secondary={subTitle} />
+			<MethodAvatar method={method} />
+			<ListItemText primary={title} secondary={method} />
 			<ListItemSecondaryAction>
 				<EndpointContextMenu menuItems={menuItems} />
 			</ListItemSecondaryAction>

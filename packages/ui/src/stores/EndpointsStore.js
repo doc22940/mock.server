@@ -1,8 +1,10 @@
 // @flow
 import axios from 'axios';
 import { observable, action, computed } from 'mobx';
+// import type { IObservableArray } from 'mobx';
 import type { $AxiosXHR } from 'axios';
 import type { $ResponseGetEndpointsType, $ResponseGetEndpointType } from 'node-mock-server-rest-api';
+import type { $MethodEnumType } from 'node-mock-server-utils';
 
 import config from '../constants/config';
 import Endpoint from '../models/Endpoint';
@@ -19,7 +21,7 @@ const url = `${config.getUrlApi()}/endpoints`;
 class EndpointsStore {
 	@observable endpoints: Array<Endpoint>;
 	@observable filterQuery: string = '';
-	@observable filterMethods: Array<string> = [];
+	@observable filterMethods: Array<$MethodEnumType> = [];
 	@observable stateFetch: AsyncStateType = asyncState.INITIAL;
 	@observable stateCreate: AsyncStateType = asyncState.DONE;
 	@observable stateUpdate: AsyncStateType = asyncState.DONE;
@@ -50,14 +52,38 @@ class EndpointsStore {
 			({ endpoint, methods }: Endpoint): boolean =>
 				endpoint.indexOf(this.filterQuery) >= 0 &&
 				(this.filterMethods.length <= 0 ||
-					methods.map((method: string): boolean => this.filterMethods.indexOf(method) >= 0).indexOf(true) >=
-						0)
+					methods
+						.map((method: $MethodEnumType): boolean => this.filterMethods.indexOf(method) >= 0)
+						.indexOf(true) >= 0)
 		);
 	}
+
+	// @computed
+	// get filteredMethodEndpoints(): Array<Endpoint> {
+	// 	const out: Array<Endpoint> = [];
+	// 	this.filteredEndpoints.forEach((endpointInstance: Endpoint) => {
+	// 		endpointInstance.methods.forEach((method: string) => {
+	// 			out.push({ ...endpointInstance, methods: [method] });
+	// 		});
+	// 	});
+	// 	return out;
+	// }
 
 	@action
 	setFilterQuery = (query: string) => {
 		this.filterQuery = query;
+	};
+
+	@action
+	toggleFilterMethod = (method: $MethodEnumType) => {
+		const index = this.filterMethods.indexOf(method);
+		if (index >= 0) {
+			// -> IObservableArray don't work with enum?
+			// $FlowFixMe
+			this.filterMethods.remove(method);
+			return;
+		}
+		this.filterMethods.push(method);
 	};
 
 	@action
@@ -77,9 +103,15 @@ class EndpointsStore {
 			return;
 		}
 
-		this.endpoints = response.data.map((endpointData: $ResponseGetEndpointType): Endpoint => {
-			return new Endpoint(endpointData);
+		const out = [];
+
+		response.data.forEach((endpointData: $ResponseGetEndpointType) => {
+			endpointData.methods.forEach((method: $MethodEnumType) => {
+				out.push(new Endpoint({ ...endpointData, methods: [method] }));
+			});
 		});
+
+		this.endpoints = out;
 
 		this.stateFetch = asyncState.DONE;
 	}
