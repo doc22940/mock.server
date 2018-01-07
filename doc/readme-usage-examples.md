@@ -18,9 +18,9 @@ mockServer({
   dirName: __dirname,
   title: 'Api mock server',
   version: 2,
-  urlBase: 'http://localhost:3003',
+  urlBase: 'http://localhost:3001',
   urlPath: '/rest/v2',
-  port: 3003,
+  port: 3001,
   uiPath: '/',
   funcPath: path.join(__dirname, '/func'),
   headers: {
