@@ -39,7 +39,7 @@ const Endpoints = ({ rootStore, history }: EndpointsPropsType): React$Element<*>
 					<EndpointsListItem
 						key={`${endpointId}_${methodId}`}
 						title={endpoint}
-						text={desc}
+						subTitle={desc}
 						method={methodId}
 						onClick={handleClickDetailFactor(endpointId, methodId)}
 					/>

@@ -40,7 +40,7 @@ class EndpointMethodHeader extends React.Component<EndpointMethodHeaderPropsType
 							</IconButton>
 						}
 						title={title}
-						subheader={subTitle}
+						subheader={subTitle === '' ? '-' : subTitle}
 					/>
 				</Card>
 			</div>

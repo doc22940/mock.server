@@ -9,7 +9,7 @@ import MethodAvatar from '../../../atoms/MethodAvatar/MethodAvatar';
 
 export type EndpointsListItemPropsType = {
 	title: string,
-	text?: string,
+	subTitle?: string,
 	method: $MethodEnumType,
 	onClick: () => void,
 };
@@ -27,11 +27,11 @@ const menuItems: Array<Object> = [
 	},
 ];
 
-const EndpointsListItem = ({ title, method, onClick, text }: EndpointsListItemPropsType): React$Element<*> => {
+const EndpointsListItem = ({ title, method, onClick, subTitle = '' }: EndpointsListItemPropsType): React$Element<*> => {
 	return (
 		<ListItem button onClick={onClick}>
 			<MethodAvatar method={method} />
-			<ListItemText primary={title} secondary={text} />
+			<ListItemText primary={title} secondary={subTitle === '' ? '-' : subTitle} />
 			<ListItemSecondaryAction>
 				<EndpointContextMenu menuItems={menuItems} />
 			</ListItemSecondaryAction>
