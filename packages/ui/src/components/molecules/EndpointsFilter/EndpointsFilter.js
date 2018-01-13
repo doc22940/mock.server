@@ -14,12 +14,12 @@ import TextField from 'material-ui/TextField';
 import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
 import MethodCheckbox from '../../atoms/MethodCheckbox/MethodCheckbox';
 import styles from './styles';
-import EndpointsStore from '../../../stores/EndpointsStore';
+import RootStore from '../../../stores/RootStore';
 import type { ClassesType } from '../../../types/classes';
 
 export type EndpointsFilterPropsType = {
 	classes?: ClassesType,
-	endpointsStore: EndpointsStore,
+	rootStore: RootStore,
 };
 export type EndpointsFilterStateType = {
 	expanded: null | boolean | string,
@@ -27,7 +27,7 @@ export type EndpointsFilterStateType = {
 
 class EndpointsFilter extends React.Component<EndpointsFilterPropsType, EndpointsFilterStateType> {
 	state = {
-		expanded: 'filter',
+		expanded: null,
 	};
 
 	handleChangeFactory = (panel: string): ((event: SyntheticMouseEvent<>, expanded: boolean) => void) => {
@@ -41,16 +41,17 @@ class EndpointsFilter extends React.Component<EndpointsFilterPropsType, Endpoint
 	handleMethodFilterFactory = (method: $MethodEnumType): ((event: SyntheticMouseEvent<>) => void) => {
 		return (event: SyntheticMouseEvent<>) => {
 			event.preventDefault();
-			this.props.endpointsStore.toggleFilterMethod(method);
+			this.props.rootStore.endpointsStore.toggleFilterMethod(method);
 		};
 	};
 
 	handleQueryChange = (event: SyntheticInputEvent<>) => {
-		this.props.endpointsStore.setFilterQuery(event.target.value);
+		this.props.rootStore.endpointsStore.setFilterQuery(event.target.value);
 	};
 
 	render(): React$Element<*> {
-		const { classes = {}, endpointsStore } = this.props;
+		const { classes = {}, rootStore } = this.props;
+		const { endpointsStore } = rootStore;
 		const { expanded } = this.state;
 
 		return (
@@ -94,4 +95,4 @@ class EndpointsFilter extends React.Component<EndpointsFilterPropsType, Endpoint
 	}
 }
 
-export default inject('endpointsStore')(withStyles(styles)(observer(EndpointsFilter)));
+export default inject('rootStore')(withStyles(styles)(observer(EndpointsFilter)));

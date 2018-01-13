@@ -1,7 +1,7 @@
 // @flow
 // import { observable, action } from "mobx";
-import type { $ResponseGetEndpointType } from 'node-mock-server-rest-api';
 import type { $MethodEnumType } from 'node-mock-server-utils';
+import type { $ResponseGetEndpointsEntryMethodEntryType } from 'node-mock-server-rest-api';
 
 /**
  *
@@ -10,12 +10,14 @@ import type { $MethodEnumType } from 'node-mock-server-utils';
 class Endpoint {
 	endpoint: string;
 	endpointId: string;
-	methods: Array<$MethodEnumType>;
+	methodId: $MethodEnumType;
+	desc: string;
 
-	constructor({ endpoint, endpointId, methods }: $ResponseGetEndpointType) {
+	constructor({ endpoint, endpointId, methodId, desc }: $ResponseGetEndpointsEntryMethodEntryType) {
 		this.endpoint = endpoint;
 		this.endpointId = endpointId;
-		this.methods = methods;
+		this.methodId = methodId;
+		this.desc = desc;
 	}
 }
 

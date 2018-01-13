@@ -1,39 +1,34 @@
 // @flow
 import axios from 'axios';
-import { observable, action, computed } from 'mobx';
+import { observable, action } from 'mobx';
 // import type { IObservableArray } from 'mobx';
 import type { $AxiosXHR } from 'axios';
-import type {
-	$ResponseGetEndpointsType,
-	$ResponseGetEndpointsEntryType,
-	$ResponseGetEndpointsEntryMethodEntryType,
-} from 'node-mock-server-rest-api';
+import type { $ResponseGetMethodType } from 'node-mock-server-rest-api';
 import type { $MethodEnumType } from 'node-mock-server-utils';
 
-import RootStore from './RootStore';
 import config from '../constants/config';
-import Endpoint from '../models/Endpoint';
+import Method from '../models/Method';
+import RootStore from './RootStore';
 
 import asyncState from '../constants/asyncState';
 import type { AsyncStateType } from '../constants/asyncState';
 // import Session from "models/Session";
 
-const url = `${config.getUrlApi()}/endpoints`;
+const createUrl = (endpointId: string, methodId: $MethodEnumType): string =>
+	`${config.getUrlApi()}/endpoints/${endpointId}/${methodId}`;
 
 // each store is an endpoint but don't have to be
 // http://localhost:4000/rest/v1/endpoints
 //
-class EndpointsStore {
+class MethodStore {
 	rootStore: RootStore;
 
 	@observable stateFetch: AsyncStateType = asyncState.INITIAL;
 	@observable stateCreate: AsyncStateType = asyncState.DONE;
 	@observable stateUpdate: AsyncStateType = asyncState.DONE;
 
-	@observable endpoints: Array<Endpoint>;
-	@observable endpointsMap: { [key: string]: Endpoint };
-	@observable filterQuery: string = '';
-	@observable filterMethods: Array<$MethodEnumType> = [];
+	@observable currentEndpointId: ?string;
+	@observable method: Method;
 
 	constructor(rootStore: RootStore) {
 		this.rootStore = rootStore;
@@ -59,70 +54,25 @@ class EndpointsStore {
 		return this.isState(asyncState.ERROR);
 	}
 
-	getEndpointById(endpointId?: null | string): ?Endpoint {
-		if (!endpointId) {
-			return;
-		}
-		return this.endpointsMap[endpointId];
-	}
-
-	@computed
-	get filteredEndpoints(): Array<Endpoint> {
-		return (this.endpoints || []).filter(
-			({ endpoint, methodId }: Endpoint): boolean =>
-				endpoint.indexOf(this.filterQuery) >= 0 &&
-				(this.filterMethods.length <= 0 || this.filterMethods.indexOf(methodId) >= 0)
-		);
-	}
-
 	@action
-	setFilterQuery = (query: string) => {
-		this.filterQuery = query;
-	};
-
-	@action
-	toggleFilterMethod = (method: $MethodEnumType) => {
-		const index = this.filterMethods.indexOf(method);
-		if (index >= 0) {
-			// -> IObservableArray don't work with enum?
-			// $FlowFixMe
-			this.filterMethods.remove(method);
-			return;
-		}
-		this.filterMethods.push(method);
-	};
-
-	@action
-	fetch = () => {
+	fetch = (endpointId: string, methodId: $MethodEnumType) => {
 		this.stateFetch = asyncState.PENDING;
 		axios
-			.get(`${url}`, {
+			.get(`${createUrl(endpointId, methodId)}`, {
 				withCredentials: false,
 			})
-			.then(this.fetchSuccess)
+			.then(this.fetchSuccess.bind(this, endpointId, methodId))
 			.catch(this.fetchError);
 	};
 	@action.bound
-	fetchSuccess(response: $AxiosXHR<$ResponseGetEndpointsType>) {
+	fetchSuccess(endpointId: string, methodId: $MethodEnumType, response: $AxiosXHR<$ResponseGetMethodType>) {
 		if (!response || !response.data) {
 			this.stateFetch = asyncState.ERROR;
 			return;
 		}
 
-		const out = [];
-		const mapOut = {};
-
-		response.data.forEach((endpointData: $ResponseGetEndpointsEntryType) => {
-			endpointData.methods.forEach((methodJson: $ResponseGetEndpointsEntryMethodEntryType) => {
-				const endpointInstance = new Endpoint({ ...endpointData, ...methodJson });
-				out.push(endpointInstance);
-				mapOut[endpointInstance.endpointId] = endpointInstance;
-			});
-		});
-
-		this.endpoints = out;
-		this.endpointsMap = mapOut;
-
+		this.currentEndpointId = endpointId;
+		this.method = new Method(response.data);
 		this.stateFetch = asyncState.DONE;
 	}
 	@action.bound
@@ -186,4 +136,4 @@ class EndpointsStore {
 	// };
 }
 
-export default EndpointsStore;
+export default MethodStore;

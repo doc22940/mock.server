@@ -1,10 +1,13 @@
 // @flow
 
+import type { $MethodEnumType } from 'node-mock-server-utils';
+
+
 // RESPONSE
 export type ResponseConstructorType = {
 	src: string,
 	endpointId: string,
-	methodId: string,
+	methodId: $MethodEnumType,
 	responseId: string,
 };
 
@@ -16,16 +19,41 @@ export type ResponseJsonType = {
 };
 
 // METHOD
+export type StoreFileJsonType = {
+	desc: string,
+	desc2?: string,
+	security?: Array<string>,
+	protected: boolean,
+	status?: string,
+	request: Object,
+	endpoint: string,
+	method: $MethodEnumType,
+	responses: ?Array<{
+		statusCode?: string | number,
+		schema?: {
+			type?: string,
+		},
+	}>,
+};
+
 export type MethodConstructorType = {
 	src: string,
 	endpointId: string,
-	methodId: string,
+	methodId: $MethodEnumType,
 };
 
 export type MethodJsonType = {
-	method: string,
-	methodId: string,
+	method: $MethodEnumType,
+	methodId: $MethodEnumType,
+	desc: string,
+	desc2: string,
 	responses: Array<{ name: string, id: string }>,
+};
+
+export type MethodMinJsonType = {
+	method: $MethodEnumType,
+	methodId: $MethodEnumType,
+	desc: string,
 };
 
 // ENDPOINT
@@ -37,13 +65,13 @@ export type EndpointConstructorType = {
 export type EndpointJsonType = {
 	endpoint: string,
 	endpointId: string,
-	methods: Array<string>,
+	methods: Array<$MethodEnumType>,
 };
 
 export type EndpointDetailedJsonType = {
 	endpoint: string,
 	endpointId: string,
-	methods: Array<MethodJsonType>,
+	methods: Array<MethodMinJsonType>,
 };
 
 export type EndpointCreateDataType = {
@@ -64,14 +92,18 @@ export type EndpointsConstructorType = {
 
 declare module 'node-mock-server-api' {
 
+	declare export type $EndpointDetailedJsonType = EndpointDetailedJsonType;
+	declare export type $EndpointDetailedJsonMethodEntryType = MethodMinJsonType;
+	declare export type $EndpointJsonType = EndpointJsonType;
 	declare export type $EndpointCreateDataType = EndpointCreateDataType;
 	declare export type $MethodCreateDataType = MethodCreateDataType;
-	declare export type $EndpointJsonType = EndpointJsonType;
+	declare export type $MethodJsonType = MethodJsonType;
+
 
 	declare export class Response {
 		src: string;
 		endpointId: string;
-		methodId: string;
+		methodId: $MethodEnumType;
 		response: string;
 		responseId: string;
 		status: number;
@@ -86,7 +118,7 @@ declare module 'node-mock-server-api' {
 	declare export class Method {
 		src: string;
 		endpointId: string;
-		methodId: string;
+		methodId: $MethodEnumType;
 		responses: Array<Response>;
 		responsesById: {[key: string]: Response};
 
@@ -94,22 +126,22 @@ declare module 'node-mock-server-api' {
 		getResponses(): Array<Response>,
 		getResponse(responseId: string): Response,
 		createResponse(responseId: string, data: string): boolean,
-		toJson(): MethodJsonType,
+		toJson(): $MethodJsonType,
 	}
 
 	declare export class Endpoint {
 		src: string,
 		endpoint: string,
 		endpointId: string,
-		methods: Array<Method>,
-		methodsById: {[key: string]: Method},
+		methods: Array<$MethodEnumType>,
+		methodsById: {[key: $MethodEnumType]: Method},
 
 		constructor(options: EndpointConstructorType): void,
 		getMethods(): Array<Method>,
-		getMethod(methodId: string): Method,
-		createMethod(options: MethodCreateDataType): ?Method,
-		removeMethod(methodId: string): boolean,
-		toJson(): EndpointJsonType,
+		getMethod(methodId: $MethodEnumType): Method,
+		createMethod(options: $MethodCreateDataType): ?Method,
+		removeMethod(methodId: $MethodEnumType): boolean,
+		toJson(): $EndpointJsonType,
 		toDetailedJson(): EndpointDetailedJsonType,
 	}
 
@@ -121,9 +153,9 @@ declare module 'node-mock-server-api' {
 		constructor(options: EndpointsConstructorType): void,
 		getEndpoints(): Array<Endpoint>,
 		getEndpoint(endpointId: string): Endpoint,
-		getEndpointsAsJson(): Array<EndpointJsonType>,
+		getEndpointsAsJson(): Array<$EndpointJsonType>,
 		getDetailedEndpointsAsJson(): Array<EndpointDetailedJsonType>,
-		createEndpoint(data: EndpointCreateDataType): Endpoint,
+		createEndpoint(data: $EndpointCreateDataType): Endpoint,
 		removeEndpoint(endpointId: string): boolean,
 	}
 

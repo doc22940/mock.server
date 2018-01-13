@@ -6,10 +6,13 @@ import type { ContextRouter } from 'react-router-dom';
 import SwitchFade from './SwitchFade/SwitchFade';
 import TemplateDefault from '../../templates/Default/Default';
 import DialogFullScreen from '../Dialog/FullScreen';
-import EndpointsStore from '../../../stores/EndpointsStore';
+
+// Stores
+import RootStore from '../../../stores/RootStore';
 
 // Pages
-import Endpoints from '../../pages/Endpoints/Endpoints';
+import EndpointsPage from '../../pages/Endpoints/Endpoints';
+import EndpointMethodPage from '../../pages/EndpointMethod/EndpointMethod';
 
 import './Routes.css';
 
@@ -47,19 +50,24 @@ const Topics = ({ match }: ContextRouter): React$Element<*> => (
 
 const Overlay = ({ history }: ContextRouter): React$Element<*> => (
 	<DialogFullScreen
+		title="Hallo"
 		onClose={() => {
 			history.goBack();
 		}}
-	/>
+	>
+		<div />
+	</DialogFullScreen>
 );
 
 export type RoutesPropsType = {
-	endpointsStore: EndpointsStore,
+	rootStore: RootStore,
 };
+
+export type RoutePropsType = {} & ContextRouter;
 
 class Routes extends Component<*> {
 	componentDidMount() {
-		this.props.endpointsStore.fetch();
+		this.props.rootStore.endpointsStore.fetch();
 	}
 
 	render(): React$Element<*> {
@@ -67,24 +75,9 @@ class Routes extends Component<*> {
 			<Router>
 				<div>
 					<TemplateDefault>
-						{/* <ul>
-							<li>
-								<Link to="/">Home</Link>
-							</li>
-							<li>
-								<Link to="/about">About</Link>
-							</li>
-							<li>
-								<Link to="/topics">Topics</Link>
-							</li>
-							<li>
-								<Link to="/overlay">Overlay</Link>
-							</li>
-						</ul>
-
-						<hr /> */}
 						<SwitchFade>
-							<Route exact path="/" component={Endpoints} />
+							<Route exact path="/" component={EndpointsPage} />
+							<Route exact path="/endpoints/:endpointId/:methodId" component={EndpointMethodPage} />
 							<Route path="/about" component={About} />
 							<Route path="/topics" component={Topics} />
 						</SwitchFade>
@@ -96,4 +89,4 @@ class Routes extends Component<*> {
 	}
 }
 
-export default inject('endpointsStore')(observer(Routes));
+export default inject('rootStore')(observer(Routes));

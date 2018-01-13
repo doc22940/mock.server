@@ -14,7 +14,11 @@
  */
 
 declare module 'mobx-react' {
-  declare module.exports: any;
+  declare export function observer(Component: React$ComponentType<*>): React$ComponentType<*>;
+  declare export function inject(storeNameA: string): (Component: React$ComponentType<*>) => React$ComponentType<*>;
+  declare export class Provider extends React$Component<{
+    rootStore: any,
+  }> {}
 }
 
 /**

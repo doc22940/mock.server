@@ -5,22 +5,15 @@ import { withStyles } from 'material-ui/styles';
 import { Provider } from 'mobx-react';
 
 import Routes from './components/organisms/Routes/Routes';
-
+import RootStore from './stores/RootStore';
 import withRoot from './hoc/withRoot/withRoot';
-import EndpointsStore from './stores/EndpointsStore';
-
-export type StoresType = {
-	endpointsStore: EndpointsStore,
-};
-
-const stores: StoresType = {
-	endpointsStore: new EndpointsStore(),
-};
 
 const styles = {
 	root: {
-		textAlign: 'center',
-		paddingTop: 200,
+		// width: '100%',
+		// display: 'flex',
+		// minHeight: '100vh',
+		// alignItems: 'stretch',
 	},
 };
 
@@ -31,8 +24,8 @@ class App extends Component<*, *> {
 
 	render(): React$Element<*> {
 		return (
-			<Provider {...stores}>
-				<div className={styles.root}>
+			<Provider rootStore={new RootStore()}>
+				<div className={this.props.classes.root}>
 					<Routes />
 				</div>
 			</Provider>

@@ -3,21 +3,20 @@
 /* eslint no-inline-comments: 0*/
 
 import React from 'react';
-import {withStyles} from 'material-ui/styles';
-import Button from 'material-ui/Button';
+import { withStyles } from 'material-ui/styles';
 import Dialog from 'material-ui/Dialog';
-import List, {ListItem, ListItemText} from 'material-ui/List';
-import Divider from 'material-ui/Divider';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import CloseIcon from 'material-ui-icons/Close';
-import Slide from 'material-ui/transitions/Slide';
-import type {ClassesType} from '../../../types/classes';
+import Fade from 'material-ui/transitions/Fade';
+import type { ClassesType } from '../../../types/classes';
 
 export type DialogFullScreenPropsType = {
 	classes?: ClassesType,
+	title: string | React$Node,
+	children: React$Node,
 	onClose: () => void,
 };
 export type DialogFullScreenStateType = {
@@ -34,7 +33,7 @@ const styles = {
 };
 
 function Transition(props: Object): React$Element<*> {
-	return <Slide direction="up" {...props} />;
+	return <Fade {...props} />;
 }
 
 class DialogFullScreen extends React.Component<DialogFullScreenPropsType, DialogFullScreenStateType> {
@@ -45,16 +44,17 @@ class DialogFullScreen extends React.Component<DialogFullScreenPropsType, Dialog
 	};
 
 	handleClickOpen = () => {
-		this.setState({open: true});
+		this.setState({ open: true });
 	};
 
 	handleClose = () => {
-		this.setState({open: false});
-		this.props.onClose();
+		this.setState({ open: false }, () => {
+			this.props.onClose();
+		});
 	};
 
 	render() {
-		const {classes = {}} = this.props;
+		const { classes = {}, title, children } = this.props;
 		return (
 			<div>
 				{/* $FlowFixMe */}
@@ -65,23 +65,14 @@ class DialogFullScreen extends React.Component<DialogFullScreenPropsType, Dialog
 								<CloseIcon />
 							</IconButton>
 							<Typography type="title" color="inherit" className={classes.flex}>
-								Sound
+								<div>{title}</div>
 							</Typography>
-							<Button color="contrast" onClick={this.handleClose}>
+							{/* <Button color="contrast" onClick={this.handleClose}>
 								save
-							</Button>
+							</Button> */}
 						</Toolbar>
 					</AppBar>
-					{/* $FlowFixMe */}
-					<List>
-						<ListItem button>
-							<ListItemText primary="Phone ringtone" secondary="Titania" />
-						</ListItem>
-						<Divider />
-						<ListItem button>
-							<ListItemText primary="Default notification ringtone" secondary="Tethys" />
-						</ListItem>
-					</List>
+					{children}
 				</Dialog>
 			</div>
 		);

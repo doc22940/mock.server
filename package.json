@@ -26,9 +26,12 @@
     "scripts": {
         "clean": "node_modules/.bin/lerna clean",
         "prestart": "node bin/onBeforeStart.js",
-        "start": "node_modules/.bin/lerna-terminal start",
+        "start": "run-p start:*",
+        "start:ui": "cd packages/ui && npm run start",
+        "start:rest-api": "cd packages/rest-api && npm run start",
         "dev": "node_modules/.bin/lerna-terminal dev",
         "flow": "node_modules/.bin/lerna run flow",
+        "flow-restart": "node_modules/.bin/lerna run flow-restart",
         "test": "node_modules/.bin/lerna run test",
         "test:dev": "node_modules/.bin/lerna-terminal test:dev",
         "bootstrap": "node_modules/.bin/lerna bootstrap --hoist",

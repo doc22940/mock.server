@@ -24,7 +24,7 @@ export default function start({ port, src }: StartType) {
 	app.use(bodyParser.urlencoded({ extended: true }));
 
 	app.get('/endpoints', (req: $Request, res: $Response) => {
-		res.send(api.getEndpointsAsJson());
+		res.send(api.getDetailedEndpointsAsJson());
 	});
 	app.post('/endpoints', (req: $Request, res: $Response) => {
 		const body: $EndpointCreateDataType = req.body;

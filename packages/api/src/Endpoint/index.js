@@ -3,15 +3,16 @@
 import path from 'path';
 
 import log from 'node-mock-server-log';
-import {decode} from 'node-mock-server-uuid';
-import {readDir, writeDir, removeDir, isDir, writeFile, isFile, toMethodEnum, is} from 'node-mock-server-utils';
+import { decode } from 'node-mock-server-uuid';
+import type { $MethodEnumType } from 'node-mock-server-utils';
+import { readDir, writeDir, removeDir, isDir, writeFile, isFile, toMethodEnum, is } from 'node-mock-server-utils';
 import Method from '../Method';
 
 import type {
 	EndpointConstructorType,
 	EndpointJsonType,
 	EndpointDetailedJsonType,
-	MethodJsonType,
+	MethodMinJsonType,
 	MethodCreateDataType,
 } from '../../node-mock-server-api.js.flow';
 
@@ -20,15 +21,16 @@ class Endpoint {
 	endpoint: string;
 	endpointId: string;
 	methods: Array<Method> = [];
-	methodsById: {[key: string]: Method} = {};
+	methodsById: { [key: $MethodEnumType]: Method } = {};
 
-	constructor({endpointId, src}: EndpointConstructorType) {
+	constructor({ endpointId, src }: EndpointConstructorType) {
 		this.src = src;
 		this.endpoint = decode(endpointId);
 		this.endpointId = endpointId;
 
-		readDir(path.join(this.src, this.endpointId)).forEach((methodId: string) => {
-			this.methodsById[methodId] = new Method({src, endpointId, methodId});
+		readDir(path.join(this.src, this.endpointId)).forEach((methodRaw: string) => {
+			const methodId: $MethodEnumType = toMethodEnum(methodRaw);
+			this.methodsById[methodId] = new Method({ src, endpointId, methodId });
 			this.methods.push(this.methodsById[methodId]);
 		});
 	}
@@ -37,7 +39,7 @@ class Endpoint {
 		return this.methods;
 	};
 
-	getMethod = (methodId: string): Method => {
+	getMethod = (methodId: $MethodEnumType): Method => {
 		return this.methodsById[methodId];
 	};
 
@@ -53,11 +55,11 @@ class Endpoint {
 		return {
 			endpoint: this.endpoint,
 			endpointId: this.endpointId,
-			methods: this.methods.map((method: Method): MethodJsonType => method.toJson()),
+			methods: this.methods.map((method: Method): MethodMinJsonType => method.toMinJson()),
 		};
 	};
 
-	removeMethod = (methodId: string): boolean => {
+	removeMethod = (methodId: $MethodEnumType): boolean => {
 		const methodInst = this.getMethod(methodId);
 		if (!methodInst) {
 			return false;
@@ -75,7 +77,7 @@ class Endpoint {
 		return true;
 	};
 
-	createMethod = ({method, desc = ''}: MethodCreateDataType): ?Method => {
+	createMethod = ({ method, desc = '' }: MethodCreateDataType): ?Method => {
 		if (!is.string(method)) {
 			log.error(`api: Method string "${method}" is invalid!`);
 			return;
