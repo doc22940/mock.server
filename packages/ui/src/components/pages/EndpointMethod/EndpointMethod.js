@@ -4,12 +4,13 @@ import { observer, inject } from 'mobx-react';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import type { RouterHistory, Location, Match } from 'react-router-dom';
 import { toMethodEnum } from 'node-mock-server-utils';
-import Typography from 'material-ui/Typography';
-import Paper from 'material-ui/Paper';
 
 import DialogFullScreen from '../../organisms/Dialog/FullScreen';
+import EndpointMethodHeader from '../../molecules/EndpointMethodHeader/EndpointMethodHeader';
 import RootStore from '../../../stores/RootStore';
 import MethodStore from '../../../stores/MethodStore';
+import EndpointsStore from '../../../stores/EndpointsStore';
+import Endpoint from '../../../models/Endpoint';
 
 export type EndpointMethodPagePropsType = {
 	rootStore: RootStore,
@@ -44,11 +45,16 @@ class EndpointMethodPage extends Component<EndpointMethodPagePropsType> {
 		return this.props.rootStore.methodStore;
 	}
 
+	get endpointsStore(): EndpointsStore {
+		return this.props.rootStore.endpointsStore;
+	}
+
+	get endpointInstance(): ?Endpoint {
+		return this.endpointsStore.getEndpointById(this.methodStore.currentEndpointId);
+	}
+
 	get renderTitle(): React$Element<*> {
-		const { rootStore } = this.props;
-		const { methodStore, endpointsStore } = rootStore;
-		const endpointInstance = endpointsStore.getEndpointById(methodStore.currentEndpointId) || {};
-		return <span>{`${methodStore.method.methodId} ${endpointInstance.endpoint}`}</span>;
+		return <span>{`Endpoint details`}</span>;
 	}
 
 	get renderLoading(): React$Element<*> {
@@ -63,33 +69,17 @@ class EndpointMethodPage extends Component<EndpointMethodPagePropsType> {
 		if (this.isLoading) {
 			return this.renderLoading;
 		}
-
+		// this.methodStore.currentEndpointId
 		return (
 			<DialogFullScreen title={this.renderTitle} onClose={this.handleClickClose}>
-				<Paper elevation={4}>
-					<Typography component="p">{this.methodStore.method.desc}</Typography>
-				</Paper>
+				<EndpointMethodHeader
+					method={this.methodStore.method.methodId}
+					title={(this.endpointInstance || {}).endpoint}
+					subTitle={this.methodStore.method.desc}
+				/>
 			</DialogFullScreen>
 		);
 	}
 }
-
-// export default EndpointMethodPage;
-//
-// const EndpointMethodPage = ({ history, match, endpointsStore }: EndpointMethodPagePropsType): React$Element<*> => {
-// 	console.log(match.params.endpointId);
-// 	console.log(endpointsStore);
-// 	// console.log(endpointsStore.endpointsMap[decodeURIComponent(match.params.endpointId)]);
-// 	return (
-// 		<DialogFullScreen
-// 			title={'EndpointMethod'}
-// 			onClose={() => {
-// 				history.goBack();
-// 			}}
-// 		>
-// 			{/* {endpointsStore.endpointsMap[]} */}
-// 		</DialogFullScreen>
-// 	);
-// };
 
 export default inject('rootStore')(observer(EndpointMethodPage));

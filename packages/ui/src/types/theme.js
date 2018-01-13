@@ -18,6 +18,7 @@ export type ThemeType = {
 		duration: {
 			leavingScreen: ThemeValueType,
 			enteringScreen: ThemeValueType,
+			shortest: ThemeValueType,
 		},
 		create: (Array<string> | string, Object) => ThemeValueType,
 	},
