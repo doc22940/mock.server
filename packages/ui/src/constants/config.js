@@ -2,7 +2,11 @@
 
 const config = {
 	getUrlApi(): string {
-		return 'http://localhost:3003';
+		return window.location.href
+			.split('/')
+			.slice(0, 3)
+			.join('/')
+			.replace('3000', '3003');
 	},
 };
 
