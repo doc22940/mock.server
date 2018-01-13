@@ -4,7 +4,6 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 import type { ContextRouter } from 'react-router-dom';
 import type { $MethodEnumType } from 'node-mock-server-utils';
-
 import RootStore from '../../../stores/RootStore';
 import Endpoint from '../../../models/Endpoint';
 import EndpointsList, { EndpointsListItem } from '../../molecules/EndpointsList/EndpointsList';

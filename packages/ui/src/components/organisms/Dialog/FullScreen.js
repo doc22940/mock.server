@@ -10,7 +10,8 @@ import Toolbar from 'material-ui/Toolbar';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import CloseIcon from 'material-ui-icons/Close';
-import Fade from 'material-ui/transitions/Fade';
+// import Fade from 'material-ui/transitions/Fade';
+import Slide from 'material-ui/transitions/Slide';
 import type { ClassesType } from '../../../types/classes';
 
 export type DialogFullScreenPropsType = {
@@ -33,7 +34,7 @@ const styles = {
 };
 
 function Transition(props: Object): React$Element<*> {
-	return <Fade {...props} />;
+	return <Slide direction="up" {...props} />;
 }
 
 class DialogFullScreen extends React.Component<DialogFullScreenPropsType, DialogFullScreenStateType> {

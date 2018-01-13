@@ -76,12 +76,23 @@ class Routes extends Component<*> {
 				<div>
 					<TemplateDefault>
 						<SwitchFade>
-							<Route exact path="/" component={EndpointsPage} />
-							<Route exact path="/endpoints/:endpointId/:methodId" component={EndpointMethodPage} />
+							<Route
+								path="/endpoints"
+								render={(props: ContextRouter): React$Element<*> => (
+									<div>
+										<EndpointsPage {...props} />
+										<Route
+											exact
+											path="/endpoints/:endpointId/:methodId"
+											component={EndpointMethodPage}
+										/>
+									</div>
+								)}
+							/>
 							<Route path="/about" component={About} />
 							<Route path="/topics" component={Topics} />
 						</SwitchFade>
-						<Route exact path="/overlay" component={Overlay} />
+						<Route path="/overlay" component={Overlay} />
 					</TemplateDefault>
 				</div>
 			</Router>

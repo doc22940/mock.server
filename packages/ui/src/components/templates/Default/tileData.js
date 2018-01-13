@@ -16,7 +16,7 @@ import endpointIcon from '../../atoms/EndpointIcon/EndpointIcon';
 
 export const MainItems = withRouter(({ history }: ContextRouterType): React$Element<*> => (
 	<div>
-		<ListItem button onClick={(): void => history.push('/')}>
+		<ListItem button onClick={(): void => history.push('/endpoints')}>
 			<ListItemIcon>{endpointIcon}</ListItemIcon>
 			<ListItemText primary="Endpoints" />
 		</ListItem>
