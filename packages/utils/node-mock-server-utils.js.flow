@@ -1,3 +1,5 @@
+// @flow
+
 export type TypeOfValueType = null | string | number | Object | Array<any>;
 export type TypeOfType = 'undefined' | 'null' | 'string' | 'symbol' | 'Array' | 'Function' | 'Object';
 export type IsType = {
@@ -35,7 +37,7 @@ export type MethodEnumType = 'GET' | 'PUT' | 'POST' | 'OPTIONS' | 'DELETE';
 
 declare module 'node-mock-server-utils' {
 
-	declare export type $MethodEnumType = MethodEnumType;
+	declare export type $MethodEnumType = 'GET' | 'PUT' | 'POST' | 'OPTIONS' | 'DELETE';
 
 	declare export function readDir(dirPath: string, ignore: ?Array<string | RegExp>): Array<string>;
 	declare export function writeDir(dirPath: string): void;

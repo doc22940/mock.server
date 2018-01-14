@@ -2,20 +2,12 @@
 
 import type { $MethodEnumType } from 'node-mock-server-utils';
 
-
 // RESPONSE
 export type ResponseConstructorType = {
 	src: string,
 	endpointId: string,
 	methodId: $MethodEnumType,
 	responseId: string,
-};
-
-export type ResponseJsonType = {
-	response: string,
-	responseId: string,
-	status: number,
-	data: ?string,
 };
 
 // METHOD
@@ -42,45 +34,19 @@ export type MethodConstructorType = {
 	methodId: $MethodEnumType,
 };
 
-export type MethodJsonType = {
-	method: $MethodEnumType,
-	methodId: $MethodEnumType,
-	desc: string,
-	desc2: string,
-	responses: Array<{ name: string, id: string }>,
-};
-
-export type MethodMinJsonType = {
-	method: $MethodEnumType,
-	methodId: $MethodEnumType,
-	desc: string,
-};
-
 // ENDPOINT
 export type EndpointConstructorType = {
 	endpointId: string,
 	src: string,
 };
 
-export type EndpointJsonType = {
-	endpoint: string,
-	endpointId: string,
-	methods: Array<$MethodEnumType>,
-};
-
-export type EndpointDetailedJsonType = {
-	endpoint: string,
-	endpointId: string,
-	methods: Array<MethodMinJsonType>,
-};
-
-export type EndpointCreateDataType = {
+export type CreateEndpointType = {
 	endpoint: string,
 	desc?: string,
 	method?: string,
 };
 
-export type MethodCreateDataType = {
+export type CreateMethodType = {
 	method: string,
 	desc?: string
 };
@@ -92,12 +58,8 @@ export type EndpointsConstructorType = {
 
 declare module 'node-mock-server-api' {
 
-	declare export type $EndpointDetailedJsonType = EndpointDetailedJsonType;
-	declare export type $EndpointDetailedJsonMethodEntryType = MethodMinJsonType;
-	declare export type $EndpointJsonType = EndpointJsonType;
-	declare export type $EndpointCreateDataType = EndpointCreateDataType;
-	declare export type $MethodCreateDataType = MethodCreateDataType;
-	declare export type $MethodJsonType = MethodJsonType;
+	declare export type $CreateEndpointType = CreateEndpointType;
+	declare export type $CreateMethodType = CreateMethodType;
 
 
 	declare export class Response {
@@ -112,13 +74,14 @@ declare module 'node-mock-server-api' {
 		constructor(options: ResponseConstructorType): void;
 		getData(): ?string;
 		updateResponse(data: string): boolean;
-		toJson(): ResponseJsonType;
 	}
 
 	declare export class Method {
 		src: string;
 		endpointId: string;
 		methodId: $MethodEnumType;
+		desc: string;
+		desc2: string;
 		responses: Array<Response>;
 		responsesById: {[key: string]: Response};
 
@@ -126,7 +89,6 @@ declare module 'node-mock-server-api' {
 		getResponses(): Array<Response>,
 		getResponse(responseId: string): Response,
 		createResponse(responseId: string, data: string): boolean,
-		toJson(): $MethodJsonType,
 	}
 
 	declare export class Endpoint {
@@ -139,10 +101,8 @@ declare module 'node-mock-server-api' {
 		constructor(options: EndpointConstructorType): void,
 		getMethods(): Array<Method>,
 		getMethod(methodId: $MethodEnumType): Method,
-		createMethod(options: $MethodCreateDataType): ?Method,
+		createMethod(options: $CreateMethodType): ?Method,
 		removeMethod(methodId: $MethodEnumType): boolean,
-		toJson(): $EndpointJsonType,
-		toDetailedJson(): EndpointDetailedJsonType,
 	}
 
 	declare export class Endpoints {
@@ -153,9 +113,7 @@ declare module 'node-mock-server-api' {
 		constructor(options: EndpointsConstructorType): void,
 		getEndpoints(): Array<Endpoint>,
 		getEndpoint(endpointId: string): Endpoint,
-		getEndpointsAsJson(): Array<$EndpointJsonType>,
-		getDetailedEndpointsAsJson(): Array<EndpointDetailedJsonType>,
-		createEndpoint(data: $EndpointCreateDataType): Endpoint,
+		createEndpoint(data: $CreateEndpointType): Endpoint,
 		removeEndpoint(endpointId: string): boolean,
 	}
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { observable, action } from 'mobx';
 // import type { IObservableArray } from 'mobx';
 import type { $AxiosXHR } from 'axios';
-import type { $ResponseGetMethodType } from 'node-mock-server-rest-api';
+import type { $GetMethodResponseType } from 'node-mock-server-rest-api';
 import type { $MethodEnumType } from 'node-mock-server-utils';
 
 import config from '../constants/config';
@@ -65,7 +65,7 @@ class MethodStore {
 			.catch(this.fetchError);
 	};
 	@action.bound
-	fetchSuccess(endpointId: string, methodId: $MethodEnumType, response: $AxiosXHR<$ResponseGetMethodType>) {
+	fetchSuccess(endpointId: string, methodId: $MethodEnumType, response: $AxiosXHR<$GetMethodResponseType>) {
 		if (!response || !response.data) {
 			this.stateFetch = asyncState.ERROR;
 			return;

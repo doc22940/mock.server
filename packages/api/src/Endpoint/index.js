@@ -8,13 +8,7 @@ import type { $MethodEnumType } from 'node-mock-server-utils';
 import { readDir, writeDir, removeDir, isDir, writeFile, isFile, toMethodEnum, is } from 'node-mock-server-utils';
 import Method from '../Method';
 
-import type {
-	EndpointConstructorType,
-	EndpointJsonType,
-	EndpointDetailedJsonType,
-	MethodMinJsonType,
-	MethodCreateDataType,
-} from '../../node-mock-server-api.js.flow';
+import type { EndpointConstructorType, CreateMethodType } from '../../node-mock-server-api.js.flow';
 
 class Endpoint {
 	src: string;
@@ -43,22 +37,6 @@ class Endpoint {
 		return this.methodsById[methodId];
 	};
 
-	toJson = (): EndpointJsonType => {
-		return {
-			endpoint: this.endpoint,
-			endpointId: this.endpointId,
-			methods: Object.keys(this.methodsById),
-		};
-	};
-
-	toDetailedJson = (): EndpointDetailedJsonType => {
-		return {
-			endpoint: this.endpoint,
-			endpointId: this.endpointId,
-			methods: this.methods.map((method: Method): MethodMinJsonType => method.toMinJson()),
-		};
-	};
-
 	removeMethod = (methodId: $MethodEnumType): boolean => {
 		const methodInst = this.getMethod(methodId);
 		if (!methodInst) {
@@ -77,7 +55,7 @@ class Endpoint {
 		return true;
 	};
 
-	createMethod = ({ method, desc = '' }: MethodCreateDataType): ?Method => {
+	createMethod = ({ method, desc = '' }: CreateMethodType): ?Method => {
 		if (!is.string(method)) {
 			log.error(`api: Method string "${method}" is invalid!`);
 			return;

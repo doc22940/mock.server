@@ -7,12 +7,7 @@ import type { $MethodEnumType } from 'node-mock-server-utils';
 // import log from 'node-mock-server-log';
 import Response from '../Response';
 
-import type {
-	MethodJsonType,
-	MethodMinJsonType,
-	MethodConstructorType,
-	StoreFileJsonType,
-} from '../../node-mock-server-api.js.flow';
+import type { MethodConstructorType, StoreFileJsonType } from '../../node-mock-server-api.js.flow';
 
 class Method {
 	src: string;
@@ -77,27 +72,6 @@ class Method {
 		this.responses.push(this.responsesById[responseId]);
 
 		return true;
-	};
-
-	toJson = (): MethodJsonType => {
-		return {
-			method: this.methodId,
-			methodId: this.methodId,
-			desc: this.desc,
-			desc2: this.desc2,
-			responses: this.responses.map(({ response, responseId }: Response): { name: string, id: string } => ({
-				name: response,
-				id: responseId,
-			})),
-		};
-	};
-
-	toMinJson = (): MethodMinJsonType => {
-		return {
-			method: this.methodId,
-			methodId: this.methodId,
-			desc: this.desc,
-		};
 	};
 }
 

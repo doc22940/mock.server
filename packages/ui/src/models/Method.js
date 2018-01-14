@@ -1,7 +1,7 @@
 // @flow
 // import { observable, action } from "mobx";
 import type { $MethodEnumType } from 'node-mock-server-utils';
-import type { $ResponseGetMethodType } from 'node-mock-server-rest-api';
+import type { $GetMethodResponseType } from 'node-mock-server-rest-api';
 
 /**
  *
@@ -13,7 +13,7 @@ class Method {
 	desc: string;
 	desc2: string;
 
-	constructor({ method, methodId, desc, desc2 }: $ResponseGetMethodType) {
+	constructor({ method, methodId, desc, desc2 }: $GetMethodResponseType) {
 		this.method = method;
 		this.methodId = methodId;
 		this.desc = desc;

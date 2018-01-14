@@ -4,9 +4,9 @@ import { observable, action, computed } from 'mobx';
 // import type { IObservableArray } from 'mobx';
 import type { $AxiosXHR } from 'axios';
 import type {
-	$ResponseGetEndpointsType,
-	$ResponseGetEndpointsEntryType,
-	$ResponseGetEndpointsEntryMethodEntryType,
+	$GetEndpointsResponseType,
+	$GetEndpointsResponseEntryType,
+	$GetEndpointsResponseEntryMethodType,
 } from 'node-mock-server-rest-api';
 import type { $MethodEnumType } from 'node-mock-server-utils';
 
@@ -103,7 +103,7 @@ class EndpointsStore {
 			.catch(this.fetchError);
 	};
 	@action.bound
-	fetchSuccess(response: $AxiosXHR<$ResponseGetEndpointsType>) {
+	fetchSuccess(response: $AxiosXHR<$GetEndpointsResponseType>) {
 		if (!response || !response.data) {
 			this.stateFetch = asyncState.ERROR;
 			return;
@@ -112,9 +112,9 @@ class EndpointsStore {
 		const out = [];
 		const mapOut = {};
 
-		response.data.forEach((endpointData: $ResponseGetEndpointsEntryType) => {
-			endpointData.methods.forEach((methodJson: $ResponseGetEndpointsEntryMethodEntryType) => {
-				const endpointInstance = new Endpoint({ ...endpointData, ...methodJson });
+		response.data.forEach((endpointJson: $GetEndpointsResponseEntryType) => {
+			endpointJson.methods.forEach((methodJson: $GetEndpointsResponseEntryMethodType) => {
+				const endpointInstance = new Endpoint({ ...endpointJson, ...methodJson });
 				out.push(endpointInstance);
 				mapOut[endpointInstance.endpointId] = endpointInstance;
 			});

@@ -1,4 +1,5 @@
 // @flow
+/* eslint complexity: 0*/
 import type { MethodEnumType } from '../node-mock-server-utils.js.flow';
 
 export const METHODS: { [key: MethodEnumType]: MethodEnumType } = {
@@ -17,12 +18,21 @@ export const METHODS_BOOLEAN: { [key: MethodEnumType]: boolean } = {
 	DELETE: false,
 };
 
-export function toMethodEnum(value: string): ?MethodEnumType {
+export function toMethodEnum(value: string): MethodEnumType {
 	const upValue = value.toUpperCase();
 
-	if (!METHODS[upValue]) {
-		return;
+	switch (upValue) {
+		case METHODS.GET:
+			return METHODS.GET;
+		case METHODS.PUT:
+			return METHODS.PUT;
+		case METHODS.POST:
+			return METHODS.POST;
+		case METHODS.OPTIONS:
+			return METHODS.OPTIONS;
+		case METHODS.DELETE:
+			return METHODS.DELETE;
+		default:
+			return METHODS.GET;
 	}
-
-	return METHODS[upValue];
 }

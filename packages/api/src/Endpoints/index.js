@@ -2,27 +2,22 @@
 
 import path from 'path';
 import log from 'node-mock-server-log';
-import {readDir, writeDir, writeFile, removeDir, is, toMethodEnum} from 'node-mock-server-utils';
+import { readDir, writeDir, writeFile, removeDir, is, toMethodEnum } from 'node-mock-server-utils';
 
-import {encode} from 'node-mock-server-uuid';
+import { encode } from 'node-mock-server-uuid';
 import Endpoint from '../Endpoint';
 
-import type {
-	EndpointsConstructorType,
-	EndpointJsonType,
-	EndpointDetailedJsonType,
-	EndpointCreateDataType,
-} from '../../node-mock-server-api.js.flow';
+import type { EndpointsConstructorType, CreateEndpointType } from '../../node-mock-server-api.js.flow';
 
 class Endpoints {
 	src: string;
 	endpoints: Array<Endpoint> = [];
-	endpointsById: {[key: string]: Endpoint} = {};
+	endpointsById: { [key: string]: Endpoint } = {};
 
-	constructor({src}: EndpointsConstructorType) {
+	constructor({ src }: EndpointsConstructorType) {
 		this.src = src;
 		readDir(this.src).forEach((endpointId: string) => {
-			this.endpointsById[endpointId] = new Endpoint({src: this.src, endpointId});
+			this.endpointsById[endpointId] = new Endpoint({ src: this.src, endpointId });
 			this.endpoints.push(this.endpointsById[endpointId]);
 		});
 	}
@@ -33,14 +28,6 @@ class Endpoints {
 
 	getEndpoint = (endpointId: string): Endpoint => {
 		return this.endpointsById[endpointId];
-	};
-
-	getEndpointsAsJson = (): Array<EndpointJsonType> => {
-		return this.endpoints.map((endpoint: Endpoint): EndpointJsonType => endpoint.toJson());
-	};
-
-	getDetailedEndpointsAsJson = (): Array<EndpointDetailedJsonType> => {
-		return this.endpoints.map((endpoint: Endpoint): EndpointDetailedJsonType => endpoint.toDetailedJson());
 	};
 
 	removeEndpoint = (endpointId: string): boolean => {
@@ -61,7 +48,7 @@ class Endpoints {
 		return true;
 	};
 
-	createEndpoint = ({endpoint, desc = '', method = 'GET'}: EndpointCreateDataType): Endpoint => {
+	createEndpoint = ({ endpoint, desc = '', method = 'GET' }: CreateEndpointType): Endpoint => {
 		if (!is.string(endpoint) || endpoint.indexOf('/') < 0) {
 			log.error(`Endpoint string "${endpoint}" is invalid!`);
 		}
@@ -104,7 +91,7 @@ class Endpoints {
 			)
 		);
 
-		this.endpointsById[endpointId] = new Endpoint({src: this.src, endpointId});
+		this.endpointsById[endpointId] = new Endpoint({ src: this.src, endpointId });
 		this.endpoints.push(this.endpointsById[endpointId]);
 
 		return this.endpointsById[endpointId];

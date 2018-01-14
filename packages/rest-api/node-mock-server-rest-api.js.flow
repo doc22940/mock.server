@@ -1,15 +1,68 @@
 // @flow
 
-import type { $EndpointJsonType, $MethodJsonType, $EndpointDetailedJsonType, $EndpointDetailedJsonMethodEntryType } from 'node-mock-server-api';
+import type { $MethodEnumType } from 'node-mock-server-utils';
 
-export type ResponseGetEndpointType = $EndpointJsonType;
-export type ResponseGetEndpointsType = Array<$EndpointDetailedJsonType>;
-export type ResponseGetMethodType = $MethodJsonType;
+export type GetEndpointsResponseEntryMethodType = {
+	method: $MethodEnumType,
+	methodId: $MethodEnumType,
+	desc: string,
+};
+
+export type GetEndpointsResponseEntryType = {
+	endpoint: string,
+	endpointId: string,
+	methods: Array<GetEndpointsResponseEntryMethodType>,
+};
+
+export type GetEndpointsResponseType = Array<GetEndpointsResponseEntryType>;
+
+export type GetEndpointResponseMethodType = {
+	method: string,
+	methodId: $MethodEnumType,
+	desc: string,
+};
+
+export type GetEndpointResponseType = {
+	endpoint: string,
+	endpointId: string,
+	methods: Array<GetEndpointResponseMethodType>
+};
+
+export type GetMethodResponseResponseType = {
+	name: string,
+	id: string,
+};
+
+export type GetMethodResponseType = {
+	method: string,
+	methodId: $MethodEnumType,
+	desc: string,
+	desc2: string,
+	responses: Array<GetMethodResponseResponseType>,
+};
+
+export type GetResponseResponseType = {
+	response: string,
+	responseId: string,
+	status: number,
+	data: ?string,
+};
 
 declare module 'node-mock-server-rest-api' {
-	declare export type $ResponseGetEndpointType = $EndpointJsonType;
-	declare export type $ResponseGetEndpointsType = Array<$EndpointDetailedJsonType>;
-	declare export type $ResponseGetEndpointsEntryType = $EndpointDetailedJsonType;
-	declare export type $ResponseGetEndpointsEntryMethodEntryType = $EndpointDetailedJsonMethodEntryType;
-	declare export type $ResponseGetMethodType = $MethodJsonType;
+	// GET /endpoints
+	declare export type $GetEndpointsResponseEntryMethodType = GetEndpointsResponseEntryMethodType;
+	declare export type $GetEndpointsResponseEntryType = GetEndpointsResponseEntryType;
+	declare export type $GetEndpointsResponseType = GetEndpointsResponseType;
+
+	// GET /endpoints/:endpointId
+	declare export type $GetEndpointResponseMethodType = GetEndpointResponseMethodType;
+	declare export type $GetEndpointResponseType = GetEndpointResponseType;
+
+	// GET /endpoints/:endpointId/:methodId
+	declare export type $GetMethodResponseResponseType = GetMethodResponseResponseType;
+	declare export type $GetMethodResponseType = GetMethodResponseType;
+
+	// GET /endpoints/:endpointId/:methodId/:responseId
+	declare export type $GetResponseResponseType = GetResponseResponseType;
+
 }
