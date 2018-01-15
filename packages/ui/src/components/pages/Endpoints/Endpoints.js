@@ -40,6 +40,7 @@ const Endpoints = ({ rootStore, history }: EndpointsPropsType): React$Element<*>
 						title={endpoint}
 						subTitle={desc}
 						method={methodId}
+						endpointId={endpointId}
 						onClick={handleClickDetailFactor(endpointId, methodId)}
 					/>
 				))}

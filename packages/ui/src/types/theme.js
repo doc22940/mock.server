@@ -28,6 +28,10 @@ export type ThemeType = {
 		},
 	},
 	palette: {
+		primary: Array<number>,
+		common: {
+			[key: string]: ThemeValueType,
+		},
 		text: {
 			[key: string]: ThemeValueType,
 		},

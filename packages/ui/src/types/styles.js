@@ -2,7 +2,6 @@
 
 export type StylesType = {
 	[key: string]: {
-		[key: string]: string | number,
+		[key: string]: string | number | Object,
 	},
 };
-

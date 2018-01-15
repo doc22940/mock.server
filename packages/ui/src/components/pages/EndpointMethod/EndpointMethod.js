@@ -73,6 +73,7 @@ class EndpointMethodPage extends Component<EndpointMethodPagePropsType> {
 		return (
 			<DialogFullScreen title={this.renderTitle} onClose={this.handleClickClose}>
 				<EndpointMethodHeader
+					endpointId={(this.endpointInstance || {}).endpointId}
 					method={this.methodStore.method.methodId}
 					title={(this.endpointInstance || {}).endpoint}
 					subTitle={this.methodStore.method.desc}
