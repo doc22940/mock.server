@@ -62,7 +62,8 @@
         "minimatch": "^3.0.4",
         "open": "0.0.5",
         "p-series": "^1.0.0",
-        "request": "^2.72.0"
+        "request": "^2.72.0",
+        "yamljs": "^0.3.0"
     },
     "devDependencies": {
         "@namics/eslint-config": "^4.1.0",
