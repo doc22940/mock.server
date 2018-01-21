@@ -168,6 +168,13 @@ Default value: ``
 
 A string that define the path for the swagger import curl.
 
+
+#### options.swaggerImport.yaml
+Type: `Boolean`
+Default value: false
+
+A flag that toggles whether the swagger file should be treated as a YAML file (otherwise: JSON).
+
 #### options.swaggerImport.dest
 Type: `String`
 Required

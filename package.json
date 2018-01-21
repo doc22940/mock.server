@@ -1,6 +1,6 @@
 {
     "name": "node-mock-server",
-    "version": "0.19.1",
+    "version": "0.20.0",
     "description": "File based Node REST API mock server",
     "email": "simon.mollweide@web.de",
     "author": "Simon Mollweide <simon.mollweide@web.de>",
@@ -14,7 +14,8 @@
     },
     "scripts": {
         "start": "nodemon demo/index.js",
-        "test": "mocha test/tests.js",
+        "test": "mocha --exit test/tests.js",
+        "test:watch": "mocha --colors test/tests.js",
         "posttest": "npm run lint",
         "lint": "npm run lint:js",
         "lint:js": "node_modules/.bin/eslint ."
@@ -46,29 +47,30 @@
     "private": false,
     "license": "MIT",
     "dependencies": {
-        "body-parser": "^1.15.0",
+        "body-parser": "1.18.2",
         "chip": "0.0.5",
-        "cookie-parser": "^1.4.3",
-        "deasync": "^0.1.4",
-        "ejs": "^2.4.1",
-        "es6-promise-polyfill": "^1.2.0",
-        "express": "^4.15.3",
-        "extend": "^3.0.0",
-        "faker": "^4.1.0",
-        "inflect": "^0.4.0",
-        "inquirer": "^3.2.1",
-        "make-dir": "^1.0.0",
-        "mime-types": "^2.1.15",
-        "minimatch": "^3.0.4",
+        "cookie-parser": "1.4.3",
+        "deasync": "0.1.12",
+        "ejs": "2.5.7",
+        "es6-promise-polyfill": "1.2.0",
+        "express": "4.16.2",
+        "extend": "3.0.1",
+        "faker": "4.1.0",
+        "inflect": "0.4.0",
+        "inquirer": "5.0.1",
+        "make-dir": "1.1.0",
+        "mime-types": "2.1.17",
+        "minimatch": "3.0.4",
         "open": "0.0.5",
-        "p-series": "^1.0.0",
-        "request": "^2.72.0"
+        "p-series": "1.0.0",
+        "request": "2.83.0",
+        "yamljs": "0.3.0"
     },
     "devDependencies": {
-        "@namics/eslint-config": "^4.1.0",
-        "babel-eslint": "^6.0.3",
-        "eslint": "^3.19.0",
-        "eslint-plugin-import": "^2.2.0",
-        "mocha": "^2.4.5"
+        "@namics/eslint-config": "4.2.0",
+        "babel-eslint": "8.2.1",
+        "eslint": "4.16.0",
+        "eslint-plugin-import": "2.8.0",
+        "mocha": "5.0.0"
     }
 }
