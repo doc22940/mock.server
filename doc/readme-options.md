@@ -79,29 +79,33 @@ A string that define the header "Content-Type".
 
 
 #### options.accessControlExposeHeaders
-Type: `String`
+Type: `String` or `function`
 Default value: `X-Total-Count`
 
-A string that define the header "Access-Control-Expose-Headers".
+A string that define the header "Access-Control-Expose-Headers". If a function
+is used, it will be called with the request object as the only parameter. 
 
 #### options.accessControlAllowOrigin
-Type: `String`
+Type: `String` or `function`
 Default value: `*`
 
-A string that define the header "Access-Control-Allow-Origin".
+A string that define the header "Access-Control-Allow-Origin". If a function
+is used, it will be called with the request object as the only parameter.
 
 #### options.accessControlAllowMethods
-Type: `String`
+Type: `String` or `function`
 Default value: `GET, POST, PUT, OPTIONS, DELETE, PATCH, HEAD`
 
-A string that define the header "Access-Control-Allow-Methods".
+A string that define the header "Access-Control-Allow-Methods". If a function
+is used, it will be called with the request object as the only parameter.
 
 
 #### options.accessControlAllowHeaders
-Type: `String`
+Type: `String` or `function`
 Default value: `origin, x-requested-with, content-type`
 
-A string that define the header "Access-Control-Allow-Headers".
+A string that define the header "Access-Control-Allow-Headers". If a function
+is used, it will be called with the request object as the only parameter.
 
 #### options.middleware
 Type: `Object`
