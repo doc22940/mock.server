@@ -99,12 +99,18 @@ Default value: `GET, POST, PUT, OPTIONS, DELETE, PATCH, HEAD`
 A string that define the header "Access-Control-Allow-Methods". If a function
 is used, it will be called with the request object as the only parameter.
 
-
 #### options.accessControlAllowHeaders
 Type: `String` or `function`
 Default value: `origin, x-requested-with, content-type`
 
 A string that define the header "Access-Control-Allow-Headers". If a function
+is used, it will be called with the request object as the only parameter.
+
+#### options.accessControlAllowCredentials
+Type: `String` or `function`
+Default value: `true`
+
+A string that define the header "Access-Control-Allow-Credentials". If a function
 is used, it will be called with the request object as the only parameter.
 
 #### options.middleware
