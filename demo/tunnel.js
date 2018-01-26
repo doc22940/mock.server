@@ -35,6 +35,7 @@ function setHeaders(res) {
 	res.setHeader('Access-Control-Allow-Origin', options.accessControlAllowOrigin);
 	res.setHeader('Access-Control-Allow-Methods', options.accessControlAllowMethods);
 	res.setHeader('Access-Control-Allow-Headers', options.accessControlAllowHeaders);
+	res.setHeader('Access-Control-Allow-Credentials', options.accessControlAllowCredentials);	
 }
 
 app.get('/rest/v1/products', (req, res) => {
