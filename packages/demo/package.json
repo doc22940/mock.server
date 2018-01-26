@@ -1,0 +1,12 @@
+{
+    "name": "node-mock-server-demo",
+    "version": "0.1.0",
+    "private": false,
+    "dependencies": {
+        "node-mock-server": "1.0.0",
+        "node-mock-server-plugin-open-in-ide": "0.1.0"
+    },
+    "scripts": {
+        "start": "node_modules/.bin/node-mock-server start"
+    }
+}
