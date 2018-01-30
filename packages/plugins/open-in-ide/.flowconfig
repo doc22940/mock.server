@@ -1,23 +1,20 @@
 [ignore]
 <PROJECT_ROOT>/node_modules/.*.json
 <PROJECT_ROOT>/dist/.*
-.*/rest-api/.*
+.*/api/.*
 .*/log/.*
 .*/utils/.*
-.*/api/.*
 .*/plugin/.*
-.*/plugins/.*
-.*/core/.*
 
 [include]
 
 [libs]
-./node_modules/node-mock-server-uuid/node-mock-server-uuid.js.flow
-./node_modules/node-mock-server-rest-api/node-mock-server-rest-api.js.flow
-./node_modules/node-mock-server-utils/node-mock-server-utils.js.flow
 ./node_modules/node-mock-server-plugin/node-mock-server-plugin.js.flow
+./node_modules/node-mock-server-log/node-mock-server-log.js.flow
+./node_modules/node-mock-server-uuid/node-mock-server-uuid.js.flow
+./node_modules/node-mock-server-api/node-mock-server-api.js.flow
+./node_modules/node-mock-server-utils/node-mock-server-utils.js.flow
 
 [options]
 unsafe.enable_getters_and_setters=true
 esproposal.decorators=ignore
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

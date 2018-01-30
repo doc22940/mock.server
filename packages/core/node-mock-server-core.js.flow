@@ -1,0 +1,22 @@
+// @flow
+
+import { Plugin } from 'node-mock-server-plugin';
+
+export type StartOptionsType = {
+	cwd: string,
+};
+
+export type ConfigType = {
+	ui: {
+		port: number,
+	},
+	restApi: {
+		port: number,
+	},
+	plugins: Array<Plugin>,
+};
+
+declare module 'node-mock-server-core' {
+	declare export type $StartOptionsType = StartOptionsType;
+	declare export type $ConfigType = ConfigType;
+}

@@ -32,7 +32,9 @@ function copyPackage() {
 
 	const targetFile = path.join(buildPath, 'package.json');
 	makeDir.sync(path.join(buildPath, 'node_modules'));
-	fs.writeFileSync(targetFile, JSON.stringify(packageDataCopy, null, 4));
+	fs.writeFileSync(targetFile, JSON.stringify(packageDataCopy, null, 4), {
+		mode: 0o755,
+	});
 	print.log(`wrote file ${targetFile.replace(currentDirectory, '')}`);
 }
 

@@ -8,5 +8,5 @@ declare module 'node-mock-server-log' {
 		error(...args: Array<any>): void,
 	};
 
-	declare export default typeof log
+	declare export default typeof log;
 }

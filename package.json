@@ -28,7 +28,6 @@
         "prestart": "node bin/onBeforeStart.js",
         "start": "run-p start:*",
         "start:ui": "cd packages/ui && npm run start",
-        "start:rest-api": "cd packages/rest-api && npm run start",
         "dev": "node_modules/.bin/lerna-terminal dev",
         "flow": "node_modules/.bin/lerna run flow",
         "flow-restart": "node_modules/.bin/lerna run flow-restart",

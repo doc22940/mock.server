@@ -5,6 +5,9 @@
 .*/uuid/.*
 .*/utils/.*
 .*/api/.*
+.*/core/.*
+.*/plugin/.*
+.*/plugins/.*
 
 [include]
 

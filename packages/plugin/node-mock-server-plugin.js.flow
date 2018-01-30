@@ -1,0 +1,47 @@
+// @flow
+import type { $Application, $Request, $Response } from 'express';
+import axios from 'axios';
+
+export type PluginConnectOptionsType = { restApiApp: $Application, cwd: string, mockServerDir: string };
+export type ClientPluginConfigType = {
+	getUrlApi: () => string,
+};
+export type ClientPluginDependenciesType = {
+	axios: typeof axios,
+};
+export type ClientPluginHooksType = {
+	endpointMethodView: {
+		addHeaderAction: (item: Object) => void,
+	},
+};
+export type ClientPluginOptionsType = {
+	config: ClientPluginConfigType,
+	dependencies: ClientPluginDependenciesType,
+	hooks: ClientPluginHooksType,
+};
+
+declare module 'node-mock-server-plugin' {
+	declare export type $PluginConnectOptionsType = PluginConnectOptionsType;
+	declare export type $ClientPluginConfigType = ClientPluginConfigType;
+	declare export type $ClientPluginDependenciesType = ClientPluginDependenciesType;
+	declare export type $ClientPluginHooksType = ClientPluginHooksType;
+	declare export type $ClientPluginOptionsType = ClientPluginOptionsType;
+
+	declare export class Plugin {
+		name: string,
+		restApiApp: $Application;
+		cwd: string;
+		mockServerDir: string;
+		constructor(): void;
+		connect(options: PluginConnectOptionsType): void;
+		addRestApiEndpointHook(): void;
+	}
+
+	declare export class ClientPlugin {
+		constructor(options: ClientPluginOptionsType): void;
+	}
+
+	declare export type $ClientPlugin = typeof ClientPlugin;
+
+	declare export default typeof Plugin;
+}

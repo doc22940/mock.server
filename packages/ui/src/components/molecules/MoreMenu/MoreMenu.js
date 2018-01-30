@@ -76,21 +76,23 @@ class MoreMenu extends React.Component<MoreMenuPropsType, MoreMenuStateType> {
 						},
 					}}
 				>
-					{menuItems.map(({ name, renderIcon, onClick }: MoreMenuItemType): React$Element<*> => (
-						<MenuItem
-							key={name}
-							selected={name === selected}
-							onClick={this.handleClickItemFactory(onClick)}
-						>
-							{renderIcon && (
-								<span>
-									{/* $FlowFixMe */}
-									<ListItemIcon className={classes.icon}>{renderIcon()}</ListItemIcon>
-								</span>
-							)}
-							<ListItemText classes={{ text: classes.text }} inset primary={name} />
-						</MenuItem>
-					))}
+					{menuItems.map(({ name, renderIcon, onClick }: MoreMenuItemType): React$Element<*> => {
+						return (
+							<MenuItem
+								key={name}
+								selected={name === selected}
+								onClick={this.handleClickItemFactory(onClick)}
+							>
+								{renderIcon && (
+									<span>
+										{/* $FlowFixMe */}
+										<ListItemIcon className={classes.icon}>{renderIcon()}</ListItemIcon>
+									</span>
+								)}
+								<ListItemText classes={{ text: classes.text }} inset primary={name} />
+							</MenuItem>
+						);
+					})}
 				</Menu>
 			</div>
 		);

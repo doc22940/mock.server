@@ -1,0 +1,6 @@
+// @flow
+import NodeMockServerPlugin from 'node-mock-server-plugin';
+
+declare module 'node-mock-server-plugin-open-in-ide' {
+	declare export class OpenInIdePlugin extends NodeMockServerPlugin {}
+}

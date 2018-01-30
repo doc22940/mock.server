@@ -1,5 +1,5 @@
 // @flow
-
+import type { $Application } from 'express';
 import type { $MethodEnumType } from 'node-mock-server-utils';
 
 export type GetEndpointsResponseEntryMethodType = {
@@ -48,7 +48,28 @@ export type GetResponseResponseType = {
 	data: ?string,
 };
 
+export type GetConfigResponseType = {
+	ui: {
+		port: number,
+	},
+	restApi: {
+		port: number,
+	},
+	plugins: Array<string>,
+};
+
+export type StartType = {
+	port: number,
+	cwd: string,
+	src: string,
+	clientConfig: GetConfigResponseType,
+};
+
 declare module 'node-mock-server-rest-api' {
+
+	// GET /config
+	declare export type $GetConfigResponseType = GetConfigResponseType;
+
 	// GET /endpoints
 	declare export type $GetEndpointsResponseEntryMethodType = GetEndpointsResponseEntryMethodType;
 	declare export type $GetEndpointsResponseEntryType = GetEndpointsResponseEntryType;
@@ -65,4 +86,6 @@ declare module 'node-mock-server-rest-api' {
 	// GET /endpoints/:endpointId/:methodId/:responseId
 	declare export type $GetResponseResponseType = GetResponseResponseType;
 
+	declare export type $StartType = StartType;
+	declare export default function start(options: $StartType): $Application;
 }

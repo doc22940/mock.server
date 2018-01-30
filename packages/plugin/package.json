@@ -1,7 +1,7 @@
 {
-    "name": "node-mock-server",
-    "version": "1.0.0",
-    "description": "File based Node REST API mock server",
+    "name": "node-mock-server-plugin",
+    "version": "0.1.0",
+    "description": "Basic plugin class, types and helper",
     "email": "simon.mollweide@web.de",
     "author": "Simon Mollweide <simon.mollweide@web.de>",
     "url": "https://github.com/smollweide/node-mock-server",
@@ -12,38 +12,25 @@
     "bugs": {
         "url": "https://github.com/smollweide/node-mock-server/issues"
     },
-    "bin": {
-        "node-mock-server": "./bin/node-mock-server.js"
-    },
     "keywords": [
-        "node",
-        "node.js",
-        "npm",
-        "mock",
-        "rest",
-        "REST",
-        "rest API",
-        "REST API",
-        "api",
-        "API",
-        "json",
-        "DTO",
-        "Datatransferobject",
-        "Swagger",
-        "documentation",
-        "REST API documentation",
-        "cli"
+        "node-mock-server",
+        "node-mock-server-plugin",
+        "plugin",
+        "mock"
     ],
     "engines": {
-        "node": ">=4"
+        "node": ">=6"
     },
+    "main": "dist/server/index.js",
     "preferGlobal": false,
     "private": false,
     "license": "MIT",
     "dependencies": {
+        "node-mock-server-api": "0.1.0",
+        "node-mock-server-uuid": "1.0.0",
+        "node-mock-server-utils": "0.1.0",
         "node-mock-server-log": "0.1.0",
-        "node-mock-server-rest-api": "0.1.0",
-        "node-mock-server-plugin": "0.1.0"
+        "opn": "5.1.0"
     },
     "devDependencies": {
         "@namics/eslint-config": "4.1.0",
@@ -52,7 +39,8 @@
         "flow-typed": "2.2.3",
         "node-flow-config": "0.1.0",
         "npm-run-all": "4.1.1",
-        "express": "4.16.2"
+        "express": "4.16.2",
+        "axios": "0.17.1"
     },
     "scripts": {
         "dev": "node-flow-config start",

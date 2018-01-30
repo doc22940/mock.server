@@ -67,10 +67,19 @@ export type RoutePropsType = {} & ContextRouter;
 
 class Routes extends Component<*> {
 	componentDidMount() {
+		this.props.rootStore.clientConfigStore.fetch();
 		this.props.rootStore.endpointsStore.fetch();
 	}
 
+	get isLoading(): boolean {
+		return this.props.rootStore.clientConfigStore.isLoading || this.props.rootStore.endpointsStore.isLoading;
+	}
+
 	render(): React$Element<*> {
+		if (this.isLoading) {
+			// TODO inital load view
+			return <div>{'Loading app ...'}</div>;
+		}
 		return (
 			<Router>
 				<div>

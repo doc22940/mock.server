@@ -1,28 +1,40 @@
 // @flow
 /* eslint no-console: 0*/
+/* eslint global-require: 0*/
 
-import fs from 'fs';
 import path from 'path';
-import {Endpoints, Endpoint, Method, Response} from 'node-mock-server-api';
-import {encode, decode} from 'node-mock-server-uuid';
 
-const uuid: string = encode('/app/v1/products/:productId');
+import startRestApi from 'node-mock-server-rest-api';
+import { Plugin } from 'node-mock-server-plugin';
+import type { $GetConfigResponseType } from 'node-mock-server-rest-api';
+import type { StartOptionsType, ConfigType } from '../node-mock-server-core.js.flow';
 
-console.log('uuid', uuid);
-console.log('uuid decoded', decode(uuid));
-// console.log(<Button modifier="test" />);
+// import log from 'node-mock-server-log';
 
-const cwd = fs.realpathSync(process.cwd());
-const api = new Endpoints({
-	src: path.join(cwd, '/packages/demo-data/.nodemockserver/data'),
-});
+const getClientConfig = ({ ui, restApi, plugins }: ConfigType): $GetConfigResponseType => {
+	return {
+		ui,
+		restApi,
+		plugins: plugins.map((pluginInstance: Plugin): string => pluginInstance.name),
+	};
+};
 
-api.getEndpoints().forEach(({endpoint, endpointId, getMethods}: Endpoint) => {
-	console.log(`endpoint: ${endpoint} (${endpointId})`);
-	getMethods().forEach(({methodId, getResponses}: Method) => {
-		console.log(`  method: ${methodId}`);
-		getResponses().forEach(({responseId}: Response) => {
-			console.log(`    response: ${responseId}`);
-		});
+export default function start({ cwd }: StartOptionsType) {
+	console.log('start mock server');
+
+	const mockServerDir: string = path.join(cwd, '.nodemockserver');
+	// $FlowFixMe
+	const config: ConfigType = require(path.join(mockServerDir, 'config.js'));
+
+	const restApiApp = startRestApi({
+		port: config.restApi.port,
+		cwd,
+		src: path.join(mockServerDir, '/data'),
+		clientConfig: getClientConfig(config),
 	});
-});
+
+	config.plugins.forEach((pluginInstance: Plugin) => {
+		pluginInstance.connect({ restApiApp, cwd, mockServerDir, config });
+		pluginInstance.addRestApiEndpointHook();
+	});
+}

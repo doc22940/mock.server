@@ -1,13 +1,14 @@
 // @flow
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import path from 'path';
 import log from 'node-mock-server-log';
 import { Endpoints, Endpoint, Method, Response } from 'node-mock-server-api';
 import type { $CreateEndpointType, $CreateMethodType } from 'node-mock-server-api';
-import { is } from 'node-mock-server-utils';
+import { is, isFile, readFile } from 'node-mock-server-utils';
 import type { $Request, $Response } from 'express';
 import type {
 	GetEndpointsResponseType,
@@ -18,20 +19,32 @@ import type {
 	GetMethodResponseType,
 	GetMethodResponseResponseType,
 	GetResponseResponseType,
+	StartType,
 } from '../node-mock-server-rest-api.js.flow';
 
-export type StartType = {
-	port: number,
-	src: string,
-};
-
-export default function start({ port, src }: StartType) {
+export default function start({ port, cwd, src, clientConfig }: StartType): express$Application {
 	const app = express();
 	const api = new Endpoints({ src });
 
 	app.use(cors());
 	app.use(bodyParser.json());
 	app.use(bodyParser.urlencoded({ extended: true }));
+
+	// config
+	app.get('/config', (req: $Request, res: $Response) => {
+		res.send(JSON.stringify(clientConfig));
+	});
+
+	app.get('/plugin/:pluginName', (req: $Request, res: $Response) => {
+		const pluginFilePath = path.join(cwd, 'node_modules', req.params.pluginName, 'dist/client/index.js');
+		if (!isFile(pluginFilePath)) {
+			log.error(`rest-api: Plugin "${req.params.pluginName}" couldn't be found!`);
+			res.status(400);
+			res.send();
+			return;
+		}
+		res.send(readFile(pluginFilePath));
+	});
 
 	const getEndpointsJson = (endpointsInstances: Array<Endpoint>): GetEndpointsResponseType =>
 		endpointsInstances.map(({ endpoint, endpointId, methods }: Endpoint): GetEndpointsResponseEntryType => ({
@@ -174,9 +187,11 @@ export default function start({ port, src }: StartType) {
 	});
 
 	app.listen(port);
+
+	return app;
 }
 
-start({
-	port: 3003,
-	src: path.join(fs.realpathSync(process.cwd()), '/../demo-data/.nodemockserver/data'),
-});
+// start({
+// 	port: 3003,
+// 	src: path.join(fs.realpathSync(process.cwd()), '/../demo-data/.nodemockserver/data'),
+// });

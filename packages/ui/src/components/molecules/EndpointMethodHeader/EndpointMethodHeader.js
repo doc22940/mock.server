@@ -4,24 +4,28 @@
 /* eslint react/display-name: 0*/
 
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 
 // material-ui
 import { withStyles } from 'material-ui/styles';
 import Card, { CardHeader } from 'material-ui/Card';
-import InsertDriveFileIcon from 'material-ui-icons/InsertDriveFile';
 
 // project packages
 import type { $MethodEnumType } from 'node-mock-server-utils';
 
 // internal
+import RootStore from '../../../stores/RootStore';
 import styles from './styles';
 import MethodAvatar from '../../atoms/MethodAvatar/MethodAvatar';
 import MoreMenu from '../MoreMenu/MoreMenu';
+import { renderIcon } from '../../atoms/Icon/Icon';
 import type { ClassesType } from '../../../types/classes';
 import type { MoreMenuItemType } from '../MoreMenu/MoreMenu';
+import type { HeaderActionType } from '../../../stores/HooksStore';
 
 // flow types
 export type EndpointMethodHeaderPropsType = {
+	rootStore: RootStore,
 	classes?: ClassesType,
 	method: $MethodEnumType,
 	endpointId: string,
@@ -31,15 +35,16 @@ export type EndpointMethodHeaderPropsType = {
 
 class EndpointMethodHeader extends React.Component<EndpointMethodHeaderPropsType> {
 	get menuItems(): Array<MoreMenuItemType> {
-		return [
-			{
-				name: 'Open endpoint file',
-				renderIcon: (): React$Element<*> => <InsertDriveFileIcon />,
-				onClick: () => {
-					console.log('open file', this.props.endpointId, this.props.method);
-				},
-			},
-		];
+		const items = this.props.rootStore.hooksStore.endpointMethodView.headerActions.map(
+			({ name, onClick, icon }: HeaderActionType): MoreMenuItemType => {
+				return {
+					name,
+					renderIcon: (): ?React$Element<*> => (icon ? renderIcon(icon) : undefined),
+					onClick: (): void => onClick(this.props.endpointId, this.props.method),
+				};
+			}
+		);
+		return items;
 	}
 
 	render(): React$Element<*> {
@@ -61,4 +66,4 @@ class EndpointMethodHeader extends React.Component<EndpointMethodHeaderPropsType
 	}
 }
 
-export default withStyles(styles)(EndpointMethodHeader);
+export default inject('rootStore')(withStyles(styles)(observer(EndpointMethodHeader)));
