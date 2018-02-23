@@ -10,6 +10,7 @@ var cookieParser = require('cookie-parser');
 var log = require('chip')();
 var defaultOptions = require('../lib/defaults/options-defaults');
 var options = require('./options');
+var getCertificate = require('../lib/Utils');
 
 var app = express();
 var server;
@@ -35,7 +36,7 @@ function setHeaders(res) {
 	res.setHeader('Access-Control-Allow-Origin', options.accessControlAllowOrigin);
 	res.setHeader('Access-Control-Allow-Methods', options.accessControlAllowMethods);
 	res.setHeader('Access-Control-Allow-Headers', options.accessControlAllowHeaders);
-	res.setHeader('Access-Control-Allow-Credentials', options.accessControlAllowCredentials);	
+	res.setHeader('Access-Control-Allow-Credentials', options.accessControlAllowCredentials);
 }
 
 app.get('/rest/v1/products', (req, res) => {
@@ -57,8 +58,8 @@ app.post('/rest/v1/products/:productCode', (req, res) => {
 
 if (options.tunnel.privateKey && options.tunnel.certificate) {
 	server = https.createServer({
-		key: options.tunnel.privateKey,
-		cert: options.tunnel.certificate,
+		key: getCertificate(options.tunnel.privateKey),
+		cert: getCertificate(options.tunnel.certificate),
 	}, app).listen(options.tunnel.port, logFunc);
 } else {
 	server = app.listen(options.tunnel.port, logFunc);
