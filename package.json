@@ -41,7 +41,7 @@
         "cli"
     ],
     "engines": {
-        "node": ">=4"
+        "node": ">=6"
     },
     "preferGlobal": false,
     "private": false,

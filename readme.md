@@ -13,7 +13,8 @@
 ![node-mock-server-ui.png](https://cloud.githubusercontent.com/assets/2912007/26034363/c509d2c2-38bb-11e7-9175-4a151f7a550f.jpg)
 
 ## Getting Started
-This application requires Node `4` or higher.
+This application requires Node `6` or higher.
+For Node `<6` please use `node-mock-server@0.22.1`
 For Node `<4` please use `node-mock-server@0.11.0`
 
 ##### 1. Install npm package:
