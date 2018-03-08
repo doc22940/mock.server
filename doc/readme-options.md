@@ -221,6 +221,11 @@ Type: `String`
 
 A string that defines the location of the imported response functions.
 
+#### options.swaggerImport.agent
+Type: `HttpProxyAgent|HttpsProxyAgent`
+Optional
+
+An agent to reach a swagger url outside a corporate proxy.
 
 #### options.customDTOToClassTemplate
 Type: `String`
