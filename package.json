@@ -63,6 +63,7 @@
         "minimatch": "3.0.4",
         "open": "0.0.5",
         "p-series": "1.0.0",
+        "react-dev-utils": "5.0.0",
         "request": "2.83.0",
         "yamljs": "0.3.0"
     },
