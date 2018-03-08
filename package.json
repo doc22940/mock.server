@@ -1,6 +1,6 @@
 {
     "name": "node-mock-server",
-    "version": "0.22.1",
+    "version": "0.23.0",
     "description": "File based Node REST API mock server",
     "email": "simon.mollweide@web.de",
     "author": "Simon Mollweide <simon.mollweide@web.de>",
@@ -41,7 +41,7 @@
         "cli"
     ],
     "engines": {
-        "node": ">=4"
+        "node": ">=6"
     },
     "preferGlobal": false,
     "private": false,
@@ -57,20 +57,21 @@
         "extend": "3.0.1",
         "faker": "4.1.0",
         "inflect": "0.4.0",
-        "inquirer": "5.0.1",
-        "make-dir": "1.1.0",
-        "mime-types": "2.1.17",
+        "inquirer": "5.1.0",
+        "make-dir": "1.2.0",
+        "mime-types": "2.1.18",
         "minimatch": "3.0.4",
         "open": "0.0.5",
-        "p-series": "1.0.0",
+        "p-series": "1.1.0",
+        "react-dev-utils": "5.0.0",
         "request": "2.83.0",
         "yamljs": "0.3.0"
     },
     "devDependencies": {
-        "@namics/eslint-config": "4.2.0",
-        "babel-eslint": "8.2.1",
-        "eslint": "4.16.0",
-        "eslint-plugin-import": "2.8.0",
-        "mocha": "5.0.0"
+        "@namics/eslint-config": "5.0.0",
+        "babel-eslint": "8.2.2",
+        "eslint": "4.18.2",
+        "eslint-plugin-import": "2.9.0",
+        "mocha": "5.0.4"
     }
 }

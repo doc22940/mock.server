@@ -3,7 +3,7 @@
 
 var express = require('express');
 var https = require('https');
-var open = require('open');
+var openBrowser = require('react-dev-utils/openBrowser');
 var jQueryExtend = require('extend');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -20,7 +20,7 @@ var logFunc = function () {
 	if (process.env.NODE_ENV !== 'test') {
 		log.info('server started at port ' + options.tunnel.port);
 		if (options.open) {
-			open('http://localhost:' + options.tunnel.port);
+			openBrowser('http://localhost:' + options.tunnel.port);
 		}
 	}
 };
