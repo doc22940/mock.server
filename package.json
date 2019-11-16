@@ -54,7 +54,7 @@
         "ejs": "2.6.1",
         "es6-promise-polyfill": "1.2.0",
         "express": "4.16.3",
-        "extend": "3.0.1",
+        "extend": "3.0.2",
         "faker": "4.1.0",
         "inflect": "0.4.0",
         "inquirer": "5.2.0",
