@@ -63,7 +63,7 @@
         "minimatch": "3.0.4",
         "opener": "1.4.3",
         "p-series": "1.1.0",
-        "react-dev-utils": "5.0.1",
+        "react-dev-utils": "11.0.4",
         "request": "2.87.0",
         "yamljs": "0.3.0"
     },
